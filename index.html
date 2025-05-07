@@ -126,11 +126,12 @@
   font-weight: bold;
 }
 
+/* Hover info: indul alulról, jön fel középre, fade + slide */
 .hover-info {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  bottom: 20px;
+  transform: translate(-50%, 30%);
   background-color: rgba(0, 0, 0, 0.75);
   padding: 15px 20px;
   font-size: 16px;
@@ -138,14 +139,14 @@
   color: #fff;
   border-radius: 10px;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none; /* hogy ne blokkolja a hover-t */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
   z-index: 2;
 }
 
 .card:hover .hover-info {
+  transform: translate(-50%, -50%);
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
 }
 
 .hover-info strong {
