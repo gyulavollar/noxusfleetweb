@@ -8,29 +8,30 @@
 </head>
 <body>
  <header>
-  <nav style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1.5rem; background: #222; color: white; height: 70px;">
-    <a href="index.html" style="display: flex; align-items: center; color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">
-      <img src="logo.png" alt="Logo" style="height: 40px; margin-right: 0.5rem;"> NOXUS FLEET
-    </a>
-    <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; align-items: center;">
-      <li class="dropdown" style="position: relative;">
-        <a href="ber.html" style="color: white; text-decoration: none;">Bérelhető autók</a>
-        <ul class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; background: #333; padding: 0.5rem 0;">
-          <li><a href="napi.html" style="display: block; padding: 0.25rem 1rem; color: white; text-decoration: none;">Napi bérlés</a></li>
-          <li><a href="havi.html" style="display: block; padding: 0.25rem 1rem; color: white; text-decoration: none;">Havi bérlés</a></li>
-        </ul>
-      </li>
-      <li class="dropdown" style="position: relative;">
-        <a href="elado.html" style="color: white; text-decoration: none;">Eladó autók</a>
-        <ul class="dropdown-menu" style="display: none; position: absolute; top: 100%; left: 0; background: #333; padding: 0.5rem 0;">
-          <li><a href="keszleten.html" style="display: block; padding: 0.25rem 1rem; color: white; text-decoration: none;">Készletelen</a></li>
-          <li><a href="rendeles.html" style="display: block; padding: 0.25rem 1rem; color: white; text-decoration: none;">Rendelés</a></li>
-        </ul>
-      </li>
-      <li><a href="kapcsolat.html" style="color: white; text-decoration: none;">Kapcsolat</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #222; color: white;">
+      <a href="index.html" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">
+        <img src="logo.png" style="max-height: 50px; align:center"> NOXUS FLEET
+      </a>
+      <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0;">
+        <li class="dropdown">
+          <a href="ber.html" style="color: white; text-decoration: none;">Bérelhető autók</a>
+          <ul class="dropdown-menu">
+            <a href="napi.html">Napi bérlés</a>
+            <a href="havi.html">Havi bérlés</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="elado.html" style="color: white; text-decoration: none;">Eladó autók</a>
+          <ul class="dropdown-menu">
+            <a href="keszleten.html">Készletelen</a>
+            <a href="rendeles.html">Rendelés</a>
+          </ul>
+        </li>
+        <li><a href="kapcsolat.html" style="color: white; text-decoration: none;">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <section id="kedvencek" style="padding: 2rem;">
     <h2 style="text-align: center;">Kedvenc Autóink</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
