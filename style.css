@@ -110,7 +110,7 @@ body {
   }
 
   .dropdown {
-    position: relative;
+    position: relative; font-weight: bold;
   }
 
 .dropdown-menu {
