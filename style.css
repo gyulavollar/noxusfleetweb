@@ -113,6 +113,10 @@ body {
     position: relative; font-weight: bold;
   }
 
+.Kapcsolat {
+    position: relative; font-weight: bold;
+  }
+
 .dropdown-menu {
   display: none;
   position: absolute;
