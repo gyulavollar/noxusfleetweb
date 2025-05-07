@@ -1,0 +1,123 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #10120F; /* mély khaki-sötétszürke háttér */
+  color: #f0ead6; /* világos bézs-sárgás szöveg */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.car-card {
+  background: #1c1f1a; /* sötétzöldes khaki */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* arany fényhatás */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #2f312a;
+}
+
+.car-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); /* erősebb arany glow */
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 1rem;
+}
+
+.car-title {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #D4AF37; /* krómozott arany */
+}
+
+.car-price {
+  color: #004225; /* Ferrari Verde Abetone */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.car-details {
+  font-size: 0.9rem;
+  color: #ddd5bb;
+}
+
+.param {
+  margin-top: 0.5rem;
+}
+
+/* WhatsApp lebegő gomb */
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #004225; /* Verde Abetone */
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px #000;
+  z-index: 100;
+  transition: transform 0.3s;
+}
+
+.float:hover {
+  transform: scale(1.1);
+}
+
+.my-float {
+  margin-top: 16px;
+}
+
+/* Dropdown menük */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #1c1f1a;
+  border: 1px solid #2f312a;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  z-index: 999;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #f0ead6;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #2f312a;
+  color: #D4AF37;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}

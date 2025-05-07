@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autók Eladók</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #222; color: white;">
+      <a href="index.html" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">
+        🚗 AutoPlaza
+      </a>
+      <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0;">
+        <li class="dropdown">
+          <a href="ber.html" style="color: white; text-decoration: none;">Bérelhető autók</a>
+          <ul class="dropdown-menu">
+            <a href="napi.html">Napi bérlés</a>
+            <a href="havi.html">Havi bérlés</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="elado.html" style="color: white; text-decoration: none;">Eladó autók</a>
+          <ul class="dropdown-menu">
+            <a href="keszleten.html">Készletelen</a>
+            <a href="rendeles.html">Rendelés</a>
+          </ul>
+        </li>
+        <li><a href="kapcsolat.html" style="color: white; text-decoration: none;">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="kedvencek" style="padding: 2rem;">
+    <h2 style="text-align: center;">Kedvenc Autóink</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+      <div style="background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="https://via.placeholder.com/400x200?text=BMW+M3" alt="BMW M3" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 1rem;">
+          <h3>BMW M3</h3>
+          <p>Erőteljes motor, luxus felszereltség, igazi élményautó.</p>
+        </div>
+      </div>
+      <div style="background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="https://via.placeholder.com/400x200?text=Audi+RS5" alt="Audi RS5" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 1rem;">
+          <h3>Audi RS5</h3>
+          <p>Elegancia és teljesítmény egyben – prémium sportkupé.</p>
+        </div>
+      </div>
+      <div style="background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="https://via.placeholder.com/400x200?text=Mercedes+AMG" alt="Mercedes AMG" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 1rem;">
+          <h3>Mercedes AMG</h3>
+          <p>Modern technológia, sportos külső és erőteljes motor.</p>
+        </div>
+      </div>
+      <div style="background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="https://via.placeholder.com/400x200?text=Tesla+Model+S" alt="Tesla Model S" style="width: 100%; height: 180px; object-fit: cover;">
+        <div style="padding: 1rem;">
+          <h3>Tesla Model S</h3>
+          <p>Elektromos jövő – gyors, csendes és környezetbarát közlekedés.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="partnerek" style="padding: 2rem;">
+    <h2 style="text-align: center;">Partnereink</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+      <img src="https://via.placeholder.com/150x80?text=Partner+1" alt="Partner 1" style="max-height: 80px;">
+      <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partner 2" style="max-height: 80px;">
+      <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partner 3" style="max-height: 80px;">
+      <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" style="max-height: 80px;">
+    </div>
+  </section>
+  <section id="rolunk" style="background:#f8f8f8; padding: 2rem;">
+    <h2 style="text-align: center;">Rólunk</h2>
+    <div style="max-width: 800px; margin: 1rem auto; font-size: 1rem; color: #333;">
+      <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. 
+      Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
+      
+      <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
+    </div>
+  </section>
+  
+  
+  
+<!-- Footer -->
+<footer style="background:#0d0d0d; color:#f2f2f2; padding:3rem 2rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
+
+    <!-- Bal oldal: logó + elérhetőség + ikonok -->
+    <div style="flex: 1 1 300px;">
+      <img src="logo.png" alt="FMC Rent logó" style="width:120px; margin-bottom:1rem;">
+      <p style="margin: 0.5rem 0;"><i class="fa fa-phone" style="color:#FFD700;"></i> +36 30 072 5204</p>
+      <p style="margin: 0.5rem 0;"><i class="fa fa-envelope" style="color:#FFD700;"></i> booking@fmcrent.com</p>
+      <p style="margin: 0.5rem 0;"><i class="fa fa-map-marker" style="color:#FFD700;"></i> Új Ecseri út 2, Vecsés</p>
+
+      <!-- Social ikonok -->
+      <div style="margin-top: 1rem;">
+        <a href="#" style="margin-right:10px;"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
+      </div>
+    </div>
+
+    <!-- Közép: Nyitvatartás -->
+    <div style="flex: 1 1 200px;">
+      <h4 style="color: #FFD700;"><i class="fa fa-clock-o"></i> Nyitvatartás</h4>
+      <ul style="list-style: none; padding: 0; margin: 0; color: #ccc;">
+        <li>Hétfő: 8:00-20:00</li>
+        <li>Kedd: 8:00-20:00</li>
+        <li>Szerda: 8:00-20:00</li>
+        <li>Csütörtök: 8:00-20:00</li>
+        <li>Péntek: 8:00-18:00</li>
+        <li>Szombat: 8:00-16:00</li>
+        <li>Vasárnap: 8:00-20:00</li>
+      </ul>
+    </div>
+
+    <!-- Jobb oldal: kép -->
+    <div style="flex: 1 1 300px; text-align: right;">
+      <img src="car-footer.jpg" alt="Autó hátulnézet" style="max-width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); transform: skew(-10deg); border: 2px solid #FFD700;">
+    </div>
+  </div>
+
+  <!-- Alsó jogi sáv -->
+  <div style="text-align: center; font-size: 0.8rem; margin-top: 2rem; color: #999;">
+    &copy; 2025 FMC Rent Kft. Minden jog fenntartva.
+  </div>
+
+  <!-- WhatsApp lebegő ikon -->
+  <a href="https://wa.me/36201234567" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; text-decoration: none;">
+    <div class="whatsapp-box" style="position: relative; width: 60px; height: 60px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 100%; height: 100%;">
+      <span class="whatsapp-tooltip">+36 20 123 4567</span>
+    </div>
+  </a>
+
+  <style>
+    .whatsapp-tooltip {
+      position: absolute;
+      bottom: 70px;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #25D366;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+
+    .whatsapp-box:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+  </style>
+</footer>
+
+<!-- Font Awesome (ha még nem tetted be máshol) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
