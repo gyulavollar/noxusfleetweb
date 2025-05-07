@@ -53,47 +53,76 @@
 <section style="background-color: black; padding: 40px 0;">
   <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
 
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="1.png" alt="Mercedes G 400d">
-      <h4>Mercedes G 400d</h4>
-      <div class="hover-info">
-        Motor: 3.0L Diesel<br>
-        Teljesítmény: 330 LE<br>
-        Ár: €100,000
+    <!-- CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="car1.png" alt="Mercedes G 400d">
+          <h4>Mercedes G 400d</h4>
+          <div class="dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Diesel</p>
+          <p><strong>Teljesítmény:</strong> 330 LE</p>
+          <p><strong>Ár:</strong> €100,000</p>
+        </div>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="2.png" alt="BMW 7 series">
-      <h4>BMW 7 series</h4>
-      <div class="hover-info">
-        Motor: 3.0L Hybrid<br>
-        Teljesítmény: 375 LE<br>
-        Ár: €110,000
+    <!-- Itt jöhet a többi kártya ugyanilyen formában -->
+    <!-- CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="car2.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+          <div class="dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
       </div>
     </div>
 
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="3.png" alt="BMW M4">
-      <h4>BMW M4</h4>
-      <div class="hover-info">
-        Motor: 3.0L Twin-Turbo<br>
-        Teljesítmény: 510 LE<br>
-        Ár: €95,000
+    <!-- CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="car3.png" alt="BMW M4">
+          <h4>BMW M4</h4>
+          <div class="dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Twin-Turbo</p>
+          <p><strong>Teljesítmény:</strong> 510 LE</p>
+          <p><strong>Ár:</strong> €95,000</p>
+        </div>
       </div>
     </div>
 
-    <!-- Card 4 -->
-    <div class="card">
-      <img src="4.png" alt="BMW i4">
-      <h4>BMW i4</h4>
-      <div class="hover-info">
-        Motor: Elektromos<br>
-        Teljesítmény: 400 LE<br>
-        Ár: €70,000
+    <!-- CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="car4.png" alt="BMW i4">
+          <h4>BMW i4</h4>
+          <div class="dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> Elektromos</p>
+          <p><strong>Teljesítmény:</strong> 400 LE</p>
+          <p><strong>Ár:</strong> €70,000</p>
+        </div>
       </div>
     </div>
 
@@ -101,58 +130,83 @@
 </section>
 
 <style>
-.card {
-  position: relative;
-  background-color: #1a1a1a;
-  color: white;
-  text-align: center;
-  padding: 20px;
+.flip-card {
+  background-color: transparent;
   width: 250px;
-  border-radius: 12px;
-  overflow: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  height: 340px;
+  perspective: 1000px;
 }
 
-.card img {
+.flip-card-inner {
+  position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 12px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+}
+
+.flip-card-front img {
+  width: 100%;
   border-radius: 8px;
 }
 
-.card h4 {
-  margin-top: 15px;
+.flip-card-front h4 {
+  margin: 15px 0 10px;
   font-size: 18px;
-  font-weight: bold;
 }
 
-/* Hover info: indul alulról, jön fel középre, fade + slide */
-.hover-info {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  transform: translate(-50%, 30%);
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 15px 20px;
+.dots span {
+  height: 9px;
+  width: 9px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.dots span:nth-child(2) {
+  background-color: #ccc;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #111;
   font-size: 16px;
   line-height: 1.6;
-  color: #fff;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
-  z-index: 2;
 }
 
-.card:hover .hover-info {
-  transform: translate(-50%, -50%);
-  opacity: 1;
+.flip-card-back p {
+  margin: 8px 0;
 }
 
-.hover-info strong {
+.flip-card-back strong {
   color: #ffd700;
 }
 </style>
+
+
 
 
 <style>
