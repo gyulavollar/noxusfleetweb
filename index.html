@@ -112,7 +112,6 @@
   overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
 }
 
 .card img {
@@ -129,24 +128,28 @@
 
 .hover-info {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.5));
-  padding: 15px 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 15px 20px;
   font-size: 16px;
-  line-height: 1.5;
-  transform: translateY(100%);
-  transition: transform 0.35s ease-in-out;
-  color: #eee;
+  line-height: 1.6;
+  color: #fff;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* hogy ne blokkolja a hover-t */
+  z-index: 2;
+}
+
+.card:hover .hover-info {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .hover-info strong {
   color: #ffd700;
-}
-
-.card:hover .hover-info {
-  transform: translateY(0%);
 }
 </style>
 
