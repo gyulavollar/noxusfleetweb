@@ -90,29 +90,34 @@ body {
 .dropdown-menu {
   display: none;
   position: absolute;
+  background-color: #1c1f1a;
+  border: 1px solid #2f312a;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
   top: 100%;
   left: 0;
-  background: #333;
-  padding: 0.5rem 0;
-  min-width: 150px;
-  z-index: 1000;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  min-width: 180px;
+  z-index: 999;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #f0ead6;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #2f312a;
+  color: #D4AF37;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
-.dropdown-menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-  background-color: #444;
-}
-
