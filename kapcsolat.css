@@ -1,11 +1,14 @@
 /* Általános beállítások */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d0d0d;
-    color: #f2f2f2;
-  }
-  
+  font-family: "Trebuchet MS", sans-serif;
+  margin: 0;
+            height: 100vh;
+            background-image: url('carbon.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000; /* Háttérszín a kép köré */
+}
   main {
     padding: 2rem;
   }
