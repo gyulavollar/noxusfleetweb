@@ -110,9 +110,39 @@ body {
   }
 
 /* Dropdown menük */
-.dropdown {
-  position: relative;
-}
+<style>
+  nav {
+    height: 60px; /* vékony header */
+    padding: 0 2rem !important;
+  }
+
+  nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  nav img {
+    max-height: 40px; /* kisebb logó */
+    margin-right: 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+  }
+
+  .dropdown {
+    position: relative; font-weight: bold;
+  }
+
+.Kapcsolat {
+    position: relative; font-weight: bold;
+  }
 
 .dropdown-menu {
   display: none;
@@ -126,25 +156,21 @@ body {
   min-width: 180px;
   z-index: 999;
   padding: 0;
-}
+  }
 
-.dropdown-menu li {
-  list-style: none;
-}
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 
-.dropdown-menu a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #f0ead6;
-  text-decoration: none;
-  transition: background 0.2s;
-}
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 
-.dropdown-menu a:hover {
-  background-color: #2f312a;
-  color: #D4AF37;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+  .dropdown-menu a:hover {
+    background-color: #444;
+  }
+</style>
