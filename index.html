@@ -278,17 +278,11 @@
 <footer style="background:#0d0d0d; color:#f2f2f2; padding:2rem;">
   <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
     
-    <!-- Bal: Kapcsolat + ikonok -->
+    <!-- Bal: Kapcsolat -->
     <div style="flex: 1 1 300px;">
       <p style="margin: 0.5rem 0;"><i class="fa fa-phone" style="color:#FFD700;"></i> +36 30 072 5204</p>
       <p style="margin: 0.5rem 0;"><i class="fa fa-envelope" style="color:#FFD700;"></i> booking@fmcrent.com</p>
       <p style="margin: 0.5rem 0;"><i class="fa fa-map-marker" style="color:#FFD700;"></i> Új Ecseri út 2, Vecsés</p>
-
-      <!-- Social ikonok -->
-      <div style="margin-top: 1rem;">
-        <a href="#" style="margin-right:10px;"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
-      </div>
     </div>
 
     <!-- Közép: jogi szöveg -->
@@ -296,36 +290,54 @@
       &copy; 2025 FMC Rent Kft. Minden jog fenntartva.
     </div>
 
-    <!-- Jobb: WhatsApp ikon -->
+    <!-- Jobb: WhatsApp + Social ikonok -->
     <div style="flex: 1 1 300px; text-align: right; position: relative;">
-      <a href="https://wa.me/36201234567" target="_blank" style="text-decoration: none;">
-        <div class="whatsapp-box" style="position: relative; width: 60px; height: 60px; display: inline-block;">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/36201234567" target="_blank" style="text-decoration: none; margin-left: 10px;">
+        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 100%; height: 100%;">
-          <span class="whatsapp-tooltip">+36 20 123 4567</span>
+          <span class="tooltip-bubble">@noxusfleet</span>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/noxusfleet" target="_blank" style="text-decoration: none; margin-left: 10px;">
+        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 100%; height: 100%;">
+          <span class="tooltip-bubble">@noxusfleet</span>
+        </div>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@noxusfleet" target="_blank" style="text-decoration: none; margin-left: 10px;">
+        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" style="width: 100%; height: 100%;">
+          <span class="tooltip-bubble">@noxusfleet</span>
         </div>
       </a>
     </div>
   </div>
 
   <style>
-    .whatsapp-tooltip {
+    .tooltip-bubble {
       position: absolute;
       bottom: 70px;
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #25D366;
-      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FFD700;
+      color: #0d0d0d;
       padding: 6px 10px;
       border-radius: 6px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       pointer-events: none;
+      z-index: 10;
     }
 
-    .whatsapp-box:hover .whatsapp-tooltip {
+    .icon-box:hover .tooltip-bubble {
       opacity: 1;
     }
   </style>
