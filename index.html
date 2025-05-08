@@ -247,17 +247,87 @@
   </section>
 
 <section style="background:#0d0d0d; color:#f2f2f2; padding:2rem;">
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
+  <style>
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      flex: 0 0 auto;
+      margin-right: 4rem;
+    }
+
+    .footer-logo img {
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .footer-hours {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .footer-hours h4 {
+      color: #FFD700;
+    }
+
+    .footer-hours ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #ccc;
+    }
+
+    .footer-contact {
+      flex: 0 0 auto;
+      margin-left: 4rem;
+      text-align: right;
+    }
+
+    .footer-contact p {
+      margin: 0.5rem 0;
+    }
+
+    .footer-contact i {
+      color: #FFD700;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-logo,
+      .footer-contact {
+        margin: 0;
+        text-align: center;
+      }
+
+      .footer-contact {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+
+  <div class="footer-container">
     
     <!-- Bal: logó -->
-    <div style="flex: 0 0 auto;">
-      <img src="logo.png" alt="FMC Rent logó" style="height: 80px; object-fit: contain;">
+    <div class="footer-logo">
+      <img src="logo.png" alt="FMC Rent logó">
     </div>
 
     <!-- Közép: Nyitvatartás -->
-    <div style="flex: 1 1 auto; text-align: center;">
-      <h4 style="color: #FFD700;"><i class="fa fa-clock-o"></i> Nyitvatartás</h4>
-      <ul style="list-style: none; padding: 0; margin: 0; color: #ccc;">
+    <div class="footer-hours">
+      <h4><i class="fa fa-clock-o"></i> Nyitvatartás</h4>
+      <ul>
         <li>Hétfő: 8:00-20:00</li>
         <li>Kedd: 8:00-20:00</li>
         <li>Szerda: 8:00-20:00</li>
@@ -269,14 +339,15 @@
     </div>
 
     <!-- Jobb: Kapcsolat -->
-    <div style="flex: 0 0 auto; text-align: right;">
-      <p style="margin: 0.5rem 0;"><i class="fa fa-phone" style="color:#FFD700;"></i> +36 30 072 5204</p>
-      <p style="margin: 0.5rem 0;"><i class="fa fa-envelope" style="color:#FFD700;"></i> booking@fmcrent.com</p>
-      <p style="margin: 0.5rem 0;"><i class="fa fa-map-marker" style="color:#FFD700;"></i> Új Ecseri út 2, Vecsés</p>
+    <div class="footer-contact">
+      <p><i class="fa fa-phone"></i> +36 30 072 5204</p>
+      <p><i class="fa fa-envelope"></i> booking@fmcrent.com</p>
+      <p><i class="fa fa-map-marker"></i> Új Ecseri út 2, Vecsés</p>
     </div>
 
   </div>
 </section>
+
 
 
 
