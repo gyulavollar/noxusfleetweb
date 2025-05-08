@@ -240,59 +240,43 @@
 </style>
 
 
-<!-- ✅ 1. Tartalomblokk (Rólunk + Partnerek) -->
-<section id="wrapper" style="padding: 2rem; display: flex; justify-content: center; margin-bottom: 3rem;">
-  <div style="background-color: #333; color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px;">
-
-    <section id="rolunk" style="margin-bottom: 2rem;">
-      <h2 style="text-align: center;">Rólunk</h2>
-      <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
-      <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
-    </section>
-
-    <section id="partnerek">
-      <h2 style="text-align: center;">Partnereink</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
-        <img src="fmclogo.png" alt="Partner 1" style="max-height: 80px;">
-        <img src="exelogo.png" alt="Partner 2" style="max-height: 80px;">
-        <img src="linhardt.png" alt="Partner 3" style="max-height: 80px;">
-        <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" style="max-height: 80px;">
-      </div>
-    </section>
-
-  </div>
-</section>
-
-<!-- ✅ 2. Footer blokk -->
-<section style="background:#0d0d0d; color:#f2f2f2; padding:2rem;">
+<footer style="background:#0d0d0d; color:#f2f2f2; padding:2rem;">
   <style>
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
+    .footer-grid {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1400px;
+      margin: 0 auto;
       gap: 2rem;
     }
 
-    .footer-logo {
-      flex: 0 0 auto;
-      margin-right: 4rem;
+    .footer-col {
+      flex: 1 1 150px;
+      min-width: 150px;
     }
 
     .footer-logo img {
-      height: 80px;
-      object-fit: contain;
+      height: 60px;
+      margin-bottom: 1rem;
     }
 
-    .footer-hours {
-      flex: 1 1 300px;
-      text-align: center;
+    .footer-menu a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-menu a:hover {
+      color: #FFD700;
     }
 
     .footer-hours h4 {
       color: #FFD700;
+      margin-bottom: 0.5rem;
     }
 
     .footer-hours ul {
@@ -300,47 +284,94 @@
       padding: 0;
       margin: 0;
       color: #ccc;
-    }
-
-    .footer-contact {
-      flex: 0 0 auto;
-      margin-left: 4rem;
-      text-align: right;
+      font-size: 0.95rem;
     }
 
     .footer-contact p {
-      margin: 0.5rem 0;
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
     }
 
     .footer-contact i {
       color: #FFD700;
+      margin-right: 0.3rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .icon-box {
+      position: relative;
+      width: 40px;
+      height: 40px;
+    }
+
+    .icon-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .tooltip-bubble {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FFD700;
+      color: #0d0d0d;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .icon-box:hover .tooltip-bubble {
+      opacity: 1;
     }
 
     @media (max-width: 768px) {
-      .footer-container {
+      .footer-grid {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
 
-      .footer-logo,
-      .footer-contact {
-        margin: 0;
-        text-align: center;
+      .footer-social {
+        justify-content: center;
       }
 
-      .footer-contact {
-        margin-top: 1rem;
+      .footer-contact,
+      .footer-hours,
+      .footer-menu {
+        text-align: center;
       }
     }
   </style>
 
-  <div class="footer-container">
-    <div class="footer-logo">
+  <div class="footer-grid">
+    <!-- Logó -->
+    <div class="footer-col footer-logo">
       <img src="logo.png" alt="FMC Rent logó">
     </div>
 
-    <div class="footer-hours">
+    <!-- Menü -->
+    <div class="footer-col footer-menu">
+      <a href="#">ÁSZF</a>
+      <a href="#">GYIK</a>
+      <a href="#">Árlista</a>
+    </div>
+
+    <!-- Nyitvatartás -->
+    <div class="footer-col footer-hours">
       <h4><i class="fa fa-clock-o"></i> Nyitvatartás</h4>
       <ul>
         <li>Hétfő: 8:00-20:00</li>
@@ -353,69 +384,42 @@
       </ul>
     </div>
 
-    <div class="footer-contact">
-      <p><i class="fa fa-phone"></i> +36 30 072 5204</p>
-      <p><i class="fa fa-envelope"></i> booking@fmcrent.com</p>
+    <!-- Kapcsolat -->
+    <div class="footer-col footer-contact">
+      <p><i class="fa fa-phone"></i> +36 30 784 6975</p>
+      <p><i class="fa fa-envelope"></i> booking@noxusfleet.com</p>
       <p><i class="fa fa-map-marker"></i> Új Ecseri út 2, Vecsés</p>
     </div>
-  </div>
-</section>
 
-<!-- ✅ 3. Jog + közösségi ikonok -->
-<footer style="background:#0d0d0d; color:#f2f2f2; padding:2rem;">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
-    <div style="flex: 1 1 200px; text-align: center; font-size: 0.8rem; color: #999;">
-      &copy; 2025 FMC Rent Kft. Minden jog fenntartva.
-    </div>
-
-    <div style="flex: 1 1 300px; text-align: right; position: relative;">
-      <a href="https://wa.me/36201234567" target="_blank" style="text-decoration: none; margin-left: 10px;">
-        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 100%; height: 100%;">
+    <!-- Social ikonok -->
+    <div class="footer-col footer-social">
+      <a href="https://wa.me/36201234567" target="_blank">
+        <div class="icon-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
           <span class="tooltip-bubble">@noxusfleet</span>
         </div>
       </a>
-
-      <a href="https://instagram.com/noxusfleet" target="_blank" style="text-decoration: none; margin-left: 10px;">
-        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 100%; height: 100%;">
+      <a href="https://instagram.com/noxusfleet" target="_blank">
+        <div class="icon-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
           <span class="tooltip-bubble">@noxusfleet</span>
         </div>
       </a>
-
-      <a href="https://www.tiktok.com/@noxusfleet" target="_blank" style="text-decoration: none; margin-left: 10px;">
-        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" style="width: 100%; height: 100%;">
+      <a href="https://www.tiktok.com/@noxusfleet" target="_blank">
+        <div class="icon-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok">
           <span class="tooltip-bubble">@noxusfleet</span>
         </div>
       </a>
     </div>
   </div>
 
-  <style>
-    .tooltip-bubble {
-      position: absolute;
-      bottom: 70px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #FFD700;
-      color: #0d0d0d;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity 0.3s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    .icon-box:hover .tooltip-bubble {
-      opacity: 1;
-    }
-  </style>
+  <!-- Jogok -->
+  <div style="text-align: center; color: #999; font-size: 0.85rem; margin-top: 2rem;">
+    &copy; 2025 Noxus Fleet Kft. Minden jog fenntartva.
+  </div>
 </footer>
+
 
 </body>
 </html>
