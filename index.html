@@ -239,7 +239,100 @@
   }
 </style>
 
+<section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
+  <style>
+    .testimonial-section {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
 
+    .testimonial-slide {
+      display: none;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      padding: 1.5rem;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .testimonial-author {
+      margin-top: 1rem;
+      color: #FFD700;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <div class="testimonial-section">
+    <div class="testimonial-slide active">
+      <p>„Gyors ügyintézés, rugalmas hozzáállás és kiváló állapotú autók.”</p>
+      <div class="testimonial-author">– Balázs K.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kivételes szolgáltatás, minden úgy ment, ahogy ígérték!”</p>
+      <div class="testimonial-author">– Réka M.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kedves ügyfélszolgálat és átlátható bérlés. Csak ajánlani tudom!”</p>
+      <div class="testimonial-author">– Zoltán F.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Korrekt árak, prémium autók és tiszta, igényes környezet.”</p>
+      <div class="testimonial-author">– Nóra V.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Az autó kiváló állapotú volt, öröm volt vezetni. Minden gördülékenyen ment.”</p>
+      <div class="testimonial-author">– Ádám T.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Sosem volt ilyen egyszerű és gyors autót bérelni!”</p>
+      <div class="testimonial-author">– Petra H.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kedvező feltételek, segítőkész csapat. Visszatérő ügyfél leszek!”</p>
+      <div class="testimonial-author">– Gergő B.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Minden igényemnek megfelelt az autó. Tényleg prémium élmény.”</p>
+      <div class="testimonial-author">– Lilla K.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Pontosan azt kaptam, amit megbeszéltünk. Nincs zsákbamacska!”</p>
+      <div class="testimonial-author">– Norbert D.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Modern autók, remek szerviz és gyors ügyintézés. 10/10.”</p>
+      <div class="testimonial-author">– Judit S.</div>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll(".testimonial-slide");
+
+    function showNextSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 4000);
+  </script>
+</section>
+
+  
 <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
   <style>
     .footer-wrapper {
