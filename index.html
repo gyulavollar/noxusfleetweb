@@ -3,168 +3,320 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noxus Fleet</title>
+  <title>Autók Eladók</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+ <header>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #222; color: white;">
+      <a href="index.html" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">
+        <img src="logo.png" style="max-height: 50px; align:center"> NOXUS FLEET
+      </a>
+      <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0;">
+        <li class="dropdown">
+          BÉRELHETŐ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="napi.html">NAPI BÉRLÉS</a>
+            <a href="havi.html">HAVI BÉRLÉS</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          ELADÓ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="keszleten.html">KÉSZLETEN</a>
+            <a href="rendeles.html">RENDELÉS</a>
+          </ul>
+        </li>
+        <li class="Kapcsolat"><a href="kapcsolat.html" style="color: white; text-decoration: none; text-weight: bold">KAPCSOLAT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section style="
+  position: relative;
+  height: 400px;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="font-size: 2.5rem; background: rgba(0, 0, 0, 0.5); padding: 1rem 2rem; border-radius: 8px;">
+    Üdvözlünk a NOXUS FLEET-nél
+  </h1>
+</section>
+
+<section style="  margin: 0;
+            height: 100vh;
+            background-image: url('carbon.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000; /* Háttérszín a kép köré */";>
+
+  
+<section style="padding: 40px 0;">
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+
+    <!-- CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="1.png" alt="Mercedes G 400d">
+          <h4>Mercedes G 400d</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Diesel</p>
+          <p><strong>Teljesítmény:</strong> 330 LE</p>
+          <p><strong>Ár:</strong> €100,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Itt jöhet a többi kártya ugyanilyen formában -->
+    <!-- CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="2.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="3.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="4.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 340px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 12px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+}
+
+.flip-card-front img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.flip-card-front h4 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+}
+
+.dots span {
+  height: 9px;
+  width: 9px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.dots span:nth-child(2) {
+  background-color: #ccc;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #111;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.flip-card-back p {
+  margin: 8px 0;
+}
+
+.flip-card-back strong {
+  color: #ffd700;
+}
+</style>
+
+
+
+
+<style>
+  /* Hover effektus a paraméter dobozra */
+  .hover-info {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  div[style*="position: relative"]:hover .hover-info {
+    transform: translateY(0%);
+  }
+</style>
+
+
+<section id="wrapper" style="padding: 2rem; display: flex; justify-content: center;">
+    <div style="background-color: #333; color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px;">
+
+        <section id="rolunk" style="margin-bottom: 2rem;">
+            <h2 style="text-align: center;">Rólunk</h2>
+            <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. 
+            Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
+
+            <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
+        </section>
+
+        <section id="partnerek">
+            <h2 style="text-align: center;">Partnereink</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+                <img src="fmclogo.png" alt="Partner 1" style="max-height: 80px;">
+                <img src="exelogo.png" alt="Partner 2" style="max-height: 80px;">
+                <img src="linhardt.png" alt="Partner 3" style="max-height: 80px;">
+                <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" style="max-height: 80px;">
+            </div>
+        </section>
+
+    </div>
+</section>
+  </section>
+
+<section style="background:#0d0d0d; color:#f2f2f2; padding:3rem 2rem;">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: stretch; gap: 2rem;">
+    
+    <!-- Bal: logó -->
+    <div style="flex: 1 1 200px; display: flex; justify-content: center; align-items: center;">
+      <img src="logo.png" alt="FMC Rent logó" style="height: 100px; object-fit: contain;">
+    </div>
+
+    <!-- Közép: Nyitvatartás -->
+    <div style="flex: 1 1 200px;">
+      <h4 style="color: #FFD700; text-align: center;"><i class="fa fa-clock-o"></i> Nyitvatartás</h4>
+      <ul style="list-style: none; padding: 0; margin: 0; color: #ccc; text-align: center;">
+        <li>Hétfő: 8:00-20:00</li>
+        <li>Kedd: 8:00-20:00</li>
+        <li>Szerda: 8:00-20:00</li>
+        <li>Csütörtök: 8:00-20:00</li>
+        <li>Péntek: 8:00-18:00</li>
+        <li>Szombat: 8:00-16:00</li>
+        <li>Vasárnap: 8:00-20:00</li>
+      </ul>
+    </div>
+
+    <!-- Jobb: Kapcsolat -->
+    <div style="flex: 1 1 200px; display: flex; flex-direction: column; justify-content: center;">
+      <p style="margin: 0.5rem 0; text-align: right;"><i class="fa fa-phone" style="color:#FFD700;"></i> +36 30 072 5204</p>
+      <p style="margin: 0.5rem 0; text-align: right;"><i class="fa fa-envelope" style="color:#FFD700;"></i> booking@fmcrent.com</p>
+      <p style="margin: 0.5rem 0; text-align: right;"><i class="fa fa-map-marker" style="color:#FFD700;"></i> Új Ecseri út 2, Vecsés</p>
+    </div>
+
+  </div>
+</section>
+
+
+  
+<!-- Footer -->
+<footer style="background:#0d0d0d; color:#f2f2f2; padding:2rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
+
+
+    <!-- Közép: jogi szöveg -->
+    <div style="flex: 1 1 200px; text-align: center; font-size: 0.8rem; color: #999;">
+      &copy; 2025 FMC Rent Kft. Minden jog fenntartva.
+    </div>
+
+    <!-- Jobb: WhatsApp + Social ikonok -->
+    <div style="flex: 1 1 300px; text-align: right; position: relative;">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/36201234567" target="_blank" style="text-decoration: none; margin-left: 10px;">
+        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 100%; height: 100%;">
+          <span class="tooltip-bubble">@noxusfleet</span>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/noxusfleet" target="_blank" style="text-decoration: none; margin-left: 10px;">
+        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 100%; height: 100%;">
+          <span class="tooltip-bubble">@noxusfleet</span>
+        </div>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@noxusfleet" target="_blank" style="text-decoration: none; margin-left: 10px;">
+        <div class="icon-box" style="display: inline-block; position: relative; width: 60px; height: 60px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" style="width: 100%; height: 100%;">
+          <span class="tooltip-bubble">@noxusfleet</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
   <style>
-    /* === Dropdown Menü Stílusok (Fejléc) === */
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #0d0d0d;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: #222;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav img {
-      max-height: 50px;
-      vertical-align: middle;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      position: relative;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-    }
-
-    nav ul li a, nav ul li span {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      min-width: 160px;
-      z-index: 1000;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    nav ul li:hover ul {
-      display: block;
-    }
-
-    nav ul li ul a {
-      display: block;
-      padding: 0.75rem 1rem;
-      color: white;
-    }
-
-    nav ul li ul a:hover {
-      background-color: #444;
-    }
-
-    /* === Flip Kártyák === */
-    .cards-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .flip-card {
-      background-color: transparent;
-      width: 250px;
-      height: 340px;
-      perspective: 1000px;
-    }
-
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transform-style: preserve-3d;
-      transition: transform 0.6s ease;
-      border-radius: 12px;
-    }
-
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      backface-visibility: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #1a1a1a;
-      color: white;
-      padding: 20px;
-    }
-
-    .flip-card-front img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .flip-card-front h4 {
-      margin: 15px 0 10px;
-      font-size: 18px;
-    }
-
-    .flip-card-back {
-      transform: rotateY(180deg);
-      background-color: #111;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .flip-card-back p {
-      margin: 8px 0;
-    }
-
-    .flip-card-back strong {
-      color: #ffd700;
-    }
-
-    /* === Tooltip Buborékok (Footer Ikonok) === */
-    .footer {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-      background-color: #222;
-      position: relative;
-    }
-
-    .icon-box {
-      position: relative;
-      cursor: pointer;
-    }
-
     .tooltip-bubble {
       position: absolute;
       bottom: 70px;
@@ -186,98 +338,9 @@
     .icon-box:hover .tooltip-bubble {
       opacity: 1;
     }
-
-    .icon-box img {
-      width: 40px;
-    }
   </style>
-</head>
-<body>
+</footer>
 
-  <!-- Navigáció -->
-  <nav>
-    <a href="index.html">
-      <img src="logo.png" alt="Noxus Fleet Logó"> NOXUS FLEET
-    </a>
-    <ul>
-      <li>
-        <span>BÉRELHETŐ AUTÓK</span>
-        <ul>
-          <li><a href="napi.html">NAPI BÉRLÉS</a></li>
-          <li><a href="havi.html">HAVI BÉRLÉS</a></li>
-        </ul>
-      </li>
-      <li>
-        <span>ELADÓ AUTÓK</span>
-        <ul>
-          <li><a href="keszleten.html">KÉSZLETEN</a></li>
-          <li><a href="rendeles.html">RENDELÉS</a></li>
-        </ul>
-      </li>
-      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
-    </ul>
-  </nav>
+<!-- Font Awesome (ha még nincs betöltve) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Flip Kártyák -->
-  <div class="cards-container">
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="bmw.jpg" alt="BMW" />
-          <h4>BMW 320i</h4>
-        </div>
-        <div class="flip-card-back">
-          <p><strong>Évjárat:</strong> 2021</p>
-          <p><strong>Teljesítmény:</strong> 184 LE</p>
-          <p><strong>Ár:</strong> 12 500 000 Ft</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="audi.jpg" alt="Audi" />
-          <h4>Audi A4</h4>
-        </div>
-        <div class="flip-card-back">
-          <p><strong>Évjárat:</strong> 2020</p>
-          <p><strong>Teljesítmény:</strong> 150 LE</p>
-          <p><strong>Ár:</strong> 10 900 000 Ft</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img src="mercedes.jpg" alt="Mercedes" />
-          <h4>Mercedes C200</h4>
-        </div>
-        <div class="flip-card-back">
-          <p><strong>Évjárat:</strong> 2019</p>
-          <p><strong>Teljesítmény:</strong> 184 LE</p>
-          <p><strong>Ár:</strong> 11 800 000 Ft</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tooltipos Alsó Sáv -->
-  <div class="footer">
-    <div class="icon-box">
-      <img src="icon-facebook.png" alt="Facebook">
-      <div class="tooltip-bubble">Facebook oldalunk</div>
-    </div>
-    <div class="icon-box">
-      <img src="icon-instagram.png" alt="Instagram">
-      <div class="tooltip-bubble">Instagram profilunk</div>
-    </div>
-    <div class="icon-box">
-      <img src="icon-phone.png" alt="Telefon">
-      <div class="tooltip-bubble">Hívj minket!</div>
-    </div>
-  </div>
-
-</body>
-</html>
