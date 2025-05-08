@@ -8,6 +8,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000;
+  overscroll-behavior: none;
 }
 
 /* -------------------- FEJLÉC ÉS NAVIGÁCIÓ -------------------- */
