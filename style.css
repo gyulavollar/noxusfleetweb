@@ -13,6 +13,9 @@ body {
   background-color: #000;
   color: #e0f7f9;
   overscroll-behavior: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 main {
@@ -29,8 +32,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
-  position: relative;
-  z-index: 1000;
 }
 
 .logo {
@@ -60,9 +61,6 @@ nav {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
-  position: relative;
-  z-index: 1000;
-  overflow: visible;
 }
 
 nav a {
@@ -89,7 +87,6 @@ ul {
 }
 
 .dropdown-menu {
-.dropdown-menu {
   display: none;
   position: absolute;
   background-color: rgba(0, 20, 25, 0.85);
@@ -99,7 +96,7 @@ ul {
   top: 100%;
   left: 0;
   min-width: 180px;
-  z-index: 1100; /* magasabb mint nav és header */
+  z-index: 999;
   padding: 0;
 }
 
