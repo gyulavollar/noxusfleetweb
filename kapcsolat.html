@@ -1,155 +1,289 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-  <meta charset="UTF-8">
-  <title>Kapcsolat</title>
-  <link rel="stylesheet" href="kapcsolat.css">
-</head>
-<body>
-
- <header>
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #222; color: white;">
-      <a href="index.html" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">
-        <img src="logo.png" style="max-height: 50px; align:center"> NOXUS FLEET
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">
+        <img src="logo.png" />
+        <h1>NOXUS FLEET</h1>
       </a>
-      <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0;">
-        <li class="dropdown">
-          BÉRELHETŐ AUTÓK
-          <ul class="dropdown-menu">
-            <a href="napi.html">NAPI BÉRLÉS</a>
-            <a href="havi.html">HAVI BÉRLÉS</a>
-          </ul>
-        </li>
-        <li class="dropdown">
-          ELADÓ AUTÓK
-          <ul class="dropdown-menu">
-            <a href="keszleten.html">KÉSZLETEN</a>
-            <a href="rendeles.html">RENDELÉS</a>
-          </ul>
-        </li>
-        <li class="Kapcsolat"><a href="kapcsolat.html" style="color: white; text-decoration: none; text-weight: bold">KAPCSOLAT</a></li>
-      </ul>
-    </nav>
-  </header>
 
+      <nav>
+        <ul>
+          <li class="dropdown">
+            BÉRELHETŐ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="napi.html">NAPI BÉRLÉS</a>
+              <a href="havi.html">HAVI BÉRLÉS</a>
+            </ul>
+          </li>
+          <li class="dropdown">
+            ELADÓ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="keszleten.html">KÉSZLETEN</a>
+              <a href="rendeles.html">RENDELÉS</a>
+            </ul>
+          </li>
+          <li class="Kapcsolat">
+            <a
+              href="kapcsolat.html"
+              style="color: white; text-decoration: none; text-weight: bold"
+            >
+              KAPCSOLAT
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-<main>
-
-  <!-- Felső szakasz: szöveg + kép -->
-  <section class="contact-top">
-    <div>
-      <h2>Lépjen velünk kapcsolatba</h2>
-      <p>Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az alábbi űrlapot vagy hívjon minket!</p>
-    </div>
-    <img src="cars/contact-car.jpg" alt="Kapcsolat autó">
-  </section>
-
-  <!-- Alsó szakasz: űrlap + térkép -->
-  <section class="contact-section">
-    <div class="contact-form">
-      <form action="send.php" method="POST">
-        <label for="name">Név</label>
-        <input type="text" name="name" id="name" required>
-
-        <label for="phone">Telefonszám</label>
-        <input type="text" name="phone" id="phone" required>
-
-        <label for="email">Email cím</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="message">Üzenet</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-
-        <button type="submit">Üzenet elküldése</button>
-      </form>
-    </div>
-
-    <div class="contact-map">
-      <!-- Itt helyettesítsd be a saját Google Maps iframe-edet -->
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337540431211!2d2.2944813156744726!3d48.85884407928798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fda5a123fd5%3A0xa0b82cba51df6c0!2sEiffel%20Tower!5e0!3m2!1shu!2shu!4v1615489027981!5m2!1shu!2shu"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-    </div>
-  </section>
-
-</main>
-
-<!-- Footer -->
-<footer style="background:#0d0d0d; color:#f2f2f2; padding:3rem 2rem;">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
-
-    <!-- Bal oldal: logó + elérhetőség + ikonok -->
-    <div style="flex: 1 1 300px;">
-      <img src="logo.png" alt="FMC Rent logó" style="width:120px; margin-bottom:1rem;">
-      <p style="margin: 0.5rem 0;"><i class="fa fa-phone" style="color:#FFD700;"></i> +36 30 072 5204</p>
-      <p style="margin: 0.5rem 0;"><i class="fa fa-envelope" style="color:#FFD700;"></i> booking@fmcrent.com</p>
-      <p style="margin: 0.5rem 0;"><i class="fa fa-map-marker" style="color:#FFD700;"></i> Új Ecseri út 2, Vecsés</p>
-
-      <!-- Social ikonok -->
-      <div style="margin-top: 1rem;">
-        <a href="#" style="margin-right:10px;"><img src="facebook-icon.png" alt="Facebook" width="30"></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram" width="30"></a>
+      <div class="hamburger" id="hamburger-menu">
+        <div class="hamburger-x" id="hamburger-x">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <ul>
+          <li class="dropdown">
+            BÉRELHETŐ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="napi.html">NAPI BÉRLÉS</a>
+              <a href="havi.html">HAVI BÉRLÉS</a>
+            </ul>
+          </li>
+          <li class="dropdown">
+            ELADÓ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="keszleten.html">KÉSZLETEN</a>
+              <a href="rendeles.html">RENDELÉS</a>
+            </ul>
+          </li>
+          <li class="Kapcsolat">
+            <a
+              href="kapcsolat.html"
+              style="color: white; text-decoration: none; text-weight: bold"
+            >
+              KAPCSOLAT
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
 
-    <!-- Közép: Nyitvatartás -->
-    <div style="flex: 1 1 200px;">
-      <h4 style="color: #FFD700;"><i class="fa fa-clock-o"></i> Nyitvatartás</h4>
-      <ul style="list-style: none; padding: 0; margin: 0; color: #ccc;">
-        <li>Hétfő: 8:00-20:00</li>
-        <li>Kedd: 8:00-20:00</li>
-        <li>Szerda: 8:00-20:00</li>
-        <li>Csütörtök: 8:00-20:00</li>
-        <li>Péntek: 8:00-18:00</li>
-        <li>Szombat: 8:00-16:00</li>
-        <li>Vasárnap: 8:00-20:00</li>
-      </ul>
-    </div>
+      <div class="hamburger-icon" id="hamburger-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="white"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+          />
+        </svg>
+      </div>
+    </header>
 
-    <!-- Jobb oldal: kép -->
-    <div style="flex: 1 1 300px; text-align: right;">
-      <img src="car-footer.jpg" alt="Autó hátulnézet" style="max-width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); transform: skew(-10deg); border: 2px solid #FFD700;">
-    </div>
-  </div>
+    <main>
+      <!-- Felső szakasz: szöveg + kép -->
+      <section class="contact-top">
+        <div>
+          <h2>Lépjen velünk kapcsolatba</h2>
+          <p>
+            Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az
+            alábbi űrlapot vagy hívjon minket!
+          </p>
+        </div>
+        <img src="cars/contact-car.jpg" alt="Kapcsolat autó" />
+      </section>
 
-  <!-- Alsó jogi sáv -->
-  <div style="text-align: center; font-size: 0.8rem; margin-top: 2rem; color: #999;">
-    &copy; 2025 FMC Rent Kft. Minden jog fenntartva.
-  </div>
+      <!-- Alsó szakasz: űrlap + térkép -->
+      <section class="contact-section">
+        <div class="contact-form">
+          <form action="send.php" method="POST">
+            <label for="name">Név</label>
+            <input type="text" name="name" id="name" required />
 
-  <!-- WhatsApp lebegő ikon -->
-  <a href="https://wa.me/36201234567" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; text-decoration: none;">
-    <div class="whatsapp-box" style="position: relative; width: 60px; height: 60px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 100%; height: 100%;">
-      <span class="whatsapp-tooltip">+36 20 123 4567</span>
-    </div>
-  </a>
+            <label for="phone">Telefonszám</label>
+            <input type="text" name="phone" id="phone" required />
 
-  <style>
-    .whatsapp-tooltip {
-      position: absolute;
-      bottom: 70px;
-      right: 50%;
-      transform: translateX(50%);
-      background-color: #25D366;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity 0.3s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      pointer-events: none;
-    }
+            <label for="email">Email cím</label>
+            <input type="email" name="email" id="email" required />
 
-    .whatsapp-box:hover .whatsapp-tooltip {
-      opacity: 1;
-    }
-  </style>
-</footer>
+            <label for="message">Üzenet</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
 
-<!-- Font Awesome (ha még nem tetted be máshol) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <button type="submit">Üzenet elküldése</button>
+          </form>
+        </div>
+
+        <div class="contact-map">
+          <!-- Itt helyettesítsd be a saját Google Maps iframe-edet -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337540431211!2d2.2944813156744726!3d48.85884407928798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fda5a123fd5%3A0xa0b82cba51df6c0!2sEiffel%20Tower!5e0!3m2!1shu!2shu!4v1615489027981!5m2!1shu!2shu"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #0d0d0d; color: #f2f2f2; padding: 3rem 2rem">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          gap: 2rem;
+        "
+      >
+        <!-- Bal oldal: logó + elérhetőség + ikonok -->
+        <div style="flex: 1 1 300px">
+          <img
+            src="logo.png"
+            alt="FMC Rent logó"
+            style="width: 120px; margin-bottom: 1rem"
+          />
+          <p style="margin: 0.5rem 0">
+            <i class="fa fa-phone" style="color: #ffd700"></i> +36 30 072 5204
+          </p>
+          <p style="margin: 0.5rem 0">
+            <i class="fa fa-envelope" style="color: #ffd700"></i>
+            booking@fmcrent.com
+          </p>
+          <p style="margin: 0.5rem 0">
+            <i class="fa fa-map-marker" style="color: #ffd700"></i> Új Ecseri út
+            2, Vecsés
+          </p>
+
+          <!-- Social ikonok -->
+          <div style="margin-top: 1rem">
+            <a href="#" style="margin-right: 10px"
+              ><img src="facebook-icon.png" alt="Facebook" width="30"
+            /></a>
+            <a href="#"
+              ><img src="instagram-icon.png" alt="Instagram" width="30"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Közép: Nyitvatartás -->
+        <div style="flex: 1 1 200px">
+          <h4 style="color: #ffd700">
+            <i class="fa fa-clock-o"></i> Nyitvatartás
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0; color: #ccc">
+            <li>Hétfő: 8:00-20:00</li>
+            <li>Kedd: 8:00-20:00</li>
+            <li>Szerda: 8:00-20:00</li>
+            <li>Csütörtök: 8:00-20:00</li>
+            <li>Péntek: 8:00-18:00</li>
+            <li>Szombat: 8:00-16:00</li>
+            <li>Vasárnap: 8:00-20:00</li>
+          </ul>
+        </div>
+
+        <!-- Jobb oldal: kép -->
+        <div style="flex: 1 1 300px; text-align: right">
+          <img
+            src="car-footer.jpg"
+            alt="Autó hátulnézet"
+            style="
+              max-width: 100%;
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+              transform: skew(-10deg);
+              border: 2px solid #ffd700;
+            "
+          />
+        </div>
+      </div>
+
+      <!-- Alsó jogi sáv -->
+      <div
+        style="
+          text-align: center;
+          font-size: 0.8rem;
+          margin-top: 2rem;
+          color: #999;
+        "
+      >
+        &copy; 2025 FMC Rent Kft. Minden jog fenntartva.
+      </div>
+
+      <!-- WhatsApp lebegő ikon -->
+      <a
+        href="https://wa.me/36201234567"
+        target="_blank"
+        style="
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000;
+          text-decoration: none;
+        "
+      >
+        <div
+          class="whatsapp-box"
+          style="position: relative; width: 60px; height: 60px"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+            alt="WhatsApp"
+            style="width: 100%; height: 100%"
+          />
+          <span class="whatsapp-tooltip">+36 20 123 4567</span>
+        </div>
+      </a>
+
+      <style>
+        .whatsapp-tooltip {
+          position: absolute;
+          bottom: 70px;
+          right: 50%;
+          transform: translateX(50%);
+          background-color: #25d366;
+          color: white;
+          padding: 6px 10px;
+          border-radius: 6px;
+          font-size: 0.9rem;
+          white-space: nowrap;
+          opacity: 0;
+          transition: opacity 0.3s;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          pointer-events: none;
+        }
+
+        .whatsapp-box:hover .whatsapp-tooltip {
+          opacity: 1;
+        }
+      </style>
+    </footer>
+
+    <!-- Font Awesome (ha még nem tetted be máshol) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </body>
+</html>
