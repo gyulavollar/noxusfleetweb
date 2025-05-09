@@ -10,9 +10,6 @@ body {
   background-color: #000;
   color: #e0f7f9;
   overscroll-behavior: none;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 /* -------------------- FEJLÉC ÉS NAVIGÁCIÓ -------------------- */
@@ -22,6 +19,10 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
 }
 
 header a {
