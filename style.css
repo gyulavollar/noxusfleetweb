@@ -127,7 +127,7 @@ ul {
   top: 100%;
   left: 0;
   min-width: 180px;
-  z-index: 999;
+  z-index: 1000;
   padding: 0;
 }
 
