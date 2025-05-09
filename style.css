@@ -8,6 +8,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000;
+  color: #e0f7f9;
   overscroll-behavior: none;
 }
 
@@ -86,12 +87,19 @@ nav {
   
   height: 60px;
   padding: 0 2rem;
+
+  background-color: rgba(0, 10, 15, 0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 
 nav a {
   display: flex;
   align-items: center;
   height: 100%;
+  color: #aef1f6;
+  text-decoration: none;
 }
 
 ul {
@@ -112,9 +120,9 @@ ul {
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #1c1f1a;
-  border: 1px solid #2f312a;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  background-color: rgba(0, 20, 25, 0.85);
+  border: 1px solid rgba(174, 241, 246, 0.2);
+  box-shadow: 0 2px 8px rgba(174, 241, 246, 0.3);
   border-radius: 6px;
   top: 100%;
   left: 0;
@@ -130,13 +138,13 @@ ul {
 .dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
-  color: white;
+  color: #aef1f6;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-  background-color: #444;
+  background-color: rgba(174, 241, 246, 0.1);
 }
 
 /* -------------------- AUTÓKÁRTYÁK ÉS GRID -------------------- */
@@ -148,17 +156,18 @@ ul {
 }
 
 .car-card {
-  background: #1c1f1a;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  background: rgba(10, 20, 25, 0.65);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(174, 241, 246, 0.25);
+  backdrop-filter: blur(6px);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #2f312a;
+  border: 1px solid rgba(174, 241, 246, 0.15);
 }
 
 .car-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 20px rgba(174, 241, 246, 0.5);
 }
 
 .car-card img {
@@ -174,22 +183,18 @@ ul {
 .car-title {
   font-size: 1.3rem;
   margin: 0 0 0.5rem;
-  color: #D4AF37;
+  color: #aef1f6;
 }
 
 .car-price {
-  color: #004225;
+  color: #7ddde4;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .car-details {
   font-size: 0.9rem;
-  color: #ddd5bb;
-}
-
-.param {
-  margin-top: 0.5rem;
+  color: #d9f3f5;
 }
 
 /* -------------------- KEDVENCEK GRID -------------------- */
@@ -211,8 +216,8 @@ ul {
   height: 60px;
   bottom: 40px;
   right: 40px;
-  background-color: #004225;
-  color: #fff;
+  background-color: #00bcc2;
+  color: #000;
   border-radius: 50%;
   text-align: center;
   font-size: 30px;
@@ -289,26 +294,12 @@ ul {
 
   .dropdown-menu a {
     padding: 0.3rem 0;
-    color: #D4AF37;
+    color: #aef1f6;
   }
 
   .dropdown:hover .dropdown-menu {
     display: block;
   }
-
-.card {
-    backdrop-filter: blur(4px) saturate(176%);
-    -webkit-backdrop-filter: blur(4px) saturate(176%);
-    background-color: rgba(46, 97, 99, 0.57);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-}
 }
 
-
-
-
-
-
-
-
+}
