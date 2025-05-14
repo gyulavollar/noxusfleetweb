@@ -22,6 +22,28 @@ body, html {
   margin: 0;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  background-color: #000a0f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+  border-bottom: 2px solid #aef1f6;
+}
+
+@media (max-width: 768px) {
+  header {
+    position: fixed; /* A mobilon mindig látható */
+    width: 100%;     /* Teljes szélesség */
+  }
+
+  main {
+    margin-top: 60px; /* A fejléc magasságával megegyező hely */
+  }
+}
 main {
   padding: 2rem;
 }
