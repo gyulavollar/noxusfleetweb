@@ -121,23 +121,27 @@
     linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
     url('carbon.png') no-repeat center center / 300% auto;
   color: #f2f2f2;
-  min-height: 200px;  <!-- Alacsonyabb magasság -->
+  min-height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  <!-- Függőleges középre igazítás -->
+  align-items: center;      <!-- Vízszintes középre igazítás -->
   position: relative;
   overflow: hidden;
+  height: 100%;            <!-- Teljes magasság kitöltés -->
 ">
   <div style="
     background-color: rgba(0, 0, 0, 0.75);
-    padding: 1.5rem;  <!-- Kisebb padding -->
+    padding: 1.5rem;
     border-radius: 8px;
     max-width: 800px;
     width: 90%;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255,215,0,0.3);
-    margin: 0.5rem;  <!-- Kisebb margó -->
+    margin: auto;          <!-- Automatikus margó a középre igazításhoz -->
+    position: relative;    <!-- Relatív pozícionálás -->
+    top: 50%;             <!-- 50%-kal lejjebb tolás -->
+    transform: translateY(-50%); <!-- Kompenzálás a pontos középre igazításhoz -->
   ">
     <h2 style="font-size: 1.5rem; font-weight: 700; color: #FFD700; margin: 0; text-shadow: 0 2px 5px rgba(0,0,0,0.7);">
       Foglald le legkedveltebb kocsijainkat
@@ -152,17 +156,18 @@
   @media (max-width: 768px) {
     section {
       background-size: 400% auto !important;
-      min-height: 180px;  <!-- Alacsonyabb mobil magasság -->
+      min-height: 180px;
     }
   }
   
   @media (max-width: 480px) {
     section {
       background-size: 500% auto !important;
-      min-height: 160px;  <!-- Extra alacsony kis mobilokon -->
+      min-height: 160px;
     }
     section > div {
-      padding: 1rem;  <!-- Extra kis padding -->
+      padding: 1rem;
+      width: 85%;  <!-- Szélesség csökkentése mobilnál -->
     }
   }
 </style>
