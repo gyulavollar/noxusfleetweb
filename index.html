@@ -123,13 +123,38 @@
             background-color: #000; /* Háttérszín a kép köré */";>
 
 
-<section style="text-align: center; padding: 20px 15px; background: url('carbon.png') no-repeat center center / cover; color: #f2f2f2; padding: 2rem 1rem 1rem;">
-  <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
-    Foglald le legkedveltebb kocsijainkat
-  </h2>
-  <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
-    Prémium autók, amiket ügyfeleink a leggyakrabban választanak
-  </p>
+<section style="
+  text-align: center;
+  padding: 20px 15px;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+              url('carbon.png') no-repeat center center / cover;
+  color: #f2f2f2;
+  padding: 2rem 1rem 1rem;
+  min-height: 200px;  /* Minimum magasság */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+">
+  <div style="
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.85);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 90%;
+  ">
+    <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
+      Foglald le legkedveltebb kocsijainkat
+    </h2>
+    <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
+      Prémium autók, amiket ügyfeleink a leggyakrabban választanak
+    </p>
+  </div>
 </section>
 
 
