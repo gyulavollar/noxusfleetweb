@@ -106,8 +106,7 @@ ul {
   padding: 0;
 }
 
-.dropdown:active .dropdown-menu,
-.dropdown:focus .dropdown-menu {
+.dropdown.open .dropdown-menu {
   display: block;
 }
 
