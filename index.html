@@ -120,12 +120,13 @@
   background: 
     url('carbon.png') no-repeat center center / cover;
   color: #f2f2f2;
-  min-height: 300px;
+  min-height: 50vh;  /* Viewport magasság %-ban */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  background-attachment: scroll;
 ">
   <div style="
     background-color: rgba(0, 0, 0, 0.7);
@@ -133,16 +134,16 @@
     border-radius: 8px;
     max-width: 800px;
     width: 90%;
+    margin: 1rem;
   ">
-    <h2 style="font-size: 2rem; font-weight: 600; color: #FFD700; margin: 0;">
+    <h2 style="font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 600; color: #FFD700; margin: 0;">
       Foglald le legkedveltebb kocsijainkat
     </h2>
-    <p style="color: #ccc; font-size: 1.1rem; margin-top: 1rem;">
+    <p style="color: #ccc; font-size: clamp(0.9rem, 3vw, 1.1rem); margin-top: 1rem;">
       Prémium autók, amiket ügyfeleink a leggyakrabban választanak
     </p>
   </div>
 </section>
-
 
   
 <section style="padding: 40px 0;">
