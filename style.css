@@ -102,11 +102,11 @@ ul {
   top: 100%;
   left: 0;
   min-width: 180px;
-  z-index: 1100;
+  z-index: 1100; /* magasabb mint nav és header */
   padding: 0;
 }
 
-.dropdown.open .dropdown-menu {
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
@@ -121,7 +121,6 @@ ul {
 .dropdown-menu a:hover {
   background-color: rgba(174, 241, 246, 0.1);
 }
-
 /* -------------------------------------------------- */
 /* -------------------- HAMBURGER MENÜ ---------------------- */
 /* -------------------------------------------------- */
