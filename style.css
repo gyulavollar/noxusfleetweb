@@ -32,16 +32,48 @@ main {
 }
 
 
+/* Fejléc fixálása */
 header {
+  position: -webkit-sticky; /* Safari támogatás */
   position: sticky;
   top: 0;
-  background-color: #000a0f; /* Egységes sötét háttérszín */
+  left: 0;
+  right: 0;
+  background-color: #000a0f;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
   z-index: 1000;
-  border-bottom: 2px solid #aef1f6; /* Egységes világoskék vonal */
+  border-bottom: 2px solid #aef1f6;
+  width: 100%;
+  height: 60px;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Szülő elemek beállítása */
+body, html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Tartalom eltolása a header alá */
+main {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  /* Mobil nézetben is maradjon sticky */
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  
+  /* A tartalom továbbra is legyen eltolva */
+  main {
+    padding-top: 70px;
+  }
 }
 
 
