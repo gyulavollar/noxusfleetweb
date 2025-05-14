@@ -118,10 +118,10 @@
   text-align: center;
   padding: 2rem 1rem;
   background: 
-    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-    url('carbon.png') no-repeat center center / 200% auto;
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+    url('carbon.png') no-repeat center center / 300% auto;
   color: #f2f2f2;
-  min-height: 300px;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,21 +130,43 @@
   overflow: hidden;
 ">
   <div style="
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.75);
     padding: 2rem;
     border-radius: 8px;
     max-width: 800px;
     width: 90%;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,215,0,0.3);
   ">
-    <h2 style="font-size: 2rem; font-weight: 600; color: #FFD700; margin: 0;">
+    <h2 style="font-size: clamp(1.8rem, 6vw, 2.5rem); font-weight: 700; color: #FFD700; margin: 0; text-shadow: 0 2px 5px rgba(0,0,0,0.7);">
       Foglald le legkedveltebb kocsijainkat
     </h2>
-    <p style="color: #eee; font-size: 1.1rem; margin-top: 1rem;">
+    <p style="color: #f0f0f0; font-size: clamp(1rem, 3.5vw, 1.2rem); margin-top: 1.5rem; line-height: 1.6; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
       Prémium autók, amiket ügyfeleink a leggyakrabban választanak
     </p>
   </div>
 </section>
+
+<style>
+  /* Mobilnézet extra nagyítás */
+  @media (max-width: 768px) {
+    section {
+      background-size: 400% auto !important;
+      min-height: 70vh;
+      background-attachment: fixed;
+    }
+  }
+  
+  /* Extra kicsi képernyők */
+  @media (max-width: 480px) {
+    section {
+      background-size: 500% auto !important;
+    }
+    section > div {
+      padding: 1.5rem;
+    }
+  }
+</style>
 
   
 <section style="padding: 40px 0;">
