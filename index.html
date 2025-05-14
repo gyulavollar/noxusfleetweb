@@ -114,58 +114,25 @@
   </h1>
 </section>
 
-<section style="
-  text-align: center;
-  padding: 1.5rem;
-  background: 
-    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
-    url('carbon.png') no-repeat center center / cover;
-  color: #f2f2f2;
-  height: 300px; /* Fixed height instead of min-height */
-  display: flex;
-  position: relative;
-  overflow: hidden;
-">
-  <div style="
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 1.5rem;
-    border-radius: 8px;
-    max-width: 800px;
-    width: 90%;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,215,0,0.3);
-  ">
-    <h2 style="font-size: 1.5rem; font-weight: 700; color: #FFD700; margin: 0; text-shadow: 0 2px 5px rgba(0,0,0,0.7);">
-      Foglald le legkedveltebb kocsijainkat
-    </h2>
-    <p style="color: #f0f0f0; font-size: 0.9rem; margin-top: 0.8rem; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
-      Prémium autók, amiket ügyfeleink a leggyakrabban választanak
-    </p>
-  </div>
+<section style="  margin: 0;
+            height: 100vh;
+            background-image: url('carbon.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000; /* Háttérszín a kép köré */";>
+
+
+<section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
+  <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
+    Foglald le legkedveltebb kocsijainkat
+  </h2>
+  <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
+    Prémium autók, amiket ügyfeleink a leggyakrabban választanak
+  </p>
 </section>
 
-<style>
-  @media (max-width: 768px) {
-    section {
-      height: 250px; /* Smaller fixed height for tablets */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    section {
-      height: 200px; /* Even smaller for phones */
-    }
-    section > div {
-      padding: 1rem;
-      width: 85%;
-    }
-  }
-</style>
+
   
 <section style="padding: 40px 0;">
   <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
