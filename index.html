@@ -118,32 +118,26 @@
   text-align: center;
   padding: 2rem 1rem;
   background: 
-    /* Csak a kép, semmi fehér overlay! */
-    url('carbon.png') no-repeat center center / 120% auto;
-  color: #fff;
+    url('carbon.png') no-repeat center center / cover;
+  color: #f2f2f2;
   min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
 ">
   <div style="
-    position: relative;
-    z-index: 2;
-    background-color: rgba(0,0,0,0.6);  /* Sötét overlay a szöveg alatt */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 2rem;
     border-radius: 8px;
     max-width: 800px;
     width: 90%;
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.2);
   ">
-    <h2 style="font-size: 2rem; font-weight: 600; color: #fff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+    <h2 style="font-size: 2rem; font-weight: 600; color: #FFD700; margin: 0;">
       Foglald le legkedveltebb kocsijainkat
     </h2>
-    <p style="color: #eee; font-size: 1.1rem; margin-top: 1rem; line-height: 1.5; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+    <p style="color: #ccc; font-size: 1.1rem; margin-top: 1rem;">
       Prémium autók, amiket ügyfeleink a leggyakrabban választanak
     </p>
   </div>
