@@ -1,4 +1,14 @@
 /* -------------------------------------------------- */
+/* -------------------- VÁLTOZÓK -------------------- */
+/* -------------------------------------------------- */
+:root {
+  --primary-blue: #00aaff;
+  --hover-blue: #66d9ff;
+  --card-bg: rgba(10, 20, 25, 0.65);
+  --text-light: #e0f7f9;
+}
+
+/* -------------------------------------------------- */
 /* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
 /* -------------------------------------------------- */
 
@@ -12,11 +22,39 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000;
-  color: #e0f7f9;
+  color: var(--text-light);
   overscroll-behavior: none;
   position: relative;
   z-index: 0;
 }
+
+/* -------------------------------------------------- */
+/* -------------------- HERO SZEKCIÓ ------------------ */
+/* -------------------------------------------------- */
+.hero-section {
+  position: relative;
+  background: url('banner.jpg') center/cover no-repeat;
+  height: 400px;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.hero-section h1,
+.hero-section p {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+
 main {
   padding: 2rem;
 }
@@ -115,6 +153,9 @@ nav a {
   height: 100%;
   color: #aef1f6;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0 1rem;
 }
 
 ul {
@@ -207,7 +248,10 @@ ul {
 }
 
 .car-card {
-  background: rgba(10, 20, 25, 0.65);
+  background: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
+  transition: all 0.3s ease;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(174, 241, 246, 0.25);
   backdrop-filter: blur(6px);
@@ -217,8 +261,8 @@ ul {
 }
 
 .car-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(174, 241, 246, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
 }
 
 .car-card img {
@@ -458,4 +502,20 @@ ul {
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+}
+
+
+
+/* -------------------------------------------------- */
+/* -------------------- FOOTER STÍLUS --------------------- */
+/* -------------------------------------------------- */
+footer a,
+footer nav a,
+footer ul li a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--hover-blue);
 }
