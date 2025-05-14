@@ -86,7 +86,8 @@ ul {
   align-items: center;
 }
 
-.dropdown, .Kapcsolat {
+.dropdown,
+.Kapcsolat {
   position: relative;
   font-weight: bold;
 }
@@ -105,8 +106,8 @@ ul {
   padding: 0;
 }
 
-/* Javított hover támogatás iPhone-hoz */
-.dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu, .dropdown:active .dropdown-menu {
+.dropdown:active .dropdown-menu,
+.dropdown:focus .dropdown-menu {
   display: block;
 }
 
