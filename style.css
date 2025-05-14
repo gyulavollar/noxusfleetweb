@@ -45,7 +45,7 @@ header {
   justify-content: space-between;
   padding: 0 15px;
   z-index: 1000;
-  border-bottom: 2px solid #aef1f6;
+  border-bottom: 1px solid #aef1f6;
   width: 100%;
   height: 60px;
   will-change: transform;
