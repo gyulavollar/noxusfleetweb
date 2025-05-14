@@ -2,88 +2,45 @@
 /* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
 /* -------------------------------------------------- */
 
-
 body {
   font-family: "Trebuchet MS", sans-serif;
   margin: 0;
-  min-height: 100vh; /* Győződj meg róla, hogy a body legalább a teljes képernyőt lefedi */
+  min-height: 100vh;
   background-image: url('carbon.jpg');
-  background-size: cover; /* Állítsd be az alap háttérméretet */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000;
-  color: #e0f7f9;
+  color: #dff9fb;
   overscroll-behavior: none;
   position: relative;
   z-index: 0;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
 main {
   padding: 2rem;
+  padding-top: 80px;
 }
 
 /* -------------------------------------------------- */
 /* -------------------- FEJLÉC ÉS NAVIGÁCIÓ ------------------ */
 /* -------------------------------------------------- */
-.logo {
-  text-decoration: none;
-}
-.logo h1 {
-  text-decoration: none;
-}
-
-
-/* Fejléc fixálása */
-header {
-  position: -webkit-sticky; /* Safari támogatás */
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #000a0f;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 15px;
-  z-index: 1000;
-  border-bottom: 1px solid #aef1f6;
-  width: 100%;
-  height: 60px;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Szülő elemek beállítása */
-body, html {
-  overflow-x: hidden;
-  height: 100%;
-}
-
-/* Tartalom eltolása a header alá */
-main {
-  padding-top: 80px;
-}
-
-@media (max-width: 768px) {
-  /* Mobil nézetben is maradjon sticky */
-  header {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-  
-  /* A tartalom továbbra is legyen eltolva */
-  main {
-    padding-top: 70px;
-  }
-}
-
 
 .logo {
   display: flex;
   align-items: center;
-}
-
-.logo img {
-  max-height: 50px;
+  justify-content: center;
+  text-decoration: none;
+  flex: none;
 }
 
 .logo h1 {
@@ -93,6 +50,31 @@ main {
   text-decoration: none;
 }
 
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 10, 15, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: 1000;
+  border-bottom: 1px solid #aef1f6;
+  width: 100%;
+  height: 60px;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+}
+
+body, html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
 nav {
   flex: 1;
   display: flex;
@@ -100,21 +82,25 @@ nav {
   align-items: center;
   height: 60px;
   padding: 0 2rem;
-  background-color: rgba(0, 10, 15, 0.7);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #aef1f6;
-  color: white;
-  position: relative;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  top: 0;
   z-index: 1000;
-  overflow: visible;
 }
 
 nav a {
   display: flex;
   align-items: center;
   height: 100%;
-  color: #aef1f6;
+  color: #00f5ff;
   text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background-color: rgba(0, 245, 255, 0.1);
 }
 
 ul {
@@ -142,7 +128,7 @@ ul {
   top: 100%;
   left: 0;
   min-width: 180px;
-  z-index: 1100; /* magasabb mint nav és header */
+  z-index: 1100;
   padding: 0;
 }
 
@@ -153,14 +139,16 @@ ul {
 .dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
-  color: #aef1f6;
+  color: #00f5ff;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-  background-color: rgba(174, 241, 246, 0.1);
+  color: #ffffff;
+  background-color: rgba(0, 245, 255, 0.1);
 }
+
 /* -------------------------------------------------- */
 /* -------------------- HAMBURGER MENÜ ---------------------- */
 /* -------------------------------------------------- */
@@ -181,7 +169,8 @@ ul {
   width: 400px;
   max-width: 70%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   position: fixed;
   top: 0;
   right: 0;
@@ -213,12 +202,12 @@ ul {
   backdrop-filter: blur(6px);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(174, 241, 246, 0.15);
+  border: 1px solid #00f5ff;
 }
 
 .car-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(174, 241, 246, 0.5);
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 245, 255, 0.3);
 }
 
 .car-card img {
@@ -232,13 +221,15 @@ ul {
 }
 
 .car-title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #aef1f6;
+  color: #00f5ff;
 }
 
 .car-price {
-  color: #7ddde4;
+  font-size: 1.2rem;
+  color: #FFD700;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -273,12 +264,12 @@ ul {
   height: 60px;
   bottom: 40px;
   right: 40px;
-  background-color: #00bcc2;
+  background-color: #00f5ff;
   color: #000;
   border-radius: 50%;
   text-align: center;
   font-size: 30px;
-  box-shadow: 2px 2px 5px #000;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
   z-index: 100;
   transition: transform 0.3s;
 }
