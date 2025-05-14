@@ -86,8 +86,7 @@ ul {
   align-items: center;
 }
 
-.dropdown,
-.Kapcsolat {
+.dropdown, .Kapcsolat {
   position: relative;
   font-weight: bold;
 }
@@ -102,11 +101,12 @@ ul {
   top: 100%;
   left: 0;
   min-width: 180px;
-  z-index: 1100; /* magasabb mint nav és header */
+  z-index: 1100;
   padding: 0;
 }
 
-.dropdown:hover .dropdown-menu {
+/* Javított hover támogatás iPhone-hoz */
+.dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu, .dropdown:active .dropdown-menu {
   display: block;
 }
 
@@ -121,6 +121,7 @@ ul {
 .dropdown-menu a:hover {
   background-color: rgba(174, 241, 246, 0.1);
 }
+
 /* -------------------------------------------------- */
 /* -------------------- HAMBURGER MENÜ ---------------------- */
 /* -------------------------------------------------- */
