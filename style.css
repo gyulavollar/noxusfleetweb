@@ -1,3 +1,50 @@
+.hamburger {
+  display: none;
+  background-color: #111;
+  padding: 1rem;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  flex-direction: column;
+}
+
+.hamburger ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hamburger ul a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+/* Mobil nézetnél jelenik meg */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
 /* -------------------------------------------------- */
 /* -------------------- VÁLTOZÓK -------------------- */
 /* -------------------------------------------------- */
