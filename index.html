@@ -56,45 +56,57 @@
   
 <header>
   <a class="logo" href="index.html">
-    <img src="logo.png" alt="NOXUS FLEET logó">
+    <img src="logo.png" alt="Noxus Fleet logó">
     <h1>NOXUS FLEET</h1>
   </a>
 
-  <!-- Hamburger ikon (mobilon) -->
-  <div class="hamburger-icon" id="hamburger-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" width="30" height="30">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </div>
-
-  <!-- Navigáció (asztali + mobil) -->
-  <nav id="main-nav">
-    <div class="hamburger-x" id="hamburger-x">
-      <!-- Csak mobilon látszik -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" width="30" height="30">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </div>
+  <!-- Asztali menü -->
+  <nav class="desktop-nav">
     <ul>
       <li class="dropdown">
-        <span>BÉRELHETŐ AUTÓK</span>
+        BÉRELHETŐ AUTÓK
         <ul class="dropdown-menu">
           <li><a href="napi.html">NAPI BÉRLÉS</a></li>
           <li><a href="havi.html">HAVI BÉRLÉS</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <span>ELADÓ AUTÓK</span>
+        ELADÓ AUTÓK
         <ul class="dropdown-menu">
           <li><a href="keszleten.html">KÉSZLETEN</a></li>
           <li><a href="rendeles.html">RENDELÉS</a></li>
         </ul>
       </li>
-      <li>
-        <a href="kapcsolat.html">KAPCSOLAT</a>
-      </li>
+      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
     </ul>
   </nav>
+
+  <!-- Hamburger ikon -->
+  <div class="hamburger-icon" id="hamburger-icon">
+    ☰
+  </div>
+
+  <!-- Mobil menü -->
+  <div class="hamburger-menu" id="hamburger-menu">
+    <div class="hamburger-close" id="hamburger-close">✕</div>
+    <ul>
+      <li class="dropdown">
+        BÉRELHETŐ AUTÓK
+        <ul class="dropdown-menu">
+          <li><a href="napi.html">NAPI BÉRLÉS</a></li>
+          <li><a href="havi.html">HAVI BÉRLÉS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        ELADÓ AUTÓK
+        <ul class="dropdown-menu">
+          <li><a href="keszleten.html">KÉSZLETEN</a></li>
+          <li><a href="rendeles.html">RENDELÉS</a></li>
+        </ul>
+      </li>
+      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+    </ul>
+  </div>
 </header>
 
 
