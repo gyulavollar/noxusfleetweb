@@ -1,468 +1,103 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autók Eladók</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <a class="logo" href="index.html">
-        <img src="logo.png" />
-        <h1>NOXUS FLEET</h1>
-      </a>
-
-      <nav>
-        <ul>
-          <li class="dropdown">
-            BÉRELHETŐ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="napi.html">NAPI BÉRLÉS</a>
-              <a href="havi.html">HAVI BÉRLÉS</a>
-            </ul>
-          </li>
-          <li class="dropdown">
-            ELADÓ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="keszleten.html">KÉSZLETEN</a>
-              <a href="rendeles.html">RENDELÉS</a>
-            </ul>
-          </li>
-          <li class="Kapcsolat">
-            <a
-              href="kapcsolat.html"
-              style="color: white; text-decoration: none; text-weight: bold"
-            >
-              KAPCSOLAT
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="hamburger" id="hamburger-menu">
-        <div class="hamburger-x" id="hamburger-x">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
-        </div>
-        <ul>
-          <li class="dropdown">
-            BÉRELHETŐ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="napi.html">NAPI BÉRLÉS</a>
-              <a href="havi.html">HAVI BÉRLÉS</a>
-            </ul>
-          </li>
-          <li class="dropdown">
-            ELADÓ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="keszleten.html">KÉSZLETEN</a>
-              <a href="rendeles.html">RENDELÉS</a>
-            </ul>
-          </li>
-          <li class="Kapcsolat">
-            <a
-              href="kapcsolat.html"
-              style="color: white; text-decoration: none; text-weight: bold"
-            >
-              KAPCSOLAT
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="hamburger-icon" id="hamburger-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="white"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-          />
-        </svg>
-      </div>
-    </header>
-
-    <section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
-  <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
-    Foglald le legkedveltebb kocsijainkat
-  </h2>
-  <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
-    Prémium autók, amiket ügyfeleink a leggyakrabban választanak
-  </p>
-</section>
-    
-    <main class="container" id="car-list">
-      <!-- Autók itt jelennek meg -->
-    </main>
-
-    <script>
-      const cars = [
-        {
-          name: 'Audi A4',
-          price: '3 200 000 Ft',
-          description: 'Megkímélt állapot, szervizelt, automata váltó.',
-          year: 2015,
-          km: 135000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Audi+A4',
-        },
-        {
-          name: 'BMW 320d',
-          price: '3 800 000 Ft',
-          description: 'Sportos, alacsony fogyasztás, szép állapot.',
-          year: 2017,
-          km: 110000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=BMW+320d',
-        },
-        {
-          name: 'Volkswagen Golf 7',
-          price: '2 700 000 Ft',
-          description: 'Kiváló városi autó, friss műszaki.',
-          year: 2016,
-          km: 145000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=VW+Golf+7',
-        },
-        {
-          name: 'Toyota Corolla',
-          price: '2 400 000 Ft',
-          description: 'Megbízható, keveset fogyasztó japán autó.',
-          year: 2014,
-          km: 160000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Toyota+Corolla',
-        },
-        {
-          name: 'Ford Focus',
-          price: '2 100 000 Ft',
-          description: 'Kényelmes családi autó, jó állapot.',
-          year: 2013,
-          km: 175000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=Ford+Focus',
-        },
-        {
-          name: 'Opel Astra',
-          price: '1 900 000 Ft',
-          description: 'Olcsó fenntartás, kis fogyasztás.',
-          year: 2012,
-          km: 180000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Opel+Astra',
-        },
-        {
-          name: 'Honda Civic',
-          price: '2 600 000 Ft',
-          description: 'Sportos kinézet, dinamikus motor.',
-          year: 2015,
-          km: 140000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Honda+Civic',
-        },
-        {
-          name: 'Mazda 3',
-          price: '2 850 000 Ft',
-          description: 'Kiváló vezetési élmény, rozsda mentes.',
-          year: 2016,
-          km: 130000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Mazda+3',
-        },
-        {
-          name: 'Renault Megane',
-          price: '1 800 000 Ft',
-          description: 'Tágas, kényelmes, jó fogyasztás.',
-          year: 2013,
-          km: 170000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=Renault+Megane',
-        },
-        {
-          name: 'Skoda Octavia',
-          price: '2 900 000 Ft',
-          description: 'Kedvelt modell, nagy csomagtér.',
-          year: 2015,
-          km: 150000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=Skoda+Octavia',
-        },
-      ];
-
-      const carList = document.getElementById('car-list');
-
-      cars.forEach((car) => {
-        const card = document.createElement('div');
-        card.className = 'car-card';
-        card.innerHTML = `
-        <img src="${car.img}" alt="${car.name}" />
-        <div class="car-info">
-          <h2 class="car-title">${car.name}</h2>
-          <p class="car-price">${car.price}</p>
-          <p class="car-details">${car.description}</p>
-          <p class="param">Évjárat: ${
-            car.year
-          } | Km: ${car.km.toLocaleString()} | Üzemanyag: ${car.fuel}</p>
-        </div>
-      `;
-        carList.appendChild(card);
-      });
-    </script>
-    <!-- Footer -->
-
-    <section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Napi Bérlés – NOXUS FLEET</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
   <style>
-    .testimonial-section {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
-
-    .testimonial-slide {
-      display: none;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      padding: 1.5rem;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    .testimonial-slide.active {
-      display: block;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial-author {
-      margin-top: 1rem;
-      color: #FFD700;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header, footer { background: #0d0d0d; color: white; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
+    header a.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; }
+    header a.logo img { height: 40px; }
+    nav ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 1rem; flex-wrap: wrap; }
+    nav ul li { position: relative; }
+    nav ul li ul.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #222; flex-direction: column; min-width: 150px; }
+    nav ul li:hover ul.dropdown-menu { display: flex; }
+    nav a { color: white; text-decoration: none; padding: 0.5rem; display: block; }
+    .hamburger-icon { display: none; cursor: pointer; }
+    main.container { padding: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .car-card { background: #1a1a1a; color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+    .car-card img { width: 100%; height: auto; display: block; }
+    .car-info { padding: 1rem; }
+    .car-title { margin: 0.5rem 0; font-size: 1.2rem; }
+    .car-price, .car-details, .param { margin: 0.3rem 0; font-size: 0.9rem; color: #ccc; }
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; display: none; background: #111; position: absolute; top: 60px; left: 0; right: 0; }
+      nav ul.active { display: flex; }
+      .hamburger-icon { display: block; }
     }
   </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">
+      <img src="logo.png" alt="logo">
+      <h1>NOXUS FLEET</h1>
+    </a>
+    <div class="hamburger-icon" onclick="document.querySelector('nav ul').classList.toggle('active')">
+      ☰
+    </div>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="#">BÉRELHETŐ AUTÓK</a>
+          <ul class="dropdown-menu">
+            <li><a href="napi.html">NAPI BÉRLÉS</a></li>
+            <li><a href="havi.html">HAVI BÉRLÉS</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">ELADÓ AUTÓK</a>
+          <ul class="dropdown-menu">
+            <li><a href="keszleten.html">KÉSZLETEN</a></li>
+            <li><a href="rendeles.html">RENDELÉS</a></li>
+          </ul>
+        </li>
+        <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="testimonial-section">
-    <div class="testimonial-slide active">
-      <p>„Gyors ügyintézés, rugalmas hozzáállás és kiváló állapotú autók.”</p>
-      <div class="testimonial-author">– Balázs K.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Kivételes szolgáltatás, minden úgy ment, ahogy ígérték!”</p>
-      <div class="testimonial-author">– Réka M.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Kedves ügyfélszolgálat és átlátható bérlés. Csak ajánlani tudom!”</p>
-      <div class="testimonial-author">– Zoltán F.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Korrekt árak, prémium autók és tiszta, igényes környezet.”</p>
-      <div class="testimonial-author">– Nóra V.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Az autó kiváló állapotú volt, öröm volt vezetni. Minden gördülékenyen ment.”</p>
-      <div class="testimonial-author">– Ádám T.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Sosem volt ilyen egyszerű és gyors autót bérelni!”</p>
-      <div class="testimonial-author">– Petra H.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Kedvező feltételek, segítőkész csapat. Visszatérő ügyfél leszek!”</p>
-      <div class="testimonial-author">– Gergő B.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Minden igényemnek megfelelt az autó. Tényleg prémium élmény.”</p>
-      <div class="testimonial-author">– Lilla K.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Pontosan azt kaptam, amit megbeszéltünk. Nincs zsákbamacska!”</p>
-      <div class="testimonial-author">– Norbert D.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p>„Modern autók, remek szerviz és gyors ügyintézés. 10/10.”</p>
-      <div class="testimonial-author">– Judit S.</div>
-    </div>
-  </div>
+  <section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
+    <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
+      Foglald le legkedveltebb kocsijainkat
+    </h2>
+    <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
+      Prémium autók, amiket ügyfeleink a leggyakrabban választanak
+    </p>
+  </section>
+
+  <main class="container" id="car-list"></main>
 
   <script>
-    let index = 0;
-    const slides = document.querySelectorAll(".testimonial-slide");
-
-    function showNextSlide() {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
-    }
-
-    setInterval(showNextSlide, 4000);
-  </script>
-</section>
-    
-    <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
-  <style>
-    .footer-wrapper {
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-      align-items: start;
-      text-align: center;
-    }
-
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .footer-section img.logo {
-      width: 60px;
-      height: auto;
-    }
-
-    .footer-section h4 {
-      margin: 0.5rem 0 0.2rem;
-      font-size: 1rem;
-      color: #FFD700;
-    }
-
-    .footer-section p,
-    .footer-section li,
-    .footer-section a {
-      color: #ccc;
-      font-size: 0.9rem;
-      margin: 0;
-      text-decoration: none;
-    }
-
-    .footer-section a:hover {
-      color: #fff;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 10px;
-      margin-top: 0.5rem;
-    }
-
-    .social-icons img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #888;
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-section {
-        margin-bottom: 1.5rem;
-      }
-
-      .social-icons {
-        justify-content: center;
-      }
-    }
-  </style>
-
-  <div class="footer-wrapper">
-    <div class="footer-grid">
-      <!-- Logó -->
-      <div class="footer-section">
-        <img src="logo.png" alt="Logó" class="logo">
-      </div>
-
-      <!-- Menü -->
-      <div class="footer-section">
-        <h4>Menü</h4>
-        <a href="#">ÁSZF</a>
-        <a href="#">GYIK</a>
-        <a href="#">Árlista</a>
-      </div>
-
-      <!-- Nyitvatartás -->
-      <div class="footer-section">
-        <h4>Nyitvatartás</h4>
-        <ul>
-          <li>H-Cs: 8:00 - 20:00</li>
-          <li>P: 8:00 - 18:00</li>
-          <li>Szo: 8:00 - 16:00</li>
-          <li>V: 8:00 - 20:00</li>
-        </ul>
-      </div>
-
-      <!-- Kapcsolat -->
-      <div class="footer-section">
-        <h4>Kapcsolat</h4>
-        <p>📞 +36 30 784 6975</p>
-        <p>📧 booking@noxusfleet.com</p>
-        <p>📍 Új Ecseri út 2, Vecsés</p>
-      </div>
-
-      <!-- Social -->
-      <div class="footer-section">
-        <h4>Kövess minket</h4>
-        <div class="social-icons">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok"></a>
+    const cars = [
+      { name: 'Audi A4', price: '3 200 000 Ft', description: 'Megkímélt állapot, szervizelt, automata váltó.', year: 2015, km: 135000, fuel: 'Benzin', img: 'https://via.placeholder.com/400x200?text=Audi+A4' },
+      { name: 'BMW 320d', price: '3 800 000 Ft', description: 'Sportos, alacsony fogyasztás, szép állapot.', year: 2017, km: 110000, fuel: 'Dízel', img: 'https://via.placeholder.com/400x200?text=BMW+320d' },
+      { name: 'Volkswagen Golf 7', price: '2 700 000 Ft', description: 'Kiváló városi autó, friss műszaki.', year: 2016, km: 145000, fuel: 'Benzin', img: 'https://via.placeholder.com/400x200?text=VW+Golf+7' }
+      // stb.
+    ];
+    const carList = document.getElementById('car-list');
+    cars.forEach(car => {
+      carList.innerHTML += `
+        <div class="car-card">
+          <img src="${car.img}" alt="${car.name}" />
+          <div class="car-info">
+            <h2 class="car-title">${car.name}</h2>
+            <p class="car-price">${car.price}</p>
+            <p class="car-details">${car.description}</p>
+            <p class="param">Évjárat: ${car.year} | Km: ${car.km.toLocaleString()} | Üzemanyag: ${car.fuel}</p>
+          </div>
         </div>
-      </div>
-    </div>
+      `;
+    });
+  </script>
 
-
-  </div>
-      </div>
-    </div>
-
-    <!-- Lábjegyzet -->
-    <div class="footer-bottom">
-      &copy; 2025 Noxus Fleet Kft. Minden jog fenntartva.
-    </div>
-  </div>
-</footer>
+  <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem; text-align: center;">
+    <p>📞 +36 30 784 6975 | 📧 booking@noxusfleet.com | 📍 Vecsés</p>
+    <p style="color: #888; font-size: 0.85rem;">&copy; 2025 Noxus Fleet Kft. Minden jog fenntartva.</p>
+  </footer>
+</body>
 </html>
