@@ -10,23 +10,102 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- 🔧 Stílusfix: overflow és magasság problémák ellen -->
   <style>
-    * {
-      box-sizing: border-box;
-    }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      overscroll-behavior: none;
-    }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #000a0f;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            height: 60px;
+            z-index: 1000;
+        }
 
-    #wrapper {
-      margin-bottom: 3rem;
-    }
-  </style>
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #aef1f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 20, 25, 0.85);
+            top: 100%;
+            left: 0;
+            padding: 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .hamburger-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: rgba(0, 20, 25, 0.85);
+                width: 100%;
+            }
+
+            .hamburger-icon {
+                display: block;
+            }
+
+            .hamburger-icon svg {
+                width: 30px;
+                height: 30px;
+                color: white;
+            }
+
+            .hamburger-icon.active + nav ul {
+                display: flex;
+            }
+        }
+    </style>
   
 </head>
 <body>
