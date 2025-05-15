@@ -10,141 +10,92 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- 🔧 Stílusfix: overflow és magasság problémák ellen -->
   <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header {
-            position: sticky;
-            top: 0;
-            background-color: #000a0f;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 15px;
-            height: 60px;
-            z-index: 1000;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      overscroll-behavior: none;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            max-height: 50px;
-            margin-right: 10px;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            margin: 0;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            color: #aef1f6;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 20, 25, 0.85);
-            top: 100%;
-            left: 0;
-            padding: 0;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .hamburger-icon {
-            display: none;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: rgba(0, 20, 25, 0.85);
-                width: 100%;
-            }
-
-            .hamburger-icon {
-                display: block;
-            }
-
-            .hamburger-icon svg {
-                width: 30px;
-                height: 30px;
-                color: white;
-            }
-
-            .hamburger-icon.active + nav ul {
-                display: flex;
-            }
-        }
-    </style>
+    #wrapper {
+      margin-bottom: 3rem;
+    }
+  </style>
   
 </head>
 <body>
  <header>
-    <div class="logo">
-        <img src="logo.png" alt="Noxus Fleet">
+  <a class="logo" href="index.html">
+        <img src="logo.png"> 
         <h1>NOXUS FLEET</h1>
-    </div>
-    <div class="hamburger-icon" id="hamburger-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
-        </svg>
-    </div>
+  </a>
+
     <nav>
-        <ul>
-            <li><a href="index.html">FŐOLDAL</a></li>
-            <li class="dropdown">BÉRELHETŐ AUTÓK
-                <ul class="dropdown-menu">
-                    <li><a href="napi.html">NAPI BÉRLÉS</a></li>
-                    <li><a href="havi.html">HAVI BÉRLÉS</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">ELADÓ AUTÓK
-                <ul class="dropdown-menu">
-                    <li><a href="keszleten.html">KÉSZLETEN</a></li>
-                    <li><a href="rendeles.html">RENDELÉS</a></li>
-                </ul>
-            </li>
-            <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
-        </ul>
+      <ul>
+        <li class="dropdown">
+          BÉRELHETŐ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="napi.html">NAPI BÉRLÉS</a>
+            <a href="havi.html">HAVI BÉRLÉS</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          ELADÓ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="keszleten.html">KÉSZLETEN</a>
+            <a href="rendeles.html">RENDELÉS</a>
+          </ul>
+        </li>
+        <li class="Kapcsolat">
+          <a href="kapcsolat.html" style="color: white; text-decoration: none; text-weight: bold">
+            KAPCSOLAT
+          </a>
+        </li>
+      </ul>
     </nav>
-</header>
-<script>
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const navMenu = document.querySelector('nav ul');
-    hamburgerIcon.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-</script>
+
+    <div class="hamburger" id="hamburger-menu">
+      <div class="hamburger-x" id="hamburger-x">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+      </div>
+      <ul>
+        <li class="dropdown">
+          BÉRELHETŐ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="napi.html">NAPI BÉRLÉS</a>
+            <a href="havi.html">HAVI BÉRLÉS</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          ELADÓ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="keszleten.html">KÉSZLETEN</a>
+            <a href="rendeles.html">RENDELÉS</a>
+          </ul>
+        </li>
+        <li class="Kapcsolat">
+          <a href="kapcsolat.html" style="color: white; text-decoration: none; text-weight: bold">
+            KAPCSOLAT
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hamburger-icon" id="hamburger-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+      </svg>
+    </div>
+  </header>
 
   <section style="
   position: relative;
