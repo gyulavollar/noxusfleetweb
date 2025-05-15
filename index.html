@@ -32,23 +32,23 @@
 <body>
 
 <script>
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  const hamburgerMenu = document.getElementById('hamburger-menu');
-  const hamburgerClose = document.getElementById('hamburger-x');
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const hamburgerMenu = document.getElementById("main-nav");
+  const closeBtn = document.getElementById("hamburger-x");
 
-  hamburgerIcon.addEventListener('click', () => {
-    hamburgerMenu.style.display = 'flex';
+  hamburgerIcon.addEventListener("click", () => {
+    hamburgerMenu.classList.add("active");
   });
 
-  hamburgerClose.addEventListener('click', () => {
-    hamburgerMenu.style.display = 'none';
+  closeBtn.addEventListener("click", () => {
+    hamburgerMenu.classList.remove("active");
   });
 
-  // Toggle dropdowns inside mobile menu
-  const dropdowns = document.querySelectorAll('.hamburger .dropdown');
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', () => {
-      dropdown.classList.toggle('open');
+  // Dropdown mobilon kattintásra
+  document.querySelectorAll(".dropdown span").forEach(drop => {
+    drop.addEventListener("click", (e) => {
+      const parent = e.target.closest(".dropdown");
+      parent.classList.toggle("open");
     });
   });
 </script>
