@@ -30,6 +30,30 @@
   
 </head>
 <body>
+
+<script>
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+  const hamburgerClose = document.getElementById('hamburger-x');
+
+  hamburgerIcon.addEventListener('click', () => {
+    hamburgerMenu.style.display = 'flex';
+  });
+
+  hamburgerClose.addEventListener('click', () => {
+    hamburgerMenu.style.display = 'none';
+  });
+
+  // Toggle dropdowns inside mobile menu
+  const dropdowns = document.querySelectorAll('.hamburger .dropdown');
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  });
+</script>
+
+  
  <header>
   <a class="logo" href="index.html">
         <img src="logo.png"> 
