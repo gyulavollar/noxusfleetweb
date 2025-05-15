@@ -1,105 +1,551 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOXUS FLEET – Autóbérlés és Eladás</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script src="script.js" defer></script>
+  <title>Autók Eladók</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- 🔧 Stílusfix: overflow és magasság problémák ellen -->
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #000; color: white; }
-    header { background: #0d0d0d; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    header a.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; }
-    header a.logo img { height: 40px; }
-    nav ul { display: flex; list-style: none; padding: 0; margin: 0; gap: 1rem; flex-wrap: wrap; }
-    nav ul li { position: relative; }
-    nav ul li ul.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #222; flex-direction: column; min-width: 150px; z-index: 10; }
-    nav ul li:hover ul.dropdown-menu { display: flex; }
-    nav a { color: white; text-decoration: none; padding: 0.5rem; display: block; }
-    .hamburger-icon { display: none; font-size: 1.5rem; cursor: pointer; }
-    @media (max-width: 768px) {
-      nav ul { flex-direction: column; display: none; background: #111; width: 100%; }
-      nav ul.active { display: flex; }
-      .hamburger-icon { display: block; }
+    * {
+      box-sizing: border-box;
     }
-    .hero { background: url('911.png') center/cover no-repeat; height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .hero h1 { background: rgba(0, 0, 0, 0.6); padding: 1rem; border-radius: 10px; font-size: 1.5rem; }
-    .container { padding: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-    .car-card { background: #1a1a1a; color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
-    .car-card img { width: 100%; height: auto; display: block; }
-    .car-info { padding: 1rem; }
-    .car-title { margin: 0.5rem 0; font-size: 1.2rem; }
-    .car-price, .car-details, .param { margin: 0.3rem 0; font-size: 0.9rem; color: #ccc; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      overscroll-behavior: none;
+    }
+
+    #wrapper {
+      margin-bottom: 3rem;
+    }
   </style>
+  
 </head>
 <body>
-  <header>
-    <a class="logo" href="index.html">
-      <img src="logo.png" alt="logo">
-      <h1>NOXUS FLEET</h1>
-    </a>
-    <div class="hamburger-icon" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</div>
+ <header>
+  <a class="logo" href="index.html">
+        <img src="logo.png"> 
+        <h1>NOXUS FLEET</h1>
+  </a>
+
     <nav>
       <ul>
         <li class="dropdown">
-          <a href="#">BÉRELHETŐ AUTÓK</a>
+          BÉRELHETŐ AUTÓK
           <ul class="dropdown-menu">
-            <li><a href="#napi">NAPI BÉRLÉS</a></li>
-            <li><a href="#havi">HAVI BÉRLÉS</a></li>
+            <a href="napi.html">NAPI BÉRLÉS</a>
+            <a href="havi.html">HAVI BÉRLÉS</a>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#">ELADÓ AUTÓK</a>
+          ELADÓ AUTÓK
           <ul class="dropdown-menu">
-            <li><a href="#keszleten">KÉSZLETEN</a></li>
-            <li><a href="#rendeles">RENDELÉS</a></li>
+            <a href="keszleten.html">KÉSZLETEN</a>
+            <a href="rendeles.html">RENDELÉS</a>
           </ul>
         </li>
-        <li><a href="#kapcsolat">KAPCSOLAT</a></li>
+        <li class="Kapcsolat">
+          <a href="kapcsolat.html" style="color: white; text-decoration: none; text-weight: bold">
+            KAPCSOLAT
+          </a>
+        </li>
       </ul>
     </nav>
+
+    <div class="hamburger" id="hamburger-menu">
+      <div class="hamburger-x" id="hamburger-x">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+      </div>
+      <ul>
+        <li class="dropdown">
+          BÉRELHETŐ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="napi.html">NAPI BÉRLÉS</a>
+            <a href="havi.html">HAVI BÉRLÉS</a>
+          </ul>
+        </li>
+        <li class="dropdown">
+          ELADÓ AUTÓK
+          <ul class="dropdown-menu">
+            <a href="keszleten.html">KÉSZLETEN</a>
+            <a href="rendeles.html">RENDELÉS</a>
+          </ul>
+        </li>
+        <li class="Kapcsolat">
+          <a href="kapcsolat.html" style="color: white; text-decoration: none; text-weight: bold">
+            KAPCSOLAT
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hamburger-icon" id="hamburger-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+      </svg>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Üdvözlünk a NOXUS FLEET-nél</h1>
-  </section>
+  <section style="
+  position: relative;
+  height: 400px;
+  background-image: url('911.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="font-size: 2.5rem; background: rgba(0, 0, 0, 0.5); padding: 1rem 2rem; border-radius: 8px;">
+    Üdvözlünk a NOXUS FLEET-nél
+  </h1>
+</section>
 
-  <section id="napi">
-    <h2 style="text-align:center; padding:1rem; color:#aef1f6;">Napi Bérlés</h2>
-    <div class="container" id="car-list"></div>
-  </section>
+<section style="  margin: 0;
+            height: 100vh;
+            background-image: url('carbon.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000; /* Háttérszín a kép köré */";>
+
+
+<section style="background: url('carbon.png') no-repeat center center / 350% auto; color: #f2f2f2; padding: 20px 15px; text-align: center;">
+  <h2 style="font-size: 1.8rem; font-weight: 600; color: #f2f2f2; margin: 0;">
+    Foglald le legkedveltebb kocsijainkat
+  </h2>
+  <p style="color: #ccc; font-size: 0.95rem; margin-top: 8px;">
+    Prémium autók, amiket ügyfeleink a leggyakrabban választanak
+  </p>
+</section>
+
+
+  
+<section style="padding: 40px 0;">
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+
+    <!-- CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="1.png" alt="Mercedes G 400d">
+          <h4>Mercedes G 400d</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Diesel</p>
+          <p><strong>Teljesítmény:</strong> 330 LE</p>
+          <p><strong>Ár:</strong> €100,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Itt jöhet a többi kártya ugyanilyen formában -->
+    <!-- CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="2.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="3.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="4.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 340px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 12px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+}
+
+.flip-card-front img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.flip-card-front h4 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+}
+
+.dots span {
+  height: 9px;
+  width: 9px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.dots span:nth-child(2) {
+  background-color: #ccc;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #111;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.flip-card-back p {
+  margin: 8px 0;
+}
+
+.flip-card-back strong {
+  color: #aef1f6;
+}
+</style>
+
+
+
+
+<style>
+  /* Hover effektus a paraméter dobozra */
+  .hover-info {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  div[style*="position: relative"]:hover .hover-info {
+    transform: translateY(0%);
+  }
+</style>
+
+<!-- ✅ 1. Tartalomblokk (Rólunk + Partnerek) -->
+<section class="card" id="wrapper" style="padding: 2rem; display: flex; justify-content: center; margin-bottom: 3rem;">
+  <div style="background: rgba(43, 50, 55, 0.5); color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px; backdrop-filter: blur(8px);">
+
+    <section id="rolunk" style="margin-bottom: 2rem;">
+      <h2 style="text-align: center;">Rólunk</h2>
+      <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
+      <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
+    </section>
+
+  </div>
+</section>
+  
+<section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
+  <style>
+    .testimonial-section {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial-slide {
+      display: none;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      padding: 1.5rem;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .testimonial-author {
+      margin-top: 1rem;
+      color: #aef1f6;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <div class="testimonial-section">
+    <div class="testimonial-slide active">
+      <p>„Gyors ügyintézés, rugalmas hozzáállás és kiváló állapotú autók.”</p>
+      <div class="testimonial-author">– Balázs K.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kivételes szolgáltatás, minden úgy ment, ahogy ígérték!”</p>
+      <div class="testimonial-author">– Réka M.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kedves ügyfélszolgálat és átlátható bérlés. Csak ajánlani tudom!”</p>
+      <div class="testimonial-author">– Zoltán F.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Korrekt árak, prémium autók és tiszta, igényes környezet.”</p>
+      <div class="testimonial-author">– Nóra V.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Az autó kiváló állapotú volt, öröm volt vezetni. Minden gördülékenyen ment.”</p>
+      <div class="testimonial-author">– Ádám T.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Sosem volt ilyen egyszerű és gyors autót bérelni!”</p>
+      <div class="testimonial-author">– Petra H.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kedvező feltételek, segítőkész csapat. Visszatérő ügyfél leszek!”</p>
+      <div class="testimonial-author">– Gergő B.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Minden igényemnek megfelelt az autó. Tényleg prémium élmény.”</p>
+      <div class="testimonial-author">– Lilla K.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Pontosan azt kaptam, amit megbeszéltünk. Nincs zsákbamacska!”</p>
+      <div class="testimonial-author">– Norbert D.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Modern autók, remek szerviz és gyors ügyintézés. 10/10.”</p>
+      <div class="testimonial-author">– Judit S.</div>
+    </div>
+  </div>
 
   <script>
-    const cars = [
-      { name: 'Audi A4', price: '3 200 000 Ft', description: 'Megkímélt állapot, szervizelt, automata váltó.', year: 2015, km: 135000, fuel: 'Benzin', img: 'https://via.placeholder.com/400x200?text=Audi+A4' },
-      { name: 'BMW 320d', price: '3 800 000 Ft', description: 'Sportos, alacsony fogyasztás, szép állapot.', year: 2017, km: 110000, fuel: 'Dízel', img: 'https://via.placeholder.com/400x200?text=BMW+320d' },
-      { name: 'Volkswagen Golf 7', price: '2 700 000 Ft', description: 'Kiváló városi autó, friss műszaki.', year: 2016, km: 145000, fuel: 'Benzin', img: 'https://via.placeholder.com/400x200?text=VW+Golf+7' }
-    ];
-    const carList = document.getElementById('car-list');
-    cars.forEach(car => {
-      carList.innerHTML += `
-        <div class="car-card">
-          <img src="${car.img}" alt="${car.name}" />
-          <div class="car-info">
-            <h2 class="car-title">${car.name}</h2>
-            <p class="car-price">${car.price}</p>
-            <p class="car-details">${car.description}</p>
-            <p class="param">Évjárat: ${car.year} | Km: ${car.km.toLocaleString()} | Üzemanyag: ${car.fuel}</p>
-          </div>
-        </div>
-      `;
-    });
+    let index = 0;
+    const slides = document.querySelectorAll(".testimonial-slide");
+
+    function showNextSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 4000);
   </script>
+</section>
 
-  <section id="kapcsolat" style="background: #111; color: #fff; padding: 2rem 1rem; text-align: center;">
-    <h2>KAPCSOLAT</h2>
-    <p>📞 +36 30 784 6975</p>
-    <p>📧 booking@noxusfleet.com</p>
-    <p>📍 Vecsés</p>
-  </section>
+<section class="card" id="wrapper" style="padding: 2rem;  background-image: url('carbon.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #000;
+  overscroll-behavior: none;display: flex; justify-content: center; margin-bottom: 3rem;">
+  <div style="background: rgba(43, 50, 55, 0.5); color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px; backdrop-filter: blur(8px);">
+        <h2 style="text-align: center;">Partnereink</h2>
+        <img src="fmclogo.png" alt="Partner 1" style="max-height: 80px;">
+        <img src="exelogo.png" alt="Partner 2" style="max-height: 80px;">
+        <img src="linhardt.png" alt="Partner 3" style="max-height: 80px;">
+        <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" style="max-height: 80px;">
+      </div>
+      </section>
+  
+<footer style="background: url('carbon.png') no-repeat center center / cover; color: #f2f2f2; padding: 2rem 1rem 1rem;">
+  <style>
+    .footer-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
 
-  <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem; text-align: center;">
-    <p>&copy; 2025 Noxus Fleet Kft. Minden jog fenntartva.</p>
-  </footer>
-</body>
-</html>
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      align-items: start;
+      text-align: center;
+    }
+
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-section img.logo {
+      width: 60px;
+      height: auto;
+    }
+
+    .footer-section h4 {
+      margin: 0.5rem 0 0.2rem;
+      font-size: 1rem;
+      color: #aef1f6;
+    }
+
+    .footer-section p,
+    .footer-section li,
+    .footer-section a {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #fff;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <div class="footer-wrapper">
+    <div class="footer-grid">
+      <!-- Logó -->
+      <div class="footer-section">
+        <img src="logo.png" alt="Logó" class="logo">
+      </div>
+
+      <!-- Menü -->
+      <div class="footer-section">
+        <h4>Menü</h4>
+        <a href="#">ÁSZF</a>
+        <a href="#">GYIK</a>
+        <a href="#">Árlista</a>
+      </div>
+
+      <!-- Nyitvatartás -->
+      <div class="footer-section">
+        <h4>Nyitvatartás</h4>
+        <ul>
+          <li>H-V: 8:00 - 22:00</li>
+        </ul>
+      </div>
+
+      <!-- Kapcsolat -->
+      <div class="footer-section">
+        <h4>Kapcsolat</h4>
+        <p>📞 +36 30 784 6975</p>
+        <p>📧 booking@noxusfleet.com</p>
+        <p>📍 Budapest</p>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-section">
+        <h4>Kövess minket</h4>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+      </div>
+    </div>
+
+    <!-- Lábjegyzet -->
+    <div class="footer-bottom">
+      &copy; 2025 Noxus Fleet
+    </div>
+  </div>
+</footer>
