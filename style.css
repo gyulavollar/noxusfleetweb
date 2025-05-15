@@ -1,3 +1,79 @@
+/* --- MOBILE STYLES --- */
+@media (max-width: 768px) {
+  nav {
+    display: none; /* hide desktop nav */
+  }
+
+  .hamburger-icon {
+    display: block;
+    cursor: pointer;
+    z-index: 1101;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 10, 15, 0.95);
+    border-top: 1px solid #aef1f6;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    z-index: 1100;
+  }
+
+  .hamburger ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger .dropdown-menu {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    display: none;
+    padding-left: 1rem;
+  }
+
+  .hamburger .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .hamburger .dropdown {
+    width: 100%;
+  }
+
+  .hamburger .dropdown-menu a {
+    padding: 0.4rem 0;
+    color: #aef1f6;
+  }
+
+  .hamburger-x {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- DEFAULTS --- */
+.hamburger,
+.hamburger-icon {
+  display: none;
+}
+
+
+
+
+
+
 /* -------------------------------------------------- */
 /* -------------------- VÁLTOZÓK -------------------- */
 /* -------------------------------------------------- */
