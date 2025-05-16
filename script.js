@@ -34,3 +34,33 @@ function hideMenu() {
 
 window.addEventListener('resize', setInitialVisibility);
 document.addEventListener('DOMContentLoaded', setInitialVisibility);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener("click", (e) => {
+      const parent = toggle.closest(".dropdown");
+
+      // Először bezárjuk az összes többi menüt
+      document.querySelectorAll(".dropdown.open").forEach(drop => {
+        if (drop !== parent) {
+          drop.classList.remove("open");
+        }
+      });
+
+      // Majd váltjuk a kattintottat
+      parent.classList.toggle("open");
+    });
+  });
+
+  // Ha a felhasználó bárhová kattint a menün kívül: zárja be a menüt
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown.open").forEach(drop => {
+        drop.classList.remove("open");
+      });
+    }
+  });
+});
+
