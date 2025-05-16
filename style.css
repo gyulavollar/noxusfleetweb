@@ -5,7 +5,7 @@
   }
 
   #hamburger-icon {
-    display: block;
+    display: block !important;
   }
 
   .hamburger {
@@ -61,15 +61,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
 /* -------------------------------------------------- */
 /* -------------------- VÁLTOZÓK -------------------- */
 /* -------------------------------------------------- */
@@ -83,14 +74,12 @@
 /* -------------------------------------------------- */
 /* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
 /* -------------------------------------------------- */
-
-
 body {
   font-family: "Trebuchet MS", sans-serif;
   margin: 0;
-  min-height: 100vh; /* Győződj meg róla, hogy a body legalább a teljes képernyőt lefedi */
+  min-height: 100vh;
   background-image: url('carbon.jpg');
-  background-size: cover; /* Állítsd be az alap háttérméretet */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000;
@@ -100,9 +89,7 @@ body {
   z-index: 0;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- HERO SZEKCIÓ ------------------ */
-/* -------------------------------------------------- */
+/* HERO SZEKCIÓ */
 .hero-section {
   position: relative;
   background: url('banner.jpg') center/cover no-repeat;
@@ -126,14 +113,11 @@ body {
   text-align: center;
 }
 
-
 main {
   padding: 2rem;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- FEJLÉC ÉS NAVIGÁCIÓ ------------------ */
-/* -------------------------------------------------- */
+/* FEJLÉC ÉS NAVIGÁCIÓ */
 .logo {
   text-decoration: none;
 }
@@ -141,10 +125,8 @@ main {
   text-decoration: none;
 }
 
-
-/* Fejléc fixálása */
 header {
-  position: -webkit-sticky; /* Safari támogatás */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -162,30 +144,25 @@ header {
   -webkit-backface-visibility: hidden;
 }
 
-/* Szülő elemek beállítása */
 body, html {
   overflow-x: hidden;
   height: 100%;
 }
 
-/* Tartalom eltolása a header alá */
 main {
   padding-top: 80px;
 }
 
 @media (max-width: 768px) {
-  /* Mobil nézetben is maradjon sticky */
   header {
     position: -webkit-sticky;
     position: sticky;
   }
-  
-  /* A tartalom továbbra is legyen eltolva */
+
   main {
     padding-top: 70px;
   }
 }
-
 
 .logo {
   display: flex;
@@ -266,12 +243,10 @@ ul {
   background-color: #444;
 }
 
-/* Megjelenítés, ha nyitva van */
 .dropdown.open .dropdown-menu {
   display: block;
 }
 
-/* Dropdown gomb stílusa */
 .dropdown-toggle {
   cursor: pointer;
   color: white;
@@ -279,19 +254,14 @@ ul {
   display: inline-block;
 }
 
-/* Mobilon tiltjuk a hover alapú megjelenítést */
 @media (hover: none) and (pointer: coarse) {
   .dropdown:hover .dropdown-menu {
     display: none;
   }
 }
-}
-/* -------------------------------------------------- */
-/* -------------------- HAMBURGER MENÜ ---------------------- */
-/* -------------------------------------------------- */
 
+/* HAMBURGER MENÜ */
 .hamburger-icon {
-  display: none;
   width: 45px;
 }
 
@@ -320,10 +290,7 @@ ul {
   align-items: end;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- AUTÓKÁRTYÁK ------------------------ */
-/* -------------------------------------------------- */
-
+/* AUTÓKÁRTYÁK */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -376,10 +343,7 @@ ul {
   color: #d9f3f5;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- KEDVENCEK GRID --------------------- */
-/* -------------------------------------------------- */
-
+/* KEDVENCEK GRID */
 .kedvencek {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -391,10 +355,7 @@ ul {
   justify-content: center;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- WHATSAPP GOMB ----------------------- */
-/* -------------------------------------------------- */
-
+/* WHATSAPP GOMB */
 .float {
   position: fixed;
   width: 60px;
@@ -419,10 +380,7 @@ ul {
   margin-top: 16px;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- KAPCSOLAT OLDAL --------------------- */
-/* -------------------------------------------------- */
-
+/* KAPCSOLAT OLDAL */
 .contact-top {
   display: flex;
   flex-wrap: wrap;
@@ -518,10 +476,7 @@ ul {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-/* -------------------------------------------------- */
-/* -------------------- RESZPONZÍV STÍLUSOK ------------------ */
-/* -------------------------------------------------- */
-
+/* RESZPONZÍV STÍLUSOK */
 @media (max-width: 768px) {
   body {
     background-size: cover;
@@ -588,11 +543,7 @@ ul {
   }
 }
 
-
-
-/* -------------------------------------------------- */
-/* -------------------- FOOTER STÍLUS --------------------- */
-/* -------------------------------------------------- */
+/* FOOTER STÍLUS */
 footer a,
 footer nav a,
 footer ul li a {
