@@ -27,77 +27,75 @@
       margin-bottom: 3rem;
     }
   </style>
-  
 </head>
+
 <body>
-<header>
-  <a class="logo" href="index.html">
-    <img src="logo.png" alt="Logo">
-    <h1>NOXUS FLEET</h1>
-  </a>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Noxus Fleet logó">
+      </a>
+      <h1>NOXUS FLEET</h1>
+    </div>
 
-  <nav>
-    <ul>
-      <li class="dropdown">
-        <span class="dropdown-toggle">BÉRELHETŐ AUTÓK</span>
-        <ul class="dropdown-menu">
-          <li><a href="napi.html">NAPI BÉRLÉS</a></li>
-          <li><a href="havi.html">HAVI BÉRLÉS</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <span class="dropdown-toggle">ELADÓ AUTÓK</span>
-        <ul class="dropdown-menu">
-          <li><a href="keszleten.html">KÉSZLETEN</a></li>
-          <li><a href="rendeles.html">RENDELÉS</a></li>
-        </ul>
-      </li>
-      <li class="Kapcsolat">
-        <a href="kapcsolat.html" style="color: white; text-decoration: none; font-weight: bold;">
-          KAPCSOLAT
-        </a>
-      </li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">BÉRELHETŐ AUTÓK</button>
+          <ul class="dropdown-menu">
+            <li><a href="napi.html">NAPI BÉRLÉS</a></li>
+            <li><a href="havi.html">HAVI BÉRLÉS</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">ELADÓ AUTÓK</button>
+          <ul class="dropdown-menu">
+            <li><a href="keszleten.html">KÉSZLETEN</a></li>
+            <li><a href="rendeles.html">RENDELÉS</a></li>
+          </ul>
+        </li>
+        <li class="Kapcsolat">
+          <a href="kapcsolat.html" class="kapcsolat-link">KAPCSOLAT</a>
+        </li>
+      </ul>
+    </nav>
 
-  <div class="hamburger" id="hamburger-menu">
-    <div class="hamburger-x" id="hamburger-x">
+    <div class="hamburger-icon" id="hamburger-icon" aria-label="Menü megnyitása" role="button" tabindex="0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-           stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+           stroke-width="1.5" stroke="white" class="size-6" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
       </svg>
     </div>
-    <ul>
-      <li class="dropdown">
-        <span class="dropdown-toggle">BÉRELHETŐ AUTÓK</span>
-        <ul class="dropdown-menu">
-          <li><a href="napi.html">NAPI BÉRLÉS</a></li>
-          <li><a href="havi.html">HAVI BÉRLÉS</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <span class="dropdown-toggle">ELADÓ AUTÓK</span>
-        <ul class="dropdown-menu">
-          <li><a href="keszleten.html">KÉSZLETEN</a></li>
-          <li><a href="rendeles.html">RENDELÉS</a></li>
-        </ul>
-      </li>
-      <li class="Kapcsolat">
-        <a href="kapcsolat.html" style="color: white; text-decoration: none; font-weight: bold;">
-          KAPCSOLAT
-        </a>
-      </li>
-    </ul>
-  </div>
 
-  <div class="hamburger-icon" id="hamburger-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-         stroke-width="1.5" stroke="white" class="size-6">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
-    </svg>
-  </div>
-</header>
+    <div class="hamburger" id="hamburger-menu">
+      <div class="hamburger-x" id="hamburger-x" aria-label="Menü bezárása" role="button" tabindex="0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke-width="1.5" stroke="currentColor" class="size-6" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <ul>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">BÉRELHETŐ AUTÓK</button>
+          <ul class="dropdown-menu">
+            <li><a href="napi.html">NAPI BÉRLÉS</a></li>
+            <li><a href="havi.html">HAVI BÉRLÉS</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">ELADÓ AUTÓK</button>
+          <ul class="dropdown-menu">
+            <li><a href="keszleten.html">KÉSZLETEN</a></li>
+            <li><a href="rendeles.html">RENDELÉS</a></li>
+          </ul>
+        </li>
+        <li class="Kapcsolat">
+          <a href="kapcsolat.html" class="kapcsolat-link">KAPCSOLAT</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
 
   <section style="
