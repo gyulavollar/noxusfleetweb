@@ -248,7 +248,7 @@ ul {
   padding: 0.5rem 0;
   margin: 0;
   list-style: none;
-  z-index: 1000;
+  z-index: 1100;
   border-radius: 0.25rem;
   min-width: 150px;
 }
