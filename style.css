@@ -234,6 +234,49 @@ header {
   z-index: 1002;
   padding: 5px;
   transition: transform var(--transition-speed) ease;
+  width: 40px;
+  height: 30px;
+  position: relative;
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+.menu-toggle span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle::before {
+  top: 0;
+}
+
+.menu-toggle::after {
+  bottom: 0;
+}
+
+.menu-toggle.open span {
+  background-color: transparent;
+}
+
+.menu-toggle.open::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.menu-toggle.open::after {
+  transform: rotate(-45deg);
+  bottom: 50%;
 }
 
 .menu-toggle:hover {
