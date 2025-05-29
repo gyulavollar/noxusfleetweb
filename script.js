@@ -1,91 +1,119 @@
-const hamburgerIcon = document.querySelector("#hamburger-icon");
-const hamburgerMenu = document.querySelector("#hamburger-menu");
-const hamburgerX = document.querySelector("#hamburger-x");
+document.addEventListener('DOMContentLoaded', function() {
+    // Elemek kiválasztása
+    const hamburgerIcon = document.querySelector("#hamburger-icon");
+    const hamburgerMenu = document.querySelector("#hamburger-menu");
+    const hamburgerX = document.querySelector("#hamburger-x");
+    const body = document.body;
+    const html = document.documentElement;
 
-function setInitialVisibility() {
-    const isMobile = window.innerWidth <= 768;
+    // Menü állapot kezelése
+    let isMenuOpen = false;
 
-    if (hamburgerIcon) {
-        hamburgerIcon.style.display = isMobile ? 'block' : 'none';
+    // Menü megnyitása/bezárása
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        // Menü állapot beállítása
+        hamburgerMenu.classList.toggle('open', isMenuOpen);
+        body.classList.toggle('menu-open', isMenuOpen);
+        html.style.overflow = isMenuOpen ? 'hidden' : '';
+        
+        // Ikonok váltása
+        hamburgerIcon.style.display = isMenuOpen ? 'none' : 'block';
+        hamburgerX.style.display = isMenuOpen ? 'block' : 'none';
+        
+        // ARIA attribútumok frissítése
+        const activeButton = isMenuOpen ? hamburgerX : hamburgerIcon;
+        activeButton.setAttribute('aria-expanded', isMenuOpen);
+        activeButton.setAttribute('aria-label', isMenuOpen ? 'Menü bezárása' : 'Menü megnyitása');
+        
+        // Fókusz átadása a látható gombnak
+        activeButton.focus();
     }
 
-    if (hamburgerMenu) {
-        hamburgerMenu.classList.remove('open');
-    }
+    // Eseménykezelők
+    hamburgerIcon.addEventListener('click', toggleMenu);
+    hamburgerX.addEventListener('click', toggleMenu);
 
-    document.body.style.overflow = 'auto';
-
-    if (hamburgerIcon && hamburgerX) {
-        hamburgerIcon.removeEventListener('click', showMenu);
-        hamburgerX.removeEventListener('click', hideMenu);
-
-        if (isMobile) {
-            hamburgerIcon.addEventListener('click', showMenu);
-        }
-    }
-}
-
-function showMenu() {
-    hamburgerMenu.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    hamburgerIcon.setAttribute('aria-expanded', 'true');
-    hamburgerIcon.removeEventListener('click', showMenu);
-    hamburgerX.addEventListener('click', hideMenu);
-}
-
-function hideMenu() {
-    hamburgerMenu.classList.remove('open');
-    document.body.style.overflow = 'auto';
-    hamburgerIcon.setAttribute('aria-expanded', 'false');
-    hamburgerIcon.addEventListener('click', showMenu);
-    hamburgerX.removeEventListener('click', hideMenu);
-}
-
-window.addEventListener('resize', setInitialVisibility);
-document.addEventListener('DOMContentLoaded', () => {
-    setInitialVisibility();
-
+    // Dropdown menük kezelése
     const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
+    
     dropdownToggles.forEach(toggle => {
         const parent = toggle.closest(".dropdown");
-
-        function toggleDropdown(e) {
-            const isOpen = parent.classList.contains("open");
-
-            // Zárja az összes többi dropdown-t
-            document.querySelectorAll(".dropdown.open").forEach(drop => {
+        
+        toggle.addEventListener("click", function(e) {
+            e.preventDefault();
+            const isOpen = parent.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", isOpen);
+            
+            // Zárja a többi dropdownot
+            document.querySelectorAll(".dropdown").forEach(drop => {
                 if (drop !== parent) {
                     drop.classList.remove("open");
-                    drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
+                    const toggleBtn = drop.querySelector(".dropdown-toggle");
+                    if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "false");
                 }
             });
-
-            parent.classList.toggle("open");
-            toggle.setAttribute("aria-expanded", String(!isOpen));
-
-            e.stopPropagation();
-        }
-
-        // Egérkattintás
-        toggle.addEventListener("click", toggleDropdown);
-
-        // Billentyűzettel is működjön
-        toggle.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " " || e.code === "Space") {
-                e.preventDefault();
-                toggleDropdown(e);
-            }
         });
     });
 
-    // Klikk a menün kívül -> zárja az összes dropdown-t
-    document.addEventListener("click", (e) => {
+    // Kattintás a menüön kívül
+    document.addEventListener("click", function(e) {
+        // Ha a menü nyitva van és a fejlécen kívülre kattintanak
+        if (isMenuOpen && !e.target.closest("header")) {
+            toggleMenu();
+        }
+        
+        // Dropdown bezárása, ha a dropdownon kívülre kattintanak
         if (!e.target.closest(".dropdown")) {
-            document.querySelectorAll(".dropdown.open").forEach(drop => {
+            document.querySelectorAll(".dropdown").forEach(drop => {
                 drop.classList.remove("open");
-                drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
+                const toggleBtn = drop.querySelector(".dropdown-toggle");
+                if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "false");
             });
         }
     });
+
+    // ESC billentyűre bezárás
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (isMenuOpen) {
+                toggleMenu();
+            }
+            
+            // Dropdownok bezárása ESC-re
+            document.querySelectorAll(".dropdown.open").forEach(drop => {
+                drop.classList.remove("open");
+                const toggleBtn = drop.querySelector(".dropdown-toggle");
+                if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "false");
+            });
+        }
+    });
+
+    // Reszponzivitás kezelése
+    function handleResponsive() {
+        if (window.innerWidth > 768) {
+            // Desktop nézet - menü bezárása
+            if (isMenuOpen) {
+                toggleMenu();
+            }
+            hamburgerIcon.style.display = 'none';
+            hamburgerX.style.display = 'none';
+        } else {
+            // Mobile nézet - hamburger ikon megjelenítése
+            hamburgerIcon.style.display = 'block';
+            hamburgerX.style.display = 'none';
+        }
+        
+        // Dropdownok bezárása képméret változásnál
+        document.querySelectorAll(".dropdown").forEach(drop => {
+            drop.classList.remove("open");
+            const toggleBtn = drop.querySelector(".dropdown-toggle");
+            if (toggleBtn) toggleBtn.setAttribute("aria-expanded", "false");
+        });
+    }
+
+    // Eseményfigyelők
+    window.addEventListener('resize', handleResponsive);
+    handleResponsive(); // Kezdeti állapot beállítása
 });
