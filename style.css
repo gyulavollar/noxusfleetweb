@@ -235,7 +235,7 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
 .mobile-menu {
   position: fixed;
   top: 60px;
-  left: -100%;
+  left: 0;
   width: 80%;
   max-width: 320px;
   height: calc(100% - 60px);
@@ -245,7 +245,12 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
   z-index: 1000;
   color: white;
   overflow-y: auto;
+
+  /* ÚJ: határolás vizuálisan */
+  border-right: 2px solid #333;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.4);
 }
+
 
 .mobile-menu.open {
   left: 0;
