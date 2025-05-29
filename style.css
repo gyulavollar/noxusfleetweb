@@ -121,7 +121,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
+  height: 200;
   background-color: #000;
   display: flex;
   justify-content: space-between;
