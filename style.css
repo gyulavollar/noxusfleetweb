@@ -164,24 +164,22 @@ main {
   }
 }
 
-/* Logo hivatkozás (balra) */
-.logo-link {
+.logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 
 .logo img {
   max-height: 50px;
 }
 
-.logo-link img {
-  height: 40px;
-  width: auto;
-  display: block;
+.logo h1 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* NAV - desktop */
 nav {
   flex: 1;
   display: flex;
@@ -198,7 +196,6 @@ nav {
   overflow: visible;
 }
 
-/* NAV linkek */
 nav a {
   display: flex;
   align-items: center;
@@ -235,29 +232,12 @@ ul {
   min-width: 150px;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  padding: 0.5rem 0;
-  margin: 0;
-  list-style: none;
-  z-index: 1000;
-  border-radius: 0.25rem;
-  min-width: 150px;
-}
-
-.dropdown.open .dropdown-menu {
-  display: block;
-}
-
 .dropdown-menu li a {
   color: white;
   text-decoration: none;
   display: block;
   padding: 0.5rem 1rem;
 }
-
 
 .dropdown-menu li a:hover {
   background-color: #444;
@@ -278,42 +258,6 @@ ul {
   .dropdown:hover .dropdown-menu {
     display: none;
   }
-
-  /* ======================= */
-/* ======= MOBILON ======= */
-/* ======================= */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-
-  .logo-link img {
-    height: 36px;
-  }
-
-  ul {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0.5rem 0;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-  }
-
-  .dropdown-menu a {
-    padding: 0.3rem 0;
-    color: #aef1f6;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-}
-  
 }
 
 /* HAMBURGER MENÜ */
