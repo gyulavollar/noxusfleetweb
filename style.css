@@ -34,13 +34,13 @@ body, html {
 
 main {
   padding-top: 80px;
-  padding: 0;
+  padding: 0; /* Fehér padding eltávolítva */
 }
 
 @media (max-width: 768px) {
   main {
     padding-top: 70px;
-    padding: 1rem;
+    padding: 0; /* Fehér padding eltávolítva */
   }
 
   body {
@@ -96,7 +96,6 @@ header {
   -webkit-backface-visibility: hidden;
 }
 
-/* BAL OLDAL: LOGÓ + MENÜ */
 .header-left {
   display: flex;
   align-items: center;
@@ -137,7 +136,6 @@ header {
   color: var(--hover-blue);
 }
 
-/* JOBB OLDAL: NYELVVÁLTÓ */
 .language-switcher {
   display: flex;
   align-items: center;
@@ -257,7 +255,6 @@ ul {
   height: 100%;
 }
 
-/* MOBIL MENÜ OVERLAY */
 .mobile-menu-overlay {
   position: fixed;
   top: 60px;
@@ -273,7 +270,6 @@ ul {
   display: block;
 }
 
-/* MOBIL MENÜ */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -296,7 +292,7 @@ ul {
 
 .mobile-menu nav ul {
   list-style: none;
-  padding: 1rem 0;
+  padding: 0; /* Fehér padding eltávolítva */
   margin: 0;
 }
 
@@ -337,7 +333,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* REJTÉS DESKTOPON */
 @media (min-width: 768px) {
   .menu-toggle,
   .mobile-menu,
@@ -346,16 +341,11 @@ a:hover {
   }
 }
 
-
-
-/* -------------------------------------------------- */
-/* -------------------- AUTÓKÁRTYÁK -------------------- */
-/* -------------------------------------------------- */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 0; /* Fehér padding eltávolítva */
 }
 
 .car-card {
@@ -418,23 +408,17 @@ a:hover {
   }
 }
 
-/* -------------------------------------------------- */
-/* -------------------- KEDVENCEK GRID -------------------- */
-/* -------------------------------------------------- */
 .kedvencek {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin-top: 1rem;
+  margin: 0; /* Fehér margin eltávolítva */
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- WHATSAPP GOMB -------------------- */
-/* -------------------------------------------------- */
 .float {
   position: fixed;
   width: 60px;
@@ -473,9 +457,6 @@ a:hover {
   }
 }
 
-/* -------------------------------------------------- */
-/* -------------------- KAPCSOLAT OLDAL -------------------- */
-/* -------------------------------------------------- */
 .contact-top {
   display: flex;
   flex-wrap: wrap;
@@ -571,9 +552,6 @@ a:hover {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-/* -------------------------------------------------- */
-/* -------------------- FOOTER -------------------- */
-/* -------------------------------------------------- */
 footer a,
 footer nav a,
 footer ul li a {
