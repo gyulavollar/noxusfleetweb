@@ -94,7 +94,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
-  z-index: 1200;
+  z-index: 2000;
   border-bottom: 1px solid #aef1f6;
   width: 100%;
   height: 60px;
@@ -223,26 +223,30 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
 /* Mobil menü overlay */
 .mobile-menu-overlay {
   position: fixed;
-  top: 60px; /* Header alatt kezdődjön */
+  top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Félig átlátszó háttér */
+  background-color: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 800; /* Hátrébb, mint a header (1200) és a menü (1000) */
+  z-index: 1400; /* ez is a fejléc alatt maradjon */
+}
+
+.mobile-menu-overlay.active {
+  display: block;
 }
 
 /* Mobil menü */
 .mobile-menu {
   position: fixed;
-  top: 60px; /* Header alatt */
+  top: 60px; /* a fejléc alatt induljon */
   left: -100%;
   width: 80%;
-  height: 90vh; /* Csak az ablak 90%-át tölti ki magasságban */
+  height: calc(100vh - 60px); /* ne lógjon rá a fejlécre */
   background-color: rgba(0, 0, 0, 0.95);
   padding: 1rem;
   transition: left 0.3s ease;
-  z-index: 1000;
+  z-index: 1500; /* kevesebb, mint a fejléc */
   overflow-y: auto;
   border-right: 2px solid #333;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
@@ -256,7 +260,8 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
 
 /* Menü gomb (hamburger / close) */
 .menu-toggle {
-  z-index: 1300; /* Legfelül legyen */
+  z-index: 2100;
+  position: relative;
 }
 
 .mobile-menu.open {
