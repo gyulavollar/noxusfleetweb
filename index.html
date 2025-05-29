@@ -8,32 +8,37 @@
   
 </head>
 <body>
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
+  </a>
 
+  <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">&#9776;</button>
 
-
-<!-- Mobilmenü -->
-<div class="mobile-menu" id="mobileMenu">
-  <nav>
+  <nav class="desktop-nav">
     <ul>
       <li class="dropdown">
-        <button type="button" class="dropdown-toggle">Bérelhető autók</button>
-        <ul>
-          <li><a href="napi.html">Napi bérlés</a></li>
-          <li><a href="havi.html">Havi bérlés</a></li>
-        </ul>
+        <button>Bérelhető autók</button>
+        <div class="dropdown-content">
+          <a href="napi.html">Napi bérlés</a>
+          <a href="havi.html">Havi bérlés</a>
+        </div>
       </li>
       <li class="dropdown">
-        <button type="button" class="dropdown-toggle">Készlet</button>
-        <ul>
-          <li><a href="keszleten.html">Készleten</a></li>
-          <li><a href="rendeles.html">Rendelésre</a></li>
-        </ul>
+        <button>Készlet</button>
+        <div class="dropdown-content">
+          <a href="keszleten.html">Készleten</a>
+          <a href="rendeles.html">Rendelésre</a>
+        </div>
       </li>
       <li><a href="kapcsolat.html">Kapcsolat</a></li>
-      <li><button id="langSwitchMobile" class="lang-button">English</button></li>
+      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
     </ul>
   </nav>
-</div>
+</header>
+
+<!-- Mobilmenü -->
+
 
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
