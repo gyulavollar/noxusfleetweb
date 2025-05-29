@@ -104,16 +104,15 @@ header {
 }
 
 
-.logo img {
-  max-height: 40px !important;
-  height: auto !important;
-  width: auto !important;
+img.logo {
+  max-height: 50px;
+  height: auto;
+  width: auto;
   object-fit: contain;
   display: block;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
 }
-
 
 
 .logo h1 {
