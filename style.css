@@ -75,257 +75,310 @@ main {
 }
 
 /* -------------------------------------------------- */
-/* -------------------- FEJLÉC ÉS NAVIGÁCIÓ -------------------- */
+/* -------------------- VÁLTOZÓK -------------------- */
 /* -------------------------------------------------- */
-/* Header alap */
-/* Body - eltolás a fixed header miatt */
-/* RESET alapvető problémákhoz */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
+:root {
+  --primary-blue: #00aaff;
+  --hover-blue: #66d9ff;
+  --card-bg: rgba(10, 20, 25, 0.65);
+  --text-light: #e0f7f9;
+  --header-height: 60px;
+  --mobile-header-height: 50px;
+  --transition-speed: 0.3s;
 }
 
-/* Body padding a header miatt */
+/* -------------------------------------------------- */
+/* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
+/* -------------------------------------------------- */
+html {
+  scroll-padding-top: var(--header-height);
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  padding-top: 60px;
-  position: relative; /* Fontos a fixed headerhez */
+  font-family: "Trebuchet MS", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('carbon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: var(--text-light);
+  overscroll-behavior: none;
+  padding-top: var(--header-height);
 }
 
-/* FIXED HEADER - garantáltan működő változat */
+/* -------------------------------------------------- */
+/* -------------------- FEJLÉC -------------------- */
+/* -------------------------------------------------- */
 header {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 60px !important;
-  background-color: #000000 !important;
-  z-index: 9999 !important;
-  margin: 0 !important;
-  padding: 0 15px !important;
-  box-sizing: border-box !important;
-  transform: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 1000;
+  border-bottom: 1px solid #aef1f6;
+  transition: height var(--transition-speed) ease;
 }
 
 /* Logo */
 .logo {
+  height: 100%;
   display: flex;
   align-items: center;
-  height: 60px;
-  overflow: hidden;
+  z-index: 1001;
 }
 
 .logo img {
-  max-height: 50px;
+  max-height: calc(var(--header-height) - 10px);
   height: auto;
   width: auto;
   object-fit: contain;
-  display: block;
-  padding: 0;
-  margin: 0;
+  transition: max-height var(--transition-speed) ease;
 }
 
-/* Menü fő navigáció */
-nav.desktop-nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 60px;
-  padding: 0 2rem;
-  background-color: rgba(0, 10, 15, 0.7);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #aef1f6;
-  color: white;
-  position: relative;
-  z-index: 1000;
-  overflow: visible;
-}
-
-nav.desktop-nav a {
-  display: flex;
-  align-items: center;
+/* Desktop navigáció */
+.desktop-nav {
   height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.desktop-nav li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.desktop-nav a, 
+.desktop-nav .dropdown > button {
   color: #aef1f6;
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 0 1rem;
-}
-
-ul {
+  padding: 0 15px;
+  height: 100%;
   display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   align-items: center;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle,
-nav.desktop-nav .dropdown > button {
-  cursor: pointer;
-  color: white;
-  padding: 0.5rem 1rem;
-  display: inline-block;
   background: none;
   border: none;
-  font-size: 1rem;
+  font: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color var(--transition-speed) ease;
 }
 
-/* Dropdown desktop */
-.dropdown-menu,
-nav.desktop-nav .dropdown-content {
-  display: none;
+.desktop-nav a:hover,
+.desktop-nav .dropdown > button:hover {
+  color: var(--hover-blue);
+}
+
+/* Dropdown menü */
+.dropdown-content {
   position: absolute;
-  background-color: #333;
-  padding: 0.5rem 0;
-  list-style: none;
-  z-index: 1000;
-  border-radius: 0.25rem;
-  min-width: 150px;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 30, 40, 0.95);
+  min-width: 200px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease;
+  border: 1px solid transparent;
+  border-top: none;
+  z-index: 1001;
 }
 
-.dropdown-menu li a,
-nav.desktop-nav .dropdown-content a {
-  color: white;
-  text-decoration: none;
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  max-height: 500px;
+  border-color: #aef1f6;
+}
+
+.dropdown-content a {
+  padding: 12px 15px;
+  color: #aef1f6 !important;
   display: block;
-  padding: 0.5rem 1rem;
+  transition: background-color var(--transition-speed) ease;
 }
 
-.dropdown-menu li a:hover,
-nav.desktop-nav .dropdown-content a:hover {
-  background-color: #444;
+.dropdown-content a:hover {
+  background-color: rgba(0, 170, 255, 0.1);
 }
 
-.dropdown.open .dropdown-menu,
-nav.desktop-nav .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .dropdown:hover .dropdown-menu {
-    display: none;
-  }
-}
-
-/* Hamburger (mobil) */
+/* Mobilmenü gomb */
 .menu-toggle {
-  font-size: 1.8rem;
   background: none;
   border: none;
   color: white;
+  font-size: 1.8rem;
   cursor: pointer;
-  display: block;
-  z-index: 1100; /* kiemelve, hogy mindig látszódjon */
-}
-
-/* Mobil menü overlay */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 1400; /* ez is a fejléc alatt maradjon */
+  z-index: 1002;
+  padding: 5px;
+  transition: transform var(--transition-speed) ease;
 }
 
-.mobile-menu-overlay.active {
-  display: block;
+.menu-toggle:hover {
+  transform: scale(1.1);
 }
 
-/* Mobil menü */
+/* Mobilmenü tartalom */
 .mobile-menu {
-  display: none;
   position: fixed;
-  top: 60px;
-  left: 0;
-  width: 80%;
-  height: calc(100vh - 60px); /* ne lógjon rá a fejlécre */
-  background-color: rgba(0, 0, 0, 0.95);
-  padding: 1rem;
-  transition: left 0.3s ease;
-  z-index: 1500; /* kevesebb, mint a fejléc */
+  top: var(--header-height);
+  left: -100%;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background: rgba(0, 20, 30, 0.98);
+  transition: left var(--transition-speed) ease-out;
+  z-index: 999;
   overflow-y: auto;
-  border-right: 2px solid #333;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
-}
-
-
-/* Menü aktív állapotban */
-.mobile-menu.active {
-  left: 0;
-}
-
-/* Menü gomb (hamburger / close) */
-.menu-toggle {
-  z-index: 2100;
-  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
 }
 
 .mobile-menu.open {
-  display: block;
+  left: 0;
 }
 
+/* Mobilmenü linkek */
 .mobile-menu nav ul {
   list-style: none;
-  padding: 1rem 0;
+  padding: 0;
   margin: 0;
 }
 
 .mobile-menu nav li {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
-.mobile-menu .dropdown > button {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  text-align: left;
-  width: 100%;
-  padding: 0.5rem 0;
-  cursor: pointer;
-  color: white;
-}
-
-.mobile-menu .dropdown ul {
-  display: none;
-  margin-top: 0.5rem;
-  margin-left: 1rem;
-  list-style: none;
-  padding: 0;
-}
-
-.mobile-menu .dropdown.open ul {
-  display: block;
-}
-
-.mobile-menu a {
+.mobile-menu nav a {
   color: #aef1f6;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 1.2rem;
+  display: block;
+  padding: 12px;
+  border-radius: 5px;
+  transition: background-color var(--transition-speed) ease;
 }
 
-a:hover {
-  text-decoration: underline;
+.mobile-menu nav a:hover {
+  background-color: rgba(0, 170, 255, 0.1);
 }
 
-/* Rejtés desktopon */
-@media (min-width: 768px) {
-  .menu-toggle,
-  .mobile-menu,
-  .mobile-menu-overlay {
+/* Mobil dropdown menük */
+.mobile-menu .dropdown > button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #aef1f6;
+  font-size: 1.2rem;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu .dropdown > button::after {
+  content: "+";
+  font-size: 1.5rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.mobile-menu .dropdown.open > button::after {
+  transform: rotate(45deg);
+}
+
+.mobile-menu .dropdown-content {
+  position: static;
+  max-height: 0;
+  padding-left: 15px;
+  background: transparent;
+  border: none !important;
+}
+
+.mobile-menu .dropdown.open .dropdown-content {
+  max-height: 500px;
+}
+
+/* Nyelvváltó gomb */
+.lang-button {
+  background: none;
+  border: 1px solid #aef1f6;
+  color: #aef1f6;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.lang-button:hover {
+  background-color: rgba(174, 241, 246, 0.1);
+}
+
+/* -------------------------------------------------- */
+/* -------------------- MEDIA QUERIES -------------------- */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 50px;
+  }
+  
+  body {
+    padding-top: var(--header-height);
+  }
+  
+  header {
+    height: var(--header-height);
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .desktop-nav {
     display: none;
   }
+  
+  .logo img {
+    max-height: calc(var(--header-height) - 10px);
+  }
+  
+  .mobile-menu {
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+  }
+  
+  /* Görgetés letiltása mobilmenü nyitva */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
 }
+
+/* A többi stílus maradjon változatlan... */
 
 
 
