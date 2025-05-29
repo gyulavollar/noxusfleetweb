@@ -212,13 +212,13 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
   color: white;
   cursor: pointer;
   display: block;
-  z-index: 1100;
+  z-index: 1100; /* kiemelve, hogy mindig látszódjon */
 }
 
-/* Mobil overlay */
+/* Mobil overlay (módosítva - top: 60px) */
 .mobile-menu-overlay {
   position: fixed;
-  top: 0;
+  top: 60px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -231,14 +231,14 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Mobilmenü teljes bal oldalról */
+/* Mobilmenü módosított – top: 60px, height: calc(100% - 60px) */
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: 60px;
   left: -100%;
   width: 80%;
   max-width: 320px;
-  height: 100%;
+  height: calc(100% - 60px);
   background-color: #000;
   padding: 1rem;
   transition: left 0.3s ease;
@@ -302,6 +302,7 @@ a:hover {
     display: none;
   }
 }
+
 
 /* -------------------------------------------------- */
 /* -------------------- AUTÓKÁRTYÁK -------------------- */
