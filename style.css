@@ -24,7 +24,6 @@ body {
   overscroll-behavior: none;
   position: relative;
   z-index: 0;
-  padding-top: 60px;
 }
 
 body, html {
@@ -34,13 +33,13 @@ body, html {
 
 main {
   padding-top: 80px;
-  padding: 0; /* Fehér padding eltávolítva */
+  padding: 2rem;
 }
 
 @media (max-width: 768px) {
   main {
     padding-top: 70px;
-    padding: 0; /* Fehér padding eltávolítva */
+    padding: 1rem;
   }
 
   body {
@@ -76,8 +75,15 @@ main {
 }
 
 /* -------------------------------------------------- */
-/* -------------------- FEJLÉC -------------------- */
+/* -------------------- FEJLÉC ÉS NAVIGÁCIÓ -------------------- */
 /* -------------------------------------------------- */
+/* Header alap */
+/* Body - eltolás a fixed header miatt */
+body {
+  padding-top: 60px;
+}
+
+/* Header fixálása a képernyő tetejére */
 header {
   position: fixed;
   top: 0;
@@ -87,7 +93,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 15px;
   z-index: 2000;
   border-bottom: 1px solid #aef1f6;
   width: 100%;
@@ -96,12 +102,7 @@ header {
   -webkit-backface-visibility: hidden;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -119,43 +120,7 @@ header {
   margin: 0;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: #aef1f6;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.nav-links a:hover {
-  color: var(--hover-blue);
-}
-
-.language-switcher {
-  display: flex;
-  align-items: center;
-}
-
-.language-switcher button {
-  background: none;
-  border: 1px solid #aef1f6;
-  color: #aef1f6;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.language-switcher button:hover {
-  background-color: #111;
-}
-
-/* DESKTOP NAV */
+/* Menü fő navigáció */
 nav.desktop-nav {
   flex: 1;
   display: flex;
@@ -172,16 +137,15 @@ nav.desktop-nav {
   overflow: visible;
 }
 
-nav.desktop-nav a,
-nav.desktop-nav .dropdown > button {
-  color: white;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
+nav.desktop-nav a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #aef1f6;
   text-decoration: none;
-  padding: 0.5rem 1rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0 1rem;
 }
 
 ul {
@@ -197,7 +161,20 @@ ul {
   position: relative;
 }
 
-.dropdown-content {
+.dropdown-toggle,
+nav.desktop-nav .dropdown > button {
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Dropdown desktop */
+.dropdown-menu,
+nav.desktop-nav .dropdown-content {
   display: none;
   position: absolute;
   background-color: #333;
@@ -208,28 +185,31 @@ ul {
   min-width: 150px;
 }
 
-.dropdown-content a {
+.dropdown-menu li a,
+nav.desktop-nav .dropdown-content a {
   color: white;
   text-decoration: none;
   display: block;
   padding: 0.5rem 1rem;
 }
 
-.dropdown-content a:hover {
+.dropdown-menu li a:hover,
+nav.desktop-nav .dropdown-content a:hover {
   background-color: #444;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown.open .dropdown-menu,
+nav.desktop-nav .dropdown:hover .dropdown-content {
   display: block;
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .dropdown:hover .dropdown-content {
+  .dropdown:hover .dropdown-menu {
     display: none;
   }
 }
 
-/* HAMBURGER (MOBIL) */
+/* Hamburger (mobil) */
 .menu-toggle {
   font-size: 1.8rem;
   background: none;
@@ -237,24 +217,10 @@ ul {
   color: white;
   cursor: pointer;
   display: block;
-  z-index: 2100;
-  position: relative;
+  z-index: 1100; /* kiemelve, hogy mindig látszódjon */
 }
 
-.menu-toggle.open::before {
-  content: "\00d7";
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 2.2rem;
-  color: white;
-  user-select: none;
-  line-height: 2.5rem;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-
+/* Mobil menü overlay */
 .mobile-menu-overlay {
   position: fixed;
   top: 60px;
@@ -263,27 +229,40 @@ ul {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 1400;
+  z-index: 1400; /* ez is a fejléc alatt maradjon */
 }
 
 .mobile-menu-overlay.active {
   display: block;
 }
 
+/* Mobil menü */
 .mobile-menu {
   display: none;
   position: fixed;
   top: 60px;
   left: 0;
   width: 80%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px); /* ne lógjon rá a fejlécre */
   background-color: rgba(0, 0, 0, 0.95);
   padding: 1rem;
   transition: left 0.3s ease;
-  z-index: 1500;
+  z-index: 1500; /* kevesebb, mint a fejléc */
   overflow-y: auto;
   border-right: 2px solid #333;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Menü aktív állapotban */
+.mobile-menu.active {
+  left: 0;
+}
+
+/* Menü gomb (hamburger / close) */
+.menu-toggle {
+  z-index: 2100;
+  position: relative;
 }
 
 .mobile-menu.open {
@@ -292,7 +271,7 @@ ul {
 
 .mobile-menu nav ul {
   list-style: none;
-  padding: 0; /* Fehér padding eltávolítva */
+  padding: 1rem 0;
   margin: 0;
 }
 
@@ -333,6 +312,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Rejtés desktopon */
 @media (min-width: 768px) {
   .menu-toggle,
   .mobile-menu,
@@ -341,11 +321,16 @@ a:hover {
   }
 }
 
+
+
+/* -------------------------------------------------- */
+/* -------------------- AUTÓKÁRTYÁK -------------------- */
+/* -------------------------------------------------- */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 0; /* Fehér padding eltávolítva */
+  padding: 2rem;
 }
 
 .car-card {
@@ -408,17 +393,23 @@ a:hover {
   }
 }
 
+/* -------------------------------------------------- */
+/* -------------------- KEDVENCEK GRID -------------------- */
+/* -------------------------------------------------- */
 .kedvencek {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin: 0; /* Fehér margin eltávolítva */
+  margin-top: 1rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
 }
 
+/* -------------------------------------------------- */
+/* -------------------- WHATSAPP GOMB -------------------- */
+/* -------------------------------------------------- */
 .float {
   position: fixed;
   width: 60px;
@@ -457,6 +448,9 @@ a:hover {
   }
 }
 
+/* -------------------------------------------------- */
+/* -------------------- KAPCSOLAT OLDAL -------------------- */
+/* -------------------------------------------------- */
 .contact-top {
   display: flex;
   flex-wrap: wrap;
@@ -552,6 +546,9 @@ a:hover {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
+/* -------------------------------------------------- */
+/* -------------------- FOOTER -------------------- */
+/* -------------------------------------------------- */
 footer a,
 footer nav a,
 footer ul li a {
