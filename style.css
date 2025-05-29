@@ -238,9 +238,10 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
 
 /* Mobil menü */
 .mobile-menu {
+  display: none;
   position: fixed;
-  top: 60px; /* a fejléc alatt induljon */
-  left: -100%;
+  top: 60px;
+  left: 0;
   width: 80%;
   height: calc(100vh - 60px); /* ne lógjon rá a fejlécre */
   background-color: rgba(0, 0, 0, 0.95);
@@ -265,7 +266,7 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
 }
 
 .mobile-menu.open {
-  left: 0;
+  display: block;
 }
 
 .mobile-menu nav ul {
