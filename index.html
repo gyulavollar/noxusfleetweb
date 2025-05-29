@@ -621,7 +621,31 @@
     setInterval(showNextSlide, 4000);
   </script>
 </section>
- 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function toggleMenu() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Mobil dropdown menük nyitása
+    const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function () {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+  });
+</script>
+  
 </body>
 
 <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
