@@ -377,6 +377,7 @@
   width: 250px;
   height: 340px;
   perspective: 1000px;
+  margin: 10px;
 }
 
 .flip-card-inner {
@@ -445,6 +446,29 @@
 
 .flip-card-back strong {
   color: #ffd700;
+}
+
+/* Mobilnézet optimalizálás */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+
+  section > div {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    max-width: 100%;
+  }
+
+  section > div {
+    padding: 0 12px;
+  }
 }
 </style>
 
