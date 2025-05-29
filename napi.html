@@ -1,106 +1,290 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autók Eladók</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <a class="logo" href="index.html">
-        <img src="logo.png" />
-        <h1>NOXUS FLEET</h1>
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kezdőlap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      <nav>
-        <ul>
-          <li class="dropdown">
-            BÉRELHETŐ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="napi.html">NAPI BÉRLÉS</a>
-              <a href="havi.html">HAVI BÉRLÉS</a>
-            </ul>
-          </li>
-          <li class="dropdown">
-            ELADÓ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="keszleten.html">KÉSZLETEN</a>
-              <a href="rendeles.html">RENDELÉS</a>
-            </ul>
-          </li>
-          <li class="Kapcsolat">
-            <a
-              href="kapcsolat.html"
-              style="color: white; text-decoration: none; text-weight: bold"
-            >
-              KAPCSOLAT
-            </a>
-          </li>
-        </ul>
-      </nav>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-      <div class="hamburger" id="hamburger-menu">
-        <div class="hamburger-x" id="hamburger-x">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background-color: #000000;
+      color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 200; /* magasabb z-index a menügombnak */
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: block;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 300;
+      width: 2.5rem;
+      height: 2.5rem;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    /* Hamburger ikon */
+    .menu-toggle.open {
+      color: transparent;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    /* X ikon pszeudo elem */
+    .menu-toggle.open::before {
+      content: "\00d7"; /* × karakter */
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 2.2rem;
+      color: white;
+      user-select: none;
+      line-height: 2.5rem;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Desktop nav */
+    nav.desktop-nav {
+      display: none;
+    }
+
+    nav.desktop-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav.desktop-nav li {
+      position: relative;
+    }
+
+    nav.desktop-nav a,
+    nav.desktop-nav .dropdown > button {
+      color: white;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    nav.desktop-nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: #333;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    nav.desktop-nav .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #333;
+    }
+
+    nav.desktop-nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    nav.desktop-nav .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Mobil menü - teljes képernyő balról */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      padding: 4rem 2rem 2rem 2rem; /* kicsit nagyobb tetejű padding, hogy a gomb ne takarjon */
+      box-shadow: 2px 0 12px rgba(0,0,0,0.3);
+      transition: left 0.3s ease;
+      z-index: 250;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.open {
+      left: 0;
+    }
+
+    .mobile-menu nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu li {
+      margin-bottom: 1.5rem;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .mobile-menu a:hover {
+      color: #007bff;
+    }
+
+    .dropdown > button {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      text-align: left;
+      width: 100%;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .mobile-menu .dropdown ul {
+      display: none;
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+    }
+
+    .mobile-menu .dropdown.open ul {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive design */
+    @media (min-width: 768px) {
+      .menu-toggle,
+      .mobile-menu {
+        display: none;
+      }
+
+      nav.desktop-nav {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
+  </a>
+
+  <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">&#9776;</button>
+
+  <nav class="desktop-nav">
+    <ul>
+      <li class="dropdown">
+        <button>Bérelhető autók</button>
+        <div class="dropdown-content">
+          <a href="napi.html">Napi bérlés</a>
+          <a href="havi.html">Havi bérlés</a>
         </div>
-        <ul>
-          <li class="dropdown">
-            BÉRELHETŐ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="napi.html">NAPI BÉRLÉS</a>
-              <a href="havi.html">HAVI BÉRLÉS</a>
-            </ul>
-          </li>
-          <li class="dropdown">
-            ELADÓ AUTÓK
-            <ul class="dropdown-menu">
-              <a href="keszleten.html">KÉSZLETEN</a>
-              <a href="rendeles.html">RENDELÉS</a>
-            </ul>
-          </li>
-          <li class="Kapcsolat">
-            <a
-              href="kapcsolat.html"
-              style="color: white; text-decoration: none; text-weight: bold"
-            >
-              KAPCSOLAT
-            </a>
-          </li>
-        </ul>
-      </div>
+      </li>
+      <li class="dropdown">
+        <button>Készlet</button>
+        <div class="dropdown-content">
+          <a href="keszleten.html">Készleten</a>
+          <a href="rendeles.html">Rendelésre</a>
+        </div>
+      </li>
+      <li><a href="kapcsolat.html">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</header>
 
-      <div class="hamburger-icon" id="hamburger-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="white"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-          />
-        </svg>
-      </div>
-    </header>
+<!-- Mobilmenü -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <ul>
+      <li class="dropdown">
+        <button type="button" class="dropdown-toggle">Bérelhető autók</button>
+        <ul>
+          <li><a href="napi.html">Napi bérlés</a></li>
+          <li><a href="havi.html">Havi bérlés</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button type="button" class="dropdown-toggle">Készlet</button>
+        <ul>
+          <li><a href="keszleten.html">Készleten</a></li>
+          <li><a href="rendeles.html">Rendelésre</a></li>
+        </ul>
+      </li>
+      <li><a href="kapcsolat.html">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  // Mobil dropdown menük nyitása
+  const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function () {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
 
     <section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
   <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
