@@ -26,7 +26,7 @@
       color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: relative;
-      z-index: 200; /* magasabb z-index a menügombnak */
+      z-index: 200;
     }
 
     h1 {
@@ -50,7 +50,6 @@
       transition: color 0.3s ease;
     }
 
-    /* Hamburger ikon */
     .menu-toggle.open {
       color: transparent;
       position: fixed;
@@ -58,9 +57,8 @@
       right: 1rem;
     }
 
-    /* X ikon pszeudo elem */
     .menu-toggle.open::before {
-      content: "\00d7"; /* × karakter */
+      content: "\00d7";
       position: absolute;
       top: 0;
       left: 0;
@@ -73,7 +71,6 @@
       height: 100%;
     }
 
-    /* Desktop nav */
     nav.desktop-nav {
       display: none;
     }
@@ -89,7 +86,8 @@
     }
 
     nav.desktop-nav a,
-    nav.desktop-nav .dropdown > button {
+    nav.desktop-nav .dropdown > button,
+    .lang-button {
       color: white;
       background: none;
       border: none;
@@ -124,7 +122,6 @@
       background-color: #f0f0f0;
     }
 
-    /* Mobil menü - teljes képernyő balról */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -132,7 +129,7 @@
       width: 100vw;
       height: 100vh;
       background-color: #fff;
-      padding: 4rem 2rem 2rem 2rem; /* kicsit nagyobb tetejű padding, hogy a gomb ne takarjon */
+      padding: 4rem 2rem 2rem 2rem;
       box-shadow: 2px 0 12px rgba(0,0,0,0.3);
       transition: left 0.3s ease;
       z-index: 250;
@@ -187,6 +184,27 @@
       display: block;
     }
 
+    .lang-button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+    }
+
+    @media (max-width: 767px) {
+      .lang-button {
+        color: #333;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem 0;
+      }
+    }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -196,7 +214,6 @@
       text-decoration: underline;
     }
 
-    /* Responsive design */
     @media (min-width: 768px) {
       .menu-toggle,
       .mobile-menu {
@@ -235,6 +252,7 @@
         </div>
       </li>
       <li><a href="kapcsolat.html">Kapcsolat</a></li>
+      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
     </ul>
   </nav>
 </header>
@@ -258,6 +276,7 @@
         </ul>
       </li>
       <li><a href="kapcsolat.html">Kapcsolat</a></li>
+      <li><button id="langSwitchMobile" class="lang-button">English</button></li>
     </ul>
   </nav>
 </div>
@@ -281,6 +300,24 @@
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function () {
       this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Nyelvváltás
+  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
+  let currentLang = 'hu';
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = currentLang === 'hu' ? 'en' : 'hu';
+
+      langButtons.forEach(b => {
+        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
+      });
+
+      console.log('Nyelv átváltva:', currentLang);
+
+      // Ide jöhet valós nyelvváltás logikája, pl. betöltés vagy redirect
     });
   });
 </script>
