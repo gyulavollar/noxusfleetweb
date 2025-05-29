@@ -78,9 +78,14 @@ main {
 /* -------------------- FEJLÉC ÉS NAVIGÁCIÓ -------------------- */
 /* -------------------------------------------------- */
 /* Header alap */
+/* Body - eltolás a fixed header miatt */
+body {
+  padding-top: 60px;
+}
+
+/* Header fixálása a képernyő tetejére */
 header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -215,7 +220,7 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
   z-index: 1100; /* kiemelve, hogy mindig látszódjon */
 }
 
-/* Mobil overlay (módosítva - top: 60px) */
+/* Mobil overlay */
 .mobile-menu-overlay {
   position: fixed;
   top: 60px;
@@ -224,18 +229,18 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 999;
+  z-index: 900; /* kisebb, mint header */
 }
 
 .mobile-menu-overlay.active {
   display: block;
 }
 
-/* Mobilmenü módosított – top: 60px, height: calc(100% - 60px) */
+/* Mobilmenü */
 .mobile-menu {
   position: fixed;
   top: 60px;
-  left: 0;
+  left: -100%;
   width: 80%;
   max-width: 320px;
   height: calc(100% - 60px);
@@ -245,12 +250,9 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
   z-index: 1000;
   color: white;
   overflow-y: auto;
-
-  /* ÚJ: határolás vizuálisan */
   border-right: 2px solid #333;
   box-shadow: 4px 0 12px rgba(0,0,0,0.4);
 }
-
 
 .mobile-menu.open {
   left: 0;
@@ -307,6 +309,7 @@ a:hover {
     display: none;
   }
 }
+
 
 
 /* -------------------------------------------------- */
