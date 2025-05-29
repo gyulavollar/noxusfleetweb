@@ -187,10 +187,10 @@
 </head>
 <body>
 
-  <header>
-<a href="index.html" class="logo">
-  <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
-</a>
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
+  </a>
 
   <button class="menu-toggle" aria-label="Menü megnyitása">&#9776;</button>
 
@@ -220,7 +220,6 @@
 
 <!-- Mobilmenü -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="close-menu" id="closeMenu">&times;</button>
   <nav>
     <ul>
       <li class="dropdown">
@@ -242,34 +241,34 @@
   </nav>
 </div>
 
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
 
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const closeMenuBtn = document.getElementById('closeMenu');
-    const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+  function toggleMenu() {
+    mobileMenu.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
 
-    function openMenu() {
-      mobileMenu.classList.add('open');
-      menuOverlay.classList.add('active');
+    // Hamburger ikon váltása X-re és vissza
+    if (mobileMenu.classList.contains('open')) {
+      menuToggle.innerHTML = '&times;';
+    } else {
+      menuToggle.innerHTML = '&#9776;';
     }
+  }
 
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-      menuOverlay.classList.remove('active');
-    }
+  menuToggle.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', toggleMenu);
 
-    menuToggle.addEventListener('click', openMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
-    menuOverlay.addEventListener('click', closeMenu);
-
-    dropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', function () {
-        this.parentElement.classList.toggle('open');
-      });
+  // Mobil dropdown menük nyitása
+  const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function () {
+      this.parentElement.classList.toggle('open');
     });
-  </script>
+  });
+</script>
 
   <section style="
   position: relative;
