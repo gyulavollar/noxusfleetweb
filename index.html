@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kezdőlap</title>
   <style>
     * {
@@ -10,11 +10,13 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
       color: #333;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -24,11 +26,13 @@
       color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: relative;
-      z-index: 200;
+      z-index: 200; /* magasabb z-index a menügombnak */
     }
+
     h1 {
       font-size: 1.5rem;
     }
+
     .menu-toggle {
       font-size: 1.8rem;
       background: none;
@@ -45,14 +49,18 @@
       user-select: none;
       transition: color 0.3s ease;
     }
+
+    /* Hamburger ikon */
     .menu-toggle.open {
       color: transparent;
       position: fixed;
       top: 1rem;
       right: 1rem;
     }
+
+    /* X ikon pszeudo elem */
     .menu-toggle.open::before {
-      content: "\00d7";
+      content: "\00d7"; /* × karakter */
       position: absolute;
       top: 0;
       left: 0;
@@ -64,17 +72,22 @@
       width: 100%;
       height: 100%;
     }
+
+    /* Desktop nav */
     nav.desktop-nav {
       display: none;
     }
+
     nav.desktop-nav ul {
       display: flex;
       list-style: none;
       gap: 1.5rem;
     }
+
     nav.desktop-nav li {
       position: relative;
     }
+
     nav.desktop-nav a,
     nav.desktop-nav .dropdown > button {
       color: white;
@@ -84,6 +97,7 @@
       cursor: pointer;
       text-decoration: none;
     }
+
     nav.desktop-nav .dropdown-content {
       display: none;
       position: absolute;
@@ -95,17 +109,22 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 10;
     }
+
     nav.desktop-nav .dropdown-content a {
       display: block;
       padding: 0.5rem 1rem;
       color: #333;
     }
+
     nav.desktop-nav .dropdown:hover .dropdown-content {
       display: block;
     }
+
     nav.desktop-nav .dropdown-content a:hover {
       background-color: #f0f0f0;
     }
+
+    /* Mobil menü - teljes képernyő balról */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -113,23 +132,27 @@
       width: 100vw;
       height: 100vh;
       background-color: #fff;
-      padding: 4rem 2rem 2rem 2rem;
+      padding: 4rem 2rem 2rem 2rem; /* kicsit nagyobb tetejű padding, hogy a gomb ne takarjon */
       box-shadow: 2px 0 12px rgba(0,0,0,0.3);
       transition: left 0.3s ease;
       z-index: 250;
       overflow-y: auto;
     }
+
     .mobile-menu.open {
       left: 0;
     }
+
     .mobile-menu nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .mobile-menu li {
       margin-bottom: 1.5rem;
     }
+
     .mobile-menu a {
       text-decoration: none;
       color: #333;
@@ -137,9 +160,11 @@
       font-weight: 600;
       display: block;
     }
+
     .mobile-menu a:hover {
       color: #007bff;
     }
+
     .dropdown > button {
       background: none;
       border: none;
@@ -151,26 +176,33 @@
       font-weight: 600;
       color: #333;
     }
+
     .mobile-menu .dropdown ul {
       display: none;
       margin-top: 0.5rem;
       margin-left: 1rem;
     }
+
     .mobile-menu .dropdown.open ul {
       display: block;
     }
+
     a {
       text-decoration: none;
       color: inherit;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    /* Responsive design */
     @media (min-width: 768px) {
       .menu-toggle,
       .mobile-menu {
         display: none;
       }
+
       nav.desktop-nav {
         display: block;
       }
@@ -207,6 +239,7 @@
   </nav>
 </header>
 
+<!-- Mobilmenü -->
 <div class="mobile-menu" id="mobileMenu">
   <nav>
     <ul>
@@ -229,66 +262,27 @@
   </nav>
 </div>
 
-<section style="
-  position: relative;
-  height: 400px;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-">
-  <h1 style="font-size: 2.5rem; background: rgba(0, 0, 0, 0.5); padding: 1rem 2rem; border-radius: 8px;">
-    Üdvözlünk a NOXUS FLEET-nél!
-  </h1>
-</section>
-
-<section style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-  <h2>Teszimonialok</h2>
-  <div id="testimonial-container" style="position: relative; height: 120px; font-size: 1.2rem; padding: 1rem; background: #eee; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden;">
-    <p id="testimonial-text" style="opacity: 1; transition: opacity 1s ease;">"Nagyon elégedett vagyok a szolgáltatással, gyors és megbízható autókölcsönzés."</p>
-  </div>
-</section>
-
 <script>
-  // Menü gomb működés
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  menuToggle.addEventListener('click', () => {
+  function toggleMenu() {
     const isOpen = mobileMenu.classList.toggle('open');
     menuToggle.classList.toggle('open', isOpen);
+
     menuToggle.setAttribute('aria-expanded', isOpen);
     menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
-  });
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
 
   // Mobil dropdown menük nyitása
-  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      button.parentElement.classList.toggle('open');
+  const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function () {
+      this.parentElement.classList.toggle('open');
     });
   });
-
-  // Tesztimoniálok váltása
-  const testimonials = [
-    '"Nagyon elégedett vagyok a szolgáltatással, gyors és megbízható autókölcsönzés."',
-    '"Kiváló autók és rugalmas bérlési lehetőségek, csak ajánlani tudom!"',
-    '"Szuper ügyfélszolgálat és tiszta, jól karbantartott járművek."'
-  ];
-  let currentIndex = 0;
-  const testimonialText = document.getElementById('testimonial-text');
-
-  setInterval(() => {
-    testimonialText.style.opacity = 0;
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % testimonials.length;
-      testimonialText.textContent = testimonials[currentIndex];
-      testimonialText.style.opacity = 1;
-    }, 1000);
-  }, 5000);
 </script>
 
 <section style="
@@ -627,31 +621,7 @@
     setInterval(showNextSlide, 4000);
   </script>
 </section>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    function toggleMenu() {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.classList.toggle('open', isOpen);
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-
-    // Mobil dropdown menük nyitása
-    const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
-    dropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', function () {
-        this.parentElement.classList.toggle('open');
-      });
-    });
-  });
-</script>
-  
+ 
 </body>
 
 <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
