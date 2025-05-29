@@ -100,14 +100,20 @@ header {
   display: flex;
   align-items: center;
   height: 60px;
+  overflow: hidden;
 }
 
+
 .logo img {
-  height: 40px;
-  max-height: 100%;
-  width: auto;
+  max-height: 40px !important;
+  height: auto !important;
+  width: auto !important;
   object-fit: contain;
+  display: block;
+  padding: 0 !important;
+  margin: 0 !important;
 }
+
 
 
 .logo h1 {
