@@ -268,5 +268,315 @@
       });
     });
   </script>
+
+  <section style="
+  position: relative;
+  height: 400px;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+">
+  <h1 style="font-size: 2.5rem; background: rgba(0, 0, 0, 0.5); padding: 1rem 2rem; border-radius: 8px;">
+    Üdvözlünk a NOXUS FLEET-nél
+  </h1>
+</section>
+
+<section style="  margin: 0;
+            height: 100vh;
+            background-image: url('carbon.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000; /* Háttérszín a kép köré */";>
+
+
+<section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
+  <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
+    Foglald le legkedveltebb kocsijainkat
+  </h2>
+  <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
+    Prémium autók, amiket ügyfeleink a leggyakrabban választanak
+  </p>
+</section>
+
+  <section style="padding: 40px 0;">
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+
+    <!-- CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="1.png" alt="Mercedes G 400d">
+          <h4>Mercedes G 400d</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Diesel</p>
+          <p><strong>Teljesítmény:</strong> 330 LE</p>
+          <p><strong>Ár:</strong> €100,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Itt jöhet a többi kártya ugyanilyen formában -->
+    <!-- CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="2.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="3.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="4.png" alt="BMW 7 series">
+          <h4>BMW 7 series</h4>
+        </div>
+        <div class="flip-card-back">
+          <p><strong>Motor:</strong> 3.0L Hybrid</p>
+          <p><strong>Teljesítmény:</strong> 375 LE</p>
+          <p><strong>Ár:</strong> €110,000</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 340px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 12px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+}
+
+.flip-card-front img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.flip-card-front h4 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+}
+
+.dots span {
+  height: 9px;
+  width: 9px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.dots span:nth-child(2) {
+  background-color: #ccc;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #111;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.flip-card-back p {
+  margin: 8px 0;
+}
+
+.flip-card-back strong {
+  color: #ffd700;
+}
+</style>
+
+
+
+
+<style>
+  /* Hover effektus a paraméter dobozra */
+  .hover-info {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  div[style*="position: relative"]:hover .hover-info {
+    transform: translateY(0%);
+  }
+</style>
+
+  <section class="card" id="wrapper" style="padding: 2rem; display: flex; justify-content: center; margin-bottom: 3rem;">
+  <div style="background: rgba(43, 50, 55, 0.5); color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px; backdrop-filter: blur(8px);">
+
+    <section id="rolunk" style="margin-bottom: 2rem;">
+      <h2 style="text-align: center;">Rólunk</h2>
+      <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
+      <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
+    </section>
+
+    <section id="partnerek">
+      <h2 style="text-align: center;">Partnereink</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
+        <img src="fmclogo.png" alt="Partner 1" style="max-height: 80px;">
+        <img src="exelogo.png" alt="Partner 2" style="max-height: 80px;">
+        <img src="linhardt.png" alt="Partner 3" style="max-height: 80px;">
+        <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" style="max-height: 80px;">
+      </div>
+    </section>
+
+  </div>
+</section>
+  
+<section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
+  <style>
+    .testimonial-section {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial-slide {
+      display: none;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      padding: 1.5rem;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .testimonial-author {
+      margin-top: 1rem;
+      color: #FFD700;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <div class="testimonial-section">
+    <div class="testimonial-slide active">
+      <p>„Gyors ügyintézés, rugalmas hozzáállás és kiváló állapotú autók.”</p>
+      <div class="testimonial-author">– Balázs K.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kivételes szolgáltatás, minden úgy ment, ahogy ígérték!”</p>
+      <div class="testimonial-author">– Réka M.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kedves ügyfélszolgálat és átlátható bérlés. Csak ajánlani tudom!”</p>
+      <div class="testimonial-author">– Zoltán F.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Korrekt árak, prémium autók és tiszta, igényes környezet.”</p>
+      <div class="testimonial-author">– Nóra V.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Az autó kiváló állapotú volt, öröm volt vezetni. Minden gördülékenyen ment.”</p>
+      <div class="testimonial-author">– Ádám T.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Sosem volt ilyen egyszerű és gyors autót bérelni!”</p>
+      <div class="testimonial-author">– Petra H.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Kedvező feltételek, segítőkész csapat. Visszatérő ügyfél leszek!”</p>
+      <div class="testimonial-author">– Gergő B.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Minden igényemnek megfelelt az autó. Tényleg prémium élmény.”</p>
+      <div class="testimonial-author">– Lilla K.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Pontosan azt kaptam, amit megbeszéltünk. Nincs zsákbamacska!”</p>
+      <div class="testimonial-author">– Norbert D.</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>„Modern autók, remek szerviz és gyors ügyintézés. 10/10.”</p>
+      <div class="testimonial-author">– Judit S.</div>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll(".testimonial-slide");
+
+    function showNextSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 4000);
+  </script>
+</section>
+ 
 </body>
 </html>
