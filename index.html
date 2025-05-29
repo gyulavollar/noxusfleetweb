@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kezdőlap</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autókölcsönző</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
     header {
       display: flex;
       justify-content: space-between;
@@ -26,11 +14,34 @@
       color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: relative;
-      z-index: 200; /* magasabb z-index a menügombnak */
+      z-index: 200;
     }
 
-    h1 {
-      font-size: 1.5rem;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo img {
+      max-height: 50px;
+      height: auto;
+      width: auto;
+      display: block;
+    }
+
+    .language-switcher {
+      margin-left: auto;
+    }
+
+    .language-switcher button {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 4px;
     }
 
     .menu-toggle {
@@ -50,17 +61,12 @@
       transition: color 0.3s ease;
     }
 
-    /* Hamburger ikon */
     .menu-toggle.open {
       color: transparent;
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
     }
 
-    /* X ikon pszeudo elem */
     .menu-toggle.open::before {
-      content: "\00d7"; /* × karakter */
+      content: "\00d7";
       position: absolute;
       top: 0;
       left: 0;
@@ -73,7 +79,6 @@
       height: 100%;
     }
 
-    /* Desktop nav */
     nav.desktop-nav {
       display: none;
     }
@@ -82,6 +87,8 @@
       display: flex;
       list-style: none;
       gap: 1.5rem;
+      padding: 0;
+      margin: 0;
     }
 
     nav.desktop-nav li {
@@ -124,7 +131,6 @@
       background-color: #f0f0f0;
     }
 
-    /* Mobil menü - teljes képernyő balról */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -132,7 +138,7 @@
       width: 100vw;
       height: 100vh;
       background-color: #fff;
-      padding: 4rem 2rem 2rem 2rem; /* kicsit nagyobb tetejű padding, hogy a gomb ne takarjon */
+      padding: 4rem 2rem 2rem 2rem;
       box-shadow: 2px 0 12px rgba(0,0,0,0.3);
       transition: left 0.3s ease;
       z-index: 250;
@@ -196,7 +202,6 @@
       text-decoration: underline;
     }
 
-    /* Responsive design */
     @media (min-width: 768px) {
       .menu-toggle,
       .mobile-menu {
@@ -212,31 +217,37 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo">
-    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
-  </a>
+  <div class="header-left">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Autókölcsönző logó">
+    </a>
+
+    <nav class="desktop-nav">
+      <ul>
+        <li class="dropdown">
+          <button>Bérelhető autók</button>
+          <div class="dropdown-content">
+            <a href="napi.html">Napi bérlés</a>
+            <a href="havi.html">Havi bérlés</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button>Készlet</button>
+          <div class="dropdown-content">
+            <a href="keszleten.html">Készleten</a>
+            <a href="rendeles.html">Rendelésre</a>
+          </div>
+        </li>
+        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="language-switcher">
+    <button>Magyar</button>
+  </div>
 
   <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">&#9776;</button>
-
-  <nav class="desktop-nav">
-    <ul>
-      <li class="dropdown">
-        <button>Bérelhető autók</button>
-        <div class="dropdown-content">
-          <a href="napi.html">Napi bérlés</a>
-          <a href="havi.html">Havi bérlés</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <button>Készlet</button>
-        <div class="dropdown-content">
-          <a href="keszleten.html">Készleten</a>
-          <a href="rendeles.html">Rendelésre</a>
-        </div>
-      </li>
-      <li><a href="kapcsolat.html">Kapcsolat</a></li>
-    </ul>
-  </nav>
 </header>
 
 <!-- Mobilmenü -->
