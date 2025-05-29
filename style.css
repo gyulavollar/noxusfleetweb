@@ -223,13 +223,13 @@ nav.desktop-nav .dropdown:hover .dropdown-content {
 /* Mobil overlay */
 .mobile-menu-overlay {
   position: fixed;
-  top: 60px;
+  top: 60px; /* hogy a header alatt kezdődjön */
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 900; /* kisebb, mint header */
+  z-index: 800; /* kisebb mint a header (1200), kisebb mint a menu (1000) */
 }
 
 .mobile-menu-overlay.active {
