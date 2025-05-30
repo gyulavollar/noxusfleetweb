@@ -229,14 +229,14 @@ header {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem; /* Smaller base size */
+  font-size: 1.5rem;
   cursor: pointer;
   display: none;
   z-index: 1002;
   padding: 5px;
   transition: transform var(--transition-speed) ease;
-  width: 30px; /* Smaller width */
-  height: 24px; /* Smaller height */
+  width: 30px;
+  height: 24px;
   position: relative;
 }
 
@@ -304,14 +304,22 @@ header {
   left: 0;
 }
 
-/* Mobilmenü linkek */
+/* Mobilmenü linkek - Centered version */
 .mobile-menu nav ul {
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 0;
   margin: 0;
+  width: 100%;
+  list-style: none;
 }
 
 .mobile-menu nav li {
+  width: 100%;
+  text-align: center;
   margin-bottom: 15px;
 }
 
@@ -323,16 +331,16 @@ header {
   padding: 12px;
   border-radius: 5px;
   transition: background-color var(--transition-speed) ease;
+  justify-content: center;
 }
 
 .mobile-menu nav a:hover {
   background-color: rgba(0, 170, 255, 0.1);
 }
 
-/* Mobil dropdown menük */
+/* Mobil dropdown menük - Centered version */
 .mobile-menu .dropdown > button {
   width: 100%;
-  text-align: left;
   background: none;
   border: none;
   color: #aef1f6;
@@ -340,26 +348,23 @@ header {
   padding: 12px;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .mobile-menu .dropdown > button::after {
-  content: "+";
-  font-size: 1.5rem;
-  transition: transform var(--transition-speed) ease;
-}
-
-.mobile-menu .dropdown.open > button::after {
-  transform: rotate(45deg);
+  display: none; /* Remove the + icon */
 }
 
 .mobile-menu .dropdown-content {
   position: static;
   max-height: 0;
-  padding-left: 15px;
   background: transparent;
   border: none !important;
+  text-align: center;
+  padding-left: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease;
 }
 
 .mobile-menu .dropdown.open .dropdown-content {
