@@ -17,6 +17,9 @@
     <span></span>
   </button>
 
+  <header>
+  <!-- Logo and hamburger menu toggle would be here -->
+  
   <nav class="desktop-nav">
     <ul>
       <li class="dropdown">
@@ -34,7 +37,12 @@
         </div>
       </li>
       <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
-      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
+      <li>
+        <div class="language-switcher">
+          <button class="lang-button active" data-lang="hu">HU</button>
+          <button class="lang-button" data-lang="en">EN</button>
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -56,13 +64,19 @@
           </div>
         </li>
         <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
-        <li><button id="langSwitchMobile" class="lang-button">English</button></li>
+        <li>
+          <div class="language-switcher">
+            <button class="lang-button active" data-lang="hu">HU</button>
+            <button class="lang-button" data-lang="en">EN</button>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
 <script>
+  // Menu toggle functionality
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const body = document.body;
@@ -71,18 +85,9 @@
     const isOpen = mobileMenu.classList.toggle('open');
     menuToggle.classList.toggle('open', isOpen);
     menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
     
     // Toggle body scroll
-    if (isOpen) {
-      body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-    } else {
-      body.style.overflow = '';
-      body.style.position = '';
-      body.style.width = '';
-    }
+    body.classList.toggle('menu-open', isOpen);
     
     // Close all dropdowns when main menu closes
     if (!isOpen) {
@@ -92,48 +97,79 @@
     }
   }
 
-  menuToggle.addEventListener('click', toggleMenu);
+  menuToggle?.addEventListener('click', toggleMenu);
 
-  // Mobil dropdown menük nyitása
+  // Mobile dropdown functionality
   document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', function(e) {
       e.stopPropagation();
       const dropdown = this.closest('.dropdown');
       dropdown.classList.toggle('open');
       
-      // Close other dropdowns when opening a new one
-      if (dropdown.classList.contains('open')) {
-        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove('open');
-          }
-        });
-      }
+      // Close other dropdowns
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove('open');
+        }
+      });
+    });
+  });
+
+  // Desktop dropdown functionality (click to open)
+  document.querySelectorAll('.desktop-nav .dropdown > button').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = this.closest('.dropdown');
+      dropdown.classList.toggle('open');
+      
+      // Close other dropdowns
+      document.querySelectorAll('.desktop-nav .dropdown').forEach(otherDropdown => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove('open');
+        }
+      });
     });
   });
 
   // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.mobile-menu .dropdown')) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
-      });
-    }
-  });
-
-  // Nyelvváltás
-  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
-  let currentLang = 'hu';
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = currentLang === 'hu' ? 'en' : 'hu';
-      langButtons.forEach(b => {
-        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
-      });
-      console.log('Nyelv átváltva:', currentLang);
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('open');
     });
   });
+
+  // Language switcher functionality
+  document.querySelectorAll('.lang-button').forEach(button => {
+    button.addEventListener('click', function() {
+      const lang = this.dataset.lang;
+      
+      // Update active state
+      document.querySelectorAll('.lang-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      this.classList.add('active');
+      
+      // Change language (implementation depends on your setup)
+      changeLanguage(lang);
+    });
+  });
+
+  function changeLanguage(lang) {
+    console.log('Changing language to:', lang);
+    // Here you would implement actual language change:
+    // 1. For static sites: redirect to language-specific page
+    // 2. For dynamic sites: load translations via AJAX
+    // 3. For SPA: update the state and re-render
+    
+    // Example implementation might include:
+    if (lang === 'hu') {
+      document.documentElement.lang = 'hu';
+      // Update text content for Hungarian
+    } else {
+      document.documentElement.lang = 'en';
+      // Update text content for English
+    }
+  }
 </script>
 
 <section style="
