@@ -14,7 +14,7 @@ const translations = {
     bookingSubtitle: "Prémium autók, amiket ügyfeleink a legjobban kedvelnek",
     welcomeTitle: "Üdvözlünk a NOXUS FLEET-nél",
     about_title: "Rólunk",
-    about_text1:"asdsdadsa",
+    about_text1:"asdsdadsas",
     about_text2:"hgfhgffhg",
     testimons1: "Nagyon elégedett vagyok az autóbérlés gyorsaságával és egyszerűségével!",
     testimons2: "A bérlési folyamat gördülékeny volt, az autó tökéletes állapotban érkezett.",
