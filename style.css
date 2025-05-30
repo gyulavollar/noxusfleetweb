@@ -568,7 +568,7 @@ header {
 }
 
 .contact-top h2 {
-  color: #FFD700;
+  color: #aef1f6;
 }
 
 .contact-top p {
@@ -606,7 +606,7 @@ header {
 }
 
 .contact-form label {
-  color: #FFD700;
+  color: #aef1f6;
 }
 
 .contact-form input,
@@ -621,12 +621,12 @@ header {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #FFD700;
+  border-color: #aef1f6;
   outline: none;
 }
 
 .contact-form button {
-  background-color: #FFD700;
+  background-color: #aef1f6;
   color: #000;
   font-weight: bold;
   border: none;
@@ -637,7 +637,7 @@ header {
 }
 
 .contact-form button:hover {
-  background-color: #e6c200;
+  background-color: #aef1f6;
 }
 
 .contact-map iframe {
