@@ -298,25 +298,26 @@ header {
   padding: 20px;
   box-sizing: border-box;
   backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Changed from center to flex-start */
+  padding-top: 80px; /* Added padding to push content down */
 }
 
-.mobile-menu.open {
-  left: 0;
-}
-
-/* Mobilmenü linkek - Centered version */
+/* Mobilmenü linkek - Centered but lower */
 .mobile-menu nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 0;
   margin: 0;
   width: 100%;
   list-style: none;
+  margin-top: 40px; /* Added margin to push content down */
 }
 
+/* Rest of your CSS remains the same */
 .mobile-menu nav li {
   width: 100%;
   text-align: center;
