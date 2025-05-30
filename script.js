@@ -3,6 +3,9 @@ const hamburgerMenu = document.querySelector("#hamburger-menu");
 const hamburgerX = document.querySelector("#hamburger-x");
 const translations = {
   hu: {
+    rent1: "Bérelhető autók",
+    rent2: "Napi bérlés",
+    rent3: "Havi bérlés",
     about_title: "Rólunk",
     about_text1: "Az AutoPlaza célja...",
     about_text2: "Csapatunk minden nap...",
@@ -19,6 +22,9 @@ const translations = {
 
   },
   en: {
+    rent1: "Rental Cars",
+    rent2: "Daily Rental",
+    rent3: "Monthly Rental",
     about_title: "About Us",
     about_text1: "AutoPlaza aims...",
     about_text2: "Our team works...",
