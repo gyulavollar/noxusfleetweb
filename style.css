@@ -307,8 +307,8 @@ header {
 /* Mobilmenü linkek */
 .mobile-menu nav ul {
   list-style: none;
-  padding: 30;
-  margin: 30;
+  padding: 40px;
+  margin: 40px;
 }
 
 .mobile-menu nav li {
