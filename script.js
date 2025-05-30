@@ -1,21 +1,19 @@
 const hamburgerIcon = document.querySelector("#hamburger-icon");
 const hamburgerMenu = document.querySelector("#hamburger-menu");
 const hamburgerX = document.querySelector("#hamburger-x");
-// Frissített nyelvi szótár
 const translations = {
   hu: {
     about_title: "Rólunk",
-    about_text1: "Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.",
-    about_text2: "Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan."
+    about_text1: "Az AutoPlaza célja...",
+    about_text2: "Csapatunk minden nap..."
   },
   en: {
     about_title: "About Us",
-    about_text1: "AutoPlaza aims to help every customer find their dream car - whether for sale or rental. With over 10 years of experience, we provide reliable background and premium services.",
-    about_text2: "Our team works every day to offer quality vehicles and personalized solutions - quickly, transparently and securely."
+    about_text1: "AutoPlaza aims...",
+    about_text2: "Our team works..."
   }
 };
 
-// Nyelvváltás kezelése
 function updateTexts() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
   document.querySelectorAll('[data-translate]').forEach(el => {
@@ -23,6 +21,23 @@ function updateTexts() {
     el.textContent = translations[lang][key];
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateTexts();
+
+  document.querySelectorAll('.lang-button').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const currentLang = localStorage.getItem('userLanguage') || 'hu';
+      const newLang = currentLang === 'hu' ? 'en' : 'hu';
+      localStorage.setItem('userLanguage', newLang);
+      updateTexts();
+      document.querySelectorAll('.lang-button').forEach(b => {
+        b.textContent = newLang === 'hu' ? 'English' : 'Magyar';
+      });
+    });
+  });
+});
+
 
 // Oldal betöltésekor
 document.addEventListener('DOMContentLoaded', updateTexts);
