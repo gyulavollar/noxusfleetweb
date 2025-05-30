@@ -5,12 +5,33 @@ const translations = {
   hu: {
     about_title: "Rólunk",
     about_text1: "Az AutoPlaza célja...",
-    about_text2: "Csapatunk minden nap..."
+    about_text2: "Csapatunk minden nap...",
+    testimons1: "Nagyon elégedett vagyok a szolgáltatással! Gyors és megbízható.",
+    testimons2: "A csapat segítőkész és profi. Csak ajánlani tudom!",
+    testimons3: "Kiváló élmény volt! Minden a megbeszéltek szerint zajlott.",
+    testimons4: "Először próbáltam, de biztosan nem utoljára.",
+    testimons5: "Minden szempontból elégedett vagyok, köszönöm!",
+    testimons6: "A minőség felülmúlta az elvárásaimat.",
+    testimons7: "Gyors válaszidő és kiváló ügyfélszolgálat.",
+    testimons8: "Már többször rendeltem, mindig elégedett voltam.",
+    testimons9: "Remek ár-érték arány! Megérte.",
+    testimons10: "Ha lehetne, 6 csillagot adnék! :)"
+
   },
   en: {
     about_title: "About Us",
     about_text1: "AutoPlaza aims...",
-    about_text2: "Our team works..."
+    about_text2: "Our team works...",
+    testimons1: "I'm very satisfied with the service! Fast and reliable.",
+    testimons2: "The team is helpful and professional. I highly recommend them!",
+    testimons3: "Great experience! Everything went as agreed.",
+    testimons4: "Tried it for the first time, but definitely not the last.",
+    testimons5: "Completely satisfied in every aspect, thank you!",
+    testimons6: "The quality exceeded my expectations.",
+    testimons7: "Quick response time and excellent customer service.",
+    testimons8: "I've ordered multiple times and was always satisfied.",
+    testimons9: "Great value for money! Totally worth it.",
+    testimons10: "If I could, I’d give it 6 stars! :)"
   }
 };
 
