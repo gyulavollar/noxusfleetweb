@@ -291,7 +291,7 @@ header {
   left: -100%;
   width: 100%;
   height: calc(120vh - var(--header-height));
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.90);
   transition: left var(--transition-speed) ease-out;
   z-index: 999;
   overflow-y: auto;
