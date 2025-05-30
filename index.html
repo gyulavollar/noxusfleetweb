@@ -400,7 +400,8 @@ function updateTexts() {
 document.addEventListener('DOMContentLoaded', updateTexts);
 
 // Ha van nyelvváltó gomb, frissítsd az eseménykezelőt
-const langSwitch = document.getElementById('langSwitch');
+const langSwitch = document.getElementById('langSwitchDesktop');
+
 if (langSwitch) {
   langSwitch.addEventListener('click', function() {
     const currentLang = localStorage.getItem('userLanguage') || 'hu';
