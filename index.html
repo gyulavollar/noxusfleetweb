@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noxus Fleet</title>
   <link rel="icon" href="logo.png" type="image/png">
-  
 </head>
 <body>
 <header>
@@ -14,9 +13,9 @@
     <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
   </a>
 
-<button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
-  <span></span>
-</button>
+  <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
+    <span></span>
+  </button>
 
   <nav class="desktop-nav">
     <ul>
@@ -39,33 +38,29 @@
     </ul>
   </nav>
 
-  
   <div class="mobile-menu" id="mobileMenu">
-  <nav>
-    <ul>
-      <li class="dropdown">
-        <button type="button" class="dropdown-toggle">Bérelhető autók</button>
-        <ul>
-          <li><a href="napi.html">Napi bérlés</a></li>
-          <li><a href="havi.html">Havi bérlés</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <button type="button" class="dropdown-toggle">Készlet</button>
-        <ul>
-          <li><a href="keszleten.html">Készleten</a></li>
-          <li><a href="rendeles.html">Rendelésre</a></li>
-        </ul>
-      </li>
-      <li><a href="kapcsolat.html">Kapcsolat</a></li>
-      <li><button id="langSwitchMobile" class="lang-button">English</button></li>
-    </ul>
-  </nav>
-</div>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <button type="button" class="dropdown-toggle">Bérelhető autók</button>
+          <div class="dropdown-content">
+            <a href="napi.html">Napi bérlés</a>
+            <a href="havi.html">Havi bérlés</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <button type="button" class="dropdown-toggle">Készlet</button>
+          <div class="dropdown-content">
+            <a href="keszleten.html">Készleten</a>
+            <a href="rendeles.html">Rendelésre</a>
+          </div>
+        </li>
+        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        <li><button id="langSwitchMobile" class="lang-button">English</button></li>
+      </ul>
+    </nav>
+  </div>
 </header>
-
-<!-- Mobilmenü -->
-
 
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
@@ -74,19 +69,44 @@
   function toggleMenu() {
     const isOpen = mobileMenu.classList.toggle('open');
     menuToggle.classList.toggle('open', isOpen);
-
     menuToggle.setAttribute('aria-expanded', isOpen);
     menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
+    
+    // Close all dropdowns when main menu closes
+    if (!isOpen) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
   }
 
   menuToggle.addEventListener('click', toggleMenu);
 
   // Mobil dropdown menük nyitása
-  const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', function () {
-      this.parentElement.classList.toggle('open');
+  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = this.closest('.dropdown');
+      dropdown.classList.toggle('open');
+      
+      // Close other dropdowns when opening a new one
+      if (dropdown.classList.contains('open')) {
+        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('open');
+          }
+        });
+      }
     });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mobile-menu .dropdown')) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
   });
 
   // Nyelvváltás
@@ -96,14 +116,10 @@
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       currentLang = currentLang === 'hu' ? 'en' : 'hu';
-
       langButtons.forEach(b => {
         b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
       });
-
       console.log('Nyelv átváltva:', currentLang);
-
-      // Ide jöhet valós nyelvváltás logikája, pl. betöltés vagy redirect
     });
   });
 </script>
