@@ -358,17 +358,59 @@
   }
 </style>
 
+  
+
   <section class="card" id="wrapper" style="padding: 2rem; display: flex; justify-content: center; margin-bottom: 3rem;">
   <div style="background: rgba(43, 50, 55, 0.5); color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px; backdrop-filter: blur(8px);">
 
     <section id="rolunk" style="margin-bottom: 2rem;">
-      <h2 style="text-align: center;">Rólunk</h2>
-      <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
-      <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
+      <h2 style="text-align: center;" data-translate="about_title">Rólunk</h2>
+      <p data-translate="about_text1">Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
+      <p data-translate="about_text2">Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
     </section>
 
   </div>
 </section>
+
+<script>
+// Frissített nyelvi szótár
+const translations = {
+  hu: {
+    about_title: "Rólunk",
+    about_text1: "Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.",
+    about_text2: "Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan."
+  },
+  en: {
+    about_title: "About Us",
+    about_text1: "AutoPlaza aims to help every customer find their dream car - whether for sale or rental. With over 10 years of experience, we provide reliable background and premium services.",
+    about_text2: "Our team works every day to offer quality vehicles and personalized solutions - quickly, transparently and securely."
+  }
+};
+
+// Nyelvváltás kezelése
+function updateTexts() {
+  const lang = localStorage.getItem('userLanguage') || 'hu';
+  document.querySelectorAll('[data-translate]').forEach(el => {
+    const key = el.getAttribute('data-translate');
+    el.textContent = translations[lang][key];
+  });
+}
+
+// Oldal betöltésekor
+document.addEventListener('DOMContentLoaded', updateTexts);
+
+// Ha van nyelvváltó gomb, frissítsd az eseménykezelőt
+const langSwitch = document.getElementById('langSwitch');
+if (langSwitch) {
+  langSwitch.addEventListener('click', function() {
+    const currentLang = localStorage.getItem('userLanguage') || 'hu';
+    const newLang = currentLang === 'hu' ? 'en' : 'hu';
+    localStorage.setItem('userLanguage', newLang);
+    updateTexts();
+    this.textContent = newLang === 'hu' ? 'English' : 'Magyar';
+  });
+}
+</script>
   
 <section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
   <style>
