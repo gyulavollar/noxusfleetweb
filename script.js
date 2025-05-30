@@ -24,6 +24,17 @@ const translations = {
     testimons8: "A bérlés során minden kérdésemre részletes választ kaptam, nagyon segítőkészek voltak.",
     testimons9: "Kényelmes átvétel és leadás, gördülékeny ügyintézés.",
     testimons10: "Minden zökkenőmentesen zajlott, az autóbérlés teljesen problémamentes volt.",
+    menuTitle: "Menü",
+    menuTerms: "ÁSZF",
+    menuFaq: "GYIK",
+    openingHoursTitle: "Nyitvatartás",
+    openingHoursWeekdays: "H-P: 8:00 - 22:00",
+    openingHoursWeekend: "Szo-V: 8:00 - 20:00",
+    contactTitle: "Kapcsolat",
+    contactPhone: "+36 30 784 6975",
+    contactEmail: "booking@noxusfleet.com",
+    socialTitle: "Kövess minket",
+    footerBottom: "© 2025 Noxus Fleet. Minden jog fenntartva."
   },
   en: {
     rent1: "Rental Cars",
@@ -46,7 +57,18 @@ const translations = {
     testimons7: "The car was technically flawless, I felt safe driving it.",
     testimons8: "I got detailed answers to all my questions during the rental, very helpful staff.",
     testimons9: "Convenient pick-up and drop-off, hassle-free administration.",
-    testimons10: "Everything went smoothly, the car rental was completely trouble-free."
+    testimons10: "Everything went smoothly, the car rental was completely trouble-free.",
+    menuTitle: "Menu",
+    menuTerms: "Terms & Conditions",
+    menuFaq: "FAQ",
+    openingHoursTitle: "Opening Hours",
+    openingHoursWeekdays: "Mon-Fri: 8:00 AM - 10:00 PM",
+    openingHoursWeekend: "Sat-Sun: 8:00 AM - 8:00 PM",
+    contactTitle: "Contact",
+    contactPhone: "+36 30 784 6975",
+    contactEmail: "booking@noxusfleet.com",
+    socialTitle: "Follow us",
+    footerBottom: "© 2025 Noxus Fleet. All rights reserved."
   }
 };
 
