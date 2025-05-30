@@ -6,12 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noxus Fleet</title>
   <link rel="icon" href="logo.png" type="image/png">
-  
 </head>
 <body>
 <header>
   <a href="index.html" class="logo">
-    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
+    <img src="logo.png" alt="Autókölcsönző logó" class="logo-img">
   </a>
 
 <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
@@ -64,88 +63,20 @@
 </div>
 </header>
 
-<!-- Mobilmenü -->
-
-
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  function toggleMenu() {
-    const isOpen = mobileMenu.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-
-  // Mobil dropdown menük nyitása
-  const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', function () {
-      this.parentElement.classList.toggle('open');
-    });
-  });
-
-  // Nyelvváltás
-  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
-  let currentLang = 'hu';
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = currentLang === 'hu' ? 'en' : 'hu';
-
-      langButtons.forEach(b => {
-        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
-      });
-
-      console.log('Nyelv átváltva:', currentLang);
-
-      // Ide jöhet valós nyelvváltás logikája, pl. betöltés vagy redirect
-    });
-  });
-</script>
-
-<section style="
-  position: relative;
-  height: 400px;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-">
-  <h1 style="font-size: 2.5rem; background: rgba(0, 0, 0, 0.5); padding: 1rem 2rem; border-radius: 8px;">
+<section class="hero-banner">
+  <h1 class="hero-title">
     Üdvözlünk a NOXUS FLEET-nél
   </h1>
 </section>
 
-<section style="
-  margin: 0;
-  height: 100vh;
-  background-image: url('carbon.jpg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #000; /* Háttérszín a kép köré */
-">
-
-  <section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
-    <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
-      Foglald le legkedveltebb kocsijainkat
-    </h2>
-    <p style="color: #555; font-size: 0.95rem; margin-top: 8px;">
-      Prémium autók, amiket ügyfeleink a legjobban kedvelnek
-    </p>
+<section class="carbon-background">
+  <section class="popular-cars-header">
+    <h2>Foglald le legkedveltebb kocsijainkat</h2>
+    <p>Prémium autók, amiket ügyfeleink a legjobban kedvelnek</p>
   </section>
 
-<section style="padding: 60px 0 40px;">
-  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+<section class="flip-cards-section">
+  <div class="flip-cards-container">
 
     <!-- CARD 1 -->
     <div class="flip-card">
@@ -210,185 +141,28 @@
   </div>
 </section>
 
-<style>
-.flip-card {
-  background-color: transparent;
-  width: 250px;
-  height: 340px;
-  perspective: 1000px;
-  margin: 10px;
-  box-sizing: border-box;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-  border-radius: 12px;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #1a1a1a;
-  color: white;
-  padding: 20px;
-}
-
-.flip-card-front img {
-  width: 100%;
-  max-height: 180px;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.flip-card-front h4 {
-  margin: 15px 0 10px;
-  font-size: 18px;
-}
-
-.dots span {
-  height: 9px;
-  width: 9px;
-  background-color: #888;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 4px;
-}
-
-.dots span:nth-child(2) {
-  background-color: #ccc;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  background-color: #111;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.flip-card-back p {
-  margin: 8px 0;
-}
-
-.flip-card-back strong {
-  color: #aef1f6;
-}
-
-/* Mobilnézet optimalizálás */
-@media (max-width: 768px) {
-  .flip-card {
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-  }
-
-  section > div {
-    padding: 0 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .flip-card {
-    max-width: 100%;
-  }
-
-  section > div {
-    padding: 0 12px;
-  }
-}
-</style>
-
-
-
-
-
-<style>
-  /* Hover effektus a paraméter dobozra */
-  .hover-info {
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-
-  div[style*="position: relative"]:hover .hover-info {
-    transform: translateY(0%);
-  }
-</style>
-
-  <section class="card" id="wrapper" style="padding: 2rem; display: flex; justify-content: center; margin-bottom: 3rem;">
-  <div style="background: rgba(43, 50, 55, 0.5); color: #fff; padding: 2rem; border-radius: 8px; max-width: 800px; backdrop-filter: blur(8px);">
-
-    <section id="rolunk" style="margin-bottom: 2rem;">
-      <h2 style="text-align: center;">Rólunk</h2>
+<section class="about-section" id="wrapper">
+  <div class="about-container">
+    <section id="rolunk">
+      <h2>Rólunk</h2>
       <p>Az AutoPlaza célja, hogy minden ügyfél megtalálja az álmai autóját – legyen szó eladásról vagy bérlésről. Több mint 10 éves tapasztalattal, megbízható háttérrel és prémium szolgáltatásokkal állunk rendelkezésedre.</p>
       <p>Csapatunk minden nap azért dolgozik, hogy minőségi járműveket és személyre szabott ajánlatokat kínáljunk – gyorsan, átláthatóan és biztonságosan.</p>
     </section>
 
     <section id="partnerek">
-      <h2 style="text-align: center;">Partnereink</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
-        <img src="fmclogo.png" alt="Partner 1" style="max-height: 80px;">
-        <img src="exelogo.png" alt="Partner 2" style="max-height: 80px;">
-        <img src="linhardt.png" alt="Partner 3" style="max-height: 80px;">
-        <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" style="max-height: 80px;">
+      <h2>Partnereink</h2>
+      <div class="partners-container">
+        <img src="fmclogo.png" alt="Partner 1" class="partner-logo">
+        <img src="exelogo.png" alt="Partner 2" class="partner-logo">
+        <img src="linhardt.png" alt="Partner 3" class="partner-logo">
+        <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partner 4" class="partner-logo">
       </div>
     </section>
-
   </div>
 </section>
   
-<section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
-  <style>
-    .testimonial-section {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
-
-    .testimonial-slide {
-      display: none;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      padding: 1.5rem;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    .testimonial-slide.active {
-      display: block;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial-author {
-      margin-top: 1rem;
-      color: #aef1f6;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-
-  <div class="testimonial-section">
+<section class="testimonials-section">
+  <div class="testimonial-container">
     <div class="testimonial-slide active">
       <p>„Gyors ügyintézés, rugalmas hozzáállás és kiváló állapotú autók.”</p>
       <div class="testimonial-author">– Balázs K.</div>
@@ -445,99 +219,12 @@
   </script>
 </section>
  
-</body>
-
-<footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
-  <style>
-    .footer-wrapper {
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-      align-items: start;
-      text-align: center;
-    }
-
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .footer-section img.logo {
-      width: 60px;
-      height: auto;
-    }
-
-    .footer-section h4 {
-      margin: 0.5rem 0 0.2rem;
-      font-size: 1rem;
-      color: #aef1f6;
-    }
-
-    .footer-section p,
-    .footer-section li,
-    .footer-section a {
-      color: #ccc;
-      font-size: 0.9rem;
-      margin: 0;
-      text-decoration: none;
-    }
-
-    .footer-section a:hover {
-      color: #fff;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 10px;
-      margin-top: 0.5rem;
-    }
-
-    .social-icons img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #888;
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-section {
-        margin-bottom: 1.5rem;
-      }
-
-      .social-icons {
-        justify-content: center;
-      }
-    }
-  </style>
-
+<footer>
   <div class="footer-wrapper">
     <div class="footer-grid">
       <!-- Logó -->
       <div class="footer-section">
-        <img src="logo.png" alt="Logó" class="logo">
+        <img src="logo.png" alt="Logó" class="footer-logo">
       </div>
 
       <!-- Menü -->
@@ -571,9 +258,9 @@
       <div class="footer-section">
         <h4>Kövess minket</h4>
         <div class="social-icons">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="social-icon"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="social-icon"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" class="social-icon"></a>
         </div>
       </div>
     </div>
@@ -584,5 +271,45 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  // Mobil dropdown menük nyitása
+  const dropdownToggles = document.querySelectorAll('.mobile-menu .dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function () {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Nyelvváltás
+  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
+  let currentLang = 'hu';
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = currentLang === 'hu' ? 'en' : 'hu';
+
+      langButtons.forEach(b => {
+        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
+      });
+
+      console.log('Nyelv átváltva:', currentLang);
+    });
+  });
+</script>
   
+</body>
 </html>
