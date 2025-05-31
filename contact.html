@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noxus Fleet</title>
   <link rel="icon" href="logo.png" type="image/png">
+  <script src="script.js"></script>
 </head>
 <body>
 <header>
@@ -20,20 +21,12 @@
   <nav class="desktop-nav">
     <ul>
       <li class="dropdown">
-        <button>BÉRELHETŐ AUTÓK</button>
-        <div class="dropdown-content">
-          <a href="napi.html">Napi bérlés</a>
-          <a href="havi.html">Havi bérlés</a>
-        </div>
+        <a href="rent.html" data-translate="rent1"> </a>
       </li>
       <li class="dropdown">
-        <button>ELADÓ AUTÓK</button>
-        <div class="dropdown-content">
-          <a href="keszleten.html">Készleten</a>
-          <a href="rendeles.html">Rendelésre</a>
-        </div>
+        <a href="sale.html" data-translate="forsale1"> </a>
       </li>
-      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+      <li><a href="contact.html" data-translate="connection">KAPCSOLAT</a></li>
       <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
     </ul>
   </nav>
@@ -41,23 +34,15 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav>
       <ul>
-        <li class="dropdown">
-          <button type="button" class="dropdown-toggle">Bérelhető autók</button>
-          <div class="dropdown-content">
-            <a href="napi.html">NAPI BÉRLÉS</a>
-            <a href="havi.html">HAVI BÉRLÉS</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <button type="button" class="dropdown-toggle">Készlet</button>
-          <div class="dropdown-content">
-            <a href="keszleten.html">KÉSZLETEN</a>
-            <a href="rendeles.html">RENDELÉSRE</a>
-          </div>
-        </li>
-        <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
-        <li><button id="langSwitchMobile" class="lang-button">English</button></li>
-      </ul>
+      <li class="dropdown">
+        <a href="rent.html" data-translate="rent1"> </a>
+      </li>
+      <li class="dropdown">
+        <a href="sale.html" data-translate="forsale1"> </a>
+      </li>
+      <li><a href="kapcsolat.html" data-translate="connection">KAPCSOLAT</a></li>
+      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
+    </ul>
     </nav>
   </div>
 </header>
