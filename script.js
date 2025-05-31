@@ -12,7 +12,7 @@ const translations = {
     connection:"Kapcsolat",
     bookingTitle: "Foglald le legkedveltebb kocsijainkat",
     bookingSubtitle: "Prémium autók, amiket ügyfeleink a legjobban kedvelnek",
-    welcomeTitle: "Noxus Fleet – Prémium autók. Maximális élmény. Kompromisszumok nélkül.",
+    welcomeTitle: "Üdvözlünk a NOXUS FLEET-nél",
     about_title: "Rólunk",
     about_text1:"A Noxus Fleet a prémium autóbérlés eleganciáját és dinamizmusát ötvözi. Flottánkban a legnevesebb márkák – BMW, Mercedes, Ferrari – képviselik a stílust és a teljesítményt, legyen szó napi élményről vagy hosszú távú bérlésről. Exkluzív eladó autóink azonnal elérhetők, de egyedi igények alapján is gondoskodunk a tökéletes modellről, közvetlen szalonkapcsolatainkon keresztül, versenyképes áron. A Noxus Fleet azoknak szól, akik nem érik be kevesebbel, mint a legjobbal.",
     about_text2:"",
