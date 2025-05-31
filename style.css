@@ -117,7 +117,26 @@ body {
 /* -------------------- FEJLÉC -------------------- */
 /* -------------------------------------------------- */
 header {
-  padding-left: 400px;
+  position: fixed;
+  top: 0;
+  width: 70%;
+  height: 65px;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 1000;
+  border-bottom: 1px solid #aef1f6;
+  transition: height var(--transition-speed) ease;
+
+  margin: 0 auto; /* Centers the header */
+  left: 0;        /* Can be removed */
+  right: 0;       /* Helps margin auto center it horizontally */
+}
+/*
+header {
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -132,7 +151,7 @@ header {
   border-bottom: 1px solid #aef1f6;
   transition: height var(--transition-speed) ease;
 }
-
+*/
 /* Logo */
 .logo {
   height: 100%;
