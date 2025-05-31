@@ -169,6 +169,13 @@
   <p data-translate="bookingSubtitle" style="color: #555; font-size: 0.95rem; margin-top: 8px;"></p>
 </section>
 
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
 
 <section class="card-grid">
   <div class="card">
