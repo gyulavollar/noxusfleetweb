@@ -72,7 +72,6 @@
 
 
 <section class="card-grid">
-  <!-- Kártya sablon (többszörözhető) -->
   <div class="card">
     <div class="card-inner">
       <div class="card-front">
@@ -181,12 +180,13 @@
     </div>
   </div>
   
-
-  <!-- További kártyák -->
-  <!-- Másold az előző div.card blokkot, és módosítsd a tartalmat! -->
 </section>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -196,10 +196,9 @@
 
 .card {
   perspective: 1000px;
-  width: 85%;
+  width: 100%;
   aspect-ratio: 4 / 5;
   cursor: pointer;
-  margin: auto;
 }
 
 .card-inner {
@@ -305,7 +304,6 @@
 @media (max-width: 1024px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
   }
 }
 
@@ -317,12 +315,33 @@
   }
 
   .card {
-    width: 95%;
     aspect-ratio: auto;
+    height: auto;
   }
 
-  .card-front img {
-    border-radius: 6px;
+  .card-inner,
+  .card-front,
+  .card-back {
+    position: relative;
+    height: auto;
+  }
+
+  .card.flipped .card-inner {
+    transform: none;
+  }
+
+  .card-front,
+  .card-back {
+    backface-visibility: visible;
+    display: none;
+  }
+
+  .card.flipped .card-back {
+    display: block;
+  }
+
+  .card:not(.flipped) .card-front {
+    display: block;
   }
 
   .card-front h3,
@@ -350,6 +369,7 @@
     });
   });
 </script>
+
 
       const cars = [
         {
