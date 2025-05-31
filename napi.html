@@ -72,11 +72,11 @@
 
 
 <section class="card-grid">
-  <!-- Kártya 1 -->
+  <!-- Kártya sablon (többszörözhető) -->
   <div class="card">
     <div class="card-inner">
       <div class="card-front">
-        <img src="3.png" alt="BMW M2">
+        <img src="3.png" alt="BMW M2" loading="lazy">
         <h3>BMW M2</h3>
       </div>
       <div class="card-back">
@@ -99,10 +99,11 @@
       </div>
     </div>
   </div>
-<div class="card">
+
+    <div class="card">
     <div class="card-inner">
       <div class="card-front">
-        <img src="3.png" alt="BMW M2">
+        <img src="3.png" alt="BMW M2" loading="lazy">
         <h3>BMW M2</h3>
       </div>
       <div class="card-back">
@@ -121,15 +122,15 @@
           <div><strong>Heti ár:</strong></div><div>170.000 Ft</div>
           <div><strong>Havi ár:</strong></div><div>670.000 Ft</div>
         </div>
-        <a class="whatsapp-button" href="https://wa.me/36301234567" target="_blank">Lépjen kapcsolatba velünk</a>
+        <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">Lépjen kapcsolatba velünk</a>
       </div>
     </div>
   </div>
 
-  <div class="card">
+    <div class="card">
     <div class="card-inner">
       <div class="card-front">
-        <img src="3.png" alt="BMW M2">
+        <img src="3.png" alt="BMW M2" loading="lazy">
         <h3>BMW M2</h3>
       </div>
       <div class="card-back">
@@ -148,15 +149,15 @@
           <div><strong>Heti ár:</strong></div><div>170.000 Ft</div>
           <div><strong>Havi ár:</strong></div><div>670.000 Ft</div>
         </div>
-        <a class="whatsapp-button" href="https://wa.me/36301234567" target="_blank">Lépjen kapcsolatba velünk</a>
+        <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">Lépjen kapcsolatba velünk</a>
       </div>
     </div>
   </div>
 
-  <div class="card">
+    <div class="card">
     <div class="card-inner">
       <div class="card-front">
-        <img src="3.png" alt="BMW M2">
+        <img src="3.png" alt="BMW M2" loading="lazy">
         <h3>BMW M2</h3>
       </div>
       <div class="card-back">
@@ -175,11 +176,14 @@
           <div><strong>Heti ár:</strong></div><div>170.000 Ft</div>
           <div><strong>Havi ár:</strong></div><div>670.000 Ft</div>
         </div>
-        <a class="whatsapp-button" href="https://wa.me/36301234567" target="_blank">Lépjen kapcsolatba velünk</a>
+        <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">Lépjen kapcsolatba velünk</a>
       </div>
     </div>
   </div>
   
+
+  <!-- További kártyák -->
+  <!-- Másold az előző div.card blokkot, és módosítsd a tartalmat! -->
 </section>
 
 <style>
@@ -192,7 +196,7 @@
 
 .card {
   perspective: 1000px;
-  width: 85%; /* 15%-kal kisebb */
+  width: 85%;
   aspect-ratio: 4 / 5;
   cursor: pointer;
   margin: auto;
@@ -223,7 +227,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* ---- E L Ő L A P ---- */
+/* Előlap */
 .card-front {
   display: flex;
   flex-direction: column;
@@ -245,7 +249,7 @@
   font-weight: 600;
 }
 
-/* ---- H Á T L A P ---- */
+/* Hátlap */
 .card-back {
   transform: rotateY(180deg);
   padding: 20px;
@@ -297,19 +301,7 @@
   background-color: #1ebc59;
 }
 
-/* ---- R E S P O N Z Í V ---- */
-@media (max-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Reszponzív */
 @media (max-width: 1024px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -349,8 +341,6 @@
     padding: 8px 12px;
   }
 }
-
-  
 </style>
 
 <script>
@@ -361,13 +351,6 @@
   });
 </script>
 
-
-  
-    <main class="container" id="car-list">
-      <!-- Autók itt jelennek meg -->
-    </main>
-
-    <script>
       const cars = [
         {
           name: 'Audi A4',
