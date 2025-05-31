@@ -309,6 +309,48 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 16px;
+  }
+
+  .card {
+    width: 95%;
+    aspect-ratio: auto;
+  }
+
+  .card-front img {
+    border-radius: 6px;
+  }
+
+  .card-front h3,
+  .card-back h3 {
+    font-size: 1rem;
+  }
+
+  .car-info-grid,
+  .pricing-grid {
+    font-size: 0.85rem;
+    gap: 4px 8px;
+  }
+
+  .whatsapp-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+  
 </style>
 
 <script>
