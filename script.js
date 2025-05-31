@@ -100,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//card
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
 
 // Oldal betöltésekor
 document.addEventListener('DOMContentLoaded', updateTexts);
@@ -204,8 +208,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
-    });
-  });
+
+   
