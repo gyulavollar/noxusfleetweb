@@ -169,13 +169,7 @@
   <p data-translate="bookingSubtitle" style="color: #555; font-size: 0.95rem; margin-top: 8px;"></p>
 </section>
 
-<script>
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
-    });
-  });
-</script>
+
 
 <section class="card-grid">
   <div class="card">
@@ -410,7 +404,16 @@
     setInterval(showNextSlide, 4000);
   </script>
 </section>
- 
+
+
+
+  <script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
 </body>
 
 <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
