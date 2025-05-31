@@ -99,7 +99,7 @@
     </div>
   </div>
 
-    <div class="card">
+  <div class="card">
     <div class="card-inner">
       <div class="card-front">
         <img src="3.png" alt="BMW M2" loading="lazy">
@@ -152,7 +152,6 @@
       </div>
     </div>
   </div>
-
     <div class="card">
     <div class="card-inner">
       <div class="card-front">
@@ -178,8 +177,33 @@
         <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">Lépjen kapcsolatba velünk</a>
       </div>
     </div>
+  </div>  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="3.png" alt="BMW M2" loading="lazy">
+        <h3>BMW M2</h3>
+      </div>
+      
+      <div class="card-back">
+        <h3>BMW M2</h3>
+        <div class="car-info-grid">
+          <div><strong>Gyártás éve:</strong></div><div>03/2022</div>
+          <div><strong>Üzemanyag:</strong></div><div>Benzin</div>
+          <div><strong>Hengerűrtartalom:</strong></div><div>3,855 cm³</div>
+          <div><strong>Teljesítmény:</strong></div><div>456 kW, 620 LE</div>
+          <div><strong>Hajtás:</strong></div><div>Hátsókerék-meghajtás</div>
+          <div><strong>Sebességváltó:</strong></div><div>Automata</div>
+        </div>
+        <div class="pricing-grid">
+          <h4>FOGLALÁSI OPCIÓK</h4>
+          <div><strong>Napi ár:</strong></div><div>25.000 Ft</div>
+          <div><strong>Heti ár:</strong></div><div>170.000 Ft</div>
+          <div><strong>Havi ár:</strong></div><div>670.000 Ft</div>
+        </div>
+        <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">Lépjen kapcsolatba velünk</a>
+      </div>
+    </div>
   </div>
-  
 </section>
 
 <style>
@@ -251,6 +275,7 @@
 /* Hátlap */
 .card-back {
   transform: rotateY(180deg);
+  direction: ltr;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -322,42 +347,19 @@
   .card-inner,
   .card-front,
   .card-back {
-    position: relative;
-    height: auto;
-  }
-
-  .card.flipped .card-inner {
-    transform: none;
+    height: 100%;
   }
 
   .card-front,
   .card-back {
-    backface-visibility: visible;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backface-visibility: hidden;
   }
 
-  .card.flipped .card-back {
-    display: block;
-  }
-
-  .card:not(.flipped) .card-front {
-    display: block;
-  }
-
-  .card-front h3,
-  .card-back h3 {
-    font-size: 1rem;
-  }
-
-  .car-info-grid,
-  .pricing-grid {
-    font-size: 0.85rem;
-    gap: 4px 8px;
-  }
-
-  .whatsapp-button {
-    font-size: 0.9rem;
-    padding: 8px 12px;
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
   }
 }
 </style>
