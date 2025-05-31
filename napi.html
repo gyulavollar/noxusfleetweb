@@ -61,17 +61,6 @@
   </div>
 </header>
 
-  <script>
-  document.querySelectorAll('.car-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const inner = card.querySelector('.card-inner');
-      inner.classList.toggle('flipped');
-    });
-  });
-</script>
-
-
-
     <section style="text-align: center; padding: 20px 15px; background-color: #f2f2f2;">
   <h2 style="font-size: 1.8rem; font-weight: 600; color: #111; margin: 0;">
     Foglald le legkedveltebb kocsijainkat
@@ -189,6 +178,15 @@
   cursor: pointer;
 }
   </style>
+   
+  <script>
+  document.querySelectorAll('.car-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const inner = card.querySelector('.card-inner');
+      inner.classList.toggle('flipped');
+    });
+  });
+</script>
 
 
 
