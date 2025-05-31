@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noxus Fleet</title>
@@ -147,27 +146,113 @@
 </section>
 
 
-<div class="car-card">
-  <div class="card-inner">
-    <div class="card-front">
-      <img src="bmw-m2.png" alt="BMW M2" />
-      <h3>BMW M2</h3>
+<section class="car-grid-section">
+  <h2>Foglalj le prémium autóink közül</h2>
+  <div class="car-grid">
+    <!-- Autókártya - ismételd 8x -->
+    <div class="car-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="bmw-m2.png" alt="BMW M2">
+          <h3>BMW M2</h3>
+        </div>
+        <div class="card-back">
+          <h3>BMW M2</h3>
+          <p><strong>Gyártás éve:</strong> 03/2022</p>
+          <p><strong>Futott km:</strong> 900 km</p>
+          <p><strong>Üzemanyag:</strong> Benzin</p>
+          <p><strong>Teljesítmény:</strong> 456 kW, 620 LE</p>
+          <p><strong>Váltó:</strong> Automata</p>
+          <p><strong>Napi ár:</strong> €155</p>
+          <p><strong>Havi ár:</strong> €2,797</p>
+          <button>Lépjen kapcsolatba velünk</button>
+        </div>
+      </div>
     </div>
-    <div class="card-back">
-      <h3>BMW M2</h3>
-      <p><strong>Gyártás éve:</strong> 03/2022</p>
-      <p><strong>Futott km:</strong> 900 km</p>
-      <p><strong>Üzemanyag:</strong> Benzin</p>
-      <p><strong>Teljesítmény:</strong> 456 kW, 620 LE</p>
-      <p><strong>Váltó:</strong> Automata</p>
-      <p><strong>Napi ár:</strong> €155</p>
-      <p><strong>Heti ár:</strong> €1,059</p>
-      <p><strong>Havi ár:</strong> €2,797</p>
-      <button>Kapcsolatfelvétel</button>
-    </div>
-  </div>
-</div>
 
+    <!-- Itt ismételd meg a további 7 kártyát más modellekkel -->
+    <!-- ... -->
+  </div>
+</section>
+
+<style>
+.car-grid-section {
+  padding: 60px 20px;
+  background-color: #0a0a0a;
+  color: white;
+  text-align: center;
+}
+
+.car-grid-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.car-card {
+  width: 280px;
+  height: 420px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: #111;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-back button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #00c3ff;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+  </style>
 
 
 
