@@ -79,24 +79,29 @@
         <img src="bmw-m2.png" alt="BMW M2">
         <h3>BMW M2</h3>
       </div>
-      <div class="card-back">
-        <h3>BMW M2</h3>
-        <div class="specs">
-          <p><strong>Gyártás éve:</strong> 03/2022</p>
-          <p><strong>Futott km:</strong> 900 km</p>
-          <p><strong>Üzemanyag:</strong> Benzin</p>
-          <p><strong>Hengerűrtartalom:</strong> 3,855 cm³</p>
-          <p><strong>Teljesítmény:</strong> 456 kW, 620 LE</p>
-          <p><strong>Hajtás:</strong> Hátsókerék-meghajtás</p>
-          <p><strong>Sebességváltó:</strong> Automata</p>
-        </div>
-        <div class="pricing">
-          <h4>FOGLALÁSI OPCIÓK</h4>
-          <p><strong>Napi ár:</strong> €155</p>
-          <p><strong>Heti ár:</strong> €1,059</p>
-          <p><strong>Havi ár:</strong> €2,797</p>
-          <p><strong>Éves ár:</strong> Egyedi ár. Keressen minket!</p>
-        </div>
+     <div class="card-back">
+  <h3>BMW M2</h3>
+  <div class="car-info-grid">
+    <div><strong>Gyártás éve:</strong></div><div>03/2022</div>
+    <div><strong>Futott km:</strong></div><div>900 km</div>
+    <div><strong>Üzemanyag:</strong></div><div>Benzin</div>
+    <div><strong>Hengerűrtartalom:</strong></div><div>3,855 cm³</div>
+    <div><strong>Teljesítmény:</strong></div><div>456 kW, 620 LE</div>
+    <div><strong>Hajtás:</strong></div><div>Hátsókerék-meghajtás</div>
+    <div><strong>Sebességváltó:</strong></div><div>Automata</div>
+  </div>
+
+  <div class="pricing-grid">
+    <h4>FOGLALÁSI OPCIÓK</h4>
+    <div><strong>Napi ár:</strong></div><div>€155</div>
+    <div><strong>Heti ár:</strong></div><div>€1,059</div>
+    <div><strong>Havi ár:</strong></div><div>€2,797</div>
+    <div><strong>Éves ár:</strong></div><div>Egyedi ár. Keressen minket!</div>
+  </div>
+
+  <button>Lépjen kapcsolatba velünk</button>
+</div>
+
         <button>Lépjen kapcsolatba velünk</button>
       </div>
     </div>
@@ -229,6 +234,26 @@
     grid-template-columns: 1fr;
   }
 }
+
+.car-info-grid,
+.pricing-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.pricing-grid h4 {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  border-top: 1px solid #666;
+  padding-top: 8px;
+}
+
+  
   </style>
    
 <script>
