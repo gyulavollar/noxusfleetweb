@@ -81,17 +81,28 @@
           <img src="bmw-m2.png" alt="BMW M2">
           <h3>BMW M2</h3>
         </div>
-        <div class="card-back">
-          <h3>BMW M2</h3>
-          <p><strong>Gyártás éve:</strong> 03/2022</p>
-          <p><strong>Futott km:</strong> 900 km</p>
-          <p><strong>Üzemanyag:</strong> Benzin</p>
-          <p><strong>Teljesítmény:</strong> 456 kW, 620 LE</p>
-          <p><strong>Váltó:</strong> Automata</p>
-          <p><strong>Napi ár:</strong> €155</p>
-          <p><strong>Havi ár:</strong> €2,797</p>
-          <button>Lépjen kapcsolatba velünk</button>
-        </div>
+       <div class="card-back">
+  <h3>BMW M2</h3>
+  <div class="specs">
+    <p><strong>Gyártás éve:</strong> 03/2022</p>
+    <p><strong>Futott km:</strong> 900 km</p>
+    <p><strong>Üzemanyag:</strong> Benzin</p>
+    <p><strong>Hengerűrtartalom:</strong> 3,855 cm³</p>
+    <p><strong>Teljesítmény:</strong> 456 kW, 620 LE</p>
+    <p><strong>Hajtás:</strong> Hátsókerék-meghajtás</p>
+    <p><strong>Sebességváltó:</strong> Automata</p>
+  </div>
+  <hr>
+  <div class="pricing">
+    <h4>FOGLALÁSI OPCIÓK</h4>
+    <p><strong>Napi ár:</strong> €155</p>
+    <p><strong>Heti ár:</strong> €1,059</p>
+    <p><strong>Havi ár:</strong> €2,797</p>
+    <p><strong>Éves ár:</strong> Egyedi ár. Keressen minket!</p>
+  </div>
+  <button>Lépjen kapcsolatba velünk</button>
+</div>
+
       </div>
     </div>
 
@@ -137,46 +148,48 @@
 
 .card-front,
 .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background-color: #111;
-  backface-visibility: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-front img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.card-back {
   transform: rotateY(180deg);
   text-align: left;
   font-size: 0.9rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #111;
+  color: #fff;
 }
 
-.card-inner.flipped {
-  transform: rotateY(180deg);
+.card-back h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-back .specs p,
+.card-back .pricing p {
+  margin: 4px 0;
+}
+
+.card-back .pricing h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0 6px;
+  border-top: 1px solid #666;
+  padding-top: 8px;
 }
 
 .card-back button {
-  margin-top: 10px;
+  margin-top: 14px;
   padding: 10px 16px;
-  background-color: #00c3ff;
+  background-color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #000;
   font-weight: bold;
   cursor: pointer;
+  align-self: center;
 }
+
   </style>
    
   <script>
