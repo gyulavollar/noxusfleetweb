@@ -73,31 +73,40 @@
 
 <section class="card-grid">
   <!-- Kártya 1 -->
-  <div class="card">
-    <div class="card-inner">
-      <div class="card-front">
-        <img src="bmw-m2.png" alt="BMW M2">
-        <h3>BMW M2</h3>
-      </div>
-     <div class="card-back">
-  <h3>BMW M2</h3>
-  <div class="car-info-grid">
-    <div><strong>Gyártás éve:</strong></div><div>03/2022</div>
-    <div><strong>Futott km:</strong></div><div>900 km</div>
-    <div><strong>Üzemanyag:</strong></div><div>Benzin</div>
-    <div><strong>Hengerűrtartalom:</strong></div><div>3,855 cm³</div>
-    <div><strong>Teljesítmény:</strong></div><div>456 kW, 620 LE</div>
-    <div><strong>Hajtás:</strong></div><div>Hátsókerék-meghajtás</div>
-    <div><strong>Sebességváltó:</strong></div><div>Automata</div>
-  </div>
+  <div class="flip-card" onclick="this.classList.toggle('flipped')">
+  <div class="flip-card-inner">
+    <!-- Front -->
+    <div class="flip-card-front">
+      <img src="bmw-m4.png" alt="BMW M4" class="car-image">
+      <h3>BMW M4</h3>
+    </div>
 
-  <div class="pricing-grid">
-    <h4>FOGLALÁSI OPCIÓK</h4>
-    <div><strong>Napi ár:</strong></div><div>€155</div>
-    <div><strong>Heti ár:</strong></div><div>€1,059</div>
-    <div><strong>Havi ár:</strong></div><div>€2,797</div>
-    <div><strong>Éves ár:</strong></div><div>Egyedi ár. Keressen minket!</div>
+    <!-- Back -->
+    <div class="flip-card-back">
+      <div class="card-section">
+        <h3><strong>BMW 7 SERIES</strong></h3>
+        <div class="details">
+          <p><strong>Gyártás éve:</strong> 03/2022</p>
+          <p><strong>Futott km:</strong> 900 km</p>
+          <p><strong>Üzemanyag:</strong> Benzin</p>
+          <p><strong>Hengerűrtartalom:</strong> 3,855 cm³</p>
+          <p><strong>Teljesítmény:</strong> 456 kW, 620 LE</p>
+          <p><strong>Hajtás:</strong> Hátsókerék-meghajtás</p>
+          <p><strong>Sebességváltó:</strong> Automata</p>
+        </div>
+      </div>
+      <hr />
+      <div class="card-section">
+        <h4><strong>FOGLALÁSI OPCIÓK</strong></h4>
+        <p><strong>Napi ár:</strong> €155</p>
+        <p><strong>Heti ár:</strong> €1,059</p>
+        <p><strong>Havi ár:</strong> €2,797</p>
+        <p><strong>Éves ár:</strong> Egyedi ár. Keressen minket!</p>
+        <button class="contact-button">Lépjen kapcsolatba</button>
+      </div>
+    </div>
   </div>
+</div>
 
   <button>Lépjen kapcsolatba velünk</button>
 </div>
@@ -115,21 +124,16 @@
 
 
 <style>
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 40px 20px;
-}
-
-.card {
+/* Alapkártya /
+.flip-card {
+  width: 320px;
+  height: 500px;
   perspective: 1000px;
-  width: 100%;
-  aspect-ratio: 4 / 5;
   cursor: pointer;
+  margin: 20px auto;
 }
 
-.card-inner {
+.flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -137,123 +141,72 @@
   transform-style: preserve-3d;
 }
 
-.card.flipped .card-inner {
+/ Aktiválás kattintásra /
+.flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.card-front,
-.card-back {
+/ Előlap és hátlap /
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  backface-visibility: hidden;
   background-color: #111;
   color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  backface-visibility: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-/* ---- E L Ő L A P ---- */
-.card-front {
+.flip-card-front {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px;
 }
 
-.card-front img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.card-front h3 {
-  margin-top: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-/* ---- H Á T L A P ---- */
-.card-back {
+.flip-card-back {
   transform: rotateY(180deg);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-.card-back h3 {
-  font-size: 1.2rem;
+/ Kép /
+.car-image {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/ Tartalom formázás /
+.card-section {
   margin-bottom: 10px;
-  text-align: center;
 }
 
-.card-back .specs p,
-.card-back .pricing p {
+.details p,
+.card-section p {
   margin: 4px 0;
-  font-size: 0.92rem;
+  font-size: 14px;
 }
 
-.card-back .pricing h4 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 12px 0 6px;
-  border-top: 1px solid #666;
-  padding-top: 8px;
-}
-
-.card-back button {
-  margin-top: 14px;
-  padding: 10px 16px;
-  background-color: #fff;
+/ Gomb */
+.contact-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: white;
+  color: black;
   border: none;
-  border-radius: 6px;
-  color: #000;
+  border-radius: 5px;
   font-weight: bold;
-  cursor: pointer;
-  align-self: center;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.card-back button:hover {
+.contact-button:hover {
   background-color: #ddd;
 }
 
-/* ---- R E S P O N Z Í V ---- */
-@media (max-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.car-info-grid,
-.pricing-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 12px;
-  font-size: 0.92rem;
-  margin-bottom: 16px;
-}
-
-.pricing-grid h4 {
-  grid-column: 1 / -1;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  border-top: 1px solid #666;
-  padding-top: 8px;
-}
-
-  
   </style>
    
 <script>
