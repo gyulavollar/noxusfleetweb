@@ -857,3 +857,7 @@ footer ul li a {
 footer a:hover {
   color: var(--hover-blue);
 }
+
+section {
+  background-color: #000 !important;
+}
