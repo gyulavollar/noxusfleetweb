@@ -378,13 +378,13 @@ header {
 .card-grid {
   display: flex;
   justify-content: center;         /* középre igazítás */
-  gap: 10px;                       /* kisebb térköz */
+  gap: 20px;                       /* kisebb térköz */
   padding: 20px;
   flex-wrap: wrap;                /* kis képernyőn törhet */
 }
 
 .card {
-  width: 22%;
+  width: 30%;
   min-width: 220px;
   max-width: 280px;
   perspective: 1000px;
