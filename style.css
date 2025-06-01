@@ -220,11 +220,13 @@ header {
 .mobile-menu {
   position: fixed;
   top: var(--header-height);
-  left: -100%;
+  left: 0;
+  transform: translateX(-100%);
+  opacity: 0;
   width: 100%;
-  height: calc(120vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
   background: rgba(0, 0, 0, 0.90);
-  transition: left var(--transition-speed) ease-out;
+  transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 999;
   overflow-y: auto;
   padding: 20px;
@@ -233,7 +235,8 @@ header {
 }
 
 .mobile-menu.open {
-  left: 0;
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* Mobilmenü linkek - Centered version */
