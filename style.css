@@ -521,7 +521,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 90%;
     width: 100%;
     backface-visibility: hidden;
     transition: opacity 0.3s ease;
