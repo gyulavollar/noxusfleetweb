@@ -378,13 +378,13 @@ header {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 40px 20px;
+  gap: 10px;
+  padding: 30px 20px;
 }
 
 .card {
   perspective: 1000px;
-  width: 80%;
+  width: 60%;
   aspect-ratio: 4 / 5;
   cursor: pointer;
 }
