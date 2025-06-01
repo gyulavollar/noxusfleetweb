@@ -21,43 +21,46 @@
 </head>
 <body>
 <header>
-  <a href="index.html" class="logo">
-    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
-  </a>
+  <div class="header-container">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
+    </a>
 
-  <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
-    <span></span>
-  </button>
+    <nav class="desktop-nav">
+      <ul>
+        <li class="dropdown">
+          <a href="rent.html" data-translate="rent1">KÖLCSÖNZÉS</a>
+        </li>
+        <li class="dropdown">
+          <a href="sale.html" data-translate="forsale1">ELADÓ</a>
+        </li>
+        <li><a href="contact.html" data-translate="connection">KAPCSOLAT</a></li>
+      </ul>
+    </nav>
 
-  <nav class="desktop-nav">
-    <ul>
-      <li class="dropdown">
-        <a href="rent.html" data-translate="rent1"> </a>
-      </li>
-      <li class="dropdown">
-        <a href="sale.html" data-translate="forsale1"> </a>
-      </li>
-      <li><a href="contact.html" data-translate="connection">KAPCSOLAT</a></li>
-      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
-    </ul>
-  </nav>
+    <button id="langSwitchDesktop" class="lang-button">English</button>
+
+    <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <nav>
       <ul>
-      <li class="dropdown">
-        <a href="rent.html" data-translate="rent1"> </a>
-      </li>
-      <li class="dropdown">
-        <a href="sale.html" data-translate="forsale1"> </a>
-      </li>
-      <li><a href="kapcsolat.html" data-translate="connection">KAPCSOLAT</a></li>
-      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
-    </ul>
+        <li class="dropdown">
+          <a href="rent.html" data-translate="rent1">KÖLCSÖNZÉS</a>
+        </li>
+        <li class="dropdown">
+          <a href="sale.html" data-translate="forsale1">ELADÓ</a>
+        </li>
+        <li><a href="kapcsolat.html" data-translate="connection">KAPCSOLAT</a></li>
+        <li><button id="langSwitchMobile" class="lang-button">English</button></li>
+      </ul>
     </nav>
   </div>
 </header>
-
+  
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
