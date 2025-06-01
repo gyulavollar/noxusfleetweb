@@ -376,10 +376,11 @@ header {
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 30px 20px;
+  display: flex;
+  justify-content: center;         /* középre igazítás */
+  gap: 10px;                       /* kisebb térköz */
+  padding: 20px;
+  flex-wrap: wrap;                /* kis képernyőn törhet */
 }
 
 .card {
