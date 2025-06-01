@@ -36,6 +36,23 @@ main {
   padding: 2rem;
 }
 
+
+/* -------------------------------------------------- */
+/* -------------------- KÖZPONTI KONTÉNER -------------------- */
+/* -------------------------------------------------- */
+.container-center {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
 @media (max-width: 768px) {
   main {
     padding-top: 70px;
