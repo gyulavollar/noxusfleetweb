@@ -384,7 +384,7 @@ header {
 
 .card {
   perspective: 1000px;
-  width: 100%;
+  width: 80%;
   aspect-ratio: 4 / 5;
   cursor: pointer;
 }
