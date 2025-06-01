@@ -844,3 +844,30 @@ footer ul li a {
 footer a:hover {
   color: var(--hover-blue);
 }
+
+@media (max-width: 600px) {
+  .card-grid {
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .card {
+    min-height: 480px;
+  }
+
+  .card-front,
+  .card-back {
+    height: 100%;
+  }
+
+  .card-back {
+    overflow-y: auto;
+    padding: 16px 12px;
+  }
+
+  .car-info-grid,
+  .pricing-grid {
+    font-size: 0.85rem;
+    gap: 4px 6px;
+  }
+}
