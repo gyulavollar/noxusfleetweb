@@ -384,8 +384,10 @@ header {
 }
 
 .card {
+  width: 22%;
+  min-width: 220px;
+  max-width: 280px;
   perspective: 1000px;
-  width: 60%;
   aspect-ratio: 4 / 5;
   cursor: pointer;
 }
