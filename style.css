@@ -498,6 +498,7 @@ header {
   .card-grid {
     display: flex;
     flex-direction: column;
+    align-items: center; /* <<< ez a kulcs */
     gap: 16px;
     padding: 10px;
   }
