@@ -186,3 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+      // Klikk a menün kívül -> zárja az összes dropdown-t
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown")) {
+            document.querySelectorAll(".dropdown.open").forEach(drop => {
+                drop.classList.remove("open");
+                drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
+            });
+        }
+    });
+});
