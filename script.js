@@ -12,7 +12,7 @@ const translations = {
     connection:"Kapcsolat",
     bookingTitle: "Legkedveltebb autóink",
     bookingSubtitle: "",
-    welcomeTitle: "Üdvözlünk a NOXUS FLEET-nél",
+    welcomeTitle: "Üdvözlünk a NOXUS FLEET világában",
     about_title: "Rólunk",
     about_text1:"A Noxus Fleet a prémium autóbérlés lendületét és minőségét hozza el számodra. Modelljeink azonnal elérhetők, de egyedi igények alapján is beszerezzük a számodra tökéletes autót. A Noxus Fleet azoknak szól, akik a vezetés élményét keresik – kompromisszumok nélkül.",
     about_text2:"",
