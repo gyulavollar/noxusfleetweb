@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-      // Klikk a menün kívül -> zárja az összes dropdown-t
+    // Klikk a menün kívül -> zárja az összes dropdown-t
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".dropdown")) {
             document.querySelectorAll(".dropdown.open").forEach(drop => {
@@ -197,3 +197,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+   
