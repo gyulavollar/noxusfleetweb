@@ -579,54 +579,6 @@ header {
   }
 }
 
-/* -------------------------------------------------- */
-/* -------------------- CARD SLIDER -------------------- */
-/* -------------------------------------------------- */
-@media (max-width: 768px) {
-  .card-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 1rem 0;
-    margin: 1rem -1rem;
-    width: calc(100% + 2rem);
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-
-  .card-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .card {
-    flex: 0 0 80%;
-    scroll-snap-align: center;
-    margin: 0 10%;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-    opacity: 0.7;
-    min-width: auto;
-    max-width: none;
-    width: auto;
-  }
-
-  .card.active {
-    transform: scale(1);
-    opacity: 1;
-    box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
-    z-index: 1;
-  }
-
-  .card:first-child {
-    margin-left: 20%;
-  }
-
-  .card:last-child {
-    margin-right: 20%;
-  }
-}
 
 /* -------------------------------------------------- */
 /* -------------------- MEDIA QUERIES -------------------- */
