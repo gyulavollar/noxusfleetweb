@@ -48,6 +48,29 @@ main {
   font-style: normal;
 }
 
+@media (min-width: 769px) {
+  /* WebKit alapú böngészők (Chrome, Edge, Safari) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000; /* Fekete háttér */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0abab5; /* Tiffany Blue */
+    border-radius: 10px;
+    border: 2px solid #000;
+  }
+
+  /* Firefox */
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: #0abab5 #000;
+  }
+}
+
 
 /* -------------------------------------------------- */
 /* -------------------- KÖZPONTI KONTÉNER -------------------- */
