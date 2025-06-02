@@ -119,6 +119,94 @@
       console.log('Nyelv átváltva:', currentLang);
     });
   });
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth <= 768) {
+    const slider = document.querySelector('.kedvencek');
+    const cards = document.querySelectorAll('.car-card');
+    let currentIndex = 0;
+    
+    // Kezdeti állapot beállítása
+    updateCards();
+    
+    // Eseményfigyelő a scroll-hoz
+    slider.addEventListener('scroll', function() {
+      const scrollPosition = slider.scrollLeft;
+      const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+      currentIndex = Math.round(scrollPosition / cardWidth);
+      updateCards();
+    });
+    
+    // Kártyák frissítése
+    function updateCards() {
+      cards.forEach((card, index) => {
+        card.classList.toggle('active', index === currentIndex);
+      });
+    }
+    
+    // Opcionális: Gombok a navigációhoz
+    const prevBtn = document.createElement('button');
+    const nextBtn = document.createElement('button');
+    
+    prevBtn.innerHTML = '&larr;';
+    nextBtn.innerHTML = '&rarr;';
+    
+    prevBtn.style.position = 'fixed';
+    prevBtn.style.left = '10px';
+    prevBtn.style.top = '50%';
+    prevBtn.style.transform = 'translateY(-50%)';
+    prevBtn.style.zIndex = '1000';
+    prevBtn.style.background = 'rgba(0,0,0,0.5)';
+    prevBtn.style.color = 'white';
+    prevBtn.style.border = 'none';
+    prevBtn.style.borderRadius = '50%';
+    prevBtn.style.width = '40px';
+    prevBtn.style.height = '40px';
+    prevBtn.style.fontSize = '20px';
+    prevBtn.style.cursor = 'pointer';
+    
+    nextBtn.style.position = 'fixed';
+    nextBtn.style.right = '10px';
+    nextBtn.style.top = '50%';
+    nextBtn.style.transform = 'translateY(-50%)';
+    nextBtn.style.zIndex = '1000';
+    nextBtn.style.background = 'rgba(0,0,0,0.5)';
+    nextBtn.style.color = 'white';
+    nextBtn.style.border = 'none';
+    nextBtn.style.borderRadius = '50%';
+    nextBtn.style.width = '40px';
+    nextBtn.style.height = '40px';
+    nextBtn.style.fontSize = '20px';
+    nextBtn.style.cursor = 'pointer';
+    
+    document.body.appendChild(prevBtn);
+    document.body.appendChild(nextBtn);
+    
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        scrollToCard();
+      }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < cards.length - 1) {
+        currentIndex++;
+        scrollToCard();
+      }
+    });
+    
+    function scrollToCard() {
+      const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+      slider.scrollTo({
+        left: currentIndex * cardWidth,
+        behavior: 'smooth'
+      });
+      updateCards();
+    }
+  }
+});
+
 </script>
 
 <section style="
