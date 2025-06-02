@@ -84,6 +84,11 @@ main {
   padding: 0 1rem;
 }
 
+.scroll-container {
+  -webkit-overflow-scrolling: auto;
+  overflow-y: scroll;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
