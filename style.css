@@ -24,6 +24,7 @@ body {
   overscroll-behavior: none;
   position: relative;
   z-index: 0;
+  text-align: center
 }
 
 body, html {
