@@ -148,6 +148,25 @@
   </h1>
 </section>
 
+  <style>
+  @media (min-width: 769px) {
+    section {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section {
+      height: 400px; /* Mobilnézetre optimalizált magasság */
+    }
+    
+    section h1 {
+      font-size: 1.5rem !important; /* Kisebb betűméret mobilon */
+      margin-top: 180px !important; /* Más pozíció mobilon */
+    }
+  }
+</style>
+
  <section style="text-align: center; padding: 20px 15px; background-color: #000000;">
   <h2 data-translate="bookingTitle" style="font-size: 1.8rem; font-weight: 600; color: #f2f2f2; margin: 0;"></h2>
   <p data-translate="bookingSubtitle" style="color: #555; font-size: 0.95rem; margin-top: 8px;"></p>
