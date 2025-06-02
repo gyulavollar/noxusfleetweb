@@ -6,24 +6,14 @@
   --hover-blue: #66d9ff;
   --card-bg: rgba(10, 20, 25, 0.65);
   --text-light: #e0f7f9;
-  --footer-height: 60px;
-  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /* -------------------------------------------------- */
 /* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
 /* -------------------------------------------------- */
-body, html {
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-image: url('carbon.jpg');
   background-size: cover;
   background-position: center;
@@ -32,15 +22,17 @@ body {
   color: var(--text-light);
   position: relative;
   z-index: 0;
-  text-align: center;
-  padding-bottom: var(--footer-height);
+  text-align: center
+}
+
+body, html {
+  overflow-x: hidden;
+  height: 100%;
 }
 
 main {
-  flex: 1;
   padding-top: 80px;
   padding: 2rem;
-  padding-bottom: calc(2rem + var(--footer-height));
 }
 
 .goldman-regular {
@@ -56,25 +48,28 @@ main {
 }
 
 @media (min-width: 769px) {
+  /* WebKit alapú böngészők (Chrome, Edge, Safari) */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #000;
+    background: #000; /* Fekete háttér */
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #0abab5;
+    background-color: #0abab5; /* Tiffany Blue */
     border-radius: 10px;
     border: 2px solid #000;
   }
 
+  /* Firefox */
   body {
     scrollbar-width: thin;
     scrollbar-color: #aef1f6 #000;
   }
 }
+
 
 /* -------------------------------------------------- */
 /* -------------------- KÖZPONTI KONTÉNER -------------------- */
@@ -96,18 +91,11 @@ main {
   main {
     padding-top: 70px;
     padding: 1rem;
-    padding-bottom: calc(var(--footer-height) + 20px);
   }
 
   body {
     background-size: cover;
     background-position: top;
-    min-height: -webkit-fill-available;
-    overscroll-behavior-y: contain;
-  }
-  
-  html {
-    height: -webkit-fill-available;
   }
 }
 
@@ -137,14 +125,16 @@ main {
   text-align: center;
 }
 
+
 /* -------------------------------------------------- */
 /* -------------------- FEJLÉC -------------------- */
 /* -------------------------------------------------- */
+
 header {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0; /* Ez megoldja a scroll-sáv problémát */
   width: auto;
   height: 65px;
   background-color: #000;
@@ -156,6 +146,7 @@ header {
   border-bottom: 1px solid #aef1f6;
   transition: height var(--transition-speed) ease;
 }
+
 
 /* Logo */
 .logo {
@@ -216,6 +207,7 @@ header {
 .desktop-nav .dropdown > button:hover {
   color: var(--hover-blue);
 }
+
 
 /* Mobilmenü gomb */
 .menu-toggle {
@@ -285,13 +277,12 @@ header {
   transform: translateX(-100%);
   opacity: 0;
   width: 100%;
-  height: calc(100vh - var(--header-height) - var(--safe-area-inset-bottom));
+  height: calc(100vh - var(--header-height));
   background: rgba(0, 0, 0, 0.90);
   transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 999;
   overflow-y: auto;
   padding: 20px;
-  padding-bottom: calc(20px + var(--safe-area-inset-bottom));
   box-sizing: border-box;
   backdrop-filter: blur(5px);
 }
@@ -350,7 +341,7 @@ header {
 }
 
 .mobile-menu .dropdown > button::after {
-  display: none;
+  display: none; /* Remove the + icon */
 }
 
 .mobile-menu .dropdown-content {
@@ -429,6 +420,8 @@ header {
   }
 }
 
+
+
 /* -------------------------------------------------- */
 /* -------------------- CARD -------------------- */
 /* -------------------------------------------------- */
@@ -438,10 +431,10 @@ header {
 
 .card-grid {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: center;         /* középre igazítás */
+  gap: 20px;                       /* kisebb térköz */
   padding: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap;                /* kis képernyőn törhet */
 }
 
 .card {
@@ -559,7 +552,7 @@ header {
   .card-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* <<< ez a kulcs */
     gap: 16px;
     padding: 10px;
   }
@@ -568,7 +561,7 @@ header {
     position: relative;
     width: 100%;
     min-height: 520px;
-    perspective: none;
+    perspective: none; /* nincs szükség 3D nézetre, mert csak fade flip van */
   }
 
   .card-inner {
@@ -622,6 +615,7 @@ header {
   }
 }
 
+
 /* -------------------------------------------------- */
 /* -------------------- MEDIA QUERIES -------------------- */
 /* -------------------------------------------------- */
@@ -652,16 +646,20 @@ header {
   
   .mobile-menu {
     top: var(--header-height);
-    height: calc(100vh - var(--header-height) - var(--safe-area-inset-bottom));
+    height: calc(100vh - var(--header-height));
   }
   
+  /* Görgetés letiltása mobilmenü nyitva */
   body.menu-open {
     overflow: hidden;
     position: fixed;
     width: 100%;
-    height: 100%;
   }
 }
+
+/* A többi stílus maradjon változatlan... */
+
+
 
 /* -------------------------------------------------- */
 /* -------------------- AUTÓKÁRTYÁK -------------------- */
@@ -779,7 +777,7 @@ header {
     width: 50px;
     height: 50px;
     font-size: 24px;
-    bottom: calc(20px + var(--safe-area-inset-bottom));
+    bottom: 20px;
     right: 20px;
   }
 
@@ -887,15 +885,8 @@ header {
 }
 
 /* -------------------------------------------------- */
-/* -------------------- FOOTER FIXES -------------------- */
+/* -------------------- FOOTER -------------------- */
 /* -------------------------------------------------- */
-footer {
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  z-index: 10;
-}
-
 footer a,
 footer nav a,
 footer ul li a {
@@ -905,34 +896,6 @@ footer ul li a {
 
 footer a:hover {
   color: var(--hover-blue);
-}
-
-.footer-bottom {
-  padding: 15px 0;
-  background-color: #000;
-  border-top: 1px solid #aef1f6;
-}
-
-@media (max-width: 768px) {
-  footer {
-    position: static;
-    padding-bottom: var(--safe-area-inset-bottom);
-  }
-  
-  .footer-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: var(--footer-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  main {
-    padding-bottom: calc(var(--footer-height) + 20px);
-  }
 }
 
 @media (max-width: 600px) {
