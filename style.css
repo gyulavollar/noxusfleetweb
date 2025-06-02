@@ -20,7 +20,6 @@ body {
   background-repeat: no-repeat;
   background-color: #000;
   color: var(--text-light);
-  overscroll-behavior: none;
   position: relative;
   z-index: 0;
   text-align: center
