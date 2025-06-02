@@ -1,6 +1,4 @@
-/* -------------------------------------------------- */
 /* -------------------- VÁLTOZÓK -------------------- */
-/* -------------------------------------------------- */
 :root {
   --primary-blue: #00aaff;
   --hover-blue: #66d9ff;
@@ -8,9 +6,7 @@
   --text-light: #e0f7f9;
 }
 
-/* -------------------------------------------------- */
 /* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
-/* -------------------------------------------------- */
 body {
   margin: 0;
   min-height: 100vh;
@@ -70,10 +66,7 @@ main {
   }
 }
 
-
-/* -------------------------------------------------- */
 /* -------------------- KÖZPONTI KONTÉNER -------------------- */
-/* -------------------------------------------------- */
 .container-center {
   max-width: 1100px;
   margin: 0 auto;
@@ -99,9 +92,7 @@ main {
   }
 }
 
-/* -------------------------------------------------- */
 /* -------------------- HERO SZEKCIÓ -------------------- */
-/* -------------------------------------------------- */
 .hero-section {
   position: relative;
   background: url('banner.jpg') center/cover no-repeat;
@@ -125,11 +116,7 @@ main {
   text-align: center;
 }
 
-
-/* -------------------------------------------------- */
 /* -------------------- FEJLÉC -------------------- */
-/* -------------------------------------------------- */
-
 header {
   position: fixed;
   top: 0;
@@ -147,8 +134,6 @@ header {
   transition: height var(--transition-speed) ease;
 }
 
-
-/* Logo */
 .logo {
   height: 100%;
   display: flex;
@@ -164,7 +149,6 @@ header {
   transition: max-height var(--transition-speed) ease;
 }
 
-/* Desktop navigáció */
 .desktop-nav {
   height: 100%;
   display: flex;
@@ -208,8 +192,6 @@ header {
   color: var(--hover-blue);
 }
 
-
-/* Mobilmenü gomb */
 .menu-toggle {
   background: none;
   border: none;
@@ -269,7 +251,6 @@ header {
   transform: scale(1.1);
 }
 
-/* Mobilmenü tartalom */
 .mobile-menu {
   position: fixed;
   top: var(--header-height);
@@ -292,7 +273,6 @@ header {
   opacity: 1;
 }
 
-/* Mobilmenü linkek - Centered version */
 .mobile-menu nav ul {
   display: flex;
   flex-direction: column;
@@ -326,7 +306,6 @@ header {
   background-color: rgba(0, 170, 255, 0.1);
 }
 
-/* Mobil dropdown menük - Centered version */
 .mobile-menu .dropdown > button {
   width: 100%;
   background: none;
@@ -359,7 +338,6 @@ header {
   max-height: 500px;
 }
 
-/* Nyelvváltó gomb */
 .lang-button {
   background: none;
   border: 1px solid #aef1f6;
@@ -374,9 +352,7 @@ header {
   background-color: rgba(174, 241, 246, 0.1);
 }
 
-/* -------------------------------------------------- */
 /* -------------------- Rólunk -------------------- */
-/* -------------------------------------------------- */
 .about-section {
   padding: 2rem;
   display: flex;
@@ -420,21 +396,17 @@ header {
   }
 }
 
-
-
-/* -------------------------------------------------- */
 /* -------------------- CARD -------------------- */
-/* -------------------------------------------------- */
 * {
   box-sizing: border-box;
 }
 
 .card-grid {
   display: flex;
-  justify-content: center;         /* középre igazítás */
-  gap: 20px;                       /* kisebb térköz */
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
-  flex-wrap: wrap;                /* kis képernyőn törhet */
+  flex-wrap: wrap;
 }
 
 .card {
@@ -473,7 +445,6 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Előlap */
 .card-front {
   display: flex;
   flex-direction: column;
@@ -495,7 +466,6 @@ header {
   font-weight: 600;
 }
 
-/* Hátlap */
 .card-back {
   transform: rotateY(180deg);
   direction: ltr;
@@ -530,7 +500,6 @@ header {
   padding-top: 8px;
 }
 
-/* WhatsApp gomb */
 .whatsapp-button {
   display: inline-block;
   text-align: center;
@@ -552,7 +521,7 @@ header {
   .card-grid {
     display: flex;
     flex-direction: column;
-    align-items: center; /* <<< ez a kulcs */
+    align-items: center;
     gap: 16px;
     padding: 10px;
   }
@@ -561,7 +530,7 @@ header {
     position: relative;
     width: 100%;
     min-height: 520px;
-    perspective: none; /* nincs szükség 3D nézetre, mert csak fade flip van */
+    perspective: none;
   }
 
   .card-inner {
@@ -615,10 +584,7 @@ header {
   }
 }
 
-
-/* -------------------------------------------------- */
 /* -------------------- MEDIA QUERIES -------------------- */
-/* -------------------------------------------------- */
 @media (max-width: 768px) {
   :root {
     --header-height: 50px;
@@ -649,21 +615,14 @@ header {
     height: calc(100vh - var(--header-height));
   }
   
-  /* Görgetés letiltása mobilmenü nyitva */
-  body.menu-open {
+ body.menu-open {
     overflow: hidden;
     position: fixed;
     width: 100%;
   }
 }
 
-/* A többi stílus maradjon változatlan... */
-
-
-
-/* -------------------------------------------------- */
 /* -------------------- AUTÓKÁRTYÁK -------------------- */
-/* -------------------------------------------------- */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -731,9 +690,7 @@ header {
   }
 }
 
-/* -------------------------------------------------- */
 /* -------------------- KEDVENCEK GRID -------------------- */
-/* -------------------------------------------------- */
 .kedvencek {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -745,50 +702,7 @@ header {
   justify-content: center;
 }
 
-/* -------------------------------------------------- */
-/* -------------------- WHATSAPP GOMB -------------------- */
-/* -------------------------------------------------- */
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #00bcc2;
-  color: #000;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 5px #000;
-  z-index: 100;
-  transition: transform 0.3s;
-}
-
-.float:hover {
-  transform: scale(1.1);
-}
-
-.my-float {
-  margin-top: 16px;
-}
-
-@media (max-width: 768px) {
-  .float {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .my-float {
-    margin-top: 13px;
-  }
-}
-
-/* -------------------------------------------------- */
 /* -------------------- KAPCSOLAT OLDAL -------------------- */
-/* -------------------------------------------------- */
 .contact-top {
   display: flex;
   flex-wrap: wrap;
@@ -884,9 +798,7 @@ header {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-/* -------------------------------------------------- */
 /* -------------------- FOOTER -------------------- */
-/* -------------------------------------------------- */
 footer a,
 footer nav a,
 footer ul li a {
