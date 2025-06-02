@@ -23,13 +23,15 @@ body {
   position: relative;
   z-index: 0;
   text-align: center;
-  -webkit-overflow-scrolling: auto;
-  overscroll-behavior: contain;
 }
 
 body, html {
   overflow-x: hidden;
   height: 100%;
+  width: 100%;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: contain;
+  overflow-x: hidden;
 }
 
 main {
