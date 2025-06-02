@@ -67,6 +67,32 @@ main {
   }
 }
 
+/* -------------------- KÖZPONTI KONTÉNER -------------------- */
+.container-center {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 70px;
+    padding: 1rem;
+  }
+
+  body {
+    background-size: cover;
+    background-position: top;
+  }
+}
+
 /* -------------------- FEJLÉC -------------------- */
 header {
   position: fixed;
@@ -310,34 +336,52 @@ header {
   background-color: rgba(174, 241, 246, 0.1);
 }
 
-/* -------------------- KÖZPONTI KONTÉNER -------------------- */
-.container-center {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.header-inner {
+/* -------------------- Rólunk -------------------- */
+.about-section {
+  padding: 2rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--header-height);
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding-top: 9rem;
 }
 
-@media (max-width: 768px) {
-  main {
-    padding-top: 70px;
-    padding: 1rem;
+.about-container {
+  background: rgba(43, 50, 55, 0.5);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  backdrop-filter: blur(8px);
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 1.5rem;
   }
 
-  body {
-    background-size: cover;
-    background-position: top;
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
   }
 }
 
 /* -------------------- CARD -------------------- */
- {
+* {
   box-sizing: border-box;
 }
 
@@ -527,51 +571,6 @@ header {
   }
 }
 
-/* -------------------- Rólunk -------------------- */
-.about-section {
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-  padding-top: 9rem;
-}
-
-.about-container {
-  background: rgba(43, 50, 55, 0.5);
-  color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 800px;
-  backdrop-filter: blur(8px);
-}
-
-.about-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.about-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 600px) {
-  .about-container {
-    padding: 1.5rem;
-  }
-
-  .about-title {
-    font-size: 1.5rem;
-  }
-
-  .about-text {
-    font-size: 0.95rem;
-  }
-}
-
-
 /* -------------------- MEDIA QUERIES -------------------- */
 @media (max-width: 768px) {
   :root {
@@ -608,6 +607,74 @@ header {
     overflow: hidden;
     position: fixed;
     width: 100%;
+  }
+}
+
+/* -------------------- AUTÓKÁRTYÁK -------------------- */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.car-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(174, 241, 246, 0.25);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(174, 241, 246, 0.15);
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 1rem;
+}
+
+.car-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #aef1f6;
+}
+
+.car-price {
+  color: #7ddde4;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.car-details {
+  font-size: 0.9rem;
+  color: #d9f3f5;
+}
+
+@media (max-width: 768px) {
+  .car-card img {
+    height: 150px;
+  }
+
+  .car-title {
+    font-size: 1.1rem;
+  }
+
+  .car-price {
+    font-size: 0.95rem;
+  }
+
+  .car-details {
+    font-size: 0.85rem;
   }
 }
 
