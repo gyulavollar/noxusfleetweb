@@ -454,121 +454,7 @@
 
 
 
-      const cars = [
-        {
-          name: 'Audi A4',
-          price: '3 200 000 Ft',
-          description: 'Megkímélt állapot, szervizelt, automata váltó.',
-          year: 2015,
-          km: 135000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Audi+A4',
-        },
-        {
-          name: 'BMW 320d',
-          price: '3 800 000 Ft',
-          description: 'Sportos, alacsony fogyasztás, szép állapot.',
-          year: 2017,
-          km: 110000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=BMW+320d',
-        },
-        {
-          name: 'Volkswagen Golf 7',
-          price: '2 700 000 Ft',
-          description: 'Kiváló városi autó, friss műszaki.',
-          year: 2016,
-          km: 145000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=VW+Golf+7',
-        },
-        {
-          name: 'Toyota Corolla',
-          price: '2 400 000 Ft',
-          description: 'Megbízható, keveset fogyasztó japán autó.',
-          year: 2014,
-          km: 160000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Toyota+Corolla',
-        },
-        {
-          name: 'Ford Focus',
-          price: '2 100 000 Ft',
-          description: 'Kényelmes családi autó, jó állapot.',
-          year: 2013,
-          km: 175000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=Ford+Focus',
-        },
-        {
-          name: 'Opel Astra',
-          price: '1 900 000 Ft',
-          description: 'Olcsó fenntartás, kis fogyasztás.',
-          year: 2012,
-          km: 180000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Opel+Astra',
-        },
-        {
-          name: 'Honda Civic',
-          price: '2 600 000 Ft',
-          description: 'Sportos kinézet, dinamikus motor.',
-          year: 2015,
-          km: 140000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Honda+Civic',
-        },
-        {
-          name: 'Mazda 3',
-          price: '2 850 000 Ft',
-          description: 'Kiváló vezetési élmény, rozsda mentes.',
-          year: 2016,
-          km: 130000,
-          fuel: 'Benzin',
-          img: 'https://via.placeholder.com/400x200?text=Mazda+3',
-        },
-        {
-          name: 'Renault Megane',
-          price: '1 800 000 Ft',
-          description: 'Tágas, kényelmes, jó fogyasztás.',
-          year: 2013,
-          km: 170000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=Renault+Megane',
-        },
-        {
-          name: 'Skoda Octavia',
-          price: '2 900 000 Ft',
-          description: 'Kedvelt modell, nagy csomagtér.',
-          year: 2015,
-          km: 150000,
-          fuel: 'Dízel',
-          img: 'https://via.placeholder.com/400x200?text=Skoda+Octavia',
-        },
-      ];
-
-      const carList = document.getElementById('car-list');
-
-      cars.forEach((car) => {
-        const card = document.createElement('div');
-        card.className = 'car-card';
-        card.innerHTML = `
-        <img src="${car.img}" alt="${car.name}" />
-        <div class="car-info">
-          <h2 class="car-title">${car.name}</h2>
-          <p class="car-price">${car.price}</p>
-          <p class="car-details">${car.description}</p>
-          <p class="param">Évjárat: ${
-            car.year
-          } | Km: ${car.km.toLocaleString()} | Üzemanyag: ${car.fuel}</p>
-        </div>
-      `;
-        carList.appendChild(card);
-      });
-    </script>
-    <!-- Footer -->
-
-    <section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
+<section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
   <style>
     .testimonial-section {
       max-width: 900px;
@@ -594,7 +480,7 @@
 
     .testimonial-author {
       margin-top: 1rem;
-      color: #FFD700;
+      color: #aef1f6;
       font-weight: bold;
     }
 
@@ -606,43 +492,43 @@
 
   <div class="testimonial-section">
     <div class="testimonial-slide active">
-      <p>„Gyors ügyintézés, rugalmas hozzáállás és kiváló állapotú autók.”</p>
+      <p data-translate="testimons1"></p>
       <div class="testimonial-author">– Balázs K.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Kivételes szolgáltatás, minden úgy ment, ahogy ígérték!”</p>
+      <p data-translate="testimons2"></p>
       <div class="testimonial-author">– Réka M.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Kedves ügyfélszolgálat és átlátható bérlés. Csak ajánlani tudom!”</p>
+      <p data-translate="testimons3"></p>
       <div class="testimonial-author">– Zoltán F.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Korrekt árak, prémium autók és tiszta, igényes környezet.”</p>
+      <p data-translate="testimons4"></p>
       <div class="testimonial-author">– Nóra V.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Az autó kiváló állapotú volt, öröm volt vezetni. Minden gördülékenyen ment.”</p>
+      <p data-translate="testimons5"></p>
       <div class="testimonial-author">– Ádám T.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Sosem volt ilyen egyszerű és gyors autót bérelni!”</p>
+      <p data-translate="testimons6"></p>
       <div class="testimonial-author">– Petra H.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Kedvező feltételek, segítőkész csapat. Visszatérő ügyfél leszek!”</p>
+     <p data-translate="testimons7"></p>
       <div class="testimonial-author">– Gergő B.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Minden igényemnek megfelelt az autó. Tényleg prémium élmény.”</p>
+      <p data-translate="testimons8"></p>
       <div class="testimonial-author">– Lilla K.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Pontosan azt kaptam, amit megbeszéltünk. Nincs zsákbamacska!”</p>
+      <p data-translate="testimons9"></p>
       <div class="testimonial-author">– Norbert D.</div>
     </div>
     <div class="testimonial-slide">
-      <p>„Modern autók, remek szerviz és gyors ügyintézés. 10/10.”</p>
+      <p data-translate="testimons10"></p>
       <div class="testimonial-author">– Judit S.</div>
     </div>
   </div>
@@ -660,12 +546,25 @@
     setInterval(showNextSlide, 4000);
   </script>
 </section>
-    
+
+
+
+  <script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
+</body>
+
 <footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
   <style>
     .footer-wrapper {
       max-width: 1300px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .footer-grid {
@@ -674,6 +573,8 @@
       gap: 2rem;
       align-items: start;
       text-align: center;
+      z-index: 1;
+      position: relative;
     }
 
     .footer-section {
