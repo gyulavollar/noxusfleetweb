@@ -27,7 +27,7 @@ const translations = {
     menuFaq: "GYIK",
     openingHoursTitle: "NYITVATARTÁS",
     openingHoursWeekdays: "H-P: 8:00 - 22:00",
-    openingHoursWeekend: "Szo-V: 8:00 - 20:00",
+    openingHoursWeekend: "SZO-V: 8:00 - 20:00",
     contactTitle: "KAPCSOLAT",
     contactPhone: "+36 30 784 6975",
     contactEmail: "booking@noxusfleet.com",
