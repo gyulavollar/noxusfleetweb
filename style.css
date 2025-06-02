@@ -1,3 +1,6 @@
+/* -------------------------------------------------- */
+/* -------------------- VÁLTOZÓK -------------------- */
+/* -------------------------------------------------- */
 :root {
   --primary-blue: #00aaff;
   --hover-blue: #66d9ff;
@@ -5,11 +8,12 @@
   --text-light: #e0f7f9;
 }
 
-/* Alapbeállítások */
-body, html {
+/* -------------------------------------------------- */
+/* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
+/* -------------------------------------------------- */
+body {
   margin: 0;
   min-height: 100vh;
-  overflow-x: hidden;
   background-image: url('carbon.jpg');
   background-size: cover;
   background-position: center;
@@ -17,14 +21,21 @@ body, html {
   background-color: #000;
   color: var(--text-light);
   overscroll-behavior: none;
-  text-align: center;
+  position: relative;
+  z-index: 0;
+  text-align: center
+}
+
+body, html {
+  overflow-x: hidden;
+  height: 100%;
 }
 
 main {
+  padding-top: 80px;
   padding: 2rem;
 }
 
-/* Font beállítások */
 .goldman-regular {
   font-family: "Goldman", sans-serif;
   font-weight: 400;
@@ -36,6 +47,7 @@ main {
   font-weight: 700;
   font-style: normal;
 }
+
 
 /* -------------------------------------------------- */
 /* -------------------- KÖZPONTI KONTÉNER -------------------- */
