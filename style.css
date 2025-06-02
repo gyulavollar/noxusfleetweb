@@ -12,7 +12,6 @@
 /* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
 /* -------------------------------------------------- */
 body {
-  font-family: "SF Pro", sans-serif;
   margin: 0;
   min-height: 100vh;
   background-image: url('carbon.jpg');
@@ -35,6 +34,18 @@ body, html {
 main {
   padding-top: 80px;
   padding: 2rem;
+}
+
+.goldman-regular {
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.goldman-bold {
+  font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 
