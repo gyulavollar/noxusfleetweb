@@ -134,9 +134,9 @@ main {
 header {
   position: fixed;
   top: 0;
-  right: 10px;
   left: 0;
-  width: 100%;
+  right: 0; /* Ez megoldja a scroll-sáv problémát */
+  width: auto;
   height: 65px;
   background-color: #000;
   display: flex;
@@ -147,6 +147,7 @@ header {
   border-bottom: 1px solid #aef1f6;
   transition: height var(--transition-speed) ease;
 }
+
 
 /* Logo */
 .logo {
