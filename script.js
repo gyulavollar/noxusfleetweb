@@ -22,17 +22,17 @@ const translations = {
     testimons8: "A bérlés során minden kérdésemre részletes választ kaptam, nagyon segítőkészek voltak.",
     testimons9: "Kényelmes átvétel és leadás, gördülékeny ügyintézés.",
     testimons10: "Minden zökkenőmentesen zajlott, az autóbérlés teljesen problémamentes volt.",
-    menuTitle: "Menü",
+    menuTitle: "MENÜ",
     menuTerms: "ÁSZF",
     menuFaq: "GYIK",
-    openingHoursTitle: "Nyitvatartás",
+    openingHoursTitle: "NYITVATARTÁS",
     openingHoursWeekdays: "H-P: 8:00 - 22:00",
     openingHoursWeekend: "Szo-V: 8:00 - 20:00",
-    contactTitle: "Kapcsolat",
+    contactTitle: "KAPCSOLAT",
     contactPhone: "+36 30 784 6975",
     contactEmail: "booking@noxusfleet.com",
-    socialTitle: "Kövess minket",
-    footerBottom: "© 2025 Noxus Fleet. Minden jog fenntartva."
+    socialTitle: "KÖVESS MINKET",
+    footerBottom: "© 2025 NOXUS FLEET. MINDEN JOG FENNTARTVA."
   },
   en: {
     rent1: "Rental Cars",
