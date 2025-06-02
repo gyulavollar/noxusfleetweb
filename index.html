@@ -122,8 +122,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth <= 768) {
-    const slider = document.querySelector('.kedvencek');
-    const cards = document.querySelectorAll('.car-card');
+    const slider = document.querySelector('.card-grid');
+    const cards = document.querySelectorAll('.card');
     let currentIndex = 0;
     
     // Kezdeti állapot beállítása
@@ -195,6 +195,17 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollToCard();
       }
     });
+    
+    function scrollToCard() {
+      const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+      slider.scrollTo({
+        left: currentIndex * cardWidth,
+        behavior: 'smooth'
+      });
+      updateCards();
+    }
+  }
+});
     
     function scrollToCard() {
       const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
