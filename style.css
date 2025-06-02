@@ -22,7 +22,9 @@ body {
   color: var(--text-light);
   position: relative;
   z-index: 0;
-  text-align: center
+  text-align: center;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: contain;
 }
 
 body, html {
