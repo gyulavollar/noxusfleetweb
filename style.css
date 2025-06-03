@@ -445,15 +445,16 @@ header {
   border-radius: 12px;
   overflow: hidden;
   backface-visibility: hidden;
-  background: linear-gradient(to bottom, #aef1f6 0%, #000000 80%);
+  background: linear-gradient(to top, #1f3d40 0%, #000000 80%);
   color: white;
   border-radius: 12px;
   overflow: hidden;
   backface-visibility: hidden;
   box-shadow:
-    0 0 8px rgba(99, 200, 207, 0.2),    /* finom külső fény */
-    0 0 16px rgba(99, 200, 207, 0.15),  /* középerős fény */
-    0 0 24px rgba(99, 200, 207, 0.1);   /* szórtabb külső fény */
+  0 0 12px rgba(99, 200, 207, 0.3),
+  0 0 24px rgba(99, 200, 207, 0.2),
+  0 0 40px rgba(99, 200, 207, 0.15);
+
 }
 
 .card-front {
