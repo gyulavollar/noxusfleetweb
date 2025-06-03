@@ -46,22 +46,20 @@ main {
 }
 
 @media (min-width: 769px) {
-  /* WebKit alapú böngészők (Chrome, Edge, Safari) */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #000; /* Fekete háttér */
+    background: #000;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #aef1f6; /* Tiffany Blue */
+    background-color: #aef1f6;
     border-radius: 10px;
     border: 2px solid #000;
   }
 
-  /* Firefox */
   body {
     scrollbar-width: thin;
     scrollbar-color: #aef1f6 #000;
@@ -139,11 +137,9 @@ header {
   padding: 0 15px;
   z-index: 1000;
   border-bottom: 2px solid #aef1f6;
-  box-shadow: 0 2px 4px rgba(174, 241, 246, 0.1); /* finom árnyék – ha nem kell, töröld ezt a sort */
   transition: height var(--transition-speed) ease;
 }
 
-/* Logo */
 .logo {
   height: 100%;
   display: flex;
@@ -159,12 +155,10 @@ header {
   transition: max-height var(--transition-speed) ease;
 }
 
-/* Desktop navigáció */
 .desktop-nav {
   height: 100%;
   display: flex;
   align-items: center;
-  /* border-bottom: 1px solid #aef1f6; --> TÖRÖLVE, mert duplázta a csíkot */
 }
 
 .desktop-nav ul {
@@ -203,7 +197,6 @@ header {
   color: var(--hover-blue);
 }
 
-/* Mobilmenü gomb */
 .menu-toggle {
   background: none;
   border: none;
@@ -263,7 +256,6 @@ header {
   transform: scale(1.1);
 }
 
-/* Mobilmenü tartalom */
 .mobile-menu {
   position: fixed;
   top: var(--header-height);
@@ -286,7 +278,6 @@ header {
   opacity: 1;
 }
 
-/* Mobilmenü linkek - Centered version */
 .mobile-menu nav ul {
   display: flex;
   flex-direction: column;
@@ -320,7 +311,6 @@ header {
   background-color: rgba(0, 170, 255, 0.1);
 }
 
-/* Mobil dropdown menük - Centered version */
 .mobile-menu .dropdown > button {
   width: 100%;
   background: none;
@@ -335,7 +325,7 @@ header {
 }
 
 .mobile-menu .dropdown > button::after {
-  display: none; /* Remove the + icon */
+  display: none; 
 }
 
 .mobile-menu .dropdown-content {
@@ -353,7 +343,6 @@ header {
   max-height: 500px;
 }
 
-/* Nyelvváltó gomb */
 .lang-button {
   background: none;
   border: 1px solid #aef1f6;
@@ -419,10 +408,10 @@ header {
 
 .card-grid {
   display: flex;
-  justify-content: center;         /* középre igazítás */
-  gap: 20px;                       /* kisebb térköz */
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
-  flex-wrap: wrap;                /* kis képernyőn törhet */
+  flex-wrap: wrap;
 }
 
 .card {
@@ -461,7 +450,6 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Előlap */
 .card-front {
   display: flex;
   flex-direction: column;
@@ -483,7 +471,6 @@ header {
   font-weight: 600;
 }
 
-/* Hátlap */
 .card-back {
   transform: rotateY(180deg);
   direction: ltr;
@@ -518,7 +505,6 @@ header {
   padding-top: 8px;
 }
 
-/* WhatsApp gomb */
 .whatsapp-button {
   display: inline-block;
   text-align: center;
@@ -540,7 +526,7 @@ header {
   .card-grid {
     display: flex;
     flex-direction: column;
-    align-items: center; /* <<< ez a kulcs */
+    align-items: center;
     gap: 16px;
     padding: 10px;
   }
@@ -549,7 +535,7 @@ header {
     position: relative;
     width: 100%;
     min-height: 520px;
-    perspective: none; /* nincs szükség 3D nézetre, mert csak fade flip van */
+    perspective: none;
   }
 
   .card-inner {
@@ -634,7 +620,6 @@ header {
     height: calc(100vh - var(--header-height));
   }
   
-  /* Görgetés letiltása mobilmenü nyitva */
   body.menu-open {
     overflow: hidden;
     position: fixed;
@@ -868,7 +853,7 @@ header {
 footer {
   position: relative;
   width: 100%;
-  padding-bottom: env(safe-area-inset-bottom); /* For iPhone notch devices */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 footer a,
