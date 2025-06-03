@@ -142,7 +142,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0; /* Ez megoldja a scroll-sáv problémát */
+  right: 0;
   width: auto;
   height: 65px;
   background-color: #000;
@@ -151,10 +151,10 @@ header {
   align-items: center;
   padding: 0 15px;
   z-index: 1000;
-  border-bottom: 1px solid #aef1f6;
+  border-bottom: 2px solid #aef1f6;
+  box-shadow: 0 2px 4px rgba(174, 241, 246, 0.1); /* finom árnyék – ha nem kell, töröld ezt a sort */
   transition: height var(--transition-speed) ease;
 }
-
 
 /* Logo */
 .logo {
@@ -177,7 +177,7 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #aef1f6;
+  /* border-bottom: 1px solid #aef1f6; --> TÖRÖLVE, mert duplázta a csíkot */
 }
 
 .desktop-nav ul {
@@ -215,7 +215,6 @@ header {
 .desktop-nav .dropdown > button:hover {
   color: var(--hover-blue);
 }
-
 
 /* Mobilmenü gomb */
 .menu-toggle {
