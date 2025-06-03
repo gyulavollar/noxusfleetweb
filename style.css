@@ -513,20 +513,27 @@ header {
 }
 
 .whatsapp-button {
-  display: inline-block;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   margin-top: 14px;
   padding: 10px 16px;
-  background-color: #25D366;
+  background-color: #1da851; /* sötétebb zöld */
   color: white;
   font-weight: bold;
   border-radius: 6px;
   transition: background-color 0.3s;
+  gap: 8px; /* kis tér a szöveg és ikon között */
 }
 
 .whatsapp-button:hover {
-  background-color: #1ebc59;
+  background-color: #178c46; /* még sötétebb hover */
+}
+
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
 }
 
 @media (max-width: 600px) {
