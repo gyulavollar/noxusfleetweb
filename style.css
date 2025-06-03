@@ -519,21 +519,28 @@ header {
   text-decoration: none;
   margin-top: 14px;
   padding: 10px 16px;
-  background-color: #1da851; /* sötétebb zöld */
+  background-color: #1da851;
   color: white;
   font-weight: bold;
   border-radius: 6px;
   transition: background-color 0.3s;
-  gap: 8px; /* kis tér a szöveg és ikon között */
+  gap: 10px;
 }
 
 .whatsapp-button:hover {
-  background-color: #178c46; /* még sötétebb hover */
+  background-color: #178c46;
 }
 
 .whatsapp-icon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1); /* fehér ikonszín */
+  flex-shrink: 0;
+}
+
+.whatsapp-text {
+  flex-grow: 1;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
