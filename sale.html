@@ -52,6 +52,11 @@
   </div>
 </header>
 
+<section style="text-align: center; padding: 40px 15px; background-color: #000;">
+  <h1 style="color: #f2f2f2; font-size: 2.2rem;">Eladó autók</h1>
+</section>
+
+
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -126,12 +131,15 @@
   });
 </script>
 
- <section style="text-align: center; padding: 20px 15px; background-color: #000000;">
-  <h2 data-translate="bookingTitle" style="font-size: 1.8rem; font-weight: 600; color: #f2f2f2; margin: 0;"></h2>
-  <p data-translate="bookingSubtitle" style="color: #555; font-size: 0.95rem; margin-top: 8px;"></p>
-</section>
+ 
   
-<section class="card-grid">
+<section class="card-grid" style="
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  background-color: #f8f8f8;
+">
   <div class="card">
     <div class="card-inner">
       <div class="card-front">
@@ -374,98 +382,7 @@
 
 
   
-<section style="background-color: #111; color: #fff; padding: 3rem 1rem;">
-  <style>
-    .testimonial-section {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
 
-    .testimonial-slide {
-      display: none;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      padding: 1.5rem;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    .testimonial-slide.active {
-      display: block;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .testimonial-author {
-      margin-top: 1rem;
-      color: #aef1f6;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-
-  <div class="testimonial-section">
-    <div class="testimonial-slide active">
-      <p data-translate="testimons1"></p>
-      <div class="testimonial-author">– Balázs K.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons2"></p>
-      <div class="testimonial-author">– Réka M.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons3"></p>
-      <div class="testimonial-author">– Zoltán F.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons4"></p>
-      <div class="testimonial-author">– Nóra V.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons5"></p>
-      <div class="testimonial-author">– Ádám T.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons6"></p>
-      <div class="testimonial-author">– Petra H.</div>
-    </div>
-    <div class="testimonial-slide">
-     <p data-translate="testimons7"></p>
-      <div class="testimonial-author">– Gergő B.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons8"></p>
-      <div class="testimonial-author">– Lilla K.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons9"></p>
-      <div class="testimonial-author">– Norbert D.</div>
-    </div>
-    <div class="testimonial-slide">
-      <p data-translate="testimons10"></p>
-      <div class="testimonial-author">– Judit S.</div>
-    </div>
-  </div>
-
-  <script>
-    let index = 0;
-    const slides = document.querySelectorAll(".testimonial-slide");
-
-    function showNextSlide() {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
-    }
-
-    setInterval(showNextSlide, 4000);
-  </script>
-</section>
 
 
 
