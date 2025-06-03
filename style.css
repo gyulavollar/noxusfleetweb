@@ -451,9 +451,9 @@ header {
   overflow: hidden;
   backface-visibility: hidden;
   box-shadow:
-  0 0 12px rgba(99, 200, 207, 0.3),
-  0 0 24px rgba(99, 200, 207, 0.2),
-  0 0 40px rgba(99, 200, 207, 0.15);
+    0 0 12px rgba(15, 153, 180, 0.35),
+    0 0 24px rgba(15, 153, 180, 0.25),
+    0 0 48px rgba(15, 153, 180, 0.15);
 
 }
 
