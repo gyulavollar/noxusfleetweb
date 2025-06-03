@@ -60,7 +60,7 @@ main {
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #0abab5; /* Tiffany Blue */
+    background-color: #aef1f6; /* Tiffany Blue */
     border-radius: 10px;
     border: 2px solid #000;
   }
