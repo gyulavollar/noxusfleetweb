@@ -789,7 +789,7 @@ header {
 }
 
 .contact-top h2 {
-  color: #aef1f6;
+  color: #FFD700;
 }
 
 .contact-top p {
@@ -827,7 +827,7 @@ header {
 }
 
 .contact-form label {
-  color: #aef1f6;
+  color: #FFD700;
 }
 
 .contact-form input,
@@ -842,12 +842,12 @@ header {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #aef1f6;
+  border-color: #FFD700;
   outline: none;
 }
 
 .contact-form button {
-  background-color: #aef1f6;
+  background-color: #FFD700;
   color: #000;
   font-weight: bold;
   border: none;
@@ -858,7 +858,7 @@ header {
 }
 
 .contact-form button:hover {
-  background-color: #aef1f6;
+  background-color: #e6c200;
 }
 
 .contact-map iframe {
@@ -869,7 +869,6 @@ header {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
-
 
 /* -------------------- FOOTER -------------------- */
 footer {
