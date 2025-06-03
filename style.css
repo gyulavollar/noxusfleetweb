@@ -367,7 +367,7 @@ header {
 }
 
 .about-container {
-  background: rgba(43, 50, 55, 0.5);
+  background: radial-gradient(circle at center, #5a5a5a 0%, #2b3237 80%);
   color: #fff;
   padding: 2rem;
   border-radius: 8px;
