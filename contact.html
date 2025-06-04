@@ -1,143 +1,118 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
-  <title>Noxus Fleet</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body class="goldman-regular">
-<header>
-  <a href="index.html" class="logo">
-    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
-  </a>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">
+        <img src="logo.png" />
+        <h1>NOXUS FLEET</h1>
+      </a>
 
-  <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
-    <span></span>
-  </button>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            BÉRELHETŐ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="napi.html">NAPI BÉRLÉS</a>
+              <a href="havi.html">HAVI BÉRLÉS</a>
+            </ul>
+          </li>
+          <li class="dropdown">
+            ELADÓ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="keszleten.html">KÉSZLETEN</a>
+              <a href="rendeles.html">RENDELÉS</a>
+            </ul>
+          </li>
+          <li class="Kapcsolat">
+            <a
+              href="kapcsolat.html"
+              style="color: white; text-decoration: none; text-weight: bold"
+            >
+              KAPCSOLAT
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-  <nav class="desktop-nav">
-    <ul>
-      <li class="dropdown">
-        <a href="rent.html" data-translate="rent1"> </a>
-      </li>
-      <li class="dropdown">
-        <a href="sale.html" data-translate="forsale1"> </a>
-      </li>
-      <li><a href="contact.html" data-translate="connection">KAPCSOLAT</a></li>
-      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
-    </ul>
-  </nav>
+      <div class="hamburger" id="hamburger-menu">
+        <div class="hamburger-x" id="hamburger-x">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <ul>
+          <li class="dropdown">
+            BÉRELHETŐ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="napi.html">NAPI BÉRLÉS</a>
+              <a href="havi.html">HAVI BÉRLÉS</a>
+            </ul>
+          </li>
+          <li class="dropdown">
+            ELADÓ AUTÓK
+            <ul class="dropdown-menu">
+              <a href="keszleten.html">KÉSZLETEN</a>
+              <a href="rendeles.html">RENDELÉS</a>
+            </ul>
+          </li>
+          <li class="Kapcsolat">
+            <a
+              href="kapcsolat.html"
+              style="color: white; text-decoration: none; text-weight: bold"
+            >
+              KAPCSOLAT
+            </a>
+          </li>
+        </ul>
+      </div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <nav>
-      <ul>
-      <li class="dropdown">
-        <a href="rent.html" data-translate="rent1"> </a>
-      </li>
-      <li class="dropdown">
-        <a href="sale.html" data-translate="forsale1"> </a>
-      </li>
-      <li><a href="contact.html" data-translate="connection">KAPCSOLAT</a></li>
-      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
-    </ul>
-    </nav>
-  </div>
-</header>
-
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const body = document.body;
-
-  function toggleMenu() {
-    const isOpen = mobileMenu.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
-    
-    // Toggle body scroll
-    if (isOpen) {
-      body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-    } else {
-      body.style.overflow = '';
-      body.style.position = '';
-      body.style.width = '';
-    }
-    
-    // Close all dropdowns when main menu closes
-    if (!isOpen) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
-      });
-    }
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-
-  // Mobil dropdown menük nyitása
-  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const dropdown = this.closest('.dropdown');
-      dropdown.classList.toggle('open');
-      
-      // Close other dropdowns when opening a new one
-      if (dropdown.classList.contains('open')) {
-        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove('open');
-          }
-        });
-      }
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.mobile-menu .dropdown')) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
-      });
-    }
-  });
-
-  // Nyelvváltás
-  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
-  let currentLang = 'hu';
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = currentLang === 'hu' ? 'en' : 'hu';
-      langButtons.forEach(b => {
-        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
-      });
-      console.log('Nyelv átváltva:', currentLang);
-    });
-  });
-</script>
-
+      <div class="hamburger-icon" id="hamburger-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="white"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+          />
+        </svg>
+      </div>
+    </header>
 
     <main>
       <!-- Felső szakasz: szöveg + kép -->
-<section class="contact-top">
-  <div>
-    <h2>Lépjen velünk kapcsolatba</h2>
-    <p>
-      Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az
-      alábbi űrlapot vagy hívjon minket!
-    </p>
-  </div>
-  <!-- HIÁNYZÓ KÉP HOZZÁADÁSA -->
-  <img src="M4.png" alt="Kapcsolat autó" class="contact-image">
-</section>
+      <section class="contact-top">
+        <div>
+          <h2>Lépjen velünk kapcsolatba</h2>
+          <p>
+            Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az
+            alábbi űrlapot vagy hívjon minket!
+          </p>
+        </div>
+        <img src="cars/contact-car.jpg" alt="Kapcsolat autó" />
+      </section>
 
       <!-- Alsó szakasz: űrlap + térkép -->
       <section class="contact-section">
@@ -171,13 +146,12 @@
       </section>
     </main>
 
-<footer style="background: #000; color: #f2f2f2; padding: 2rem 1rem 1rem; border-top: 2px solid #aef1f6;">
+    <!-- Footer -->
+<footer style="background: #0d0d0d; color: #f2f2f2; padding: 2rem 1rem 1rem;">
   <style>
     .footer-wrapper {
       max-width: 1300px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
     }
 
     .footer-grid {
@@ -186,8 +160,6 @@
       gap: 2rem;
       align-items: start;
       text-align: center;
-      z-index: 1;
-      position: relative;
     }
 
     .footer-section {
@@ -205,7 +177,7 @@
     .footer-section h4 {
       margin: 0.5rem 0 0.2rem;
       font-size: 1rem;
-      color: #aef1f6;
+      color: #FFD700;
     }
 
     .footer-section p,
@@ -270,47 +242,50 @@
 
       <!-- Menü -->
       <div class="footer-section">
-        <h4 data-translate="menuTitle"></h4>
-        <a href="#" data-translate="menuTerms"></a>
-        <a href="#" data-translate="menuFaq"></a>
+        <h4>Menü</h4>
+        <a href="#">ÁSZF</a>
+        <a href="#">GYIK</a>
+        <a href="#">Árlista</a>
       </div>
 
       <!-- Nyitvatartás -->
       <div class="footer-section">
-        <h4 data-translate="openingHoursTitle"></h4>
+        <h4>Nyitvatartás</h4>
         <ul>
-          <li data-translate="openingHoursWeekdays"></li>
-          <li data-translate="openingHoursWeekend"></li>
+          <li>H-Cs: 8:00 - 20:00</li>
+          <li>P: 8:00 - 18:00</li>
+          <li>Szo: 8:00 - 16:00</li>
+          <li>V: 8:00 - 20:00</li>
         </ul>
       </div>
 
       <!-- Kapcsolat -->
       <div class="footer-section">
-        <h4 data-translate="contactTitle"></h4>
-        <p>📞 <span data-translate="contactPhone"></span></p>
-        <p>📧 <span data-translate="contactEmail"></span></p>
+        <h4>Kapcsolat</h4>
+        <p>📞 +36 30 784 6975</p>
+        <p>📧 booking@noxusfleet.com</p>
+        <p>📍 Új Ecseri út 2, Vecsés</p>
       </div>
 
       <!-- Social -->
       <div class="footer-section">
-        <h4 data-translate="socialTitle"></h4>
+        <h4>Kövess minket</h4>
         <div class="social-icons">
-          <a href="https://wa.me/36307846975" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-          </a>
-          <a href="https://www.instagram.com/noxusfleet?igsh=cWhnZWgxNGxvNjZ6" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-          </a>
-          <a href="https://www.tiktok.com/@noxusfleet?_t=ZN-8wro9WbKfpe&_r=1" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" width="32" height="32">
-          </a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok"></a>
         </div>
       </div>
     </div>
 
+
+  </div>
+      </div>
+    </div>
+
     <!-- Lábjegyzet -->
-    <section class="footer-bottom" data-translate="footerBottom"></section>
+    <div class="footer-bottom">
+      &copy; 2025 Noxus Fleet Kft. Minden jog fenntartva.
+    </div>
   </div>
 </footer>
-  </body> 
-</html>
