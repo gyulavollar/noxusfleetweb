@@ -774,6 +774,8 @@ header {
     padding-top: 6px;
   }
 
+/* -------------------- KONTAKT -------------------- */
+  
 .contact-top {
   width: 100%;
   display: flex;
@@ -803,8 +805,10 @@ header {
 .contact-top img {
   flex: 1 1 300px;
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  object-fit: cover;
 }
 
 .contact-section {
@@ -879,10 +883,15 @@ header {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .contact-top {
     flex-direction: column;
     text-align: center;
+  }
+  .contact-top img {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
   }
 
   .contact-section {
