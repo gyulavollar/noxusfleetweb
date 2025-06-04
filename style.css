@@ -465,7 +465,7 @@ header {
   padding: 15px;
 }
 
-.card-front img {
+.card .card-front img {  /* Specifikusabb szelektor */
   width: 100%;
   height: auto;
   object-fit: cover;
