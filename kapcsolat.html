@@ -122,7 +122,197 @@
   </style>
 </head>
 <body>
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Autókölcsönző logó" style="max-height: 50px; height: auto; width: auto; display: block;">
+  </a>
 
+  <button class="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false">
+    <span></span>
+  </button>
+
+  <nav class="desktop-nav">
+    <ul>
+      <li class="dropdown">
+        <a href="rent.html" data-translate="rent1"> </a>
+      </li>
+      <li class="dropdown">
+        <a href="sale.html" data-translate="forsale1"> </a>
+      </li>
+      <li><a href="kapcsolat.html" data-translate="connection">KAPCSOLAT</a></li>
+      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <ul>
+      <li class="dropdown">
+        <a href="rent.html" data-translate="rent1"> </a>
+      </li>
+      <li class="dropdown">
+        <a href="sale.html" data-translate="forsale1"> </a>
+      </li>
+      <li><a href="kapcsolat.html" data-translate="connection">KAPCSOLAT</a></li>
+      <li><button id="langSwitchDesktop" class="lang-button">English</button></li>
+    </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const body = document.body;
+
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
+    
+    // Toggle body scroll
+    if (isOpen) {
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+    } else {
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+    }
+    
+    // Close all dropdowns when main menu closes
+    if (!isOpen) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  // Mobil dropdown menük nyitása
+  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = this.closest('.dropdown');
+      dropdown.classList.toggle('open');
+      
+      // Close other dropdowns when opening a new one
+      if (dropdown.classList.contains('open')) {
+        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('open');
+          }
+        });
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mobile-menu .dropdown')) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
+  });
+
+  // Nyelvváltás
+  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
+  let currentLang = 'hu';
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = currentLang === 'hu' ? 'en' : 'hu';
+      langButtons.forEach(b => {
+        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
+      });
+      console.log('Nyelv átváltva:', currentLang);
+    });
+  });
+</script>
+
+<section class="hero-section2">
+  <h1 data-translate="welcomeTitle">
+    <!-- Ide jön a cím szöveg -->
+  </h1>
+</section>
+
+<style>
+  .hero-section2 {
+    position: relative;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Háttér animáció (zoom in kicsiből nagyra) */
+  .hero-section2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('bg.jpg');
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1); /* indulás kisebbről */
+    animation: zoomIn 2s ease-out forwards;
+    z-index: 0;
+  }
+
+  /* Szöveg fade-in animációval */
+  .hero-section2 h1 {
+    font-size: 3rem;
+    margin-top: 225px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 0s;
+  }
+
+  /* Animáció kulcskockák */
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);     /* indul kicsiben */
+    }
+    100% {
+      transform: scale(1.2);   /* nagyítva végződik */
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobil nézet */
+  @media (max-width: 768px) {
+    .hero-section2 {
+      height: 400px !important;
+    }
+
+    .hero-section2 h1 {
+      font-size: 2rem !important;
+      margin-top: 80px !important;
+    }
+  }
+</style>
   <main>
     <section class="contact-top">
       <h2>Lépjen velünk kapcsolatba</h2>
