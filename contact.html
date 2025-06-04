@@ -8,119 +8,129 @@
   <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Goldman', sans-serif;
-      background-color: #000;
-      color: #e0e0e0;
-    }
+   body {
+  margin: 0;
+  font-family: 'Goldman', sans-serif;
+  background-color: #000;
+  color: #e0e0e0;
+}
 
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .contact-top {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+.contact-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+  text-align: left;
+}
 
-    .contact-top h2 {
-      font-size: 2.5rem;
-      color: #aef1f6;
-      margin-bottom: 10px;
-    }
+.contact-text {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
 
-    .contact-top p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
+.contact-top h2 {
+  font-size: 2.5rem;
+  color: #aef1f6;
+  margin-bottom: 10px;
+}
 
-    .contact-image {
-      width: 100%;
-      max-width: 500px;
-      border: 2px solid #aef1f6;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #aef1f6;
-      display: block;
-      margin: 0 auto;
-    }
+.contact-top p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
 
-    .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
+.contact-image {
+  flex: 1 1 400px;
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #aef1f6;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #aef1f6;
+}
 
-    .contact-form, .contact-map {
-      flex: 1 1 400px;
-      min-width: 300px;
-    }
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
 
-    .contact-form {
-      background-color: #111;
-      padding: 30px;
-      border-radius: 12px;
-      border: 1px solid #aef1f6;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-    }
+.contact-form,
+.contact-map {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
 
-    .contact-form label {
-      display: block;
-      margin-bottom: 5px;
-      color: #0ff;
-    }
+.contact-form {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #aef1f6;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #aef1f6;
-      border-radius: 8px;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Goldman', sans-serif;
-    }
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #0ff;
+}
 
-    .contact-form button {
-      width: 100%;
-      padding: 12px;
-      background-color: #aef1f6;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #aef1f6;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Goldman', sans-serif;
+}
 
-    .contact-form button:hover {
-      background-color: #aef1f6;
-    }
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #aef1f6;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .contact-map iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      border-radius: 12px;
-      border: none;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-    }
+.contact-form button:hover {
+  background-color: #7fdfe6;
+}
 
-    @media (max-width: 768px) {
-      .contact-section {
-        flex-direction: column;
-      }
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
 
-      .contact-form button {
-        width: 100%;
-      }
-    }
+@media (max-width: 768px) {
+  .contact-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-section {
+    flex-direction: column;
+  }
+}
   </style>
 </head>
   <header>
