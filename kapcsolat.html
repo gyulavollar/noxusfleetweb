@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kapcsolat - NOXUS FLEET</title>
+  <title>NOXUS FLEET</title>
   <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
   <style>
@@ -235,85 +235,7 @@
   });
 </script>
 
-<section class="hero-section2">
-  <h1 data-translate="welcomeTitle">
-    <!-- Ide jön a cím szöveg -->
-  </h1>
-</section>
 
-<style>
-  .hero-section2 {
-    position: relative;
-    height: 580px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  /* Háttér animáció (zoom in kicsiből nagyra) */
-  .hero-section2::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('bg.jpg');
-    background-size: 110%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transform: scale(1); /* indulás kisebbről */
-    animation: zoomIn 2s ease-out forwards;
-    z-index: 0;
-  }
-
-  /* Szöveg fade-in animációval */
-  .hero-section2 h1 {
-    font-size: 3rem;
-    margin-top: 225px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 0;
-    z-index: 1;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-    animation-delay: 0s;
-  }
-
-  /* Animáció kulcskockák */
-  @keyframes zoomIn {
-    0% {
-      transform: scale(1);     /* indul kicsiben */
-    }
-    100% {
-      transform: scale(1.2);   /* nagyítva végződik */
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Mobil nézet */
-  @media (max-width: 768px) {
-    .hero-section2 {
-      height: 400px !important;
-    }
-
-    .hero-section2 h1 {
-      font-size: 2rem !important;
-      margin-top: 80px !important;
-    }
-  }
-</style>
   <main>
     <section class="contact-top">
       <h2>Lépjen velünk kapcsolatba</h2>
