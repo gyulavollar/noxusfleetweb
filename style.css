@@ -781,14 +781,19 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around; /* Változtatva space-between-ről */
   gap: 2rem;
   padding: 3rem 1rem;
   background-color: #0d0d0d;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-top div {
-  flex: 1 1 300px;
+  flex: 1 1 45%; /* Változtatva 300px-ről százalékosra */
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .contact-top h2 {
@@ -803,12 +808,14 @@ header {
 }
 
 .contact-top img {
-  flex: 1 1 300px;
-  max-width: 100%;
-  height: auto !important; /* !important használata csak ideiglenesen, teszteléshez */
+  flex: 1 1 45%; /* Változtatva 300px-ről százalékosra */
+  max-width: 500px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-  object-fit: cover !important;
+  box-shadow: 0 0 10px rgba(174, 241, 246, 0.3);
+  object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 .contact-section {
@@ -882,6 +889,23 @@ header {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
+
+  /* Asztali specifikus beállítások */
+@media (min-width: 1024px) {
+  .contact-top {
+    padding: 4rem 2rem;
+  }
+  
+  .contact-top div {
+    flex-basis: 40%;
+  }
+  
+  .contact-top img {
+    flex-basis: 50%;
+    max-width: 600px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .contact-top {
