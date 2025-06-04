@@ -783,7 +783,8 @@ header {
   justify-content: space-around;
   gap: 2rem;
   padding: 3rem 1rem;
-  background-color: #0d0d0d;
+  background-color: yellow;
+  
   box-sizing: border-box;
   max-width: 1200px;
   margin: 0 auto;
