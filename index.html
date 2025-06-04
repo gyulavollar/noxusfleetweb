@@ -124,46 +124,86 @@
   });
 </script>
 
-<section class="hero-section2" style="
-  position: relative;
-  height: 580px;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  color: white;
-  text-align: center;
-">
-  <h1 data-translate="welcomeTitle" style="
+<section class="hero-section2">
+  <h1 data-translate="welcomeTitle">
+    <!-- Ide jön a cím szöveg -->
+  </h1>
+</section>
+
+<style>
+  .hero-section2 {
+    position: relative;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Háttér animáció */
+  .hero-section2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('bg.jpg');
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.2);
+    animation: zoomIn 5s ease-out forwards;
+    z-index: 0;
+  }
+
+  /* Szöveg stílus + fade-in */
+  .hero-section2 h1 {
     font-size: 3rem;
     margin-top: 225px;
     position: absolute;
     top: 0;
     width: 100%;
     padding: 0;
-  ">
-  </h1>
-</section>
-
-<style>
-  /* Alapértelmezett stílusok (desktop) */
-  .hero-section2 {
-    /* Itt lehetnek desktop specifikus stílusok, ha szükséges */
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in forwards;
+    animation-delay: 1s; /* kis késleltetés, míg a háttér elindul */
   }
 
-  /* Mobil nézet (max-width: 768px) */
+  /* Animációk */
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobil nézet */
   @media (max-width: 768px) {
     .hero-section2 {
-      height: 400px !important; /* Csak erre a sectionre */
+      height: 400px !important;
     }
-    
+
     .hero-section2 h1 {
       font-size: 2rem !important;
       margin-top: 80px !important;
     }
   }
 </style>
+
 
 <section style="text-align: center; padding: 20px 15px; margin-top: 1px; background-color: #000000;">
   <h2 data-translate="bookingTitle" style="font-size: 1.8rem; font-weight: 600; color: #f2f2f2; margin: 0;"></h2>
