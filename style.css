@@ -805,10 +805,10 @@ header {
 .contact-top img {
   flex: 1 1 300px;
   max-width: 100%;
-  height: auto;
+  height: auto !important; /* !important használata csak ideiglenesen, teszteléshez */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-  object-fit: cover;
+  object-fit: cover !important;
 }
 
 .contact-section {
@@ -892,10 +892,7 @@ header {
     width: 100%;
     max-width: 100%;
     margin-top: 1rem;
-  }
-
-  .contact-section {
-    flex-direction: column;
+    height: auto !important; /* Felülírja az esetleges más beállításokat */
   }
 }
 
