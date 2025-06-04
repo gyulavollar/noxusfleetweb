@@ -1,17 +1,18 @@
 const hamburgerIcon = document.querySelector("#hamburger-icon");
 const hamburgerMenu = document.querySelector("#hamburger-menu");
 const hamburgerX = document.querySelector("#hamburger-x");
+
 const translations = {
   hu: {
     rent1: "BÉRELHETŐ AUTÓK",
-    forsale1:"ELADÓ AUTÓK",
-    connection:"KAPCSOLAT",
+    forsale1: "ELADÓ AUTÓK",
+    connection: "KAPCSOLAT",
     bookingTitle: "LEGKEDVELTEBB AUTÓINK",
     bookingSubtitle: "",
     welcomeTitle: "ÜDVÖZÖLJÜK A NOXUS FLEET VILÁGÁBAN",
     about_title: "RÓLUNK",
-    about_text1:"A Noxus Fleet a prémium autóbérlés lendületét és minőségét hozza el számodra. Modelljeink azonnal elérhetők, de egyedi igények alapján is beszerezzük a számodra tökéletes autót. A Noxus Fleet azoknak szól, akik a vezetés élményét keresik – kompromisszumok nélkül.",
-    about_text2:"",
+    about_text1: "A Noxus Fleet a prémium autóbérlés lendületét és minőségét hozza el számodra. Modelljeink azonnal elérhetők, de egyedi igények alapján is beszerezzük a számodra tökéletes autót. A Noxus Fleet azoknak szól, akik a vezetés élményét keresik – kompromisszumok nélkül.",
+    about_text2: "",
     testimons1: "Nagyon elégedett vagyok az autóbérlés gyorsaságával és egyszerűségével!",
     testimons2: "A bérlési folyamat gördülékeny volt, az autó tökéletes állapotban érkezett.",
     testimons3: "Barátságos ügyfélszolgálat, segítőkész munkatársak. Csak ajánlani tudom!",
@@ -36,14 +37,14 @@ const translations = {
   },
   en: {
     rent1: "Rental Cars",
-    forsale3: "Available to Order",
-    connection:"Connection",
+    forsale1: "Available Cars",
+    connection: "Connection",
     bookingTitle: "Our Favourite Cars",
     bookingSubtitle: "",
     welcomeTitle: "Welcome to NOXUS FLEET",
     about_title: "About Us",
-    about_text1:"Noxus Fleet brings you the energy and quality of premium car rentals. Our models are available instantly, and we also source the perfect car tailored to your individual needs. Noxus Fleet is for those who seek the true experience of driving – without compromise.",
-    about_text2:"",
+    about_text1: "Noxus Fleet brings you the energy and quality of premium car rentals. Our models are available instantly, and we also source the perfect car tailored to your individual needs. Noxus Fleet is for those who seek the true experience of driving – without compromise.",
+    about_text2: "",
     testimons1: "I’m very satisfied with the speed and simplicity of the car rental!",
     testimons2: "The rental process was smooth, and the car arrived in perfect condition.",
     testimons3: "Friendly customer service and helpful staff. Highly recommend!",
@@ -72,130 +73,102 @@ function updateTexts() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
-    el.textContent = translations[lang][key];
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
   });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  updateTexts();
-
+  // Frissíti a nyelvgomb szövegét is
   document.querySelectorAll('.lang-button').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const currentLang = localStorage.getItem('userLanguage') || 'hu';
-      const newLang = currentLang === 'hu' ? 'en' : 'hu';
-      localStorage.setItem('userLanguage', newLang);
-      updateTexts();
-      document.querySelectorAll('.lang-button').forEach(b => {
-        b.textContent = newLang === 'hu' ? 'English' : 'Magyar';
-      });
-    });
-  });
-});
-
-
-
-// Oldal betöltésekor
-document.addEventListener('DOMContentLoaded', updateTexts);
-
-// Ha van nyelvváltó gomb, frissítsd az eseménykezelőt
-const langSwitch = document.getElementById('langSwitchDesktop');
-
-if (langSwitch) {
-  langSwitch.addEventListener('click', function() {
-    const currentLang = localStorage.getItem('userLanguage') || 'hu';
-    const newLang = currentLang === 'hu' ? 'en' : 'hu';
-    localStorage.setItem('userLanguage', newLang);
-    updateTexts();
-    this.textContent = newLang === 'hu' ? 'English' : 'Magyar';
+    btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
   });
 }
 
 function setInitialVisibility() {
-    const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
 
-    if (hamburgerIcon) {
-        hamburgerIcon.style.display = isMobile ? 'block' : 'none';
+  if (hamburgerIcon) hamburgerIcon.style.display = isMobile ? 'block' : 'none';
+  if (hamburgerMenu) hamburgerMenu.classList.remove('open');
+  document.body.style.overflow = 'auto';
+
+  if (hamburgerIcon && hamburgerX) {
+    hamburgerIcon.removeEventListener('click', showMenu);
+    hamburgerX.removeEventListener('click', hideMenu);
+    if (isMobile) {
+      hamburgerIcon.addEventListener('click', showMenu);
     }
-
-    if (hamburgerMenu) {
-        hamburgerMenu.classList.remove('open');
-    }
-
-    document.body.style.overflow = 'auto';
-
-    if (hamburgerIcon && hamburgerX) {
-        hamburgerIcon.removeEventListener('click', showMenu);
-        hamburgerX.removeEventListener('click', hideMenu);
-
-        if (isMobile) {
-            hamburgerIcon.addEventListener('click', showMenu);
-        }
-    }
+  }
 }
 
 function showMenu() {
-    hamburgerMenu.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    hamburgerIcon.setAttribute('aria-expanded', 'true');
-    hamburgerIcon.removeEventListener('click', showMenu);
-    hamburgerX.addEventListener('click', hideMenu);
+  hamburgerMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  hamburgerIcon.setAttribute('aria-expanded', 'true');
+  hamburgerX.addEventListener('click', hideMenu);
+  hamburgerIcon.removeEventListener('click', showMenu);
 }
 
 function hideMenu() {
-    hamburgerMenu.classList.remove('open');
-    document.body.style.overflow = 'auto';
-    hamburgerIcon.setAttribute('aria-expanded', 'false');
-    hamburgerIcon.addEventListener('click', showMenu);
-    hamburgerX.removeEventListener('click', hideMenu);
+  hamburgerMenu.classList.remove('open');
+  document.body.style.overflow = 'auto';
+  hamburgerIcon.setAttribute('aria-expanded', 'false');
+  hamburgerX.removeEventListener('click', hideMenu);
+  hamburgerIcon.addEventListener('click', showMenu);
 }
 
-window.addEventListener('resize', setInitialVisibility);
 document.addEventListener('DOMContentLoaded', () => {
-    setInitialVisibility();
+  updateTexts();
+  setInitialVisibility();
 
-    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-    dropdownToggles.forEach(toggle => {
-        const parent = toggle.closest(".dropdown");
-
-        function toggleDropdown(e) {
-            const isOpen = parent.classList.contains("open");
-
-            // Zárja az összes többi dropdown-t
-            document.querySelectorAll(".dropdown.open").forEach(drop => {
-                if (drop !== parent) {
-                    drop.classList.remove("open");
-                    drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
-                }
-            });
-
-            parent.classList.toggle("open");
-            toggle.setAttribute("aria-expanded", String(!isOpen));
-
-            e.stopPropagation();
-        }
-
-        // Egérkattintás
-        toggle.addEventListener("click", toggleDropdown);
-
-        // Billentyűzettel is működjön
-        toggle.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " " || e.code === "Space") {
-                e.preventDefault();
-                toggleDropdown(e);
-            }
-        });
+  // Nyelvváltó gomb eseménykezelés
+  document.querySelectorAll('.lang-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currentLang = localStorage.getItem('userLanguage') || 'hu';
+      const newLang = currentLang === 'hu' ? 'en' : 'hu';
+      localStorage.setItem('userLanguage', newLang);
+      updateTexts();
     });
+  });
 
-    // Klikk a menün kívül -> zárja az összes dropdown-t
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".dropdown")) {
-            document.querySelectorAll(".dropdown.open").forEach(drop => {
-                drop.classList.remove("open");
-                drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
-            });
+  // Dropdown menük
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+  dropdownToggles.forEach(toggle => {
+    const parent = toggle.closest(".dropdown");
+
+    function toggleDropdown(e) {
+      const isOpen = parent.classList.contains("open");
+
+      // Zárja az összes többi dropdown-t
+      document.querySelectorAll(".dropdown.open").forEach(drop => {
+        if (drop !== parent) {
+          drop.classList.remove("open");
+          drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
         }
+      });
+
+      parent.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      e.stopPropagation();
+    }
+
+    toggle.addEventListener("click", toggleDropdown);
+    toggle.addEventListener("keydown", e => {
+      if (["Enter", " ", "Space"].includes(e.key)) {
+        e.preventDefault();
+        toggleDropdown(e);
+      }
     });
+  });
+
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown.open").forEach(drop => {
+        drop.classList.remove("open");
+        drop.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
+      });
+    }
+  });
 });
 
-   
+window.addEventListener('resize', setInitialVisibility);
