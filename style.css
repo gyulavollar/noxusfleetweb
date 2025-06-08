@@ -1,335 +1,85 @@
-/* -------------------- VÁLTOZÓK -------------------- */
+/* -------------------- VARIABLES -------------------- */
 :root {
   --primary-blue: #00aaff;
   --hover-blue: #66d9ff;
   --card-bg: rgba(10, 20, 25, 0.65);
   --text-light: #e0f7f9;
+  --header-height: 65px;
+  --transition-speed: 0.3s;
 }
 
-/* -------------------- ALAP BEÁLLÍTÁSOK -------------------- */
+/* -------------------- BASE STYLES -------------------- */
 body {
-  margin: 0;
-  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
-  color: var(--text-light);
   position: relative;
   z-index: 0;
-  text-align: center;
 }
 
 body, html {
   overflow-x: hidden;
   min-height: 100vh;
   width: 100%;
+  padding-top: 80px;
+  font-family: "Goldman", sans-serif;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+  color: var(--text-light);
+  font-family: "Goldman", sans-serif;
+  text-align: center;
   overscroll-behavior: auto;
 }
 
 main {
-  padding-top: 80px;
   padding: 2rem;
+  padding-top: var(--header-height);
 }
 
 .goldman-regular {
-  font-family: "Goldman", sans-serif;
   font-weight: 400;
-  font-style: normal;
 }
 
 .goldman-bold {
-  font-family: "Goldman", sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 
+/* -------------------- SCROLLBAR (Desktop only) -------------------- */
 @media (min-width: 769px) {
   ::-webkit-scrollbar {
     width: 10px;
   }
-
   ::-webkit-scrollbar-track {
     background: #000;
   }
-
   ::-webkit-scrollbar-thumb {
     background-color: #aef1f6;
     border-radius: 10px;
     border: 2px solid #000;
   }
-
   body {
     scrollbar-width: thin;
     scrollbar-color: #aef1f6 #000;
   }
 }
 
-  /* Hero section styles */
-  .hero-section2 {
-    position: relative;
-    height: 580px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  /* Háttér animáció (zoom in kicsiből nagyra) */
-  .hero-section2::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('bg.jpg');
-    background-size: 110%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transform: scale(1); /* indulás kisebbről */
-    animation: zoomIn 2s ease-out forwards;
-    z-index: 0;
-  }
-
-  /* Szöveg fade-in animációval */
-  .hero-section2 h1 {
-    font-size: 3rem;
-    margin-top: 225px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 0;
-    z-index: 1;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-    animation-delay: 0s;
-  }
-
-  /* Animáció kulcskockák */
-  @keyframes zoomIn {
-    0% {
-      transform: scale(1);     /* indul kicsiben */
-    }
-    100% {
-      transform: scale(1.2);   /* nagyítva végződik */
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Mobil nézet */
-  @media (max-width: 768px) {
-    .hero-section2 {
-      height: 400px !important;
-    }
-
-    .hero-section2 h1 {
-      font-size: 2rem !important;
-      margin-top: 80px !important;
-    }
-  }
-
-  /* Hover effektus a paraméter dobozra */
-  .hover-info {
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-
-  div[style*="position: relative"]:hover .hover-info {
-    transform: translateY(0%);
-  }
-
-  /* Testimonial styles */
-  .testimonial-section {
-    max-width: 800px;
-    margin: auto;
-    margin-bottom: 3rem;
-    text-align: center;
-    position: relative;
-  }
-
-  .testimonial-slide {
-    display: none;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    padding: 1.5rem;
-    background: radial-gradient(circle at center, #242424 0%, #111 90%);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  }
-
-  .testimonial-slide.active {
-    display: block;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .testimonial-author {
-    margin-top: 1rem;
-    color: #aef1f6;
-    font-weight: bold;
-  }
-
-  /* Footer styles */
-  .footer-wrapper {
-    max-width: 1300px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-    align-items: start;
-    text-align: center;
-    z-index: 1;
-    position: relative;
-  }
-
-  .footer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .footer-section img.logo {
-    width: 60px;
-    height: auto;
-  }
-
-  .footer-section h4 {
-    margin: 0.5rem 0 0.2rem;
-    font-size: 1rem;
-    color: #aef1f6;
-  }
-
-  .footer-section p,
-  .footer-section li,
-  .footer-section a {
-    color: #ccc;
-    font-size: 0.9rem;
-    margin: 0;
-    text-decoration: none;
-  }
-
-  .footer-section a:hover {
-    color: #fff;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 10px;
-    margin-top: 0.5rem;
-  }
-
-  .social-icons img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    color: #888;
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .footer-section {
-      margin-bottom: 1.5rem;
-    }
-
-    .social-icons {
-      justify-content: center;
-    }
-  }
-
-/* -------------------- KÖZPONTI KONTÉNER -------------------- */
-.container-center {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.scroll-container {
-  -webkit-overflow-scrolling: auto;
-  overflow-y: scroll;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--header-height);
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 1rem;
-    padding-top: 70px;
-    padding-bottom: 80px;
-  }
-
-  body {
-    background-size: cover;
-    background-position: top;
-  }
-}
-
-/* -------------------- HERO SZEKCIÓ -------------------- */
-.hero-section {
-  position: relative;
-  background: url('banner.jpg') center/cover no-repeat;
-  height: 400px;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  z-index: 1;
-}
-
-.hero-section h1,
-.hero-section p {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-}
-
-/* -------------------- FEJLÉC -------------------- */
+/* -------------------- HEADER -------------------- */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: auto;
-  height: 65px;
+  height: var(--header-height);
   background-color: #000;
   display: flex;
   justify-content: space-between;
@@ -337,59 +87,35 @@ header {
   padding: 0 15px;
   z-index: 1000;
   border-bottom: 2px solid #aef1f6;
-  transition: height var(--transition-speed) ease;
-}
-
-.logo {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  z-index: 1001;
 }
 
 .logo img {
   max-height: calc(var(--header-height) - 10px);
   height: auto;
-  width: auto;
   object-fit: contain;
   transition: max-height var(--transition-speed) ease;
 }
 
-.desktop-nav {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
 .desktop-nav ul {
   display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
   height: 100%;
 }
 
-.desktop-nav li {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.desktop-nav a, 
+.desktop-nav a,
 .desktop-nav .dropdown > button {
   color: #aef1f6;
   text-decoration: none;
   padding: 0 15px;
-  height: 100%;
   display: flex;
   align-items: center;
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
   font-weight: 600;
   transition: color var(--transition-speed) ease;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .desktop-nav a:hover,
@@ -404,23 +130,19 @@ header {
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
-  z-index: 1002;
-  padding: 5px;
-  transition: transform var(--transition-speed) ease;
+  position: relative;
   width: 30px;
   height: 24px;
-  position: relative;
 }
 
 .menu-toggle span,
 .menu-toggle::before,
 .menu-toggle::after {
   content: '';
-  display: block;
-  background-color: #fff;
+  position: absolute;
   height: 3px;
   width: 100%;
-  position: absolute;
+  background-color: #fff;
   left: 0;
   transition: 0.3s ease;
 }
@@ -430,41 +152,28 @@ header {
   transform: translateY(-50%);
 }
 
-.menu-toggle::before {
-  top: 0;
-}
+.menu-toggle::before { top: 0; }
+.menu-toggle::after { bottom: 0; }
 
-.menu-toggle::after {
-  bottom: 0;
-}
-
-.menu-toggle.open span {
-  background-color: transparent;
-}
-
+.menu-toggle.open span { background-color: transparent; }
 .menu-toggle.open::before {
   transform: rotate(45deg);
   top: 50%;
 }
-
 .menu-toggle.open::after {
   transform: rotate(-45deg);
   bottom: 50%;
-}
-
-.menu-toggle:hover {
-  transform: scale(1.1);
 }
 
 .mobile-menu {
   position: fixed;
   top: var(--header-height);
   left: 0;
-  transform: translateX(-100%);
-  opacity: 0;
   width: 100%;
   height: calc(100vh - var(--header-height));
-  background: rgba(0, 0, 0, 0.90);
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateX(-100%);
+  opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 999;
   overflow-y: auto;
@@ -479,68 +188,25 @@ header {
 }
 
 .mobile-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  list-style: none;
-}
-
-.mobile-menu nav li {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 15px;
 }
 
 .mobile-menu nav a {
   color: #aef1f6;
   text-decoration: none;
   font-size: 1.2rem;
-  display: block;
   padding: 12px;
   border-radius: 5px;
   transition: background-color var(--transition-speed) ease;
-  justify-content: center;
 }
 
 .mobile-menu nav a:hover {
   background-color: rgba(0, 170, 255, 0.1);
-}
-
-.mobile-menu .dropdown > button {
-  width: 100%;
-  background: none;
-  border: none;
-  color: #aef1f6;
-  font-size: 1.2rem;
-  padding: 12px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mobile-menu .dropdown > button::after {
-  display: none; 
-}
-
-.mobile-menu .dropdown-content {
-  position: static;
-  max-height: 0;
-  background: transparent;
-  border: none !important;
-  text-align: center;
-  padding-left: 0;
-  overflow: hidden;
-  transition: max-height var(--transition-speed) ease;
-}
-
-.mobile-menu .dropdown.open .dropdown-content {
-  max-height: 500px;
 }
 
 .lang-button {
@@ -557,55 +223,75 @@ header {
   background-color: rgba(174, 241, 246, 0.1);
 }
 
-/* -------------------- Rólunk -------------------- */
-.about-section {
-  padding: 2rem;
+/* -------------------- HERO SECTION -------------------- */
+.hero-section2 {
+  position: relative;
+  height: 580px;
   display: flex;
   justify-content: center;
-  margin-bottom: 0rem;
-  padding-top: 9rem;
-}
-
-.about-container {
-  background: radial-gradient(circle at center, #242424 0%, #111 90%);
-  color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 800px;
-  backdrop-filter: blur(8px);
-}
-
-.about-title {
+  align-items: center;
+  color: white;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  overflow: hidden;
 }
 
-.about-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+.hero-section2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('bg.jpg');
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  animation: zoomIn 2s ease-out forwards;
+  z-index: 0;
 }
 
-@media (max-width: 600px) {
-  .about-container {
-    padding: 1.5rem;
+.hero-section2 h1 {
+  font-size: 3rem;
+  margin-top: 225px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 0s;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
   }
-
-  .about-title {
-    font-size: 1.5rem;
-  }
-
-  .about-text {
-    font-size: 0.95rem;
+  100% {
+    transform: scale(1.2);
   }
 }
 
-/* -------------------- CARD -------------------- */
-* {
-  box-sizing: border-box;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+@media (max-width: 768px) {
+  .hero-section2 {
+    height: 400px !important;
+  }
+  .hero-section2 h1 {
+    font-size: 2rem !important;
+    margin-top: 80px !important;
+  }
+}
+
+/* -------------------- CARDS -------------------- */
 .card-grid {
   display: flex;
   justify-content: center;
@@ -647,14 +333,10 @@ header {
   backface-visibility: hidden;
   background: linear-gradient(to top, #0f99b4 0%, #000000 60%);
   color: white;
-  border-radius: 12px;
-  overflow: hidden;
-  backface-visibility: hidden;
   box-shadow:
     0 0 6px rgba(15, 153, 180, 0.35),
     0 0 12px rgba(15, 153, 180, 0.25),
     0 0 24px rgba(15, 153, 180, 0.15);
-
 }
 
 .card-front {
@@ -665,7 +347,7 @@ header {
   padding: 15px;
 }
 
-.card .card-front img {  /* Specifikusabb szelektor */
+.card .card-front img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -734,7 +416,7 @@ header {
 .whatsapp-icon {
   width: 22px;
   height: 22px;
-  filter: brightness(0) invert(1); /* fehér ikonszín */
+  filter: brightness(0) invert(1);
   flex-shrink: 0;
 }
 
@@ -745,7 +427,6 @@ header {
 
 @media (max-width: 600px) {
   .card-grid {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
@@ -753,7 +434,6 @@ header {
   }
 
   .card {
-    position: relative;
     width: 100%;
     min-height: 520px;
     perspective: none;
@@ -762,20 +442,14 @@ header {
   .card-inner {
     height: 100%;
     width: 100%;
-    position: relative;
   }
 
   .card-front,
   .card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 90%;
-    width: 100%;
-    backface-visibility: hidden;
-    transition: opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
   .card-front {
@@ -810,171 +484,81 @@ header {
   }
 }
 
-/* -------------------- MEDIA QUERIES -------------------- */
-@media (max-width: 768px) {
-  :root {
-    --header-height: 50px;
-  }
-  
-  body {
-    padding-top: var(--header-height);
-  }
-  
-  header {
-    height: var(--header-height);
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .desktop-nav {
-    display: none;
-  }
-  
-  .logo img {
-    max-height: calc(var(--header-height) - 10px);
-  }
-  
-  .mobile-menu {
-    top: var(--header-height);
-    height: calc(100vh - var(--header-height));
-  }
-  
-  body.menu-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-  }
-}
-
-/* -------------------- KEDVENCEK GRID -------------------- */
-.kedvencek {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-}
-
-/* -------------------- AUTÓKÁRTYÁK -------------------- */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+/* -------------------- ABOUT SECTION -------------------- */
+.about-section {
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0rem;
+  padding-top: 9rem;
 }
 
-.car-card {
-  background: #1a1a1a;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(174, 241, 246, 0.25);
-  backdrop-filter: blur(6px);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(174, 241, 246, 0.15);
+.about-container {
+  background: radial-gradient(circle at center, #242424 0%, #111 90%);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  backdrop-filter: blur(8px);
 }
 
-.car-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.car-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.car-info {
-  padding: 1rem;
-}
-
-.car-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #aef1f6;
-}
-
-.car-price {
-  color: #7ddde4;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.car-details {
-  font-size: 0.9rem;
-  color: #d9f3f5;
-}
-
-@media (max-width: 768px) {
-  .car-card img {
-    height: 150px;
-  }
-
-  .car-title {
-    font-size: 1.1rem;
-  }
-
-  .car-price {
-    font-size: 0.95rem;
-  }
-
-  .car-details {
-    font-size: 0.85rem;
-  }
+.about-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {
-  .card-grid {
-    gap: 10px;
-    padding: 6px;
+  .about-container {
+    padding: 1.5rem;
   }
 
-  .card {
-    min-height: 500px;
+  .about-title {
+    font-size: 1.5rem;
   }
 
-  .card-front,
-  .card-back {
-    height: 100%;
-    max-height: 100%;
-    overflow: hidden;
+  .about-text {
+    font-size: 0.95rem;
   }
+}
 
-  .card-back {
-    overflow: hidden;
-    padding: 12px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 0.8rem;
-  }
+/* -------------------- TESTIMONIALS -------------------- */
+.testimonial-section {
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
 
-  .card-front h3,
-  .card-back h3 {
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
+.testimonial-slide {
+  display: none;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1.5rem;
+  background: radial-gradient(circle at center, #242424 0%, #111 90%);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
 
-  .car-info-grid,
-  .pricing-grid {
-    font-size: 0.8rem;
-    gap: 3px 6px;
-    margin-bottom: 10px;
-  }
+.testimonial-slide.active {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
 
-  .pricing-grid h4 {
-    font-size: 0.85rem;
-    margin-bottom: 6px;
-    padding-top: 6px;
-  }
+.testimonial-author {
+  margin-top: 1rem;
+  color: #aef1f6;
+  font-weight: bold;
+}
 
-/* -------------------- KONTAKT -------------------- */
+/* -------------------- CONTACT SECTION -------------------- */
 .contact-top {
   text-align: center;
   margin-bottom: 60px;
@@ -1084,6 +668,93 @@ footer {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+.footer-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  align-items: start;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-section img.logo {
+  width: 60px;
+  height: auto;
+}
+
+.footer-section h4 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1rem;
+  color: #aef1f6;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
 footer a,
 footer nav a,
 footer ul li a {
@@ -1093,5 +764,4 @@ footer ul li a {
 
 footer a:hover {
   color: var(--hover-blue);
-}
 }
