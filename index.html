@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body class="goldman-regular">
 <header>
@@ -49,80 +48,6 @@
     </nav>
   </div>
 </header>
-
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const body = document.body;
-
-  function toggleMenu() {
-    const isOpen = mobileMenu.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
-    
-    // Toggle body scroll
-    if (isOpen) {
-      body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-    } else {
-      body.style.overflow = '';
-      body.style.position = '';
-      body.style.width = '';
-    }
-    
-    // Close all dropdowns when main menu closes
-    if (!isOpen) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
-      });
-    }
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-
-  // Mobil dropdown menük nyitása
-  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const dropdown = this.closest('.dropdown');
-      dropdown.classList.toggle('open');
-      
-      // Close other dropdowns when opening a new one
-      if (dropdown.classList.contains('open')) {
-        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove('open');
-          }
-        });
-      }
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.mobile-menu .dropdown')) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
-      });
-    }
-  });
-
-  // Nyelvváltás
-  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
-  let currentLang = 'hu';
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = currentLang === 'hu' ? 'en' : 'hu';
-      langButtons.forEach(b => {
-        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
-      });
-      console.log('Nyelv átváltva:', currentLang);
-    });
-  });
-</script>
 
 <section class="hero-section2">
   <h1 data-translate="welcomeTitle">
@@ -306,28 +231,7 @@
     <div class="testimonial-author">– Andrea Nagy</div>
   </div>
 </div>
-
-  <script>
-    let index = 0;
-    const slides = document.querySelectorAll(".testimonial-slide");
-
-    function showNextSlide() {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
-    }
-
-    setInterval(showNextSlide, 4000);
-  </script>
 </section>
-
-  <script>
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
-    });
-  });
-</script>
 
 <footer style="background: #000; color: #f2f2f2; padding: 2rem 1rem 1rem; border-top: 2px solid #aef1f6;">
   <div class="footer-wrapper">
@@ -381,6 +285,9 @@
     <section class="footer-bottom" data-translate="footerBottom"></section>
   </div>
 </footer>
-  
+
+<!-- All JavaScript moved to the bottom -->
+<script src="script.js" defer></script>
+
 </body>
 </html>
