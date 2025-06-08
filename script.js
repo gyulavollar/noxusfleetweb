@@ -172,3 +172,95 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('resize', setInitialVisibility);
+
+  // Menu toggle functionality
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const body = document.body;
+
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
+    
+    // Toggle body scroll
+    if (isOpen) {
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+    } else {
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+    }
+    
+    // Close all dropdowns when main menu closes
+    if (!isOpen) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  // Mobil dropdown menük nyitása
+  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = this.closest('.dropdown');
+      dropdown.classList.toggle('open');
+      
+      // Close other dropdowns when opening a new one
+      if (dropdown.classList.contains('open')) {
+        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('open');
+          }
+        });
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mobile-menu .dropdown')) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+    }
+  });
+
+  // Nyelvváltás
+  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
+  let currentLang = 'hu';
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = currentLang === 'hu' ? 'en' : 'hu';
+      langButtons.forEach(b => {
+        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
+      });
+      console.log('Nyelv átváltva:', currentLang);
+    });
+  });
+
+  // Testimonial slider
+  let index = 0;
+  const slides = document.querySelectorAll(".testimonial-slide");
+
+  function showNextSlide() {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }
+
+  setInterval(showNextSlide, 4000);
+
+  // Card flip functionality
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
