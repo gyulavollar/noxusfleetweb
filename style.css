@@ -305,7 +305,16 @@ header {
   transform: rotateY(180deg);
 }
 
-.card-front,
+.card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
 .card-back {
   position: absolute;
   top: 0;
@@ -324,19 +333,9 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  text-align: center;
-}
-
-.card-front {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 15px;
-  text-align: center;
-  position: relative;
+  text-align: right;
+  direction: ltr;
+  padding: 20px;
 }
 
 .car-name {
