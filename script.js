@@ -1,7 +1,12 @@
+// === MENU TOGGLE ELEMENTS ===
 const hamburgerIcon = document.querySelector("#hamburger-icon");
 const hamburgerMenu = document.querySelector("#hamburger-menu");
 const hamburgerX = document.querySelector("#hamburger-x");
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const body = document.body;
 
+// === TRANSLATIONS ===
 const translations = {
   hu: {
     rent1: "BÉRELHETŐ AUTÓK",
@@ -11,7 +16,7 @@ const translations = {
     bookingSubtitle: "",
     welcomeTitle: "ÜDVÖZÖLJÜK A NOXUS FLEET VILÁGÁBAN",
     about_title: "RÓLUNK",
-    about_text1: "A Noxus Fleet a prémium autóbérlés lendületét és minőségét hozza el számodra. Modelljeink azonnal elérhetők, de egyedi igények alapján is beszerezzük a számodra tökéletes autót. A Noxus Fleet azoknak szól, akik a vezetés élményét keresik – kompromisszumok nélkül.",
+    about_text1: "A Noxus Fleet a prémium autóbérlés lendületét és minőségét hozza el számodra...",
     about_text2: "",
     testimons1: "Nagyon elégedett vagyok az autóbérlés gyorsaságával és egyszerűségével!",
     testimons2: "A bérlési folyamat gördülékeny volt, az autó tökéletes állapotban érkezett.",
@@ -20,7 +25,7 @@ const translations = {
     testimons5: "Rugalmas feltételek és korrekt árak, örömmel bérelek itt újra.",
     testimons6: "Gyors válaszidő és egyszerű foglalási rendszer, remek élmény volt.",
     testimons7: "Az autó műszakilag kifogástalan volt, biztonságban éreztem magam vele.",
-    testimons8: "A bérlés során minden kérdésemre részletes választ kaptam, nagyon segítőkészek voltak.",
+    testimons8: "A bérlés során minden kérdésemre részletes választ kaptam.",
     testimons9: "Kényelmes átvétel és leadás, gördülékeny ügyintézés.",
     testimons10: "Minden zökkenőmentesen zajlott, az autóbérlés teljesen problémamentes volt.",
     menuTitle: "MENÜ",
@@ -43,7 +48,7 @@ const translations = {
     bookingSubtitle: "",
     welcomeTitle: "Welcome to NOXUS FLEET",
     about_title: "About Us",
-    about_text1: "Noxus Fleet brings you the energy and quality of premium car rentals. Our models are available instantly, and we also source the perfect car tailored to your individual needs. Noxus Fleet is for those who seek the true experience of driving – without compromise.",
+    about_text1: "Noxus Fleet brings you the energy and quality of premium car rentals...",
     about_text2: "",
     testimons1: "I’m very satisfied with the speed and simplicity of the car rental!",
     testimons2: "The rental process was smooth, and the car arrived in perfect condition.",
@@ -69,8 +74,10 @@ const translations = {
   }
 };
 
+// === Update Text Based on Selected Language ===
 function updateTexts() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
+
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (translations[lang][key]) {
@@ -78,49 +85,51 @@ function updateTexts() {
     }
   });
 
-  // Frissíti a nyelvgomb szövegét is
+  // Update text for language switch buttons
   document.querySelectorAll('.lang-button').forEach(btn => {
     btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
   });
 }
 
+// === Set Menu Visibility Based on Screen Size ===
 function setInitialVisibility() {
   const isMobile = window.innerWidth <= 768;
 
   if (hamburgerIcon) hamburgerIcon.style.display = isMobile ? 'block' : 'none';
   if (hamburgerMenu) hamburgerMenu.classList.remove('open');
-  document.body.style.overflow = 'auto';
+  body.style.overflow = 'auto';
 
   if (hamburgerIcon && hamburgerX) {
     hamburgerIcon.removeEventListener('click', showMenu);
     hamburgerX.removeEventListener('click', hideMenu);
-    if (isMobile) {
-      hamburgerIcon.addEventListener('click', showMenu);
-    }
+    if (isMobile) hamburgerIcon.addEventListener('click', showMenu);
   }
 }
 
+// === Show Mobile Menu ===
 function showMenu() {
   hamburgerMenu.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  body.style.overflow = 'hidden';
   hamburgerIcon.setAttribute('aria-expanded', 'true');
   hamburgerX.addEventListener('click', hideMenu);
   hamburgerIcon.removeEventListener('click', showMenu);
 }
 
+// === Hide Mobile Menu ===
 function hideMenu() {
   hamburgerMenu.classList.remove('open');
-  document.body.style.overflow = 'auto';
+  body.style.overflow = 'auto';
   hamburgerIcon.setAttribute('aria-expanded', 'false');
   hamburgerX.removeEventListener('click', hideMenu);
   hamburgerIcon.addEventListener('click', showMenu);
 }
 
+// === Main Logic on Page Load ===
 document.addEventListener('DOMContentLoaded', () => {
   updateTexts();
   setInitialVisibility();
 
-  // Nyelvváltó gomb eseménykezelés
+  // Language Switch Button
   document.querySelectorAll('.lang-button').forEach(btn => {
     btn.addEventListener('click', () => {
       const currentLang = localStorage.getItem('userLanguage') || 'hu';
@@ -130,16 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dropdown menük
+  // Desktop Dropdown Menus
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
   dropdownToggles.forEach(toggle => {
     const parent = toggle.closest(".dropdown");
 
     function toggleDropdown(e) {
       const isOpen = parent.classList.contains("open");
 
-      // Zárja az összes többi dropdown-t
+      // Close other open dropdowns
       document.querySelectorAll(".dropdown.open").forEach(drop => {
         if (drop !== parent) {
           drop.classList.remove("open");
@@ -161,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Close all dropdowns on outside click
   document.addEventListener("click", e => {
     if (!e.target.closest(".dropdown")) {
       document.querySelectorAll(".dropdown.open").forEach(drop => {
@@ -171,96 +180,88 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// === Adjust Visibility on Resize ===
 window.addEventListener('resize', setInitialVisibility);
 
-  // Menu toggle functionality
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const body = document.body;
+// === Toggle Mobile Menu ===
+function toggleMenu() {
+  const isOpen = mobileMenu.classList.toggle('open');
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen);
+  menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 
-  function toggleMenu() {
-    const isOpen = mobileMenu.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Menü bezárása' : 'Menü megnyitása');
-    
-    // Toggle body scroll
-    if (isOpen) {
-      body.style.overflow = 'hidden';
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-    } else {
-      body.style.overflow = '';
-      body.style.position = '';
-      body.style.width = '';
-    }
-    
-    // Close all dropdowns when main menu closes
-    if (!isOpen) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
-      });
-    }
+  // Toggle scroll locking
+  if (isOpen) {
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.width = '100%';
+  } else {
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.width = '';
+
+    // Close all mobile dropdowns
+    document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+      dropdown.classList.remove('open');
+    });
   }
+}
+menuToggle.addEventListener('click', toggleMenu);
 
-  menuToggle.addEventListener('click', toggleMenu);
+// === Mobile Dropdown Menu Behavior ===
+document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const dropdown = this.closest('.dropdown');
+    dropdown.classList.toggle('open');
 
-  // Mobil dropdown menük nyitása
-  document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const dropdown = this.closest('.dropdown');
-      dropdown.classList.toggle('open');
-      
-      // Close other dropdowns when opening a new one
-      if (dropdown.classList.contains('open')) {
-        document.querySelectorAll('.mobile-menu .dropdown').forEach(otherDropdown => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove('open');
-          }
-        });
-      }
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.mobile-menu .dropdown')) {
-      document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
-        dropdown.classList.remove('open');
+    // Close other dropdowns
+    if (dropdown.classList.contains('open')) {
+      document.querySelectorAll('.mobile-menu .dropdown').forEach(other => {
+        if (other !== dropdown) other.classList.remove('open');
       });
     }
   });
+});
 
-  // Nyelvváltás
-  const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
-  let currentLang = 'hu';
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = currentLang === 'hu' ? 'en' : 'hu';
-      langButtons.forEach(b => {
-        b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
-      });
-      console.log('Nyelv átváltva:', currentLang);
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.mobile-menu .dropdown')) {
+    document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
+      dropdown.classList.remove('open');
     });
-  });
-
-  // Testimonial slider
-  let index = 0;
-  const slides = document.querySelectorAll(".testimonial-slide");
-
-  function showNextSlide() {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
   }
+});
 
-  setInterval(showNextSlide, 4000);
+// === Alternate Language Switch Buttons ===
+const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
+let currentLang = localStorage.getItem('userLanguage') || 'hu';
 
-  // Card flip functionality
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentLang = currentLang === 'hu' ? 'en' : 'hu';
+    localStorage.setItem('userLanguage', currentLang);
+    langButtons.forEach(b => {
+      b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
     });
+    updateTexts();
+    console.log('Language switched:', currentLang);
   });
+});
+
+// === Testimonial Slider ===
+let index = 0;
+const slides = document.querySelectorAll(".testimonial-slide");
+
+function showNextSlide() {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}
+setInterval(showNextSlide, 4000);
+
+// === Card Flip Animation ===
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+});
