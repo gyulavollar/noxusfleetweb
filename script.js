@@ -38,7 +38,8 @@ const translations = {
     contactPhone: "+36 30 784 6975",
     contactEmail: "booking@noxusfleet.com",
     socialTitle: "KÖVESS MINKET",
-    footerBottom: "© 2025 NOXUS FLEET. MINDEN JOG FENNTARTVA."
+    footerBottom: "© 2025 NOXUS FLEET. MINDEN JOG FENNTARTVA.",
+    test1: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt."
   },
   en: {
     rent1: "Rental Cars",
@@ -70,7 +71,8 @@ const translations = {
     contactPhone: "+36 30 784 6975",
     contactEmail: "booking@noxusfleet.com",
     socialTitle: "Follow us",
-    footerBottom: "© 2025 Noxus Fleet. All rights reserved."
+    footerBottom: "© 2025 Noxus Fleet. All rights reserved.",
+    test1: "I rented a BMW X6 for a visit home. It was a perfect choice."
   }
 };
 
