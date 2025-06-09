@@ -349,6 +349,7 @@ header {
   text-align: right;
   direction: ltr;
   padding: 20px;
+  transform: rotateY(180deg);
 }
 
 .car-name {
