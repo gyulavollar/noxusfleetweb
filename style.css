@@ -273,12 +273,14 @@ header {
 
 /* -------------------- CARDS -------------------- */
 .card-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 1160px; /* 4 x ~280px kártya + gap */
+  margin: 0 auto;
   gap: 20px;
   padding: 20px;
-  flex-wrap: wrap;
 }
+
 
 .card {
   width: 100%;
