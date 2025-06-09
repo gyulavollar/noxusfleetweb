@@ -368,6 +368,7 @@ header {
 .card-front .details-text {
   font-size: 1rem;
   color: #aef1f6;
+  margin-bottom: 10px;
 }
 
 .card-front h3 {
