@@ -317,7 +317,7 @@ header {
   height: 100%;
   padding: 20px 15px;
   border-radius: 12px;
-  background: linear-gradient(to top, #0f99b4 0%, #000000 60%);
+  background: linear-gradient(to top, #0f99b4 0%, #000000 50%);
   box-shadow:
     0 0 6px rgba(15, 153, 180, 0.35),
     0 0 12px rgba(15, 153, 180, 0.25),
@@ -336,7 +336,7 @@ header {
   border-radius: 12px;
   overflow: hidden;
   backface-visibility: hidden;
-  background: linear-gradient(to top, #0f99b4 0%, #000000 60%);
+  background: linear-gradient(to top, #0f99b4 0%, #000000 50%);
   color: white;
   box-shadow:
     0 0 6px rgba(15, 153, 180, 0.35),
