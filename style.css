@@ -385,14 +385,13 @@ header {
   text-align: center;
 }
 
-/* ✅ ITT A JAVÍTÁS: lejjebb toljuk az autóadatokat */
 .car-info-grid {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 4px 12px;
   font-size: 0.92rem;
   margin-bottom: 16px;
-  margin-top: 16px; /* ⇦ EZ A SOR A JAVÍTÁS */
+  margin-top: 16px;
 }
 
 .pricing-grid {
@@ -417,7 +416,7 @@ header {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  margin-top: 14px;
+  margin-top: 4px;
   padding: 10px 16px;
   background-color: #1da851;
   color: white;
