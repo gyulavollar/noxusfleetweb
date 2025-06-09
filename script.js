@@ -61,7 +61,7 @@ const translations = {
     contactPhone: "+36 30 784 6975",
     contactEmail: "booking@noxusfleet.com",
     socialTitle: "FOLLOW US",
-    footerBottom: "© 2025 Noxus Fleet. All rights reserved.",
+    footerBottom: "© 2025 NOXUS FLEET. ALL RIGHTS RESERVED.",
     test1: "I rented a BMW X6 for a home visit. It was a perfect choice.",
     test2: "Fast administration, clean car, fair conditions. I can only recommend them.",
     test3: "I rented a car for two months for work in the countryside. Everything went smoothly.",
