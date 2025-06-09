@@ -281,12 +281,14 @@ header {
 }
 
 .card {
-  width: 30%;
-  min-width: 220px;
+  width: 100%;
   max-width: 280px;
+  min-width: 220px;
+  height: 420px; /* Állíthatod, ha mást szeretnél */
   perspective: 1000px;
-  aspect-ratio: 4 / 5;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-inner {
@@ -295,6 +297,8 @@ header {
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
 }
 
 .card.flipped .card-inner {
@@ -307,7 +311,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 125%;
+  height: 100%;
   border-radius: 12px;
   overflow: hidden;
   backface-visibility: hidden;
@@ -317,6 +321,12 @@ header {
     0 0 6px rgba(15, 153, 180, 0.35),
     0 0 12px rgba(15, 153, 180, 0.25),
     0 0 24px rgba(15, 153, 180, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
 }
 
 .card-front {
@@ -334,6 +344,7 @@ header {
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+  flex-shrink: 1;
 }
 
 .card-front .details-text {
@@ -345,7 +356,7 @@ header {
 .card-front h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .card-back {
