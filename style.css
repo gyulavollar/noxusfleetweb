@@ -332,17 +332,17 @@ header {
 .card-front {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   height: 100%;
   padding: 15px;
   text-align: center;
+  position: relative;
 }
 
 .car-name {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-top: 55px;
+  margin-top: 80px; /* most már működni fog! */
 }
 
 .card .card-front img {
@@ -356,7 +356,8 @@ header {
 .card-front .details-text {
   font-size: 1rem;
   color: #aef1f6;
-  margin-bottom: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px; /* hogy ne essen teljesen az aljára */
 }
 
 .card-front h3 {
