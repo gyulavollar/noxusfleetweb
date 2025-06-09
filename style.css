@@ -443,7 +443,7 @@ header {
 
 /* -------------------- ABOUT SECTION -------------------- */
 .about-section {
-  padding: 4rem 2rem 2rem; /* kisebb top és bottom padding */
+  padding: 4rem 1rem 1rem; /* kisebb top és bottom padding */
   display: flex;
   justify-content: center;
 }
