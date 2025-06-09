@@ -85,8 +85,9 @@ function updateTexts() {
     }
   });
 
-  // Update text for language switch buttons
-  document.querySelectorAll('.lang-button').forEach(btn => {
+  // Update button text
+  const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
+  langButtons.forEach(btn => {
     btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
   });
 }
@@ -129,11 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
   updateTexts();
   setInitialVisibility();
 
-  // Language Switch Button
-  document.querySelectorAll('.lang-button').forEach(btn => {
+  // Unified language switch logic
+  const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
+  langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const currentLang = localStorage.getItem('userLanguage') || 'hu';
-      const newLang = currentLang === 'hu' ? 'en' : 'hu';
+      let currentLang = localStorage.getItem('userLanguage') || 'hu';
+      let newLang = currentLang === 'hu' ? 'en' : 'hu';
       localStorage.setItem('userLanguage', newLang);
       updateTexts();
     });
@@ -169,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close all dropdowns on outside click
   document.addEventListener("click", e => {
     if (!e.target.closest(".dropdown")) {
       document.querySelectorAll(".dropdown.open").forEach(drop => {
@@ -190,7 +191,6 @@ function toggleMenu() {
   menuToggle.setAttribute('aria-expanded', isOpen);
   menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 
-  // Toggle scroll locking
   if (isOpen) {
     body.style.overflow = 'hidden';
     body.style.position = 'fixed';
@@ -200,7 +200,6 @@ function toggleMenu() {
     body.style.position = '';
     body.style.width = '';
 
-    // Close all mobile dropdowns
     document.querySelectorAll('.mobile-menu .dropdown').forEach(dropdown => {
       dropdown.classList.remove('open');
     });
@@ -215,7 +214,6 @@ document.querySelectorAll('.mobile-menu .dropdown-toggle').forEach(toggle => {
     const dropdown = this.closest('.dropdown');
     dropdown.classList.toggle('open');
 
-    // Close other dropdowns
     if (dropdown.classList.contains('open')) {
       document.querySelectorAll('.mobile-menu .dropdown').forEach(other => {
         if (other !== dropdown) other.classList.remove('open');
@@ -230,22 +228,6 @@ document.addEventListener('click', function(e) {
       dropdown.classList.remove('open');
     });
   }
-});
-
-// === Alternate Language Switch Buttons ===
-const langButtons = document.querySelectorAll('#langSwitchDesktop, #langSwitchMobile');
-let currentLang = localStorage.getItem('userLanguage') || 'hu';
-
-langButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    currentLang = currentLang === 'hu' ? 'en' : 'hu';
-    localStorage.setItem('userLanguage', currentLang);
-    langButtons.forEach(b => {
-      b.textContent = currentLang === 'hu' ? 'English' : 'Magyar';
-    });
-    updateTexts();
-    console.log('Language switched:', currentLang);
-  });
 });
 
 // === Testimonial Slider ===
