@@ -443,11 +443,9 @@ header {
 
 /* -------------------- ABOUT SECTION -------------------- */
 .about-section {
-  padding: 2rem;
+  padding: 6rem 2rem 3rem; /* top, sides, bottom */
   display: flex;
   justify-content: center;
-  margin-bottom: 0rem;
-  padding-top: 6rem;
 }
 
 .about-container {
@@ -474,8 +472,7 @@ header {
 /* -------------------- TESTIMONIALS -------------------- */
 .testimonial-section {
   max-width: 800px;
-  margin: auto;
-  margin-bottom: 3rem;
+  margin: 3rem auto; /* top and bottom margin */
   text-align: center;
   position: relative;
 }
