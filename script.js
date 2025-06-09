@@ -39,7 +39,16 @@ const translations = {
     contactEmail: "booking@noxusfleet.com",
     socialTitle: "KÖVESS MINKET",
     footerBottom: "© 2025 NOXUS FLEET. MINDEN JOG FENNTARTVA.",
-    test1: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt."
+    test1: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test2: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test3: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test4: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test5: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test6: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test7: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test8: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test9: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test10: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt."
   },
   en: {
     rent1: "Rental Cars",
@@ -72,7 +81,16 @@ const translations = {
     contactEmail: "booking@noxusfleet.com",
     socialTitle: "Follow us",
     footerBottom: "© 2025 Noxus Fleet. All rights reserved.",
-    test1: "I rented a BMW X6 for a visit home. It was a perfect choice."
+    test1: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test2: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test3: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test4: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test5: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test6: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test7: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test8: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test9: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test10: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt."
   }
 };
 
