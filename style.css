@@ -342,7 +342,7 @@ header {
 .card-front .car-name {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-top: 25px;     /* Ez tolja lejjebb a nevet */
+  margin-top: 55px;
 }
 
 .card .card-front img {
