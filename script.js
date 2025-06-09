@@ -29,7 +29,7 @@ const translations = {
     contactEmail: "booking@noxusfleet.com",
     socialTitle: "KÖVESS MINKET",
     footerBottom: "© 2025 NOXUS FLEET. MINDEN JOG FENNTARTVA.",
-    test1: "I rented a BMW X6 for a home visit. It was a perfect choice.",
+    test1: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
     test2: "Gyors ügyintézés, tiszta autó, korrekt feltételek. Csak ajánlani tudom.",
     test3: "Két hónapra béreltem autót, a vidéki munkához. Minden zökkenőmentesen zajlott.",
     test4: "A BMW 440i nagyon jó választás volt. Igazi prémium élmény.",
