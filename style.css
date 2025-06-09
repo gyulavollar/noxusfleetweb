@@ -379,23 +379,21 @@ header {
   margin-top: 5px;
 }
 
-.card-back {
-  transform: rotateY(180deg);
-  direction: ltr;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: right;
-}
-
 .card-back h3 {
   font-size: 1rem;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.car-info-grid,
+.car-info-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: auto 1fr;
