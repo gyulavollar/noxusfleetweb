@@ -322,9 +322,11 @@ header {
 .card-front {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  height: 100%;
   padding: 15px;
+  text-align: center;
 }
 
 .card .card-front img {
@@ -334,10 +336,16 @@ header {
   border-radius: 8px;
 }
 
+.card-front .details-text {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #aef1f6;
+}
+
 .card-front h3 {
-  margin-top: 12px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  margin: 10px 0;
 }
 
 .card-back {
