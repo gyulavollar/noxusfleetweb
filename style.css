@@ -82,12 +82,19 @@ header {
   transition: max-height var(--transition-speed) ease;
 }
 
+.desktop-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .desktop-nav ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
   height: 100%;
+  align-items: center;
 }
 
 .desktop-nav a,
@@ -95,6 +102,7 @@ header {
   color: #aef1f6;
   text-decoration: none;
   padding: 0 15px;
+  height: 100%;
   display: flex;
   align-items: center;
   font-weight: 600;
