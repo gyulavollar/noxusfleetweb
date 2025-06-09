@@ -349,8 +349,8 @@ header {
 
 .card-front .details-text {
   font-size: 1rem;
-  margin-top: 10px;
   color: #aef1f6;
+  margin-bottom: 25px;
 }
 
 .card-front h3 {
