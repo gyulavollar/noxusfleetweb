@@ -375,8 +375,8 @@ header {
 .card-front h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 0 0 8px 0; /* kisebb alsó margó */
-  margin-top: 5px; /* vagy pozitív értékkel tolhatod felfelé */
+  margin: 0 0 8px 0;
+  margin-top: 5px;
 }
 
 .card-back {
