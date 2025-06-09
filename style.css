@@ -281,6 +281,7 @@ header {
   padding: 20px;
 }
 
+
 .card {
   width: 100%;
   max-width: 280px;
@@ -349,7 +350,6 @@ header {
   text-align: right;
   direction: ltr;
   padding: 20px;
-  transform: rotateY(180deg);
 }
 
 .car-name {
@@ -375,8 +375,18 @@ header {
 .card-front h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 0 0 8px 0;
-  margin-top: 5px;
+  margin: 0 0 8px 0; /* kisebb alsó margó */
+  margin-top: 5px; /* vagy pozitív értékkel tolhatod felfelé */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  direction: ltr;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
 }
 
 .card-back h3 {
@@ -385,16 +395,7 @@ header {
   text-align: center;
 }
 
-/* ✅ ITT A JAVÍTÁS: lejjebb toljuk az autóadatokat */
-.car-info-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 12px;
-  font-size: 0.92rem;
-  margin-bottom: 16px;
-  margin-top: 16px; /* ⇦ EZ A SOR A JAVÍTÁS */
-}
-
+.car-info-grid,
 .pricing-grid {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -443,6 +444,62 @@ header {
   text-align: center;
 }
 
+/* -------------------- ABOUT SECTION -------------------- */
+.about-section {
+  padding: 4rem 1rem 1rem; /* kisebb top és bottom padding */
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  background: radial-gradient(circle at center, #242424 0%, #111 90%);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 800px;
+  backdrop-filter: blur(8px);
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* -------------------- TESTIMONIALS -------------------- */
+.testimonial-section {
+  max-width: 800px;
+  margin: 2rem auto; /* kisebb függőleges margó */
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-slide {
+  display: none;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1.2rem;
+  background: radial-gradient(circle at center, #242424 0%, #111 90%);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.testimonial-slide.active {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.testimonial-author {
+  margin-top: 0.8rem;
+  color: #aef1f6;
+  font-weight: bold;
+}
 
 /* -------------------- CONTACT SECTION -------------------- */
 .contact-top {
