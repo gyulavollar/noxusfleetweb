@@ -369,13 +369,14 @@ header {
   font-size: 1rem;
   color: #aef1f6;
   margin-bottom: 10px;
-  margin-top: 40px; /* ÚJ sor – ez tolja lejjebb */
+  margin-top: 40px;
 }
 
 .card-front h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 8px 0; /* kisebb alsó margó */
+  margin-top: -10px; /* vagy pozitív értékkel tolhatod felfelé */
 }
 
 .card-back {
