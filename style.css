@@ -507,7 +507,7 @@ header {
 
 .contact-top h2 {
   font-size: 2.5rem;
-  color: #0ff;
+  color: #aef1f6;
   margin-bottom: 10px;
 }
 
@@ -515,16 +515,6 @@ header {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto 30px;
-}
-
-.contact-image {
-  width: 100%;
-  max-width: 500px;
-  border: 2px solid #0ff;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #0ff;
-  display: block;
-  margin: 0 auto;
 }
 
 .contact-section {
@@ -545,14 +535,14 @@ header {
   background-color: #111;
   padding: 30px;
   border-radius: 12px;
-  border: 1px solid #0ff;
+  border: 1px solid #aef1f6;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
 .contact-form label {
   display: block;
   margin-bottom: 5px;
-  color: #0ff;
+  color: #aef1f6;
 }
 
 .contact-form input,
@@ -560,7 +550,7 @@ header {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #0ff;
+  border: 1px solid#aef1f6;
   border-radius: 8px;
   background-color: #000;
   color: #fff;
