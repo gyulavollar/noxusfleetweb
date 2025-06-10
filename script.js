@@ -29,16 +29,17 @@ const translations = {
     contactEmail: "📧 booking@noxusfleet.com",
     socialTitle: "KÖVESS MINKET",
     footerBottom: "© 2025 NOXUS FLEET. MINDEN JOG FENNTARTVA.",
-    test1: "HAZALÁTOGATÁSHOZ BÉRELTEM EGY BMW X6-OT. TÖKÉLETES VÁLASZTÁS VOLT.",
-    test2: "GYORS ÜGYINTÉZÉS, TISZTA AUTÓ, KORREKT FELTÉTELEK. CSAK AJÁNLANI TUDOM.",
-    test3: "KÉT HÓNAPRA BÉRELTEM AUTÓT, A VIDÉKI MUNKÁHOZ. MINDEN ZÖKKENŐMENTESEN ZAJLOTT.",
-    test4: "A BMW 440I NAGYON JÓ VÁLASZTÁS VOLT. IGAZI PRÉMIUM ÉLMÉNY.",
-    test5: "ÁTLÁTHATÓ ÁRAK, NINCSENEK REJTETT KÖLTSÉGEK. EZ RITKA MANAPSÁG.",
-    test6: "RÉGÓTA KERESTEM ILYEN RUGALMAS SZOLGÁLTATÓT. ITT VÉGRE MEGTALÁLTAM.",
-    test7: "BÉRELTEM EGY BMW 430I CABRIO-T EGY HÉTRE – KIVÁLÓ ÁLLAPOT, NAGY ÉLMÉNY.",
-    test8: "A BÉRLÉS GYORS VOLT, AZ AUTÓ MAKULÁTLAN. TELJESEN ELÉGEDETT VAGYOK.",
-    test9: "A BMW X5 KÉNYELMES ÉS JÓL FELSZERELT VOLT. A CSAPAT IS PROFI.",
-    test10: "PRÓBÁLTAM A BMW M4-ET – NAGY ÉLMÉNY VOLT, SIMÁN MENT VELE MINDEN."
+    test1: "Hazalátogatáshoz béreltem egy BMW X6-ot. Tökéletes választás volt.",
+    test2: "Gyors ügyintézés, tiszta autó, korrekt feltételek. Csak ajánlani tudom.",
+    test3: "Két hónapra béreltem autót, a vidéki munkához. Minden zökkenőmentesen zajlott.",
+    test4: "A BMW 440i nagyon jó választás volt. Igazi prémium élmény.",
+    test5: "Átlátható árak, nincsenek rejtett költségek. Ez ritka manapság.",
+    test6: "Régóta kerestem ilyen rugalmas szolgáltatót. Itt végre megtaláltam.",
+    test7: "Béreltem egy BMW 430i Cabrio-t egy hétre – kiváló állapot, nagy élmény.",
+    test8: "A bérlés gyors volt, az autó makulátlan. Teljesen elégedett vagyok.",
+    test9: "A BMW X5 kényelmes és jól felszerelt volt. A csapat is profi.",
+    test10: "Próbáltam a BMW M4-et – nagy élmény volt, simán ment vele minden."
+
 
 
   },
@@ -63,16 +64,17 @@ const translations = {
     contactEmail: "📧 booking@noxusfleet.com",
     socialTitle: "FOLLOW US",
     footerBottom: "© 2025 NOXUS FLEET. ALL RIGHTS RESERVED.",
-    test1: "I RENTED A BMW X6 FOR A HOME VISIT. IT WAS A PERFECT CHOICE.",
-    test2: "FAST ADMINISTRATION, CLEAN CAR, FAIR CONDITIONS. I CAN ONLY RECOMMEND THEM.",
-    test3: "I RENTED A CAR FOR TWO MONTHS FOR WORK IN THE COUNTRYSIDE. EVERYTHING WENT SMOOTHLY.",
-    test4: "THE BMW 440I WAS A GREAT CHOICE. A TRULY PREMIUM EXPERIENCE.",
-    test5: "TRANSPARENT PRICES, NO HIDDEN FEES. THAT’S RARE THESE DAYS.",
-    test6: "I’VE BEEN LOOKING FOR SUCH A FLEXIBLE SERVICE FOR A LONG TIME. FINALLY FOUND IT HERE.",
-    test7: "I RENTED A BMW 430I CABRIO FOR A WEEK – EXCELLENT CONDITION, GREAT EXPERIENCE.",
-    test8: "THE RENTAL PROCESS WAS QUICK, THE CAR SPOTLESS. I'M COMPLETELY SATISFIED.",
-    test9: "THE BMW X5 WAS COMFORTABLE AND WELL-EQUIPPED. THE TEAM WAS PROFESSIONAL TOO.",
-    test10: "I TRIED THE BMW M4 – IT WAS AN AMAZING EXPERIENCE, EVERYTHING WENT SMOOTHLY."
+    test1: "I rented a BMW X6 for a home visit. It was a perfect choice.",
+    test2: "Fast administration, clean car, fair conditions. I can only recommend them.",
+    test3: "I rented a car for two months for work in the countryside. Everything went smoothly.",
+    test4: "The BMW 440i was a great choice. A truly premium experience.",
+    test5: "Transparent prices, no hidden fees. That’s rare these days.",
+    test6: "I’ve been looking for such a flexible service for a long time. Finally found it here.",
+    test7: "I rented a BMW 430i Cabrio for a week – excellent condition, great experience.",
+    test8: "The rental process was quick, the car spotless. I'm completely satisfied.",
+    test9: "The BMW X5 was comfortable and well-equipped. The team was professional too.",
+    test10: "I tried the BMW M4 – it was an amazing experience, everything went smoothly."
+
   }
 };
 
