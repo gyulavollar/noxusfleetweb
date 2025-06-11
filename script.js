@@ -43,7 +43,12 @@ const translations = {
     fuel:"Üzemanyag:",
     performance:"Teljesítmény:",
     drive:"Hajtás:",
-    shift:"Sebességváltó:"
+    shift:"Sebességváltó:",
+    diesel:"Dízel",
+    gas:"Benzin",
+    four:"Négykerék",
+    front:"Elsőkerék",
+    rear:"Hátsókerék"
 
   },
   en: {
@@ -81,7 +86,12 @@ const translations = {
     fuel:"Fuel:",
     performance:"Performance:",
     drive:"Drive:",
-    shift:"Transmisson:"
+    shift:"Transmisson:",
+    diesel:"Diesel",
+    gas:"Gas",
+    four:"All-Wheel",
+    front:"Front-Wheel",
+    rear:"Rear-Wheel"
   }
 };
 
