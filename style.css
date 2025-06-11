@@ -521,37 +521,33 @@ header {
 .contact-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 40px;
+  grid-template-rows: auto auto;
+  gap: 30px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.contact-grid-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-info-box {
+/* Header boxes */
+.contact-header {
   background-color: #111;
-  padding: 30px;
+  padding: 20px 30px;
   border-radius: 12px;
   border: 1px solid #aef1f6;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
   color: #aef1f6;
+  margin-bottom: -15px; /* Pulls the content box closer */
 }
 
-.contact-info-box h3 {
+.contact-header h3 {
   font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 15px;
+  margin: 0;
 }
 
-.contact-form,
+/* Content boxes */
+.contact-form-container,
 .contact-map-container {
-  flex: 1;
+  grid-row: 2;
 }
 
 .contact-form {
@@ -560,8 +556,19 @@ header {
   border-radius: 12px;
   border: 1px solid #aef1f6;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  height: 100%;
 }
 
+.contact-map {
+  height: 100%;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #aef1f6;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Form styles (keep your original) */
 .contact-form label {
   display: block;
   margin-bottom: 5px;
@@ -596,25 +603,15 @@ header {
   background-color: #0f99b4;
 }
 
-.contact-map {
-  height: 100%;
-  min-height: 420px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-section {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    grid-template-rows: auto auto auto auto;
+  }
+  
+  .contact-map-container {
+    grid-row: 4;
   }
   
   .contact-map {
