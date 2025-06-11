@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Címzett email címe
-    $to = "sajat@emailcimed.hu"; // ← IDE írd be a saját címed!
+    $to = "noxusfleet@gmail.com";
 
     // Adatok begyűjtése és tisztítása
     $name = strip_tags(trim($_POST["name"]));
