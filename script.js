@@ -54,7 +54,8 @@ const translations = {
     hp:"LE",
     bookingos:"Foglalási Opciók",
     auto:"Automata",
-    contus:"Üzenjen nekünk!"
+    contus:"Üzenjen nekünk!",
+    details:"Részletek"
   },
   en: {
     rent1: "FOR RENT",
@@ -102,7 +103,8 @@ const translations = {
     hp:"HP",
     bookingos:"Booking Options",
     auto:"Automatic",
-    contus:"Contact us!"
+    contus:"Contact us!",
+    details:"View details"
     
   }
 };
