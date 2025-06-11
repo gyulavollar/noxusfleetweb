@@ -51,7 +51,8 @@ const translations = {
     rear:"Hátsókerék",
     weekly:"Heti ár:",
     monthly:"Havi ár:",
-    hp:"LE"
+    hp:"LE",
+    bookingos:"Foglalási Opciók"
 
   },
   en: {
@@ -97,7 +98,8 @@ const translations = {
     rear:"Rear-Wheel",
     weekly:"Weekly price:",
     monthly:"Monthly price:",
-    hp:"HP"
+    hp:"HP",
+    bookingos:"Booking Options"
     
   }
 };
