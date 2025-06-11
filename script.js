@@ -53,8 +53,8 @@ const translations = {
     monthly:"Havi ár:",
     hp:"LE",
     bookingos:"Foglalási Opciók",
-    auto:"Automata"
-
+    auto:"Automata",
+    contus:"Üzenjen nekünk!"
   },
   en: {
     rent1: "FOR RENT",
@@ -101,7 +101,8 @@ const translations = {
     monthly:"Monthly price:",
     hp:"HP",
     bookingos:"Booking Options",
-    auto:"Automatic"
+    auto:"Automatic",
+    contus:"Contact us!"
     
   }
 };
