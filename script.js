@@ -48,7 +48,9 @@ const translations = {
     gas:"Benzin",
     four:"Négykerék",
     front:"Elsőkerék",
-    rear:"Hátsókerék"
+    rear:"Hátsókerék",
+    weekly:"Heti ár:",
+    monthly:"Havi ár:"
 
   },
   en: {
@@ -91,7 +93,9 @@ const translations = {
     gas:"Gas",
     four:"All-Wheel",
     front:"Front-Wheel",
-    rear:"Rear-Wheel"
+    rear:"Rear-Wheel",
+    weekly:"Weekly price:",
+    monthly:"Monthly price:"
   }
 };
 
