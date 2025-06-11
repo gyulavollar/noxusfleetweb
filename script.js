@@ -38,9 +38,12 @@ const translations = {
     test7: "Béreltem egy BMW 430i Cabrio-t egy hétre – kiváló állapot, nagy élmény.",
     test8: "A bérlés gyors volt, az autó makulátlan. Teljesen elégedett vagyok.",
     test9: "A BMW X5 kényelmes és jól felszerelt volt. A csapat is profi.",
-    test10: "Próbáltam a BMW M4-et – nagy élmény volt, simán ment vele minden."
-
-
+    test10: "Próbáltam a BMW M4-et – nagy élmény volt, simán ment vele minden.",
+    prod:"Gyártási év:",
+    fuel:"Üzemanyag:",
+    performance:"Teljesítmény:",
+    drive:"Hajtás:",
+    shift:"Sebességváltó:"
 
   },
   en: {
@@ -73,8 +76,12 @@ const translations = {
     test7: "I rented a BMW 430i Cabrio for a week – excellent condition, great experience.",
     test8: "The rental process was quick, the car spotless. I'm completely satisfied.",
     test9: "The BMW X5 was comfortable and well-equipped. The team was professional too.",
-    test10: "I tried the BMW M4 – it was an amazing experience, everything went smoothly."
-
+    test10: "I tried the BMW M4 – it was an amazing experience, everything went smoothly.",
+    prod:"Production:",
+    fuel:"Fuel:",
+    performance:"Performance:",
+    drive:"Drive:",
+    shift:"Transmisson:"
   }
 };
 
