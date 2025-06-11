@@ -517,18 +517,41 @@ header {
   margin: 0 auto 30px;
 }
 
+/* New Grid Layout */
 .contact-section {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
-  justify-content: space-between;
   margin-top: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-grid-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-box {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #aef1f6;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  color: #aef1f6;
+}
+
+.contact-info-box h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .contact-form,
-.contact-map {
-  flex: 1 1 400px;
-  min-width: 300px;
+.contact-map-container {
+  flex: 1;
 }
 
 .contact-form {
@@ -550,7 +573,7 @@ header {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid#aef1f6;
+  border: 1px solid #aef1f6;
   border-radius: 8px;
   background-color: #000;
   color: #fff;
@@ -573,13 +596,30 @@ header {
   background-color: #0f99b4;
 }
 
-.contact-map iframe {
-  width: 100%;
+.contact-map {
   height: 100%;
   min-height: 420px;
   border-radius: 12px;
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
   border: none;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  .contact-map {
+    min-height: 350px;
+  }
 }
 
 /* -------------------- FOOTER -------------------- */
