@@ -50,7 +50,8 @@ const translations = {
     front:"Elsőkerék",
     rear:"Hátsókerék",
     weekly:"Heti ár:",
-    monthly:"Havi ár:"
+    monthly:"Havi ár:",
+    hp:"LE"
 
   },
   en: {
@@ -95,7 +96,9 @@ const translations = {
     front:"Front-Wheel",
     rear:"Rear-Wheel",
     weekly:"Weekly price:",
-    monthly:"Monthly price:"
+    monthly:"Monthly price:",
+    hp:"HP"
+    
   }
 };
 
