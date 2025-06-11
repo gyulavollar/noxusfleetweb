@@ -529,15 +529,13 @@ header {
   padding: 0 20px;
 }
 
-/* Header boxes - removed border */
 .contact-header {
-  background-color: #111;
+  background-color: #000;
   padding: 20px 30px;
   border-radius: 12px;
-  /* Removed border property */
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
   color: #aef1f6;
-  margin-bottom: -10px; /* Adjusted to pull content closer */
+  margin-bottom: -10px;
 }
 
 .contact-header h3 {
