@@ -717,9 +717,12 @@ footer a:hover {
   .hero-section2 {
     height: 400px;
   }
+  .hero-section2::before {
+    background-size: 120%;
+  }
   .hero-section2 h1 {
     font-size: 2rem;
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
   /* Cards */
@@ -814,4 +817,10 @@ footer a:hover {
   .about-text {
     font-size: 0.95rem;
   }
+}
+
+/* --- HERO ANIMATION OVERRIDE --- */
+@keyframes zoomIn {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.35); }
 }
