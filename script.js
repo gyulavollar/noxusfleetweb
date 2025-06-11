@@ -52,7 +52,8 @@ const translations = {
     weekly:"Heti ár:",
     monthly:"Havi ár:",
     hp:"LE",
-    bookingos:"Foglalási Opciók"
+    bookingos:"Foglalási Opciók",
+    auto:"Automata"
 
   },
   en: {
@@ -99,7 +100,8 @@ const translations = {
     weekly:"Weekly price:",
     monthly:"Monthly price:",
     hp:"HP",
-    bookingos:"Booking Options"
+    bookingos:"Booking Options",
+    auto:"Automatic"
     
   }
 };
