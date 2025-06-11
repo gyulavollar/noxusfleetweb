@@ -56,37 +56,51 @@
       <p>Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az alábbi űrlapot vagy hívjon minket!</p>
     </section>
 
-    <section class="contact-section">
-      <div class="contact-form">
-        <form action="send.php" method="POST">
-          <label for="name">Név</label>
-          <input type="text" name="name" id="name" required>
+    <section class="contact-grid-container">
+      <!-- Left Column -->
+      <div class="contact-grid-column">
+        <div class="contact-info-box">
+          <h3>Írjon nekünk</h3>
+          <p>Kérjük töltse ki az űrlapot, és mi hamarosan válaszolunk!</p>
+        </div>
+        <div class="contact-form">
+          <form action="send.php" method="POST">
+            <label for="name">Név</label>
+            <input type="text" name="name" id="name" required>
 
-          <label for="phone">Telefonszám</label>
-          <input type="text" name="phone" id="phone" required>
+            <label for="phone">Telefonszám</label>
+            <input type="text" name="phone" id="phone" required>
 
-          <label for="email">Email cím</label>
-          <input type="email" name="email" id="email" required>
+            <label for="email">Email cím</label>
+            <input type="email" name="email" id="email" required>
 
-          <label for="message">Üzenet</label>
-          <textarea name="message" id="message" rows="5" required></textarea>
+            <label for="message">Üzenet</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
 
-          <button type="submit">Üzenet elküldése</button>
-        </form>
+            <button type="submit">Üzenet elküldése</button>
+          </form>
+        </div>
       </div>
 
-<div class="contact-map">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d673.8031312020606!2d19.04804176685955!3d47.505252197831695!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d47.505237699999995!2d19.048138299999998!5e0!3m2!1shu!2shu!4v1749591585832!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    width="600"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-  </section>
+      <!-- Right Column -->
+      <div class="contact-grid-column">
+        <div class="contact-info-box">
+          <h3>Látogasson el hozzánk</h3>
+          <p>Budapest, Székely Mihály u. 2, 1061</p>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d673.8031312020606!2d19.04804176685955!3d47.505252197831695!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d47.505237699999995!2d19.048138299999998!5e0!3m2!1shu!2shu!4v1749591585832!5m2!1shu!2shu"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
 
 <section style="background-color: #000; color: #fff; padding: 3rem 1rem;">
 <div class="testimonial-section">
