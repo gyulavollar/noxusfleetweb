@@ -55,7 +55,7 @@ const translations = {
     bookingos:"Foglalási Opciók",
     auto:"Automata",
     contus:"Üzenjen nekünk!",
-    details:"Részletek"
+    details:"RÉSZLETEK"
   },
   en: {
     rent1: "FOR RENT",
@@ -104,7 +104,7 @@ const translations = {
     bookingos:"Booking Options",
     auto:"Automatic",
     contus:"Contact us!",
-    details:"View details"
+    details:"VIEW DETAILS"
     
   }
 };
