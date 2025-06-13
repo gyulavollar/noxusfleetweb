@@ -16,7 +16,7 @@ const translations = {
     bookingSubtitle: "",
     welcomeTitle: "ÜDVÖZÖLJÜK A NOXUS FLEET VILÁGÁBAN",
     about_title: "RÓLUNK",
-    about_text1: "A NOXUS FLEET a vezetés élményét emeli új szintre – sportos és prémium kategóriás autók széles választékát kínáljuk mindazoknak, akik nem érik be az átlagossal. Legyen szó bérlésről vagy vásárlásról, nálunk mindenki megtalálja a stílusához illő modellt. Kínálatunk folyamatosan frissül, megbízható partnereinken keresztül jutunk hozzá a legjobb állapotban lévő járművekhez. Így biztosítjuk, hogy ügyfeleink mindig kifogástalan autóba ülhetnek be. A NOXUS FLEET-nél a minőség, rugalmasság és vezetési élmény találkozik.",
+    about_text1: "A NOXUS FLEET a vezetés élményét emeli új szintre – sportos és prémium kategóriás autók széles választékát kínáljuk mindazoknak, akik nem érik be az átlagossal. Legyen szó bérlésről vagy vásárlásról, nálunk mindenki megtalálja a stílusához illő modellt. Kínálatunk folyamatosan frissül, megbízható partnereinken keresztül jutunk hozzá a legjobb járművekhez. Így biztosítjuk, hogy ügyfeleink mindig kifogástalan autóba ülhetnek be. A NOXUS FLEET-nél a minőség, rugalmasság és vezetési élmény találkozik.",
     about_text2: "",
     menuTitle: "MENÜ",
     menuTerms: "ÁSZF",
