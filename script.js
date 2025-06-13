@@ -65,7 +65,7 @@ const translations = {
     bookingSubtitle: "",
     welcomeTitle: "WELCOME TO THE WORLD OF NOXUS FLEET",
     about_title: "ABOUT US",
-    about_text1: "NOXUS FLEET BRINGS YOU THE ENERGY AND QUALITY OF PREMIUM CAR RENTALS...",
+    about_text1: "NOXUS FLEET takes the driving experience to the next level – offering a wide selection of sporty and premium-class vehicles for those who won't settle for average. Whether you're looking to rent or buy, you'll find the model that matches your style.Our inventory is constantly updated through trusted partners, ensuring access to top-condition vehicles at all times. This way, our clients can always get behind the wheel of a flawless car. At NOXUS FLEET, quality, flexibility, and driving pleasure come together.",
     about_text2: "",
     menuTitle: "MENU",
     menuTerms: "TERMS & CONDITIONS",
