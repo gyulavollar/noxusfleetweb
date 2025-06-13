@@ -282,3 +282,26 @@ document.querySelectorAll('.card').forEach(card => {
     card.classList.toggle('flipped');
   });
 });
+
+// === Currency Conversion ===
+const exchangeRate = 410; // 1 EUR = 390 HUF
+document.querySelectorAll('.card').forEach(card => {
+  const weeklyPriceEl = card.querySelector('[data-weekly-huf]');
+  const monthlyPriceEl = card.querySelector('[data-monthly-huf]');
+
+  if (!weeklyPriceEl || !monthlyPriceEl) return;
+
+  const weeklyHUF = parseInt(weeklyPriceEl.dataset.weeklyHuf);
+  const monthlyHUF = parseInt(monthlyPriceEl.dataset.monthlyHuf);
+
+  if (lang === 'en') {
+    const weeklyEUR = Math.round(weeklyHUF / exchangeRate);
+    const monthlyEUR = Math.round(monthlyHUF / exchangeRate);
+    weeklyPriceEl.textContent = `€${weeklyEUR}`;
+    monthlyPriceEl.textContent = `€${monthlyEUR}`;
+  } else {
+    weeklyPriceEl.textContent = weeklyHUF.toLocaleString('hu-HU') + ' Ft';
+    monthlyPriceEl.textContent = monthlyHUF.toLocaleString('hu-HU') + ' Ft';
+  }
+});
+
