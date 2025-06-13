@@ -306,7 +306,7 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 // === Currency Conversion ===
-const exchangeRate = 410; // 1 EUR = 390 HUF
+const exchangeRate = 410; // 1 EUR = 410 HUF
 document.querySelectorAll('.card').forEach(card => {
   const weeklyPriceEl = card.querySelector('[data-weekly-huf]');
   const monthlyPriceEl = card.querySelector('[data-monthly-huf]');
