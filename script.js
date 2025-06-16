@@ -60,7 +60,15 @@ const translations = {
     rentslogen:"Prémium élmény, kulcsrakészen – válogasson exkluzív bérautóink közül!",
     rentnotice:"A weboldalon feltüntetett árak tájékoztató jellegűek, azok előzetes értesítés nélkül változhatnak. A kaució összege gépjárműtípusonként eltérő lehet. Bővebb információért és egyedi ajánlatért kérjük, lépjen velünk kapcsolatba elérhetőségeink egyikén!",
     sellslogen:"Válogatott prémium autók – minőség, amely hosszú távon is értéket képvisel.",
-    sellnotice:"Az oldalon feltüntetett árak irányárak, amelyek az aktuális piaci viszonyok függvényében változhatnak. Amennyiben autóink valamelyike felkeltette érdeklődését, kérjük, lépjen kapcsolatba velünk az elérhetőségeink egyikén — személyre szabott ajánlattal és részletes tájékoztatással állunk rendelkezésére."
+    sellnotice:"Az oldalon feltüntetett árak irányárak, amelyek az aktuális piaci viszonyok függvényében változhatnak. Amennyiben autóink valamelyike felkeltette érdeklődését, kérjük, lépjen kapcsolatba velünk az elérhetőségeink egyikén — személyre szabott ajánlattal és részletes tájékoztatással állunk rendelkezésére.",
+    contactus:"Lépjen velünk kapcsolatba",
+    contacttext:"Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az alábbi űrlapot vagy hívjon minket!",
+    writeus:"Írjon nekünk",
+    place:"Az autók átadási helye:",
+    name:"Név",
+    phone:"Telefonszám",
+    email:"Email cím",
+    text:"Üzenet"
   
   },
   en: {
@@ -115,7 +123,15 @@ const translations = {
     rentslogen:"A Premium Experience, Delivered Turnkey – Discover Our Exclusive Fleet",
     rentnotice:"All prices listed on our website are indicative and subject to change without prior notice. Security deposit amounts may vary depending on the vehicle category. For comprehensive details or a bespoke offer, we invite you to contact us via any of our available channels.",
     sellslogen:"Curated Premium Vehicles – Excellence That Endures",
-    sellnotice:"The prices presented serve as guide rates and may adjust in accordance with market conditions. Should one of our vehicles catch your eye, please reach out — we will be pleased to provide a personalized proposal along with full information tailored to your needs."
+    sellnotice:"The prices presented serve as guide rates and may adjust in accordance with market conditions. Should one of our vehicles catch your eye, please reach out — we will be pleased to provide a personalized proposal along with full information tailored to your needs.",
+    contactus: "Contact Us",
+    contacttext: "If you have any questions regarding car rental, please fill out the form below or give us a call!",
+    writeus: "Write to Us",
+    place: "Vehicle Handover Location:",
+    name: "Name",
+    phone: "Phone Number",
+    email: "Email Address",
+    text: "Message"
     
   }
 };
