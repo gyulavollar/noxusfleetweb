@@ -56,7 +56,12 @@ const translations = {
     bookingos:"Foglalási Opciók",
     auto:"Automata",
     contus:"Üzenjen nekünk!",
-    details:"RÉSZLETEK"
+    details:"RÉSZLETEK",
+    rentslogen:"Prémium élmény, kulcsrakészen – válogasson exkluzív bérautóink közül!",
+    rentnotice:"A weboldalon feltüntetett árak tájékoztató jellegűek, azok előzetes értesítés nélkül változhatnak. A kaució összege gépjárműtípusonként eltérő lehet. Bővebb információért és egyedi ajánlatért kérjük, lépjen velünk kapcsolatba elérhetőségeink egyikén!",
+    sellslogen:"Válogatott prémium autók – minőség, amely hosszú távon is értéket képvisel.",
+    sellnotice:"Az oldalon feltüntetett árak irányárak, amelyek az aktuális piaci viszonyok függvényében változhatnak. Amennyiben autóink valamelyike felkeltette érdeklődését, kérjük, lépjen kapcsolatba velünk az elérhetőségeink egyikén — személyre szabott ajánlattal és részletes tájékoztatással állunk rendelkezésére."
+  
   },
   en: {
     rent1: "FOR RENT",
@@ -106,7 +111,11 @@ const translations = {
     bookingos:"Booking Options",
     auto:"Automatic",
     contus:"Contact us!",
-    details:"VIEW DETAILS"
+    details:"VIEW DETAILS",
+    rentslogen:"A Premium Experience, Delivered Turnkey – Discover Our Exclusive Fleet",
+    rentnotice:"All prices listed on our website are indicative and subject to change without prior notice. Security deposit amounts may vary depending on the vehicle category. For comprehensive details or a bespoke offer, we invite you to contact us via any of our available channels.",
+    sellslogen:"Curated Premium Vehicles – Excellence That Endures",
+    sellnotice:"The prices presented serve as guide rates and may adjust in accordance with market conditions. Should one of our vehicles catch your eye, please reach out — we will be pleased to provide a personalized proposal along with full information tailored to your needs."
     
   }
 };
