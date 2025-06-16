@@ -97,8 +97,8 @@ const translations = {
     test2: "Fast administration, clean car, fair conditions. I can only recommend them.",
     test3: "I rented a car for two months. Everything went smoothly.",
     test4: "The BMW 440i was a great choice. A truly premium experience.",
-    test5: "Transparent prices, no hidden fees. That’s rare these days.",
-    test6: "I’ve been looking for such a flexible service for a long time. Finally found it here.",
+    test5: "Transparent prices, no hidden fees. That's rare these days.",
+    test6: "I've been looking for such a flexible service for a long time. Finally found it here.",
     test7: "I rented a BMW 430i Cabrio for a week – excellent condition, great experience.",
     test8: "The rental process was quick, the car spotless. I'm completely satisfied.",
     test9: "The BMW X5 was comfortable and well-equipped. The team was professional too.",
@@ -133,7 +133,7 @@ const translations = {
     phone: "Phone Number",
     email: "Email Address",
     text: "Message",
-    send:"Üzenet elküldése"
+    send:"Send Message"
     
   }
 };
@@ -144,10 +144,15 @@ function updateTexts() {
 
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
-    
-  // === Currency Conversion (moved inside updateTexts) ===
+    } else if (el.dataset.default) {
+      // Ha nincs fordítás, default szöveg
+      el.textContent = el.dataset.default;
+    }
+  });
+
+  // === Currency Conversion ===
   const exchangeRate = 410;
   document.querySelectorAll('.card').forEach(card => {
     const weeklyPriceEl = card.querySelector('[data-weekly-huf]');
@@ -167,8 +172,6 @@ function updateTexts() {
       weeklyPriceEl.textContent = weeklyHUF.toLocaleString('hu-HU') + ' Ft';
       monthlyPriceEl.textContent = monthlyHUF.toLocaleString('hu-HU') + ' Ft';
     }
-  });
-}
   });
 
   // Update button text
@@ -333,26 +336,3 @@ document.querySelectorAll('.card').forEach(card => {
     card.classList.toggle('flipped');
   });
 });
-
-// === Currency Conversion ===
-const exchangeRate = 410; // 1 EUR = 410 HUF
-document.querySelectorAll('.card').forEach(card => {
-  const weeklyPriceEl = card.querySelector('[data-weekly-huf]');
-  const monthlyPriceEl = card.querySelector('[data-monthly-huf]');
-
-  if (!weeklyPriceEl || !monthlyPriceEl) return;
-
-  const weeklyHUF = parseInt(weeklyPriceEl.dataset.weeklyHuf);
-  const monthlyHUF = parseInt(monthlyPriceEl.dataset.monthlyHuf);
-
-  if (lang === 'en') {
-    const weeklyEUR = Math.round(weeklyHUF / exchangeRate);
-    const monthlyEUR = Math.round(monthlyHUF / exchangeRate);
-    weeklyPriceEl.textContent = `€${weeklyEUR}`;
-    monthlyPriceEl.textContent = `€${monthlyEUR}`;
-  } else {
-    weeklyPriceEl.textContent = weeklyHUF.toLocaleString('hu-HU') + ' Ft';
-    monthlyPriceEl.textContent = monthlyHUF.toLocaleString('hu-HU') + ' Ft';
-  }
-});
-
