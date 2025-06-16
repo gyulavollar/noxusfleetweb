@@ -1,297 +1,313 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport"/>
-<title>Noxus Fleet</title>
-<link href="logo.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Goldman&amp;display=swap" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport"/>
+    <title>Noxus Fleet</title>
+    <link href="logo.png" rel="icon" type="image/png"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&amp;display=swap" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <script defer="" src="script.js"></script>
 </head>
 
-    <body class="goldman-regular">
-  <header>
-<a class="logo" href="index.html">
-<img alt="Autókölcsönző logó" src="logo.png" style="max-height: 50px; height: auto; width: auto; display: block;"/>
-</a>
-<button aria-expanded="false" aria-label="Menü megnyitása" class="menu-toggle">
-<span></span>
-</button>
-<nav class="desktop-nav">
-<ul>
-<li class="dropdown">
-<a data-translate="rent1" href="rent.html"> </a>
-</li>
-<li class="dropdown">
-<a data-translate="forsale1" href="sale.html"> </a>
-</li>
-<li><a data-translate="connection" href="contact.html">KAPCSOLAT</a></li>
-<li><button class="lang-button" id="langSwitchDesktop">English</button></li>
-</ul>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-<nav>
-<ul>
-<li class="dropdown">
-<a data-translate="rent1" href="rent.html"> </a>
-</li>
-<li class="dropdown">
-<a data-translate="forsale1" href="sale.html"> </a>
-</li>
-<li><a data-translate="connection" href="contact.html">KAPCSOLAT</a></li>
-<li><button class="lang-button" id="langSwitchDesktop">English</button></li>
-</ul>
-</nav>
-</div>
-  </header>
+<body class="goldman-regular">
+    <header>
+        <div class="header-container">
+            <a class="logo" href="index.html">
+                <img alt="Autókölcsönző logó" src="logo.png" style="max-height: 50px; height: auto; width: auto; display: block;"/>
+            </a>
+            <button aria-expanded="false" aria-label="Menü megnyitása" class="menu-toggle">
+                <span></span>
+            </button>
+            <nav class="desktop-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a data-translate="rent1" href="rent.html"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a data-translate="forsale1" href="sale.html"></a>
+                    </li>
+                    <li><a data-translate="connection" href="contact.html">KAPCSOLAT</a></li>
+                    <li><button class="lang-button" id="langSwitchDesktop">English</button></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <nav>
+                    <ul>
+                        <li class="dropdown">
+                            <a data-translate="rent1" href="rent.html"></a>
+                        </li>
+                        <li class="dropdown">
+                            <a data-translate="forsale1" href="sale.html"></a>
+                        </li>
+                        <li><a data-translate="connection" href="contact.html">KAPCSOLAT</a></li>
+                        <li><button class="lang-button" id="langSwitchDesktop">English</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <section class="hero-section2">
-<h1 data-translate="welcomeTitle">
-<!-- Ide jön a cím szöveg -->
-</h1>
-</section>
-<section style="text-align: center; padding: 20px 15px; margin-top: 1px; background-color: #000000;">
-<h2 data-translate="bookingTitle" style="font-size: 1.8rem; font-weight: 600; color: #f2f2f2; margin: 0;"></h2>
-<p data-translate="bookingSubtitle" style="color: #555; font-size: 0.95rem; margin-top: 8px;"></p>
-  </section>
+        <div class="hero-content">
+            <h1 data-translate="welcomeTitle">
+                <!-- Ide jön a cím szöveg -->
+            </h1>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="booking-container">
+            <h2 data-translate="bookingTitle" style="font-size: 1.8rem; font-weight: 600; color: #f2f2f2; margin: 0;"></h2>
+            <p data-translate="bookingSubtitle" style="color: #555; font-size: 0.95rem; margin-top: 8px;"></p>
+        </div>
+    </section>
 
     <section class="card-grid">
-  <div class="card">
-<div class="card-inner">
-<div class="card-front">
-<h3>BMW M4 Competition</h3>
-<img alt="BMW M4 Competition" loading="lazy" src="M4.png"/>
-<div class="details-text" data-translate="details">RÉSZLETEK</div>
-</div>
-<div class="card-back">
-<h3 style="text-align: center;">BMW M4 Competition</h3>
-<div class="car-info-grid">
-<div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div><div>2024</div>
-<div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div><div data-translate="gas">Benzin</div>
-<div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
-<div><span class="hp-value">503</span> <span class="hp-unit" data-translate="hp">LE</span></div>
-<div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div><div data-translate="four">Négykerék</div>
-<div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div><div data-translate="auto">Automata</div>
-</div>
-<div class="pricing-grid">
-<h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
-<div data-translate="weekly"><strong>Heti ár:</strong></div>
-<div data-weekly-huf="450000">450.000 Ft</div>
-<div data-translate="monthly"><strong>Havi ár:</strong></div>
-<div data-monthly-huf="990000">990.000 Ft</div>
-</div>
-<a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
-<img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
-<span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
-</a>
-</div>
-</div>
-  </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>BMW M4 Competition</h3>
+                    <img alt="BMW M4 Competition" loading="lazy" src="M4.png"/>
+                    <div class="details-text" data-translate="details">RÉSZLETEK</div>
+                </div>
+                <div class="card-back">
+                    <h3 style="text-align: center;">BMW M4 Competition</h3>
+                    <div class="car-info-grid">
+                        <div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div>
+                        <div>2024</div>
+                        <div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div>
+                        <div data-translate="gas">Benzin</div>
+                        <div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
+                        <div><span class="hp-value">503</span> <span class="hp-unit" data-translate="hp">LE</span></div>
+                        <div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div>
+                        <div data-translate="four">Négykerék</div>
+                        <div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div>
+                        <div data-translate="auto">Automata</div>
+                    </div>
+                    <div class="pricing-grid">
+                        <h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
+                        <div data-translate="weekly"><strong>Heti ár:</strong></div>
+                        <div data-weekly-huf="450000">450.000 Ft</div>
+                        <div data-translate="monthly"><strong>Havi ár:</strong></div>
+                        <div data-monthly-huf="990000">990.000 Ft</div>
+                    </div>
+                    <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
+                        <img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+                        <span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-  <div class="card">
-<div class="card-inner">
-<div class="card-front">
-<h3>Range Rover Sport</h3>
-<img alt="Range Rover Sport" loading="lazy" src="RANGE.png"/>
-<div class="details-text" data-translate="details">RÉSZLETEK</div>
-</div>
-<div class="card-back">
-<h3 style="text-align: center;">Range Rover Sport</h3>
-<div class="car-info-grid">
-<div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div><div>2024</div>
-<div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div><div data-translate="gas">Benzin</div>
-<div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
-<div><span class="hp-value">255</span> <span class="hp-unit" data-translate="hp">LE</span></div>
-<div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div><div data-translate="four">Négykerék</div>
-<div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div><div data-translate="auto">Automata</div>
-</div>
-<div class="pricing-grid">
-<h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
-<div data-translate="weekly"><strong>Heti ár:</strong></div>
-<div data-weekly-huf="450000">450.000 Ft</div>
-<div data-translate="monthly"><strong>Havi ár:</strong></div>
-<div data-monthly-huf="990000">990.000 Ft</div>
-</div>
-<a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
-<img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
-<span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
-</a>
-</div>
-</div>
-  </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Range Rover Sport</h3>
+                    <img alt="Range Rover Sport" loading="lazy" src="RANGE.png"/>
+                    <div class="details-text" data-translate="details">RÉSZLETEK</div>
+                </div>
+                <div class="card-back">
+                    <h3 style="text-align: center;">Range Rover Sport</h3>
+                    <div class="car-info-grid">
+                        <div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div>
+                        <div>2024</div>
+                        <div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div>
+                        <div data-translate="gas">Benzin</div>
+                        <div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
+                        <div><span class="hp-value">255</span> <span class="hp-unit" data-translate="hp">LE</span></div>
+                        <div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div>
+                        <div data-translate="four">Négykerék</div>
+                        <div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div>
+                        <div data-translate="auto">Automata</div>
+                    </div>
+                    <div class="pricing-grid">
+                        <h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
+                        <div data-translate="weekly"><strong>Heti ár:</strong></div>
+                        <div data-weekly-huf="450000">450.000 Ft</div>
+                        <div data-translate="monthly"><strong>Havi ár:</strong></div>
+                        <div data-monthly-huf="990000">990.000 Ft</div>
+                    </div>
+                    <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
+                        <img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+                        <span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-  <div class="card">
-<div class="card-inner">
-<div class="card-front">
-<h3>BMW I5 eDrive40</h3>
-<img alt="BMW I5 eDrive40" loading="lazy" src="i5.png"/>
-<div class="details-text" data-translate="details">RÉSZLETEK</div>
-</div>
-<div class="card-back">
-<h3 style="text-align: center;">BMW I5 eDrive40</h3>
-<div class="car-info-grid">
-<div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div><div>2024</div>
-<div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div><div data-translate="elec">Elektromos</div>
-<div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
-<div><span class="hp-value">355</span> <span class="hp-unit" data-translate="hp">LE</span></div>
-<div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div><div data-translate="four">Négykerék</div>
-<div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div><div data-translate="auto">Automata</div>
-</div>
-<div class="pricing-grid">
-<h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
-<div data-translate="weekly"><strong>Heti ár:</strong></div>
-<div data-weekly-huf="450000">350.000 Ft</div>
-<div data-translate="monthly"><strong>Havi ár:</strong></div>
-<div data-monthly-huf="990000">730.000 Ft</div>
-</div>
-<a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
-<img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
-<span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
-</a>
-</div>
-</div>
-  </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>BMW I5 eDrive40</h3>
+                    <img alt="BMW I5 eDrive40" loading="lazy" src="i5.png"/>
+                    <div class="details-text" data-translate="details">RÉSZLETEK</div>
+                </div>
+                <div class="card-back">
+                    <h3 style="text-align: center;">BMW I5 eDrive40</h3>
+                    <div class="car-info-grid">
+                        <div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div>
+                        <div>2024</div>
+                        <div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div>
+                        <div data-translate="elec">Elektromos</div>
+                        <div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
+                        <div><span class="hp-value">355</span> <span class="hp-unit" data-translate="hp">LE</span></div>
+                        <div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div>
+                        <div data-translate="four">Négykerék</div>
+                        <div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div>
+                        <div data-translate="auto">Automata</div>
+                    </div>
+                    <div class="pricing-grid">
+                        <h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
+                        <div data-translate="weekly"><strong>Heti ár:</strong></div>
+                        <div data-weekly-huf="450000">350.000 Ft</div>
+                        <div data-translate="monthly"><strong>Havi ár:</strong></div>
+                        <div data-monthly-huf="990000">730.000 Ft</div>
+                    </div>
+                    <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
+                        <img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+                        <span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-  <div class="card">
-<div class="card-inner">
-<div class="card-front">
-<h3>BMW 430I Cabrio</h3>
-<img alt="BMW 430I Cabrio" loading="lazy" src="430icabrio.png"/>
-<div class="details-text" data-translate="details">RÉSZLETEK</div>
-</div>
-<div class="card-back">
-<h3 style="text-align: center;">BMW 430I Cabrio</h3>
-<div class="car-info-grid">
-<div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div><div>2024</div>
-<div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div><div data-translate="gas">Benzin</div>
-<div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
-<div><span class="hp-value">255</span> <span class="hp-unit" data-translate="hp">LE</span></div>
-<div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div><div data-translate="four">Négykerék</div>
-<div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div><div data-translate="auto">Automata</div>
-</div>
-<div class="pricing-grid">
-<h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
-<div data-translate="weekly"><strong>Heti ár:</strong></div>
-<div data-weekly-huf="450000">330.000 Ft</div>
-<div data-translate="monthly"><strong>Havi ár:</strong></div>
-<div data-monthly-huf="990000">690.000 Ft</div>
-</div>
-<a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
-<img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
-<span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
-</a>
-</div>
-</div>
-  </div>
-</section>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>BMW 430I Cabrio</h3>
+                    <img alt="BMW 430I Cabrio" loading="lazy" src="430icabrio.png"/>
+                    <div class="details-text" data-translate="details">RÉSZLETEK</div>
+                </div>
+                <div class="card-back">
+                    <h3 style="text-align: center;">BMW 430I Cabrio</h3>
+                    <div class="car-info-grid">
+                        <div data-translate="prod" style="text-align: left;"><strong>Gyártás éve:</strong></div>
+                        <div>2024</div>
+                        <div data-translate="fuel" style="text-align: left;"><strong>Üzemanyag:</strong></div>
+                        <div data-translate="gas">Benzin</div>
+                        <div data-translate="performance" style="text-align: left;"><strong>Teljesítmény:</strong></div>
+                        <div><span class="hp-value">255</span> <span class="hp-unit" data-translate="hp">LE</span></div>
+                        <div data-translate="drive" style="text-align: left;"><strong>Hajtás:</strong></div>
+                        <div data-translate="four">Négykerék</div>
+                        <div data-translate="shift" style="text-align: left;"><strong>Sebességváltó:</strong></div>
+                        <div data-translate="auto">Automata</div>
+                    </div>
+                    <div class="pricing-grid">
+                        <h4 data-translate="bookingos" style="text-align: center;">FOGLALÁSI OPCIÓK</h4>
+                        <div data-translate="weekly"><strong>Heti ár:</strong></div>
+                        <div data-weekly-huf="450000">330.000 Ft</div>
+                        <div data-translate="monthly"><strong>Havi ár:</strong></div>
+                        <div data-monthly-huf="990000">690.000 Ft</div>
+                    </div>
+                    <a class="whatsapp-button" href="https://wa.me/36307846975" target="_blank">
+                        <img alt="WhatsApp" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+                        <span class="whatsapp-text" data-translate="contus">Üzenjen nekünk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="about-section">
-<div class="about-container">
-<section class="about-content" id="about">
-<h2 class="about-title" data-translate="about_title">Rólunk</h2>
-<p class="about-text" data-translate="about_text1">
-</p>
-<p class="about-text" data-translate="about_text2">
-</p>
-</section>
-</div>
-  </section>
+        <div class="about-container">
+            <div class="about-content" id="about">
+                <h2 class="about-title" data-translate="about_title">Rólunk</h2>
+                <p class="about-text" data-translate="about_text1"></p>
+                <p class="about-text" data-translate="about_text2"></p>
+            </div>
+        </div>
+    </section>
 
-    <section style="background-color: #000; color: #fff; padding: 3rem 1rem;">
-<div class="testimonial-section">
-<div class="testimonial-slide active">
-<p data-translate="test1"></p>
-<div class="testimonial-author">– Máté Kiss</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test2"></p>
-<div class="testimonial-author">– Dóra Czene</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test3"></p>
-<div class="testimonial-author">– Levente Sánta</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test4"></p>
-<div class="testimonial-author">– Petra Molnár</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test5"></p>
-<div class="testimonial-author">– Gergely Halász</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test6"></p>
-<div class="testimonial-author">– Laura Szilágyi</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test7"></p>
-<div class="testimonial-author">– Tamás Fekete</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test8"></p>
-<div class="testimonial-author">– Zita Németh</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test9"></p>
-<div class="testimonial-author">– Bence Tóvári</div>
-</div>
-<div class="testimonial-slide">
-<p data-translate="test10"></p>
-<div class="testimonial-author">– Andrea Nagy</div>
-</div>
-</div>
-  </section>
+    <section class="testimonials-section">
+        <div class="testimonial-container">
+            <div class="testimonial-slide active">
+                <p data-translate="test1"></p>
+                <div class="testimonial-author">– Máté Kiss</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test2"></p>
+                <div class="testimonial-author">– Dóra Czene</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test3"></p>
+                <div class="testimonial-author">– Levente Sánta</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test4"></p>
+                <div class="testimonial-author">– Petra Molnár</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test5"></p>
+                <div class="testimonial-author">– Gergely Halász</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test6"></p>
+                <div class="testimonial-author">– Laura Szilágyi</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test7"></p>
+                <div class="testimonial-author">– Tamás Fekete</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test8"></p>
+                <div class="testimonial-author">– Zita Németh</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test9"></p>
+                <div class="testimonial-author">– Bence Tóvári</div>
+            </div>
+            <div class="testimonial-slide">
+                <p data-translate="test10"></p>
+                <div class="testimonial-author">– Andrea Nagy</div>
+            </div>
+        </div>
+    </section>
 
-    <footer style="background: #000; color: #f2f2f2; padding: 2rem 1rem 1rem; border-top: 2px solid #aef1f6;">
-<div class="footer-wrapper">
-<div class="footer-grid">
-<!-- Logó -->
-<div class="footer-section">
-<img alt="Logó" class="logo" src="logo.png"/>
-</div>
-<!-- Menü -->
-<div class="footer-section">
-<h4 data-translate="menuTitle"></h4>
-<a data-translate="menuTerms" href="#"></a>
-<a data-translate="menuFaq" href="#"></a>
-</div>
-<!-- Nyitvatartás -->
-<div class="footer-section">
-<h4 data-translate="openingHoursTitle"></h4>
-<ul>
-<li data-translate="openingHoursWeekdays"></li>
-<li data-translate="openingHoursWeekend"></li>
-</ul>
-</div>
-<!-- Kapcsolat -->
-<div class="footer-section">
-<h4 data-translate="contactTitle"></h4>
-<p> <span data-translate="contactPhone"></span></p>
-<p> <span data-translate="contactEmail"></span></p>
-</div>
-<!-- Social -->
-<div class="footer-section">
-<h4 data-translate="socialTitle"></h4>
-<div class="social-icons">
-<a href="https://wa.me/36307846975" rel="noopener noreferrer" target="_blank">
-<img alt="WhatsApp" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
-</a>
-<a href="https://www.instagram.com/noxusfleet?igsh=cWhnZWgxNGxvNjZ6" rel="noopener noreferrer" target="_blank">
-<img alt="Instagram" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"/>
-</a>
-<a href="https://www.tiktok.com/@noxusfleet?_t=ZN-8wro9WbKfpe&amp;_r=1" rel="noopener noreferrer" target="_blank">
-<img alt="TikTok" height="32" src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="32"/>
-</a>
-</div>
-</div>
-</div>
-<!-- Lábjegyzet -->
-<section class="footer-bottom" data-translate="footerBottom"></section>
-</div>
-  </footer>
-
-  </body>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <img alt="Logó" class="logo" src="logo.png"/>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="menuTitle"></h4>
+                    <a data-translate="menuTerms" href="#"></a>
+                    <a data-translate="menuFaq" href="#"></a>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="openingHoursTitle"></h4>
+                    <ul>
+                        <li data-translate="openingHoursWeekdays"></li>
+                        <li data-translate="openingHoursWeekend"></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="contactTitle"></h4>
+                    <p><span data-translate="contactPhone"></span></p>
+                    <p><span data-translate="contactEmail"></span></p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="socialTitle"></h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/36307846975" rel="noopener noreferrer" target="_blank">
+                            <img alt="WhatsApp" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
+                        </a>
+                        <a href="https://www.instagram.com/noxusfleet?igsh=cWhnZWgxNGxvNjZ6" rel="noopener noreferrer" target="_blank">
+                            <img alt="Instagram" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"/>
+                        </a>
+                        <a href="https://www.tiktok.com/@noxusfleet?_t=ZN-8wro9WbKfpe&amp;_r=1" rel="noopener noreferrer" target="_blank">
+                            <img alt="TikTok" height="32" src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="32"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <section data-translate="footerBottom"></section>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
