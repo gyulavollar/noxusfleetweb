@@ -899,3 +899,13 @@ footer a:hover {
     font-size: 0.95rem;
   }
 }
+
+  @media (max-width: 600px) {
+    .aszf-section ul {
+      display: block;
+      width: 100%;
+      padding-left: 1.2rem;
+      box-sizing: border-box;
+      margin-left: 0;
+      text-align: left;
+    }
