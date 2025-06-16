@@ -904,8 +904,8 @@ footer a:hover {
   list-style-position: inside;
   padding-left: 0;
   display: inline-block;
-  text-align: left; /* desktopon balra */
-  margin: 0 auto;   /* középre a blokk */
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
