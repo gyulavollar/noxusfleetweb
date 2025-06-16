@@ -68,7 +68,8 @@ const translations = {
     name:"Név",
     phone:"Telefonszám",
     email:"Email cím",
-    text:"Üzenet"
+    text:"Üzenet",
+    send:"Üzenet elküldése"
   
   },
   en: {
@@ -131,7 +132,8 @@ const translations = {
     name: "Name",
     phone: "Phone Number",
     email: "Email Address",
-    text: "Message"
+    text: "Message",
+    send:"Üzenet elküldése"
     
   }
 };
