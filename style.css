@@ -900,12 +900,23 @@ footer a:hover {
   }
 }
 
-  @media (max-width: 600px) {
-    .aszf-section ul {
-      display: block;
-      width: 100%;
-      padding-left: 1.2rem;
-      box-sizing: border-box;
-      margin-left: 0;
-      text-align: left;
-    }
+.aszf-section ul {
+  list-style-position: inside;
+  padding-left: 0;
+  display: inline-block;
+  text-align: left; /* desktopon balra */
+  margin: 0 auto;   /* középre a blokk */
+}
+
+@media (max-width: 600px) {
+  .aszf-section ul {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    margin: 0 auto;
+    text-align: center;  /* mobilon középre igazítjuk a szöveget is */
+  }
+  
+  .aszf-section ul li {
+    text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
+  }
