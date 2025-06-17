@@ -63,13 +63,8 @@ const translations = {
     sellnotice:"Az oldalon feltüntetett árak irányárak, amelyek az aktuális piaci viszonyok függvényében változhatnak. Amennyiben autóink valamelyike felkeltette érdeklődését, kérjük, lépjen kapcsolatba velünk az elérhetőségeink egyikén — személyre szabott ajánlattal és részletes tájékoztatással állunk rendelkezésére.",
     contactus:"Lépjen velünk kapcsolatba",
     contacttext:"Ha bármilyen kérdése van az autóbérléssel kapcsolatban, kérjük, írjon e-mailt vagy hívjon minket!",
-    writeus:"Írjon nekünk",
-    place:"Az autók átadási helye:",
-    name:"Név",
-    phone:"Telefonszám",
-    email:"Email cím",
-    text:"Üzenet",
-    send:"Üzenet elküldése"
+    place:"Az autók átadási helye:"
+    
   },
   en: {
     rent1: "FOR RENT",
@@ -126,13 +121,7 @@ const translations = {
     sellnotice:"The prices presented serve as guide rates and may adjust in accordance with market conditions. Should one of our vehicles catch your eye, please reach out — we will be pleased to provide a personalized proposal along with full information tailored to your needs.",
     contactus: "Contact Us",
     contacttext: "If you have any questions regarding car rental, please email us or give us a call!",
-    writeus: "Write to Us",
-    place: "Vehicle Handover Location:",
-    name: "Name",
-    phone: "Phone Number",
-    email: "Email Address",
-    text: "Message",
-    send:"Send Message"
+    place: "Vehicle Handover Location:"
   }
 };
 
