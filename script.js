@@ -64,7 +64,9 @@ const translations = {
     contactus:"Lépjen velünk kapcsolatba",
     contacttext:"Ha bármilyen kérdése van az autóbérléssel kapcsolatban, kérjük, írjon e-mailt vagy hívjon minket!",
     place:"Az autók átadási helye:",
-    handover:"Az autók átadásának helyszíne előzetes egyeztetés alapján változhat. A feltüntetett cím a preferált átvételi pont."
+    handover:"Az autók átadásának helyszíne előzetes egyeztetés alapján változhat. A feltüntetett cím a preferált átvételi pont.",
+    Phone: "Telefon",
+    Email: "Email"
     
   },
   en: {
@@ -123,7 +125,9 @@ const translations = {
     contactus: "Contact Us",
     contacttext: "If you have any questions regarding car rental, please email us or give us a call!",
     place: "Vehicle Handover Location:",
-    handover: "The handover location may vary based on prior arrangement. The indicated address is the preferred pickup point."
+    handover: "The handover location may vary based on prior arrangement. The indicated address is the preferred pickup point.",
+    Phone: "Telefon",
+    Email: "Email"
   }
 };
 
