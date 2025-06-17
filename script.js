@@ -152,6 +152,25 @@ function updateTexts() {
     }
   });
 
+  updateLangBlocks(lang);
+
+  const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
+  langButtons.forEach(btn => {
+    btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
+  });
+} else if (el.dataset.default) {
+      el.textContent = el.dataset.default;
+    }
+  });
+
+  updateLangBlocks(lang);
+
+  const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
+  langButtons.forEach(btn => {
+    btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
+  });
+}
+
   // === Currency Conversion ===
   const exchangeRate = 410;
   document.querySelectorAll('.card').forEach(card => {
