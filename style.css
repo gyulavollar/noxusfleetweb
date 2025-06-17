@@ -395,10 +395,18 @@ header {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
   gap: 4px 12px;
   font-size: 0.92rem;
   margin-bottom: 16px;
+}
+
+.pricing-grid > div:nth-child(odd) {
+  text-align: left;
+}
+
+.pricing-grid > div:nth-child(even) {
+  text-align: right;
 }
 
 .pricing-grid h4 {
