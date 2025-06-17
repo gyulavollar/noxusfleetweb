@@ -139,14 +139,15 @@ const translations = {
 // === Update Language Blocks Visibility ===
 function updateLanguageBlocks() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
+  
+  // Először elrejtjük az összes nyelvi blokkot
   document.querySelectorAll('[data-langblock]').forEach(block => {
-    // Minden nyelvi blokkot elrejtünk először
     block.style.display = 'none';
-    
-    // Csak az aktuális nyelvű blokkot jelenítjük meg
-    if (block.getAttribute('data-langblock') === lang) {
-      block.style.display = 'block';
-    }
+  });
+  
+  // Csak az aktuális nyelv blokkjait jelenítjük meg
+  document.querySelectorAll(`[data-langblock="${lang}"]`).forEach(block => {
+    block.style.display = 'block';
   });
 }
 
