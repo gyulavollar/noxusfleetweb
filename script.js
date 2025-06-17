@@ -140,10 +140,12 @@ const translations = {
 function updateLanguageBlocks() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
   document.querySelectorAll('[data-langblock]').forEach(block => {
-    if (block.dataset.langblock === lang) {
+    // Minden nyelvi blokkot elrejtünk először
+    block.style.display = 'none';
+    
+    // Csak az aktuális nyelvű blokkot jelenítjük meg
+    if (block.getAttribute('data-langblock') === lang) {
       block.style.display = 'block';
-    } else {
-      block.style.display = 'none';
     }
   });
 }
