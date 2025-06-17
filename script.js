@@ -70,7 +70,6 @@ const translations = {
     email:"Email cím",
     text:"Üzenet",
     send:"Üzenet elküldése"
-  
   },
   en: {
     rent1: "FOR RENT",
@@ -134,9 +133,20 @@ const translations = {
     email: "Email Address",
     text: "Message",
     send:"Send Message"
-    
   }
 };
+
+// === Update Language Blocks Visibility ===
+function updateLanguageBlocks() {
+  const lang = localStorage.getItem('userLanguage') || 'hu';
+  document.querySelectorAll('[data-langblock]').forEach(block => {
+    if (block.dataset.langblock === lang) {
+      block.style.display = 'block';
+    } else {
+      block.style.display = 'none';
+    }
+  });
+}
 
 // === Update Text Based on Selected Language ===
 function updateTexts() {
@@ -147,10 +157,12 @@ function updateTexts() {
     if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
     } else if (el.dataset.default) {
-      // Ha nincs fordítás, default szöveg
       el.textContent = el.dataset.default;
     }
   });
+
+  // Update language blocks
+  updateLanguageBlocks();
 
   // === Currency Conversion ===
   const exchangeRate = 410;
@@ -217,6 +229,7 @@ function hideMenu() {
 // === Main Logic on Page Load ===
 document.addEventListener('DOMContentLoaded', () => {
   updateTexts();
+  updateLanguageBlocks();
   setInitialVisibility();
 
   // Unified language switch logic
