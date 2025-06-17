@@ -507,82 +507,81 @@ header {
 }
 
 .contact-top h2 {
-  font-size: 3rem; /* Increased size */
-  color: #0abab5; /* Tiffany blue */
-  margin-bottom: 20px;
+  font-size: 3rem;
+  color: #aef1f6; /* Your specified Tiffany blue */
+  margin-bottom: 25px;
   font-weight: 700;
 }
 
 .contact-top p {
-  font-size: 1.3rem; /* Increased size */
+  font-size: 1.3rem;
   color: #fff;
   line-height: 1.6;
+  margin-bottom: 60px; /* Added more space below */
 }
 
-/* Contact Info Section - Simplified */
+/* Contact Info Section */
 .contact-info-section {
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 80px; /* Increased bottom margin */
   padding: 0 20px;
 }
 
 .contact-info-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px; /* Increased gap between boxes */
+  margin-bottom: 40px; /* Added space below contact info */
 }
 
 .contact-info-box {
   text-align: center;
   padding: 0;
-  background: transparent; /* Removed background */
-  border: none; /* Removed border */
-  box-shadow: none; /* Removed shadow */
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .contact-info-box h3 {
-  color: #0abab5; /* Tiffany blue */
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  color: #aef1f6; /* Tiffany blue */
+  font-size: 1.6rem; /* Slightly larger */
+  margin-bottom: 15px; /* More space below heading */
   font-weight: 500;
 }
 
 .contact-info-box p {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.3rem; /* Larger text */
   margin: 0;
+  line-height: 1.6;
 }
 
 /* Map Section Styles */
 .contact-map-section {
   max-width: 1200px;
-  margin: 0 auto 80px;
+  margin: 0 auto 100px; /* More space at bottom */
   padding: 0 20px;
 }
 
 .contact-map-header {
   background: transparent;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* More space above map */
   text-align: center;
 }
 
 .contact-map-header h3 {
-  font-size: 1.5rem;
-  color: #0abab5; /* Tiffany blue */
-  margin: 0 0 10px 0;
+  font-size: 1.6rem;
+  color: #aef1f6; /* Tiffany blue */
+  margin: 0 0 15px 0; /* More space below */
   font-weight: 500;
 }
 
-.contact-map-container {
-  width: 100%;
-}
-
 .contact-map {
-  height: 400px;
+  height: 450px; /* Slightly taller map */
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1); /* Subtle border */
+  border: 1px solid rgba(174, 241, 246, 0.3); /* Tiffany blue subtle border */
 }
 
 /* Responsive adjustments */
@@ -593,15 +592,17 @@ header {
   
   .contact-top p {
     font-size: 1.1rem;
+    margin-bottom: 50px;
   }
   
   .contact-info-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px;
+    margin-bottom: 30px;
   }
   
   .contact-map {
-    height: 300px;
+    height: 350px;
   }
 }
 /* -------------------- FOOTER -------------------- */
