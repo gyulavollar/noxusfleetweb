@@ -401,12 +401,14 @@ header {
   margin-bottom: 16px;
 }
 
-.pricing-grid > div:nth-child(odd) {
-  text-align: left;
+.pricing-grid div:nth-child(2),
+.pricing-grid div:nth-child(4) {
+  text-align: left; /* "Heti ár", "Havi ár" */
 }
 
-.pricing-grid > div:nth-child(even) {
-  text-align: right;
+.pricing-grid div:nth-child(3),
+.pricing-grid div:nth-child(5) {
+  text-align: right; /* "450.000 Ft", "990.000 Ft" */
 }
 
 .pricing-grid h4 {
