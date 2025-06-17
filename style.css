@@ -584,6 +584,23 @@ header {
   border: 1px solid rgba(174, 241, 246, 0.3); /* Tiffany blue subtle border */
 }
 
+/* Contact Link Styles */
+.contact-link {
+  color: #aef1f6; /* Your Tiffany blue color */
+  text-decoration: none; /* No underline */
+  transition: opacity 0.3s ease;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  opacity: 0.8; /* Subtle hover effect */
+}
+
+/* For mobile devices */
+a[href^="tel:"] {
+  white-space: nowrap;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-top h2 {
