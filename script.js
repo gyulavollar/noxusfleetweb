@@ -138,10 +138,12 @@ const translations = {
   }
 };
 
+
 // === Update Text Based on Selected Language ===
 function updateTexts() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
 
+  // Fordítás kulcsszavak alapján
   document.querySelectorAll('[data-translate]').forEach(el => {
     const key = el.getAttribute('data-translate');
     if (translations[lang] && translations[lang][key]) {
@@ -152,24 +154,42 @@ function updateTexts() {
     }
   });
 
-  updateLangBlocks(lang);
-
-  const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
-  langButtons.forEach(btn => {
-    btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
+  // === Nyelvi szekciók (ÁSZF blokkváltás pl. hu/en) ===
+  document.querySelectorAll('[data-langblock]').forEach(section => {
+    const sectionLang = section.getAttribute('data-langblock');
+    section.style.display = sectionLang === lang ? 'block' : 'none';
   });
-} else if (el.dataset.default) {
-      el.textContent = el.dataset.default;
+
+  // === Currency Conversion ===
+  const exchangeRate = 410;
+  document.querySelectorAll('.card').forEach(card => {
+    const weeklyPriceEl = card.querySelector('[data-weekly-huf]');
+    const monthlyPriceEl = card.querySelector('[data-monthly-huf]');
+
+    if (!weeklyPriceEl || !monthlyPriceEl) return;
+
+    const weeklyHUF = parseInt(weeklyPriceEl.dataset.weeklyHuf);
+    const monthlyHUF = parseInt(monthlyPriceEl.dataset.monthlyHuf);
+
+    if (lang === 'en') {
+      const weeklyEUR = Math.round(weeklyHUF / exchangeRate);
+      const monthlyEUR = Math.round(monthlyHUF / exchangeRate);
+      weeklyPriceEl.textContent = `€${weeklyEUR}`;
+      monthlyPriceEl.textContent = `€${monthlyEUR}`;
+    } else {
+      weeklyPriceEl.textContent = weeklyHUF.toLocaleString('hu-HU') + ' Ft';
+      monthlyPriceEl.textContent = monthlyHUF.toLocaleString('hu-HU') + ' Ft';
     }
   });
 
-  updateLangBlocks(lang);
-
+  // Gomb szöveg frissítése
   const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
   langButtons.forEach(btn => {
     btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
   });
 }
+
+  });
 
   // === Currency Conversion ===
   const exchangeRate = 410;
