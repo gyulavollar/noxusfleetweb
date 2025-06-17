@@ -126,7 +126,7 @@ const translations = {
     contacttext: "If you have any questions regarding car rental, please email us or give us a call!",
     place: "Vehicle Handover Location:",
     handover: "The handover location may vary based on prior arrangement. The indicated address is the preferred pickup point.",
-    Phone: "Telefon",
+    Phone: "Phone",
     Email: "Email"
   }
 };
