@@ -136,19 +136,21 @@ const translations = {
   }
 };
 
-// === Update Language Blocks Visibility ===
 function updateLanguageBlocks() {
   const lang = localStorage.getItem('userLanguage') || 'hu';
   
-  // Először elrejtjük az összes nyelvi blokkot
+  // Minden nyelvi blokk elrejtése
   document.querySelectorAll('[data-langblock]').forEach(block => {
     block.style.display = 'none';
   });
   
-  // Csak az aktuális nyelv blokkjait jelenítjük meg
-  document.querySelectorAll(`[data-langblock="${lang}"]`).forEach(block => {
-    block.style.display = 'block';
-  });
+  // Csak az aktuális nyelv blokkjának megjelenítése
+  const activeBlocks = document.querySelectorAll(`[data-langblock="${lang}"]`);
+  if (activeBlocks.length > 0) {
+    activeBlocks.forEach(block => {
+      block.style.display = 'block';
+    });
+  }
 }
 
 // === Update Text Based on Selected Language ===
