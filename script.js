@@ -66,7 +66,10 @@ const translations = {
     place:"Az autók átadási helye:",
     handover:"Az autók átadásának helyszíne előzetes egyeztetés alapján változhat. A feltüntetett cím a preferált átvételi pont.",
     Phone: "Telefon",
-    Email: "Email"
+    Email: "Email",
+    daily: "Napi ár:",
+    weekly: "Heti ár:",
+    monthly: "Havi ár:"
     
   },
   en: {
@@ -127,7 +130,10 @@ const translations = {
     place: "Vehicle Handover Location:",
     handover: "The handover location may vary based on prior arrangement. The indicated address is the preferred pickup point.",
     Phone: "Phone",
-    Email: "Email"
+    Email: "Email",
+    daily: "Daily price:",
+    weekly: "Weekly price:",
+    monthly: "Monthly price:"
   }
 };
 
@@ -146,6 +152,42 @@ function updateLanguageBlocks() {
       block.style.display = 'block';
     });
   }
+}
+
+// === PRICE MANAGEMENT FUNCTIONS ===
+function updatePrices(lang) {
+  const exchangeRate = 410;
+  
+  document.querySelectorAll('.pricing-grid').forEach(pricingGrid => {
+    const periodType = pricingGrid.dataset.periodType || 'weekly-monthly'; // Default to weekly-monthly if not specified
+    
+    // Handle daily prices
+    const dailyPriceEl = pricingGrid.querySelector('[data-daily-huf]');
+    if (dailyPriceEl) {
+      const dailyHUF = parseInt(dailyPriceEl.dataset.dailyHuf);
+      dailyPriceEl.textContent = lang === 'en' 
+        ? `€${Math.round(dailyHUF / exchangeRate)}` 
+        : `${dailyHUF.toLocaleString('hu-HU')} Ft`;
+    }
+    
+    // Handle weekly prices
+    const weeklyPriceEl = pricingGrid.querySelector('[data-weekly-huf]');
+    if (weeklyPriceEl) {
+      const weeklyHUF = parseInt(weeklyPriceEl.dataset.weeklyHuf);
+      weeklyPriceEl.textContent = lang === 'en' 
+        ? `€${Math.round(weeklyHUF / exchangeRate)}` 
+        : `${weeklyHUF.toLocaleString('hu-HU')} Ft`;
+    }
+    
+    // Handle monthly prices
+    const monthlyPriceEl = pricingGrid.querySelector('[data-monthly-huf]');
+    if (monthlyPriceEl) {
+      const monthlyHUF = parseInt(monthlyPriceEl.dataset.monthlyHuf);
+      monthlyPriceEl.textContent = lang === 'en' 
+        ? `€${Math.round(monthlyHUF / exchangeRate)}` 
+        : `${monthlyHUF.toLocaleString('hu-HU')} Ft`;
+    }
+  });
 }
 
 // === Update Text Based on Selected Language ===
