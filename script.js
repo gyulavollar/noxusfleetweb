@@ -184,7 +184,14 @@ function updateTexts() {
       weeklyPriceEl.textContent = weeklyHUF.toLocaleString('hu-HU') + ' Ft';
       monthlyPriceEl.textContent = monthlyHUF.toLocaleString('hu-HU') + ' Ft';
     }
+
+    // Fix for card flip language transition
+    if(card.classList.contains('flipped')) {
+      card.classList.remove('flipped');
+      setTimeout(() => card.classList.add('flipped'), 10);
+    }
   });
+  }
 
   // Update button text
   const langButtons = document.querySelectorAll('.lang-button, #langSwitchDesktop, #langSwitchMobile');
@@ -192,7 +199,6 @@ function updateTexts() {
     btn.textContent = lang === 'hu' ? 'English' : 'Magyar';
   });
 }
-
 // === Set Menu Visibility Based on Screen Size ===
 function setInitialVisibility() {
   const isMobile = window.innerWidth <= 768;
