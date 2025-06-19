@@ -205,6 +205,7 @@ function updateTexts() {
 
   // Update language blocks
   updateLanguageBlocks();
+  updatePrices(lang);
 
   // === Currency Conversion ===
   const exchangeRate = 410;
@@ -270,6 +271,8 @@ function hideMenu() {
 
 // === Main Logic on Page Load ===
 document.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('userLanguage') || 'hu';
+  updatePrices(lang);
   updateTexts();
   updateLanguageBlocks();
   setInitialVisibility();
