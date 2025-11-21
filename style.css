@@ -461,6 +461,8 @@ color: var(--text-light);
 font-family: "Goldman", sans-serif;
 padding: 2rem 0;
 max-width: 1400px;
+justify-content: center;
+margin: 0 auto;
 }
 
 
@@ -1178,6 +1180,7 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
 
 
 
