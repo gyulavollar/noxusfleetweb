@@ -455,15 +455,13 @@ header {
 .about-wrapper {
 width: 100%;
 display: flex;
-justify-content: center;
-align-items: center;
 min-height: 650px;
 background: #000;
 color: var(--text-light);
 font-family: "Goldman", sans-serif;
 padding: 2rem 0;
 max-width: 1400px;
-margin: 0 auto;
+}
 
 
 .about-left {
@@ -1180,7 +1178,6 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
-
 
 
 
