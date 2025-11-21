@@ -48,13 +48,13 @@ main {
     background: #000;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #ac02f5;
+    background-color: #aef1f6;
     border-radius: 10px;
     border: 2px solid #000;
   }
   body {
     scrollbar-width: thin;
-    scrollbar-color: #ac02f5 #000;
+    scrollbar-color: #aef1f6 #000;
   }
 }
 
@@ -71,7 +71,7 @@ header {
   align-items: center;
   padding: 0 15px;
   z-index: 1000;
-  border-bottom: 2px solid #ac02f5;
+  border-bottom: 2px solid #aef1f6;
 }
 
 .logo img {
@@ -98,7 +98,7 @@ header {
 
 .desktop-nav a,
 .desktop-nav .dropdown > button {
-  color: #ac02f5;
+  color: #aef1f6;
   text-decoration: none;
   padding: 0 15px;
   height: 100%;
@@ -190,7 +190,7 @@ header {
 }
 
 .mobile-menu nav a {
-  color: #ac02f5;
+  color: #aef1f6;
   text-decoration: none;
   font-size: 1.2rem;
   padding: 12px;
@@ -204,8 +204,8 @@ header {
 
 .lang-button {
   background: none;
-  border: 1px solid #ac02f5;
-  color: #ac02f5;
+  border: 1px solid #aef1f6;
+  color: #aef1f6;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -366,7 +366,7 @@ header {
 
 .card-front .details-text {
   font-size: 1rem;
-  color: #ac02f5;
+  color: #aef1f6;
   margin-bottom: 10px;
   margin-top: 40px;
 }
@@ -452,32 +452,239 @@ header {
 }
 
 /* -------------------- ABOUT SECTION -------------------- */
-.about-section {
-  padding: 4rem 1rem 1rem;
+.about-wrapper {
+width: 100%;
+display: flex;
+min-height: 650px;
+background: #000;
+color: var(--text-light);
+font-family: "Goldman", sans-serif;
+margin: 0 auto;
+padding: 2rem 0; /* added spacing */
+max-width: 1400px; /* aligns with car card section width */
+}
+
+
+.about-left {
+flex: 1;
+position: relative;
+}
+
+
+.about-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+
+.about-right {
+flex: 1;
+display: flex;
+flex-direction: column;
+padding: 2.5rem;
+background: linear-gradient(to bottom, rgba(0, 20, 30, 0.85), rgba(0, 0, 0, 0.9));
+border-left: 1px solid rgba(0, 170, 255, 0.35);
+}
+
+
+.about-top h2 {
+font-size: 2.4rem;
+margin-bottom: 1rem;
+color: var(--primary-blue);
+text-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+}
+
+
+.learn-more-btn {
+display: inline-block;
+margin-top: 1rem;
+padding: 0.8rem 1.4rem;
+background: var(--primary-blue);
+border-radius: 6px;
+color: #000;
+font-weight: bold;
+text-decoration: none;
+transition: var(--transition-speed);
+}
+.learn-more-btn:hover {
+background: var(--hover-blue);
+box-shadow: 0 0 15px var(--hover-blue);
+}
+
+
+.about-grid {
+flex: 1;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1rem;
+margin-top: 1rem;
+}
+
+
+.grid-item {
+background: var(--card-bg);
+border: 1px solid rgba(0, 170, 255, 0.25);
+border-radius: 12px;
+</style>
+
+/* -------------------------------- */
+/* FAQ MAIN WRAPPER – same as ABOUT */
+/* -------------------------------- */
+.faq-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #050505;
+  border-radius: 14px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.faq-section {
   display: flex;
   justify-content: center;
+  padding: 3rem 1rem;
 }
 
-.about-container {
-  background: radial-gradient(circle at center, #242424 0%, #111 90%);
-  color: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
+.faq-wrapper {
   max-width: 800px;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 14px;
+
+  /* SAME BACKGROUND AS ABOUT */
+  background: radial-gradient(circle at center, #242424 0%, #111 90%);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(0, 170, 255, 0.25);
+  color: #fff;
 }
 
-.about-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.2rem;
+/* -------------------------------- */
+/* FAQ ITEM */
+/* -------------------------------- */
+.faq-item {
+  border-bottom: 1px solid rgba(0, 170, 255, 0.20);
 }
 
-.about-text {
-  font-size: 1rem;
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* -------------------------------- */
+/* QUESTION BUTTON */
+/* -------------------------------- */
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+
+  padding: 1.2rem 0;
+  font-size: 1.25rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  color: #00aaff;
+  font-family: "Goldman", sans-serif;
+
+  transition: color 0.25s ease;
+}
+
+.faq-question:hover {
+  color: #66d9ff;
+}
+
+.faq-number {
+  margin-right: 10px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #66d9ff;
+}
+
+/* -------------------------------- */
+/* ICON */
+/* -------------------------------- */
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #00aaff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #00aaff;
+  font-size: 20px;
+
+  transition: 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  background: rgba(0, 170, 255, 0.2);
+  border-color: #66d9ff;
+  color: #66d9ff;
+}
+
+/* -------------------------------- */
+/* ANSWER (DROPDOWN) */
+/* -------------------------------- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  padding: 0;
+  margin: 0;
+
   line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #fff;
+
+  /* SAME GREY BACKGROUND AS ABOUT */
+  background: rgba(20, 20, 20, 0.85);
+
+  border-radius: 8px;
+
+  transition: 
+    max-height 0.35s ease,
+    opacity 0.35s ease,
+    padding 0.35s ease;
 }
+
+.faq-item.active .faq-answer {
+  max-height: 600px;
+  opacity: 1;
+  padding: 1rem 1rem 1.5rem;
+}
+
+/* -------------------------------- */
+/* MOBILE */
+/* -------------------------------- */
+@media (max-width: 600px) {
+
+  .faq-question {
+    font-size: 1.05rem;
+  }
+
+  .faq-number {
+    font-size: 1.2rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+
 
 /* -------------------- TESTIMONIALS -------------------- */
 .testimonial-section {
@@ -504,7 +711,7 @@ header {
 
 .testimonial-author {
   margin-top: 0.8rem;
-  color: #ac02f5;
+  color: #aef1f6;
   font-weight: bold;
 }
 
@@ -518,7 +725,7 @@ header {
 
 .contact-top h2 {
   font-size: 3rem;
-  color: #ac02f5; /* Your specified Tiffany blue */
+  color: #aef1f6; /* Your specified Tiffany blue */
   margin-bottom: 25px;
   font-weight: 700;
 }
@@ -553,7 +760,7 @@ header {
 }
 
 .contact-info-box h3 {
-  color: #ac02f5; /* Tiffany blue */
+  color: #aef1f6; /* Tiffany blue */
   font-size: 1.6rem; /* Slightly larger */
   margin-bottom: 15px; /* More space below heading */
   font-weight: 500;
@@ -582,7 +789,7 @@ header {
 
 .contact-map-header h3 {
   font-size: 1.6rem;
-  color: #ac02f5; /* Tiffany blue */
+  color: #aef1f6; /* Tiffany blue */
   margin: 0 0 15px 0; /* More space below */
   font-weight: 500;
 }
@@ -596,7 +803,7 @@ header {
 
 /* Contact Link Styles */
 .contact-link {
-  color: #ac02f5; /* Your Tiffany blue color */
+  color: #aef1f6; /* Your Tiffany blue color */
   text-decoration: none; /* No underline */
   transition: opacity 0.3s ease;
   display: inline-block;
@@ -648,7 +855,7 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: start;
   text-align: center;
@@ -671,7 +878,7 @@ footer {
 .footer-section h4 {
   margin: 0.5rem 0 0.2rem;
   font-size: 1rem;
-  color: #ac02f5;
+  color: #aef1f6;
 }
 
 .footer-section p,
@@ -829,7 +1036,7 @@ footer a:hover {
   }
   .card-front .details-text {
     font-size: 1rem;
-    color: #ac02f5;
+    color: #aef1f6;
     margin-bottom: 10px;
     margin-top: 40px;
   }
@@ -951,3 +1158,9 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
+
+
+
+
+
