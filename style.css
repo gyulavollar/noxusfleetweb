@@ -489,46 +489,59 @@ header {
   font-family: "Montserrat", sans-serif;
 }
 
-/* FAQ blokk */
+/* -------------------- FAQ WRAPPER -------------------- */
+.faq-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 170, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* -------------------- FAQ ITEM -------------------- */
 .faq-item {
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid rgba(0, 170, 255, 0.15);
 }
 
 .faq-item:last-child {
   border-bottom: none;
 }
 
-/* Gomb */
+/* -------------------- QUESTION BUTTON -------------------- */
 .faq-question {
   width: 100%;
-  background: #0d0d0d;
-  color: #fff;
+  background: transparent;
+  color: var(--primary-blue);
   border: none;
-  padding: 1.5rem;
-  font-size: 1.2rem;
-  text-align: left;
+  padding: 1.3rem 0;
+  font-size: 1.3rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 700;
-  border-radius: 12px;
-  transition: background 0.3s ease;
+  text-align: left;
+  font-family: "Goldman", sans-serif;
+  transition: color var(--transition-speed);
 }
 
 .faq-question:hover {
-  background: #111;
+  color: var(--hover-blue);
 }
 
 .faq-number {
-  color: #00d4ff;
+  color: var(--hover-blue);
   margin-right: 10px;
-  font-weight: 900;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
+/* -------------------- ICON -------------------- */
 .faq-icon {
-  background: #0a0a0a;
-  border: 1px solid #00e1ff;
+  background: #000;
+  border: 2px solid var(--primary-blue);
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -536,44 +549,58 @@ header {
   justify-content: center;
   align-items: center;
   font-size: 22px;
-  color: #00e1ff;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-/* Rejtett szöveg */
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  padding: 0 1.2rem;
-  color: #cce9ff;
-  font-size: 1rem;
-  line-height: 1.6;
-  transition: max-height 0.35s ease, opacity 0.35s ease;
-}
-
-/* Aktív állapot */
-.faq-item.active .faq-answer {
-  max-height: 400px;
-  opacity: 1;
-  padding-bottom: 1.5rem;
+  color: var(--primary-blue);
+  transition: 
+     transform var(--transition-speed),
+     border var(--transition-speed),
+     color var(--transition-speed),
+     background var(--transition-speed);
 }
 
 .faq-item.active .faq-icon {
   transform: rotate(180deg);
-  background: #00e1ff22;
+  border-color: var(--hover-blue);
+  color: var(--hover-blue);
+  background: rgba(0, 170, 255, 0.2);
 }
 
-/* Mobil */
+/* -------------------- ANSWER -------------------- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 0;
+  font-size: 1rem;
+  color: var(--text-light);
+  text-align: left;
+  line-height: 1.7;
+  transition: 
+      max-height 0.35s ease,
+      opacity 0.35s ease,
+      padding 0.35s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0.5rem 0 1.5rem 0;
+}
+
+/* -------------------- MOBILE -------------------- */
 @media (max-width: 600px) {
   .faq-question {
-    font-size: 1rem;
-    padding: 1.2rem;
+    font-size: 1.1rem;
   }
+
+  .faq-number {
+    font-size: 1.2rem;
+  }
+
   .faq-answer {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
+
 
 /* -------------------- TESTIMONIALS -------------------- */
 .testimonial-section {
@@ -1047,5 +1074,6 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
 
 
