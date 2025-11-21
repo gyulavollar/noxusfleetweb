@@ -394,3 +394,20 @@ document.querySelectorAll('.card').forEach(card => {
     card.classList.toggle('flipped');
   });
 });
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+
+    // egy nyíljon ki egyszerre  
+    faqItems.forEach((other) => {
+      if (other !== item) {
+        other.classList.remove("active");
+      }
+    });
+
+    item.classList.toggle("active");
+  });
+});
+
