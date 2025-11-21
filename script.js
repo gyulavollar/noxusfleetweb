@@ -9,8 +9,8 @@ const body = document.body;
 // === TRANSLATIONS ===
 const translations = {
   hu: {
-    rent1: "BÉRELHETŐ AUTÓK",
-    forsale1: "ELADÓ AUTÓK",
+    rent1: "ÁRAK",
+    forsale1: "GALÉRIA",
     connection: "KAPCSOLAT",
     bookingTitle: "LEGKEDVELTEBB AUTÓINK",
     bookingSubtitle: "",
@@ -73,8 +73,8 @@ const translations = {
     
   },
   en: {
-    rent1: "FOR RENT",
-    forsale1: "FOR SALE",
+    rent1: "PRICES",
+    forsale1: "GALLERY",
     connection: "CONTACT",
     bookingTitle: "OUR FAVOURITE CARS",
     bookingSubtitle: "",
