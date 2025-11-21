@@ -489,107 +489,140 @@ header {
   font-family: "Montserrat", sans-serif;
 }
 
-/* -------------------- FAQ WRAPPER -------------------- */
-.faq-container {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid rgba(0, 170, 255, 0.25);
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* -------------------------------- */
+/* FAQ MAIN WRAPPER – same as ABOUT */
+/* -------------------------------- */
+.faq-section {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
 }
 
-/* -------------------- FAQ ITEM -------------------- */
+.faq-wrapper {
+  max-width: 800px;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 14px;
+
+  /* SAME BACKGROUND AS ABOUT */
+  background: radial-gradient(circle at center, #242424 0%, #111 90%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(0, 170, 255, 0.25);
+  color: #fff;
+}
+
+/* -------------------------------- */
+/* FAQ ITEM */
+/* -------------------------------- */
 .faq-item {
-  border-bottom: 1px solid rgba(0, 170, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 170, 255, 0.20);
 }
 
 .faq-item:last-child {
   border-bottom: none;
 }
 
-/* -------------------- QUESTION BUTTON -------------------- */
+/* -------------------------------- */
+/* QUESTION BUTTON */
+/* -------------------------------- */
 .faq-question {
   width: 100%;
   background: transparent;
-  color: var(--primary-blue);
   border: none;
-  padding: 1.3rem 0;
-  font-size: 1.3rem;
-  cursor: pointer;
+
+  padding: 1.2rem 0;
+  font-size: 1.25rem;
+
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  text-align: left;
+  align-items: center;
+
+  cursor: pointer;
+  color: #00aaff;
   font-family: "Goldman", sans-serif;
-  transition: color var(--transition-speed);
+
+  transition: color 0.25s ease;
 }
 
 .faq-question:hover {
-  color: var(--hover-blue);
+  color: #66d9ff;
 }
 
 .faq-number {
-  color: var(--hover-blue);
   margin-right: 10px;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
+  color: #66d9ff;
 }
 
-/* -------------------- ICON -------------------- */
+/* -------------------------------- */
+/* ICON */
+/* -------------------------------- */
 .faq-icon {
-  background: #000;
-  border: 2px solid var(--primary-blue);
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
+  border: 2px solid #00aaff;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 22px;
-  color: var(--primary-blue);
-  transition: 
-     transform var(--transition-speed),
-     border var(--transition-speed),
-     color var(--transition-speed),
-     background var(--transition-speed);
+  justify-content: center;
+
+  color: #00aaff;
+  font-size: 20px;
+
+  transition: 0.3s ease;
 }
 
+/* ACTIVE STATE */
 .faq-item.active .faq-icon {
-  transform: rotate(180deg);
-  border-color: var(--hover-blue);
-  color: var(--hover-blue);
+  transform: rotate(45deg);
   background: rgba(0, 170, 255, 0.2);
+  border-color: #66d9ff;
+  color: #66d9ff;
 }
 
-/* -------------------- ANSWER -------------------- */
+/* -------------------------------- */
+/* ANSWER (DROPDOWN) */
+/* -------------------------------- */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  padding: 0 0;
+
+  padding: 0;
+  margin: 0;
+
+  line-height: 1.6;
   font-size: 1rem;
-  color: var(--text-light);
-  text-align: left;
-  line-height: 1.7;
+  color: #fff;
+
+  /* SAME GREY BACKGROUND AS ABOUT */
+  background: rgba(20, 20, 20, 0.85);
+
+  border-radius: 8px;
+
   transition: 
-      max-height 0.35s ease,
-      opacity 0.35s ease,
-      padding 0.35s ease;
+    max-height 0.35s ease,
+    opacity 0.35s ease,
+    padding 0.35s ease;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 400px;
+  max-height: 600px;
   opacity: 1;
-  padding: 0.5rem 0 1.5rem 0;
+  padding: 1rem 1rem 1.5rem;
 }
 
-/* -------------------- MOBILE -------------------- */
+/* -------------------------------- */
+/* MOBILE */
+/* -------------------------------- */
 @media (max-width: 600px) {
+
   .faq-question {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .faq-number {
@@ -600,6 +633,7 @@ header {
     font-size: 0.95rem;
   }
 }
+
 
 
 /* -------------------- TESTIMONIALS -------------------- */
@@ -1074,6 +1108,7 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
 
 
 
