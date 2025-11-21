@@ -459,9 +459,6 @@ min-height: 650px;
 background: #000;
 color: var(--text-light);
 font-family: "Goldman", sans-serif;
-margin: 0 auto;
-padding: 2rem 0; /* added spacing */
-max-width: 1400px; /* aligns with car card section width */
 }
 
 
@@ -527,7 +524,28 @@ margin-top: 1rem;
 background: var(--card-bg);
 border: 1px solid rgba(0, 170, 255, 0.25);
 border-radius: 12px;
-</style>
+padding: 1.2rem;
+transition: var(--transition-speed);
+}
+.grid-item:hover {
+border-color: var(--primary-blue);
+box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+
+.grid-item h3 {
+color: var(--primary-blue);
+margin-bottom: 0.5rem;
+text-shadow: 0 0 6px rgba(0, 170, 255, 0.6);
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+.about-wrapper { flex-direction: column; }
+.about-left { height: 280px; }
+.about-grid { grid-template-columns: 1fr; }
+}
 
 /* -------------------------------- */
 /* FAQ MAIN WRAPPER – same as ABOUT */
@@ -1158,7 +1176,6 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
-
 
 
 
