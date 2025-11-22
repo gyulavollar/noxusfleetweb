@@ -72,6 +72,7 @@ header {
   padding: 0 15px;
   z-index: 1000;
   border-bottom: 2px solid #aef1f6;
+  max-width: 1200px;
 }
 
 .logo img {
@@ -1180,6 +1181,7 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
 
 
 
