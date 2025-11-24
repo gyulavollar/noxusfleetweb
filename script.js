@@ -497,3 +497,15 @@ function prevImg(section) {
 // Start auto sliding at page load
 startAutoSlide();
 
+
+const statSwiper = new Swiper(".statSwiper", {
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+  navigation: {
+    nextEl: ".stat-next",
+    prevEl: ".stat-prev",
+  },
+});
