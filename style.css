@@ -272,82 +272,66 @@ header {
 
 /* -------------------- WHY US -------------------- */
 .stats-video-section {
-  display: flex;
   width: 100%;
-  height: 100vh;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+  background: #000;
+  padding: 80px 0;
 }
 
-/* Bal oldal */
+.stats-container {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 40px;
+  align-items: center;
+}
+
 .stats-left {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  box-sizing: border-box;
+  justify-content: space-between;
+  min-height: 500px;
 }
 
-/* Három rész elosztása */
-.stats-top {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.stats-top h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #28f0f0;
 }
 
-.stats-middle {
-  flex: 1;
-  display: flex;
-  align-items: center;
+.stats-top p {
+  font-size: 18px;
+  line-height: 1.4;
 }
 
-.stats-bottom {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 20px;
-}
-
-/* Jobb oldal videó */
-.stats-right {
-  width: 50%;
-  height: 100%;
-}
-
-.stats-right video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Gomb */
 .stats-btn {
   background: #28f0f0;
-  padding: 16px 30px;
-  border-radius: 12px;
-  font-size: 18px;
   color: #000;
+  font-size: 18px;
+  padding: 16px 32px;
+  border-radius: 12px;
   text-decoration: none;
 }
 
-/* Statisztika slider */
+.stats-bottom {
+  width: 100%;
+}
+
 .statSwiper {
   width: 100%;
-  max-width: 500px;
 }
 
 .stat-item h3 {
-  color: #28f0f0;
   font-size: 40px;
+  color: #28f0f0;
   margin: 0;
 }
 
 .stat-item p {
-  font-size: 18px;
   margin-top: 8px;
+  font-size: 18px;
 }
 
 .swiper-button-prev,
@@ -355,23 +339,33 @@ header {
   color: #28f0f0 !important;
 }
 
+/* Jobb oldal videó */
+.stats-right {
+  width: 50%;
+}
+
+.stats-right video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 /* Mobil */
 @media (max-width: 900px) {
-  .stats-video-section {
+
+  .stats-container {
     flex-direction: column;
-    height: auto;
   }
 
   .stats-left, .stats-right {
     width: 100%;
-    height: auto;
   }
 
   .stats-right video {
     height: 300px;
   }
 }
-
 
 /* -------------------- SLIDER -------------------- */
 .featured-slider {
@@ -1374,6 +1368,7 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
 
 
 
