@@ -411,3 +411,89 @@ faqItems.forEach((item) => {
   });
 });
 
+let autoSlide = true;  
+let autoTimer = null;
+
+const slider = document.getElementById("mainSlider");
+let touchStartX = 0;
+
+// ---- Auto slide ----
+function startAutoSlide() {
+    autoTimer = setInterval(() => {
+        if (autoSlide) nextImg(slider.querySelector('.slider-main'));
+    }, 3000);
+}
+
+function stopAutoSlide() {
+    autoSlide = false;
+    clearInterval(autoTimer);
+}
+
+// ---- Manual controls ----
+function manualNext() {
+    stopAutoSlide();
+    nextImg(slider.querySelector('.slider-main'));
+}
+
+function manualPrev() {
+    stopAutoSlide();
+    prevImg(slider.querySelector('.slider-main'));
+}
+
+function manualSet(el) {
+    stopAutoSlide();
+    setImg(el);
+}
+
+// ---- Swipe Controls ----
+slider.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchmove", (e) => {
+    let diff = e.touches[0].clientX - touchStartX;
+
+    // Don't trigger until swipe is clear
+    if (Math.abs(diff) > 50) {
+        stopAutoSlide();
+        if (diff > 0) manualPrev();
+        else manualNext();
+        touchStartX = e.touches[0].clientX + 999999; // avoid double-slide
+    }
+});
+
+// ---- Slider core functions ----
+function setImg(el) {
+    const slider = el.closest('.car-slider');
+    const mainImg = slider.querySelector('.main-img');
+    mainImg.src = el.src;
+
+    slider.querySelectorAll('.thumb-row img')
+        .forEach(i => i.classList.remove('active'));
+
+    el.classList.add('active');
+}
+
+function nextImg(section) {
+    const thumbs = section.parentElement.querySelectorAll('.thumb-row img');
+    const main = section.querySelector('.main-img').src;
+
+    let index = [...thumbs].findIndex(t => t.src === main);
+    index = (index + 1) % thumbs.length;
+
+    setImg(thumbs[index]);
+}
+
+function prevImg(section) {
+    const thumbs = section.parentElement.querySelectorAll('.thumb-row img');
+    const main = section.querySelector('.main-img').src;
+
+    let index = [...thumbs].findIndex(t => t.src === main);
+    index = (index - 1 + thumbs.length) % thumbs.length;
+
+    setImg(thumbs[index]);
+}
+
+// Start auto sliding at page load
+startAutoSlide();
+
