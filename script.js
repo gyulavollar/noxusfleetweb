@@ -498,7 +498,7 @@ function prevImg(section) {
 startAutoSlide();
 
 
-<script>
+
 const statSwiper = new Swiper(".statSwiper", {
   loop: true,
   autoplay: {
@@ -508,6 +508,5 @@ const statSwiper = new Swiper(".statSwiper", {
   navigation: {
     nextEl: ".stat-next",
     prevEl: ".stat-prev",
-  }
+  },
 });
-</script>
