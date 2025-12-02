@@ -48,61 +48,103 @@
 </nav>
 </div>
   </header>
-<main>
-  <section class="contact-top">
-    <h2 data-translate="contactus">Lépjen velünk kapcsolatba</h2>
-    <p data-translate="contacttext">Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az alábbi űrlapot vagy hívjon minket!</p>
-  </section>
-    
-<!-- Contact Info Section -->
-<section class="contact-info-section">
-  <div class="contact-info-container">
-    <!-- Email Info -->
-    <div class="contact-info-box">
-      <h3 data-translate="Email">Email</h3>
-      <p>
-        <a href="mailto:booking@noxusfleet.com" class="contact-link" data-translate="contactEmail">
-          📧 booking@noxusfleet.com
-        </a>
-      </p>
-    </div>
-    
-    <!-- Phone Info -->
-    <div class="contact-info-box">
-      <h3 data-translate="Phone">Telefon</h3>
-      <p>
-        <a href="tel:+36307846975" class="contact-link" data-translate="contactPhone">
-          📞 +36 30 784 6975
-        </a>
-      </p>
-    </div>
-  </div>
-</section>
 
-  <!-- Map Section -->
-  <section class="contact-map-section">
-    <div class="contact-map-header">
-      <h3 data-translate="place">Az autók átadási helye:</h3>
+        <main>
+  <div class="contact-grid-container">
+    
+    <!-- Bal felső: Cím és szöveg -->
+    <div class="contact-header">
+      <h2 data-translate="contactus">Lépjen velünk kapcsolatba</h2>
+      <p data-translate="contacttext">
+        Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az alábbi űrlapot vagy hívjon minket!
+      </p>
     </div>
     
-    <div class="contact-map-container">
-      <div class="contact-map">
-        <iframe
-          src="https://www.google.com/maps?q=47.378110,19.129690&hl=hu&z=17&output=embed"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!-- Jobb felső: Autó kép -->
+    <div class="contact-image">
+      <img src="assets/images/car-contact.jpg" alt="Bérelhető autó" data-translate="carImageAlt">
+    </div>
+    
+    <!-- Bal alsó: Email contact form -->
+    <div class="contact-form-section">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" data-translate="nameLabel">Név *</label>
+            <input type="text" id="name" name="name" required placeholder="Teljes neved">
+          </div>
+          
+          <div class="form-group">
+            <label for="email" data-translate="emailLabel">Email cím *</label>
+            <input type="email" id="email" name="email" required placeholder="pelda@email.hu">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject" data-translate="subjectLabel">Tárgy</label>
+          <input type="text" id="subject" name="subject" placeholder="Üzeneted tárgya">
+        </div>
+        
+        <div class="form-group">
+          <label for="message" data-translate="messageLabel">Üzenet *</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Írd ide üzeneted..."></textarea>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="submit-btn" data-translate="sendButton">
+            <span class="btn-text">Üzenet küldése</span>
+            <span class="btn-icon">✉️</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Jobb alsó: Térkép és elérhetőségek -->
+    <div class="contact-map-info">
+      <!-- Map Section - eredeti kóddal -->
+      <section class="contact-map-section">
+        <div class="contact-map-header">
+          <h3 data-translate="place">Az autók átadási helye:</h3>
+        </div>
+        
+        <div class="contact-map-container">
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps?q=47.378110,19.129690&hl=hu&z=17&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Elérhetőségek -->
+      <div class="contact-details">
+        <div class="contact-info-item">
+          <h3 data-translate="Email">Email</h3>
+          <p>
+            <a href="mailto:booking@noxusfleet.com" class="contact-link" data-translate="contactEmail">
+              <span class="contact-icon">📧</span> booking@noxusfleet.com
+            </a>
+          </p>
+        </div>
+        
+        <div class="contact-info-item">
+          <h3 data-translate="Phone">Telefon</h3>
+          <p>
+            <a href="tel:+36307846975" class="contact-link" data-translate="contactPhone">
+              <span class="contact-icon">📞</span> +36 30 784 6975
+            </a>
+          </p>
+        </div>
       </div>
     </div>
-  </section>
-
-  <section style="margint-top: 0;">
-    <p data-translate="handover">Az autók átadásának helyszíne előzetes egyeztetés alapján változhat. A feltüntetett cím a preferált átvételi pont.</p>
-  </section>    
+    
+  </div>
 </main>
 
         
