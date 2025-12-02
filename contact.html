@@ -49,35 +49,36 @@
 </div>
   </header>
 
-        <main>
+ <main>
   <div class="contact-grid-container">
     
     <!-- Bal felső: Cím és szöveg -->
     <div class="contact-header">
       <h2 data-translate="contactus">Lépjen velünk kapcsolatba</h2>
       <p data-translate="contacttext">
-        Ha bármilyen kérdése van az autóbérléssel kapcsolatban, töltse ki az alábbi űrlapot vagy hívjon minket!
+        Ha bármilyen kérdése van az autóbérléssel kapcsolatban, kérjük, írjon e-mailt vagy hívjon minket!
       </p>
     </div>
     
     <!-- Jobb felső: Autó kép -->
     <div class="contact-image">
-      <img src="assets/images/car-contact.jpg" alt="Bérelhető autó" data-translate="carImageAlt">
+      <!-- Ide kerülhet egy autó kép vagy megtartod az előzőt -->
+      <div class="image-placeholder">
+        <span>Autó kép helye</span>
+      </div>
     </div>
     
     <!-- Bal alsó: Email contact form -->
     <div class="contact-form-section">
       <form class="contact-form" action="#" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name" data-translate="nameLabel">Név *</label>
-            <input type="text" id="name" name="name" required placeholder="Teljes neved">
-          </div>
-          
-          <div class="form-group">
-            <label for="email" data-translate="emailLabel">Email cím *</label>
-            <input type="email" id="email" name="email" required placeholder="pelda@email.hu">
-          </div>
+        <div class="form-group">
+          <label for="name" data-translate="nameLabel">Név *</label>
+          <input type="text" id="name" name="name" required placeholder="Teljes neved">
+        </div>
+        
+        <div class="form-group">
+          <label for="email" data-translate="emailLabel">Email cím *</label>
+          <input type="email" id="email" name="email" required placeholder="pelda@email.hu">
         </div>
         
         <div class="form-group">
@@ -87,24 +88,23 @@
         
         <div class="form-group">
           <label for="message" data-translate="messageLabel">Üzenet *</label>
-          <textarea id="message" name="message" rows="6" required placeholder="Írd ide üzeneted..."></textarea>
+          <textarea id="message" name="message" rows="5" required placeholder="Írd ide üzeneted..."></textarea>
         </div>
         
         <div class="form-actions">
           <button type="submit" class="submit-btn" data-translate="sendButton">
-            <span class="btn-text">Üzenet küldése</span>
-            <span class="btn-icon">✉️</span>
+            Üzenet küldése
           </button>
         </div>
       </form>
     </div>
     
-    <!-- Jobb alsó: Térkép és elérhetőségek -->
-    <div class="contact-map-info">
-      <!-- Map Section - eredeti kóddal -->
+    <!-- Jobb alsó: Csak a térkép -->
+    <div class="contact-map-only">
       <section class="contact-map-section">
         <div class="contact-map-header">
           <h3 data-translate="place">Az autók átadási helye:</h3>
+          <p class="coordinates">47°22'41.2"N 19°07'45.7"E<br>Budapest, Rezeda utca</p>
         </div>
         
         <div class="contact-map-container">
@@ -120,28 +120,15 @@
             </iframe>
           </div>
         </div>
-      </section>
-      
-      <!-- Elérhetőségek -->
-      <div class="contact-details">
-        <div class="contact-info-item">
-          <h3 data-translate="Email">Email</h3>
-          <p>
-            <a href="mailto:booking@noxusfleet.com" class="contact-link" data-translate="contactEmail">
-              <span class="contact-icon">📧</span> booking@noxusfleet.com
-            </a>
-          </p>
-        </div>
         
-        <div class="contact-info-item">
-          <h3 data-translate="Phone">Telefon</h3>
-          <p>
-            <a href="tel:+36307846975" class="contact-link" data-translate="contactPhone">
-              <span class="contact-icon">📞</span> +36 30 784 6975
-            </a>
-          </p>
+        <div class="map-footer">
+          <div class="map-controls">
+            <span class="control-btn">🗺️</span>
+            <span class="control-btn">🔍</span>
+            <span class="control-btn">📍</span>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
     
   </div>
