@@ -961,25 +961,26 @@ text-shadow: 0 0 6px rgba(0, 170, 255, 0.6);
   grid-row: 1;
   border-radius: 8px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-  height: 250px;
+  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #ccc;
+  border: none;
+  /* Opcionális: ha a rács cella méretét szeretnéd kihasználni */
+  width: 100%;
+  height: 100%;
 }
 
 .image-placeholder {
-  color: #666;
-  font-size: 1.2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
-.image-placeholder span {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #999;
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* vagy contain */
+  border-radius: 8px;
 }
 
 .contact-form-section {
@@ -1571,6 +1572,7 @@ footer a:hover {
     text-align: center;  /* a listaelemek szövege is középen legyen mobilon */
   }
 }
+
 
 
 
