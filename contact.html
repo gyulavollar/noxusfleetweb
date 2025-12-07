@@ -50,75 +50,71 @@
   </header>
 
  <main>
-  <div class="contact-grid-container">
-    
-    <!-- Bal felső: Cím és szöveg -->
-    <div class="contact-header">
-      <h2 data-translate="contactus">Lépjen velünk kapcsolatba</h2>
-      <p data-translate="contacttext">
-        Ha bármilyen kérdése van az autóbérléssel kapcsolatban, kérjük, írjon e-mailt vagy hívjon minket!
-      </p>
-    </div>
-    
-    <!-- Jobb felső: Autó kép -->
-    <div class="contact-image">
-      <!-- Ide kerülhet egy autó kép vagy megtartod az előzőt -->
-      <div class="image-placeholder">
-        <img src="911.png"/>
-      </div>
-    </div>
-    
-    <!-- Bal alsó: Email contact form -->
-    <div class="contact-form-section">
-      <form class="contact-form" action="#" method="POST">
-        <div class="form-group">
-          <label for="name" data-translate="nameLabel">Név *</label>
-          <input type="text" id="name" name="name" required placeholder="Teljes neved">
+<body>
+
+    <!-- ====== SECTION 1 – HERO WITH IMAGE & TEXT ====== -->
+    <section class="about-hero">
+        <div class="hero-overlay">
+            <h1>ABOUT US</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+               Nulla facilisi. Integer vitae enim commodo, pharetra mi vel, 
+               interdum magna.</p>
         </div>
-        
-        <div class="form-group">
-          <label for="email" data-translate="emailLabel">Email cím *</label>
-          <input type="email" id="email" name="email" required placeholder="pelda@email.hu">
+        <img src="your-image.jpg" alt="About Image">
+    </section>
+
+
+    <!-- ====== SECTION 2 – LEFT IMAGE / RIGHT TEXT ====== -->
+    <section class="about-split">
+        <div class="left">
+            <img src="your-image-2.jpg" alt="About Side Image">
         </div>
-        
-        <div class="form-group">
-          <label for="subject" data-translate="subjectLabel">Tárgy</label>
-          <input type="text" id="subject" name="subject" placeholder="Üzeneted tárgya">
+        <div class="right">
+            <h2>Our Mission</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+               Suspendisse porttitor augue ut nisi luctus gravida. 
+               Mauris vehicula risus ipsum, vitae convallis magna facilisis in.</p>
         </div>
-        
-        <div class="form-group">
-          <label for="message" data-translate="messageLabel">Üzenet *</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Írd ide üzeneted..."></textarea>
+    </section>
+
+
+    <!-- ====== SECTION 3 – EMPTY (you will fill later) ====== -->
+    <section class="about-empty">
+        <!-- Ide majd később beírsz amit szeretnél -->
+    </section>
+
+
+    <!-- ====== SECTION 4 – WHY US (same structure as image) ====== -->
+    <section class="why-us">
+        <h2 class="title">WHY US</h2>
+        <p class="subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+            tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <i class="icon">❤️‍🔥</i>
+                <h3>KEEP PULSE GOING</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+
+            <div class="why-item">
+                <i class="icon">∞</i>
+                <h3>PASS THE LIMITS</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+
+            <div class="why-item">
+                <i class="icon">💡</i>
+                <h3>GREAT IDEAS</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
         </div>
-        
-        <div class="form-actions">
-          <button type="submit" class="submit-btn" data-translate="sendButton">
-            Üzenet küldése
-          </button>
-        </div>
-      </form>
-    </div>
-    
-    <!-- Jobb alsó: Csak a térkép -->
-    <div class="contact-map-only">
-      <section class="contact-map-section">
-        <div class="contact-map-container">
-          <div class="contact-map">
-            <iframe
-              src="https://www.google.com/maps?q=47.378110,19.129690&hl=hu&z=17&output=embed"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-      </section>
-    </div>
-    
-  </div>
+    </section>
+
+</body>
+
 </main>
 
         
