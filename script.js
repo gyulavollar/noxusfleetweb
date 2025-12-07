@@ -510,3 +510,46 @@ const statSwiper = new Swiper(".statSwiper", {
     prevEl: ".stat-prev",
   },
 });
+
+// OBSERVER
+const section = document.querySelector('section');
+const barFills = document.querySelectorAll('.bar-fill');
+const counters = document.querySelectorAll('.stat-number');
+let animated = false;
+
+
+const observer = new IntersectionObserver((entries) => {
+if (entries[0].isIntersecting && !animated) {
+animated = true;
+
+
+// BAR ANIMATION
+barFills.forEach(bar => {
+const width = bar.getAttribute('data-fill');
+bar.style.width = width + '%';
+});
+
+
+// COUNTER ANIMATION
+counters.forEach(counter => {
+const target = +counter.getAttribute('data-target');
+let count = 0;
+const speed = target / 80; // adjust speed
+
+
+const updateCount = () => {
+count += speed;
+if (count < target) {
+counter.textContent = Math.floor(count);
+requestAnimationFrame(updateCount);
+} else {
+counter.textContent = target + (target >= 100 ? '+' : '');
+}
+};
+updateCount();
+});
+}
+}, { threshold: 0.4 });
+
+
+observer.observe(section);
