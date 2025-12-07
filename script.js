@@ -511,8 +511,7 @@ const statSwiper = new Swiper(".statSwiper", {
   },
 });
 
-// OBSERVER
-const section = document.querySelector('section');
+const section = document.querySelector('.skills-section');
 const barFills = document.querySelectorAll('.bar-fill');
 const counters = document.querySelectorAll('.stat-number');
 let animated = false;
@@ -521,6 +520,40 @@ let animated = false;
 const observer = new IntersectionObserver((entries) => {
 if (entries[0].isIntersecting && !animated) {
 animated = true;
+
+
+// BAR ANIMATION
+barFills.forEach(bar => {
+const width = bar.getAttribute('data-fill');
+bar.style.width = width + '%';
+});
+
+
+// COUNTER ANIMATION
+counters.forEach(counter => {
+const target = Number(counter.getAttribute('data-target'));
+let count = 0;
+const speed = target / 60;
+
+
+const updateCount = () => {
+count += speed;
+if (count < target) {
+counter.textContent = Math.floor(count);
+requestAnimationFrame(updateCount);
+} else {
+counter.textContent = target + (target >= 100 ? '+' : '');
+}
+};
+
+
+updateCount();
+});
+}
+}, { threshold: 0.4 });
+
+
+observer.observe(section);
 
 
 // BAR ANIMATION
